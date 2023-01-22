@@ -3,6 +3,6 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PKHeX.Core" Version="24.7.27" />
+    <ProjectReference Include="..\..\PKHeX\PKHeX.Core\PKHeX.Core.csproj" />
   </ItemGroup>
 </Project>
