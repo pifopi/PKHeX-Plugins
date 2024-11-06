@@ -59,7 +59,7 @@ namespace PKHeX.Core.AutoMod
                     Aesthetics.ApplyShinyBall(pk);
                 }
             }
-            if (enc.IsEgg)
+            if (enc?.IsEgg == true)
             {
                 if (ball == Ball.Master)
                     pk.Ball = (byte)Ball.Poke;
