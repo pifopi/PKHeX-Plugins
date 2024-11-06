@@ -129,7 +129,8 @@ namespace PKHeX.Core.AutoMod
                     continue;
 
                 pk = pk.Clone(); // Handle Nickname-Trash issues (weedle word filter)
-                if (dest.Generation >= 8 && HomeTrackerUtil.IsRequired(enc, pk) && !AllowHOMETransferGeneration)
+                var AllowHome = ParseSettings.Settings.HOMETransfer.HOMETransferTrackerNotPresent != Severity.Invalid;
+                if (dest.Generation >= 8 && HomeTrackerUtil.IsRequired(enc, pk) && !AllowHome)
                     continue;
 
                 // Apply final details

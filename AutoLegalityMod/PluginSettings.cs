@@ -106,9 +106,9 @@ namespace AutoModPlugins
                 EncounterTypeGroup.Mystery
             ];
 
-        [Category(Legality)]
-        [Description("Disabling this will force ALM to not generate Pokemon which require a HOME tracker.")]
-        public bool AllowHOMETransferGeneration { get; set; } = true;
+      //  [Category(Legality)]
+       // [Description("Disabling this will force ALM to not generate Pokemon which require a HOME tracker.")]
+        //public bool AllowHOMETransferGeneration { get; set; } = true;
 
         [Category(Legality)]
         [Description("Produces an Easter Egg Pokémon if the provided set is illegal.")]
