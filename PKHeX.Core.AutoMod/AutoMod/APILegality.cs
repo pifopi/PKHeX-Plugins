@@ -1256,10 +1256,7 @@ namespace PKHeX.Core.AutoMod
             var species = (int)pk.Species;
             while (true)
             {
-                var ivs = new[] { -1, -1, -1, -1, -1, -1 };
                 var seed = Util.Rand32();
-                while (seeds.Contains(seed))
-                    seed = Util.Rand32();
                 var rng = new Xoroshiro128Plus8b(seed);
 
                 if ((uint)(species - (int)Species.NidoranF) < 6)
@@ -1914,7 +1911,6 @@ namespace PKHeX.Core.AutoMod
 
             return await task.ConfigureAwait(false); // will re-fire exception if present
         }
-
 
         private static GameVersion[] GetPairedVersions(GameVersion version, IEnumerable<GameVersion> versionlist)
         {
