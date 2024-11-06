@@ -1848,8 +1848,30 @@ namespace PKHeX.Core.AutoMod
         /// <summary>
         /// Wrapper function for GetLegalFromTemplate but with a Timeout
         /// </summary>
-        public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false) =>
-            GetLegalFromTemplateTimeoutAsync(dest, template, set, nativeOnly).ConfigureAwait(false).GetAwaiter().GetResult();
+        public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false)
+        {
+            AsyncLegalizationResult GetLegal()
+            {
+                try
+                {
+                    if (!EnableDevMode && ALMVersion.GetIsMismatch())
+                        return new(template, LegalizationResult.VersionMismatch);
+
+                    var res = dest.GetLegalFromTemplate(template, set, out var s, nativeOnly);
+                    return new AsyncLegalizationResult(res, s);
+                }
+                catch (MissingMethodException)
+                {
+                    return new AsyncLegalizationResult(template, LegalizationResult.VersionMismatch);
+                }
+            }
+
+            var task = Task.Run(GetLegal);
+            var first = task.TimeoutAfter(new TimeSpan(0, 0, 0, Timeout))?.Result;
+            return first ?? new AsyncLegalizationResult(template, LegalizationResult.Timeout);
+        }
+        public static AsyncLegalizationResult AsyncGetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false) =>
+          GetLegalFromTemplateTimeoutAsync(dest, template, set, nativeOnly).ConfigureAwait(false).GetAwaiter().GetResult();
         public static async Task<AsyncLegalizationResult> GetLegalFromTemplateTimeoutAsync(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false)
         {
             AsyncLegalizationResult GetLegal()
@@ -1887,6 +1909,18 @@ namespace PKHeX.Core.AutoMod
             public readonly PKM Created = pk;
             public readonly LegalizationResult Status = res;
         }
+
+        private static async Task<AsyncLegalizationResult?>? TimeoutAfter(this Task<AsyncLegalizationResult> task, TimeSpan timeout)
+        {
+            using var cts = new CancellationTokenSource(timeout);
+            var delay = Task.Delay(timeout, cts.Token);
+            var completedTask = await Task.WhenAny(task, delay).ConfigureAwait(false);
+            if (completedTask != task)
+                return null;
+
+            return await task.ConfigureAwait(false); // will re-fire exception if present
+        }
+
 
         private static GameVersion[] GetPairedVersions(GameVersion version, IEnumerable<GameVersion> versionlist)
         {
