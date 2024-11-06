@@ -1248,15 +1248,18 @@ namespace PKHeX.Core.AutoMod
         /// <param name="gender"></param>
         public static void FindEggPIDIV8b(PKM pk, Shiny shiny, byte? gender, EncounterCriteria criteria)
         {
-            var ivs = new[] { -1, -1, -1, -1, -1, -1 };
+            
             var IVs = pk.IVs;
             var required_ivs = new[] { IVs[0], IVs[1], IVs[2], IVs[4], IVs[5], IVs[3] };
             var pi = PersonalTable.BDSP.GetFormEntry(pk.Species, pk.Form);
             var ratio = pi.Gender;
-
+            Span<uint> seeds = [];
             while (true)
             {
+                var ivs = new[] { -1, -1, -1, -1, -1, -1 };
                 var seed = Util.Rand32();
+                while (seeds.Contains(seed))
+                    seed = Util.Rand32();
                 var rng = new Xoroshiro128Plus8b(seed);
 
                 var nido_family_f = new[]
