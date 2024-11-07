@@ -84,6 +84,7 @@ namespace PKHeX.Core.AutoMod
             if (regen.EncounterFilters.Any())
                 encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(regen.EncounterFilters, enc));
             PKM? last = null;
+            var AllowHome = ParseSettings.Settings.HOMETransfer.HOMETransferTrackerNotPresent != Severity.Invalid;
             foreach (var enc in encounters)
             {
                 // Return out if set times out
@@ -128,8 +129,6 @@ namespace PKHeX.Core.AutoMod
                 if (!EntityConverter.IsCompatibleGB(pk, template.Japanese, pk.Japanese))
                     continue;
 
-                pk = pk.Clone(); // Handle Nickname-Trash issues (weedle word filter)
-                var AllowHome = ParseSettings.Settings.HOMETransfer.HOMETransferTrackerNotPresent != Severity.Invalid;
                 if (dest.Generation >= 8 && HomeTrackerUtil.IsRequired(enc, pk) && !AllowHome)
                     continue;
 
