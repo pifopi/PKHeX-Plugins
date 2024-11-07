@@ -1034,6 +1034,7 @@ namespace PKHeX.Core.AutoMod
             uint count = 0;
             uint finalseed = 0;
             ulong seed = Util.Rand.Rand64();
+            Span<int> ivs = stackalloc int[6];
             do
             {
                 var pi = PersonalTable.SV.GetFormEntry(enc.Species, enc.Form);
@@ -1086,21 +1087,20 @@ namespace PKHeX.Core.AutoMod
                 pk.PID = pid;
                 if (pk.IsShiny != set.Shiny)
                     continue;
-                const int UNSET = -1;
-                const int MAX = 31;
-                Span<int> ivs = [UNSET, UNSET, UNSET, UNSET, UNSET, UNSET];
+
+                ivs.Fill(-1);
                 for (int i = 0; i < ((IFlawlessIVCount)enc).FlawlessIVCount; i++)
                 {
                     int index;
                     do { index = (int)rand.NextInt(6); }
-                    while (ivs[index] != UNSET);
-                    ivs[index] = MAX;
+                    while (ivs[index] != -1);
+                    ivs[index] = 31;
                 }
 
                 for (int i = 0; i < 6; i++)
                 {
-                    if (ivs[i] == UNSET)
-                        ivs[i] = (int)rand.NextInt(MAX + 1);
+                    if (ivs[i] == -1)
+                        ivs[i] = (int)rand.NextInt(32);
                 }
                 if (!criteria.IsIVsCompatibleSpeedLast(ivs,9))
                     continue;
@@ -1208,22 +1208,21 @@ namespace PKHeX.Core.AutoMod
             }
 
             // RNG is fixed now and you have the requested shiny!
-            const int UNSET = -1;
-            const int MAX = 31;
-            for (int i = ivs.Count(z => z == MAX); i < flawless; i++)
+
+            for (int i = ivs.Count(z => z == 31); i < flawless; i++)
             {
                 int index = (int)rng.NextInt(6);
-                while (ivs[index] != UNSET)
+                while (ivs[index] != -1)
                 {
                     index = (int)rng.NextInt(6);
                 }
 
-                ivs[index] = MAX;
+                ivs[index] = 31;
             }
 
             for (int i = 0; i < 6; i++)
             {
-                if (ivs[i] == UNSET)
+                if (ivs[i] == -1)
                     ivs[i] = (int)rng.NextInt(32);
             }
 
