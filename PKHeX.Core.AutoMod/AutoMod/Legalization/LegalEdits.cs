@@ -65,7 +65,10 @@ namespace PKHeX.Core.AutoMod
 
             if (pk.Generation == 5 && pk.MetLocation == 75)
             {
-                pk.Ball = (int)Ball.Dream;
+                if (pk.Species == (ushort)Species.Shedinja)
+                    pk.Ball = (int)Ball.Poke;
+                else
+                    pk.Ball = (int)Ball.Dream;
             }
             else
             {

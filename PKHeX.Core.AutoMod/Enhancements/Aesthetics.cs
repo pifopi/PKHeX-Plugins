@@ -1120,19 +1120,7 @@ namespace PKHeX.Core.AutoMod
                 [Blue] = [Dive, LAFeather, Net, LAGreat, Great, Beast, Lure, LAJet],
                 [Yellow] = [Level, LAUltra, Ultra, Repeat, Quick, Moon],
                 [Green] = [Safari, Friend, Nest, Dusk, Strange],
-                [Black] =
-                [
-                    Luxury,
-                    LAGigaton,
-                    LALeaden,
-                    LAHeavy,
-                    Heavy,
-                    LAUltra,
-                    Ultra,
-                    Moon,
-                    Net,
-                    Beast
-                ],
+                [Black] = [Luxury, LAGigaton, LALeaden, LAHeavy, Heavy, LAUltra, Ultra, Moon, Net, Beast],
                 [Brown] = [Level, Heavy],
                 [Purple] = [Master, Love, Dream, Heal],
                 [Gray] = [Heavy, LAGigaton, LALeaden, LAHeavy, Premier, Luxury],
