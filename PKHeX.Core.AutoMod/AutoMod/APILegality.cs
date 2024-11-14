@@ -1127,7 +1127,7 @@ namespace PKHeX.Core.AutoMod
                     PersonalInfo.RatioMagicMale => Gender.Male,
                     _ => (Gender)Encounter9RNG.GetGender(gender_ratio, rand.NextInt(100)),
                 };
-                if (criteria.Gender != Gender.Random && gender != criteria.Gender)
+                if (!criteria.IsGenderSatisfied((byte)gender))
                     continue;
                 pk.Gender = (byte)gender;
 
