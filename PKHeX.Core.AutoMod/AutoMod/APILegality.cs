@@ -96,8 +96,8 @@ namespace PKHeX.Core.AutoMod
                 }
 
                 // Look before we leap -- don't waste time generating invalid / incompatible junk.
-               if (!IsEncounterValid(set, enc, abilityreq, destVer))
-                   continue;
+                if (!IsEncounterValid(set, enc, abilityreq, destVer))
+                    continue;
 
                 if (enc is IFixedNature { IsFixedNature: true } fixedNature)
                     criteria = criteria with { Nature = Nature.Random };
@@ -1127,7 +1127,7 @@ namespace PKHeX.Core.AutoMod
                     PersonalInfo.RatioMagicMale => Gender.Male,
                     _ => (Gender)Encounter9RNG.GetGender(gender_ratio, rand.NextInt(100)),
                 };
-                if (gender != criteria.Gender)
+                if (criteria.Gender != Gender.Random && gender != criteria.Gender)
                     continue;
                 pk.Gender = (byte)gender;
 

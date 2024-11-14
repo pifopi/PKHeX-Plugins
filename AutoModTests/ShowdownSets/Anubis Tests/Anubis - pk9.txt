@@ -22639,3 +22639,15 @@ Jolly Nature
 - Power Gem
 - Acid Armor
 - Sludge Wave
+
+Kingambit @ Black Glasses  
+Ability: Defiant  
+Level: 50  
+Shiny: Yes  
+Tera Type: Dark  
+EVs: 252 HP / 228 Atk / 28 Spe  
+Adamant Nature  
+- Sucker Punch  
+- Kowtow Cleave  
+- Protect  
+- Swords Dance
