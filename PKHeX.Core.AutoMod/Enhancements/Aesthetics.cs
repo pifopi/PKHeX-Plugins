@@ -1059,7 +1059,7 @@ namespace PKHeX.Core.AutoMod
         public static void ApplyShinyBall(PKM pk)
         {
             var color = ShinyMap[(Species)pk.Species];
-            ApplyFirstLegalBall(pk, BallColors[color]);
+            ApplyFirstLegalBall(pk, pk.LA? BallColorsLA[color]:BallColors[color]);
         }
 
         private static readonly Ball[] BallList = (Ball[])Enum.GetValues(typeof(Ball));
@@ -1116,18 +1116,30 @@ namespace PKHeX.Core.AutoMod
         private static readonly Dictionary<PersonalColor, Ball[]> BallColors =
             new()
             {
-                [Red] = [LAOrigin, Cherish, Repeat, Fast, Heal, Great, Dream, Lure],
-                [Blue] = [Dive, LAFeather, Net, LAGreat, Great, Beast, Lure, LAJet],
-                [Yellow] = [Level, LAUltra, Ultra, Repeat, Quick, Moon],
-                [Green] = [Safari, Friend, Nest, Dusk, Strange],
-                [Black] = [Luxury, LAGigaton, LALeaden, LAHeavy, Heavy, LAUltra, Ultra, Moon, Net, Beast],
+                [Red] = [Repeat, Fast, Heal, Great, Dream, Lure],
+                [Blue] = [Dive, Net, Great, Lure, Beast],
+                [Yellow] = [Level, Ultra, Repeat, Quick, Moon],
+                [Green] = [Safari, Friend, Nest, Dusk],
+                [Black] = [Luxury, Heavy, Ultra, Moon, Net, Beast],
                 [Brown] = [Level, Heavy],
-                [Purple] = [Master, Love, Dream, Heal],
-                [Gray] = [Heavy, LAGigaton, LALeaden, LAHeavy, Premier, Luxury],
-                [White] = [Premier, LAWing, LAJet, Timer, Luxury, Ultra],
-                [Pink] = [Love, Dream, Heal],
+                [Purple] = [Master, Love, Heal, Dream ],
+                [Gray] = [Heavy, Premier, Luxury],
+                [White] = [Premier, Timer, Luxury, Ultra],
+                [Pink] = [Love, Heal, Dream],
             };
-
+        private static readonly Dictionary<PersonalColor, Ball[]> BallColorsLA = new()
+        {
+            [Red] = [LAPoke],
+            [Blue] = [LAFeather, LAGreat, LAJet],
+            [Yellow] = [LAUltra],
+            [Green] = [LAPoke],
+            [Black] = [LAGigaton, LALeaden, LAHeavy, LAUltra],
+            [Brown] = [LAPoke],
+            [Purple] = [LAPoke],
+            [Gray] = [LAGigaton, LALeaden, LAHeavy],
+            [White] = [LAWing, LAJet],
+            [Pink] = [LAPoke]
+        };
         public static byte ApplyFirstLegalBall(PKM pkm, IEnumerable<Ball> balls)
         {
             var orig_ball = pkm.Ball;

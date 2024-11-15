@@ -33,8 +33,6 @@ namespace PKHeX.Core.AutoMod
             if (enc is MysteryGift)
                 return;
 
-            var legal = new LegalityAnalysis(pk).Valid;
-
             if (ball != Ball.None)
             {
                 if (pk.LA && ReplaceBallPrefixLA && LABallMapping.TryGetValue(ball, out var modified))
@@ -43,10 +41,6 @@ namespace PKHeX.Core.AutoMod
                 }
 
                 pk.Ball = (byte)ball;
-                if (!force && !pk.ValidBall())
-                {
-                    pk.Ball = orig;
-                }
             }
             else if (matching)
             {
@@ -59,8 +53,7 @@ namespace PKHeX.Core.AutoMod
                     Aesthetics.ApplyShinyBall(pk);
                 }
             }
-            var la = new LegalityAnalysis(pk);
-            if (force || la.Valid)
+            if (force || new LegalityAnalysis(pk).Valid)
                 return;
 
             if (pk.Generation == 5 && pk.MetLocation == 75)
@@ -74,9 +67,6 @@ namespace PKHeX.Core.AutoMod
             {
                 pk.Ball = orig;
             }
-
-            if (legal && !la.Valid)
-                pk.Ball = orig;
         }
 
         public static bool ValidBall(this PKM pk)

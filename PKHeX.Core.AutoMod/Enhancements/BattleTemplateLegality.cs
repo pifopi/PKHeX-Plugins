@@ -22,6 +22,7 @@ namespace PKHeX.Core.AutoMod
         public static string HIDDEN_ABILITY_UNAVAILABLE { get; set; } = "You cannot obtain {0} with hidden ability in this game.";
         public static string HOME_TRANSFER_ONLY { get; set; } = "{0} is only available in this game through Home Transfer.";
 
+        public static string BAD_WORDS { get; set; } = "{0}'s nickname, OT or HT contains a filtered word.";
         public static string SetAnalysis(this IBattleTemplate set, ITrainerInfo sav, PKM failed)
         {
             if (failed.Version == 0)
@@ -103,7 +104,9 @@ namespace PKHeX.Core.AutoMod
                 return ALPHA_INVALID;
 
             encounters.RemoveAll(enc => !APILegality.IsRequestedAlphaValid(set, enc));
-
+            if (WordFilter.IsFiltered(failed.Nickname, out _) || WordFilter.IsFiltered(failed.OriginalTrainerName, out _) || WordFilter.IsFiltered(failed.HandlingTrainerName, out _))
+                return string.Format(BAD_WORDS, species_name);
+           
             // Ability checks
             var abilityreq = APILegality.GetRequestedAbility(failed, set);
             if (abilityreq == AbilityRequest.NotHidden && encounters.All(z => z is IEncounterable { Ability: AbilityPermission.OnlyHidden }))
