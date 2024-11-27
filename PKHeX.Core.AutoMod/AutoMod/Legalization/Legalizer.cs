@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using static PKHeX.Core.AutoMod.APILegality;
 
@@ -141,15 +142,19 @@ public static class Legalizer
     /// <param name="tr"></param>
     /// <param name="set"></param>
     /// <returns></returns>
-    public static async Task< AsyncLegalizationResult> GetLegalFromSetAsync(this ITrainerInfo tr, IBattleTemplate set)
+    public static async Task<AsyncLegalizationResult> GetLegalFromSetAsync(this ITrainerInfo tr, IBattleTemplate set)
     {
-        var template = EntityBlank.GetBlank(tr);
-        if (template.Version == 0)
-            template.Version = tr.Version;
+        AsyncLegalizationResult GetLegal()
+        {
+            var template = EntityBlank.GetBlank(tr);
+            if (template.Version == 0)
+                template.Version = tr.Version;
 
-        EncounterMovesetGenerator.OptimizeCriteria(template, tr);
-        template.ApplySetDetails(set);
-        return tr.GetLegalFromSet(set, template);
+            EncounterMovesetGenerator.OptimizeCriteria(template, tr);
+            template.ApplySetDetails(set);
+            return tr.GetLegalFromSet(set, template);
+        }
+        return await Task.Run(GetLegal);
     }
     /// <summary>
     /// Regenerates the set by searching for an encounter that can generate the template.
