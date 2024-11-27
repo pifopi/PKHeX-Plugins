@@ -66,7 +66,7 @@ public static class ModLogic
         var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Generation) : sav;
         var context = sav.Context;
         var generation = sav.Generation;
-        Parallel.For(1, personal.MaxSpeciesID, id =>
+        Parallel.For(1, personal.MaxSpeciesID+1, id => //parallel For's end is exclusive
         {
             var s = (ushort)id;
             if (!personal.IsSpeciesInGame(s))
@@ -126,7 +126,7 @@ public static class ModLogic
         ConcurrentBag<PKM> pklist = [];
         var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(src.Version, src.Generation, fallback: src, lang: (LanguageID)src.Language) : src;
 
-        Parallel.For(1, srcPersonal.MaxSpeciesID, id =>
+        Parallel.For(1, srcPersonal.MaxSpeciesID+1, id => //parallel For's end is exclusive
         {
             var s = (ushort)id;
             if (!srcPersonal.IsSpeciesInGame(s))
