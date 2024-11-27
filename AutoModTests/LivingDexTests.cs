@@ -6,274 +6,123 @@ using PKHeX.Core.AutoMod;
 using Xunit;
 using static PKHeX.Core.GameVersion;
 
-namespace AutoModTests
+namespace AutoModTests;
+
+public static class LivingDexTests
 {
-    public static class LivingDexTests
+    static LivingDexTests() => TestUtil.InitializePKHeXEnvironment();
+
+    private static readonly GameVersion[] GetGameVersionsToTest =
+    [
+        SL,
+        BD,
+        PLA,
+        SW,
+        US,
+        SN,
+        OR,
+        X,
+        B2,
+        B,
+        Pt,
+        E,
+        C,
+        RD,
+    ];
+
+    private static GenerateResult SingleSaveTest(this GameVersion s, LivingDexConfig cfg)
     {
-        static LivingDexTests() => TestUtil.InitializePKHeXEnvironment();
+        var trainer = new SimpleTrainerInfo(s) { OT = "ALMUT" };
+        var personal = GameData.GetPersonal(s);
+        RecentTrainerCache.SetRecentTrainer(trainer);
 
-        private static readonly GameVersion[] GetGameVersionsToTest =
-        [
-            SL,
-            BD,
-            PLA,
-            SW,
-            US,
-            SN,
-            OR,
-            X,
-            B2,
-            B,
-            Pt,
-            E,
-            C,
-            RD
-        ];
+        var expected = trainer.GetExpectedDexCount(personal, cfg);
+        expected.Should().NotBe(0);
 
-        private static GenerateResult SingleSaveTest(this GameVersion s, LivingDexConfig cfg)
+        var pkms = trainer.GenerateLivingDex(personal, cfg).ToArray();
+        var genned = pkms.Length;
+        return new GenerateResult(genned == expected, expected, genned);
+    }
+
+    public static IEnumerable<object[]> GetLivingDexTestData()
+    {
+        var cfgs = new LivingDexConfig[16];
+        for (int i = 0; i < 16; i++)
+            cfgs[i] = new LivingDexConfig((byte)i);
+
+        foreach (var ver in GetGameVersionsToTest)
         {
-            var sav = SaveUtil.GetBlankSAV(s, "ALMUT");
-            RecentTrainerCache.SetRecentTrainer(sav);
-
-            var expected = sav.GetExpectedDexCount(cfg);
-            expected.Should().NotBe(0);
-
-            var pkms = sav.GenerateLivingDex(cfg).ToArray();
-            var genned = pkms.Length;
-            var val = new GenerateResult(genned == expected, expected, genned);
-            return val;
+            foreach (var cf in cfgs)
+                yield return [ver, cf];
         }
+    }
 
-        public static IEnumerable<object[]> GetLivingDexTestData()
+    [Theory]
+    [MemberData(nameof(GetLivingDexTestData))]
+    public static void VerifyDex(GameVersion game, LivingDexConfig cfg)
+    {
+        APILegality.Timeout = 99999;
+        Legalizer.EnableEasterEggs = false;
+        APILegality.SetAllLegalRibbons = false;
+
+        var res = game.SingleSaveTest(cfg);
+        res.Success.Should().BeTrue($"GameVersion: {game}\n{cfg}\nExpected: {res.Expected}\nGenerated: {res.Generated}");
+    }
+
+    private readonly record struct GenerateResult(bool Success, int Expected, int Generated);
+
+    // Ideally should use purely PKHeX's methods or known total counts so that we're not verifying against ourselves.
+    private static int GetExpectedDexCount(this ITrainerInfo sav, IPersonalTable personal, LivingDexConfig cfg)
+    {
+        Dictionary<ushort, List<byte>> speciesDict = [];
+        var context = sav.Context;
+        var generation = sav.Generation;
+        for (ushort s = 1; s <= personal.MaxSpeciesID; s++)
         {
-            var cfgs = new LivingDexConfig[]
+            if (!personal.IsSpeciesInGame(s))
+                continue;
+
+            List<byte> forms = [];
+            var formCount = personal[s].FormCount;
+            var str = GameInfo.Strings;
+            if (formCount == 1 && cfg.IncludeForms) // Validate through form lists
+                formCount = (byte)FormConverter.GetFormList(s, str.types, str.forms, GameInfo.GenderSymbolUnicode, context).Length;
+            if (s == (ushort)Species.Alcremie)
+                formCount = (byte)(formCount * 6);
+            uint formarg = 0;
+            byte acform = 0;
+            for (byte f = 0; f < formCount; f++)
             {
-                CFG_TFFF,
-                CFG_TTFF,
-                CFG_TTTF,
-                CFG_TTTT,
-                CFG_TFTF,
-                CFG_TFFT,
-                CFG_TFTT,
-                CFG_TTFT,
-                CFG_FTTT,
-                CFG_FFTT,
-                CFG_FFFT,
-                CFG_FFFF,
-                CFG_FTFT,
-                CFG_FTTF,
-                CFG_FTFF,
-                CFG_FFTF,
-            };
-            foreach (var ver in GetGameVersionsToTest)
-            {
-                foreach (var cf in cfgs)
+                byte form = f;
+                if (s == (ushort)Species.Alcremie)
                 {
-                    yield return new object[] { ver, cf };
+                    form = acform;
+                    if (f % 6 == 0)
+                    {
+                        acform++;
+                        formarg = 0;
+                    }
+                    else
+                    {
+                        formarg++;
+                    }
                 }
-            }
-        }
-
-        [Theory]
-        [MemberData(nameof(GetLivingDexTestData))]
-        public static void VerifyDex(GameVersion game, LivingDexConfig cfg)
-        {
-            APILegality.Timeout = 99999;
-            Legalizer.EnableEasterEggs = false;
-            APILegality.SetAllLegalRibbons = false;
-
-            var res = game.SingleSaveTest(cfg);
-            res.Success.Should().BeTrue($"GameVersion: {game}\n{cfg}\nExpected: {res.Expected}\nGenerated: {res.Generated}");
-        }
-
-        private readonly record struct GenerateResult(bool Success, int Expected, int Generated);
-
-        // Ideally should use purely PKHeX's methods or known total counts so that we're not verifying against ourselves.
-        private static int GetExpectedDexCount(this SaveFile sav, LivingDexConfig cfg)
-        {
-            Dictionary<ushort, List<byte>> speciesDict = [];
-            var personal = sav.Personal;
-            var species = Enumerable.Range(1, sav.MaxSpeciesID).Select(x => (ushort)x);
-            foreach (ushort s in species)
-            {
-                if (!personal.IsSpeciesInGame(s))
+                if (!personal.IsPresentInGame(s, form) || FormInfo.IsFusedForm(s, form, generation) || FormInfo.IsBattleOnlyForm(s, form, generation) || (FormInfo.IsTotemForm(s, form) && context is not EntityContext.Gen7) || FormInfo.IsLordForm(s, form, context))
                     continue;
 
-                List<byte> forms = [];
-                var formCount = personal[s].FormCount;
-                var str = GameInfo.Strings;
-                if (formCount == 1 && cfg.IncludeForms) // Validate through form lists
-                    formCount = (byte)FormConverter.GetFormList(s, str.types, str.forms, GameInfo.GenderSymbolUnicode, sav.Context).Length;
-                if (s == (ushort)Species.Alcremie)
-                    formCount = (byte)(formCount * 6);
-                uint formarg = 0;
-                byte acform = 0;
-                for (byte f = 0; f < formCount; f++)
-                {
-                    byte form = f;
-                    if (s == (ushort)Species.Alcremie)
-                    {
-                        form = acform;
-                        if (f % 6 == 0)
-                        {
-                            acform++;
-                            formarg = 0;
-                        }
-                        else
-                            formarg++;
-                    }
-                    if (!personal.IsPresentInGame(s, form) || FormInfo.IsFusedForm(s, form, sav.Generation) || FormInfo.IsBattleOnlyForm(s, form, sav.Generation) || (FormInfo.IsTotemForm(s, form) && sav.Context is not EntityContext.Gen7) || FormInfo.IsLordForm(s, form, sav.Context))
-                        continue;
+                var valid = sav.GetRandomEncounter(s, form, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly, out PKM? pk);
+                if (pk is null || !valid || pk.Form != form)
+                    continue;
 
-                    var valid = sav.GetRandomEncounter(s, form, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly, out PKM? pk);
-                    if (pk is not null && valid && pk.Form == form )
-                    {
-                        forms.Add(form);
-                        if (!cfg.IncludeForms)
-                            break;
-                    }
-                }
-
-                if (forms.Count > 0)
-                {
-                    speciesDict.TryAdd(s, forms);
-                }
+                forms.Add(form);
+                if (!cfg.IncludeForms)
+                    break;
             }
 
-            return cfg.IncludeForms ? speciesDict.Values.Sum(x => x.Count) : speciesDict.Count;
+            if (forms.Count > 0)
+                speciesDict.TryAdd(s, forms);
         }
 
-        // const configs
-        private static readonly LivingDexConfig CFG_TFFF =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = false,
-                SetAlpha = false,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_TTFF =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = true,
-                SetAlpha = false,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_TTTF =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = true,
-                SetAlpha = true,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_TTTT =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = true,
-                SetAlpha = true,
-                NativeOnly = true
-            };
-
-        private readonly static LivingDexConfig CFG_TFTF =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = false,
-                SetAlpha = true,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_TFFT =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = false,
-                SetAlpha = false,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_TFTT =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = false,
-                SetAlpha = true,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_TTFT =
-            new()
-            {
-                IncludeForms = true,
-                SetShiny = true,
-                SetAlpha = false,
-                NativeOnly = true
-            };
-
-        private readonly static LivingDexConfig CFG_FTTT =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = true,
-                SetAlpha = true,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_FFTT =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = false,
-                SetAlpha = true,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_FFFT =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = false,
-                SetAlpha = false,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_FFFF =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = false,
-                SetAlpha = false,
-                NativeOnly = false
-            };
-
-        private readonly static LivingDexConfig CFG_FTFT =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = true,
-                SetAlpha = false,
-                NativeOnly = true
-            };
-        private readonly static LivingDexConfig CFG_FTTF =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = true,
-                SetAlpha = true,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_FTFF =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = true,
-                SetAlpha = false,
-                NativeOnly = false
-            };
-        private readonly static LivingDexConfig CFG_FFTF =
-            new()
-            {
-                IncludeForms = false,
-                SetShiny = false,
-                SetAlpha = true,
-                NativeOnly = false
-            };
+        return cfg.IncludeForms ? speciesDict.Values.Sum(x => x.Count) : speciesDict.Count;
     }
 }

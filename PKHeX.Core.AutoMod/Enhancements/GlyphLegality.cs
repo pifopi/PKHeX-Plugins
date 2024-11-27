@@ -1,40 +1,52 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PKHeX.Core.AutoMod
+namespace PKHeX.Core.AutoMod;
+
+public static class GlyphLegality
 {
-    public static class GlyphLegality
-    {
-        private static readonly Dictionary<char, char> CharDictionary;
+    private static readonly Dictionary<char, char> CharDictionary = [];
 
-        static GlyphLegality()
+    static GlyphLegality()
+    {
+        const string full = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンッァィゥェォャュョ゙゚ー０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ～！＠＃＄％＾＆＊（）＿＋－＝｛｝［］｜＼：；＂＇＜＞，．？／";
+        const string half = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｯｧｨｩｪｫｬｭｮﾞﾟｰ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@#$%^&*()_+-={}[]|\\:;\"'<>,.?/";
+        for (int i = 0; i < full.Length; i++)
+            CharDictionary.Add(half[i], full[i]);
+    }
+
+    public static bool ContainsFullWidth(ReadOnlySpan<char> val)
+    {
+        foreach (var c in val)
         {
-            CharDictionary = [];
-            const string full = "アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンッァィゥェォャュョ゙゚ー０１２３４５６７８９ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ～！＠＃＄％＾＆＊（）＿＋－＝｛｝［］｜＼：；＂＇＜＞，．？／";
-            const string half = "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝｯｧｨｩｪｫｬｭｮﾞﾟｰ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz~!@#$%^&*()_+-={}[]|\\:;\"'<>,.?/";
-            for (int i = 0; i < full.Length; i++)
-            {
-                CharDictionary.Add(half[i], full[i]);
-            }
+            if (CharDictionary.ContainsValue(c))
+                return true;
         }
-
-        public static bool ContainsFullWidth(string val) => val.Any(z => CharDictionary.ContainsValue(z));
-
-        public static bool ContainsHalfWidth(string val) => val.Any(z => CharDictionary.ContainsKey(z));
-
-        public static string StringConvert(string val, StringConversionType type) =>
-            type switch
-            {
-                StringConversionType.HalfWidth => val.Normalize(NormalizationForm.FormKC),
-                StringConversionType.FullWidth => string.Concat(val.Select(c => CharDictionary.TryGetValue(c, out char value) ? value : c)),
-                _ => val,
-            };
+        return false;
     }
 
-    public enum StringConversionType
+    public static bool ContainsHalfWidth(ReadOnlySpan<char> val)
     {
-        HalfWidth,
-        FullWidth,
+        foreach (var c in val)
+        {
+            if (CharDictionary.ContainsKey(c))
+                return true;
+        }
+        return false;
     }
+
+    public static string StringConvert(string val, StringConversionType type) => type switch
+    {
+        StringConversionType.HalfWidth => val.Normalize(NormalizationForm.FormKC),
+        StringConversionType.FullWidth => string.Concat(val.Select(c => CharDictionary.GetValueOrDefault(c, c))),
+        _ => val,
+    };
+}
+
+public enum StringConversionType
+{
+    HalfWidth,
+    FullWidth,
 }
