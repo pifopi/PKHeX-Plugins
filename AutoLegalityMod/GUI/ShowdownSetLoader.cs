@@ -107,7 +107,7 @@ public static class ShowdownSetLoader
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/architdate/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
                     UseShellExecute = true,
                 });
             }
@@ -137,7 +137,7 @@ public static class ShowdownSetLoader
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/architdate/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
                     UseShellExecute = true,
                 });
             }
@@ -179,7 +179,7 @@ public static class ShowdownSetLoader
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/architdate/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
                     UseShellExecute = true,
                 });
             }
@@ -199,7 +199,7 @@ public static class ShowdownSetLoader
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/architdate/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
                     UseShellExecute = true,
                 });
             }

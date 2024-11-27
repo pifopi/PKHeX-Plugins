@@ -84,7 +84,7 @@ public abstract class AutoModPlugin : IPlugin
 
         var info = new ProcessStartInfo
         {
-            FileName = "https://github.com/architdate/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
+            FileName = "https://github.com/santcrab2/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
             UseShellExecute = true,
         };
         Process.Start(info);
