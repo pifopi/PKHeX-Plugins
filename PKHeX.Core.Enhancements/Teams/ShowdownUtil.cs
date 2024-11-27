@@ -42,7 +42,7 @@ public static class ShowdownUtil
 
         int first = source.IndexOf('\n');
         if (first < 0)
-            return false;
+            first = source.Length;
         var slice = source[..first].Trim();
         return new ShowdownSet(slice).Species != 0;
     }

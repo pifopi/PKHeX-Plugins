@@ -33,13 +33,13 @@ public static class Legalizer
     /// <returns>Legalized PKM (hopefully legal)</returns>
     public static PKM Legalize(this ITrainerInfo tr, PKM pk)
     {
-        var set = new ShowdownSet(pk); //RegenSet may carry illegal traits, Use basic Showdown set to revert to a legal template.
-        var almres = tr.GetLegalFromTemplateTimeout(pk, set);
+        var set = new ShowdownSet(pk); //Regen Template may carry illegal traits, Use basic Showdown set to revert to a legal template.
+        var almres = tr.GetLegalFromSet(set);
         var result = almres.Status;
         return result == LegalizationResult.VersionMismatch ? throw new MissingMethodException("PKHeX and Plugins have a version mismatch") : almres.Created;
     }
     /// <summary>
-    /// Tries to regenerate the <see cref="pk"/> into a valid pkm.
+    /// Tries to regenerate the <see cref="pk"/> into a valid pkm. For Blazor WASM.
     /// </summary>
     /// <param name="tr">Source/Destination trainer</param>
     /// <param name="pk">Currently invalid pkm data</param>
@@ -47,8 +47,8 @@ public static class Legalizer
     /// <returns>Legalized PKM (hopefully legal)</returns>
     public static async Task<PKM> LegalizeAsync(this ITrainerInfo tr, PKM pk)
     {
-        var set = new RegenTemplate(pk, tr.Generation);
-        var almres = await tr.GetLegalFromTemplateTimeoutAsync(pk, set);
+        var set = new ShowdownSet(pk);
+        var almres = await tr.GetLegalFromSetAsync(set);
         var result = almres.Status;
         return result == LegalizationResult.VersionMismatch ? throw new MissingMethodException("PKHeX and Plugins have a version mismatch") : almres.Created;
     }
@@ -135,7 +135,22 @@ public static class Legalizer
         template.ApplySetDetails(set);
         return tr.GetLegalFromSet(set, template);
     }
+    /// <summary>
+    /// For Blazor WASM
+    /// </summary>
+    /// <param name="tr"></param>
+    /// <param name="set"></param>
+    /// <returns></returns>
+    public static async Task< AsyncLegalizationResult> GetLegalFromSetAsync(this ITrainerInfo tr, IBattleTemplate set)
+    {
+        var template = EntityBlank.GetBlank(tr);
+        if (template.Version == 0)
+            template.Version = tr.Version;
 
+        EncounterMovesetGenerator.OptimizeCriteria(template, tr);
+        template.ApplySetDetails(set);
+        return tr.GetLegalFromSet(set, template);
+    }
     /// <summary>
     /// Regenerates the set by searching for an encounter that can generate the template.
     /// </summary>
