@@ -66,8 +66,11 @@ public class LegalizeBoxes : AutoModPlugin
     {
         var sav = SaveFileEditor.SAV;
         var count = sav.LegalizeBox(sav.CurrentBox);
-        if (count <= 0) // failed to modify anything
+        if (count <= 0) // failed to modify anything, let the user know.
+        {
+            WinFormsUtil.Alert("Unable to legalize any of the Pokémon in the Current Box");
             return;
+        }
 
         SaveFileEditor.ReloadSlots();
         WinFormsUtil.Alert($"Legalized {count} Pokémon in Current Box!");
@@ -77,8 +80,9 @@ public class LegalizeBoxes : AutoModPlugin
     {
         var sav = SaveFileEditor.SAV;
         var count = sav.LegalizeBoxes();
-        if (count <= 0) // failed to modify anything
+        if (count <= 0) // failed to modify anything, let the user know.
         {
+            WinFormsUtil.Alert("Unable to legalize any of the Pokémon in All Boxes");
             return;
         }
 

@@ -146,9 +146,9 @@ public abstract class AutoModPlugin : IPlugin
         AddPluginControl(modmenu);
     }
 
-    private static ToolStripMenuItem GetModMenu(ToolStripDropDownItem tools, IReadOnlyList<ToolStripItem> search)
+    private static ToolStripMenuItem GetModMenu(ToolStripDropDownItem tools, ToolStripItem[] search)
     {
-        if (search.Count != 0)
+        if (search.Length != 0)
             return (ToolStripMenuItem)search[0];
 
         var modmenu = CreateBaseGroupItem();
