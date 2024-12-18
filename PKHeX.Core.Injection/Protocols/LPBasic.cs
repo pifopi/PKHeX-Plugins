@@ -29,11 +29,11 @@ public sealed class LPBasic(LiveHeXVersion lv, bool useCache) : InjectionBase(lv
 
     public static readonly BlockData[] Blocks_Rigel2 =
     [
-        Get(0x45068F18, 0xF25C070E, "KMyStatus", "Trainer Data"),
+        Get(0x45068F18, 0xF25C070E, "MyStatus", "Trainer Data"),
         Get(0x45067A98, 0x1177C2C4, "KItem", "Items"),
-        Get(0x45072DF0, 0x1B882B09, "KMisc", "Miscellaneous"),
-        Get(0x45127098, 0x874DA6FA, "KTrainerCard", "Trainer Card"),
-        Get(0x450748E8, 0xD224F9AC, "KFashionUnlock", "Fashion"),
+        Get(0x45072DF0, 0x1B882B09, "Misc", "Miscellaneous"),
+        Get(0x45127098, 0x874DA6FA, "TrainerCard", "Trainer Card"),
+        Get(0x450748E8, 0xD224F9AC, "Fashion", "Fashion"),
         Get(0x450C8A70, 0x9033eb7b, "Raid", "Raid"),
         Get(0x450C94D8, 0x158DA896, "RaidArmor", "RaidArmor"),
         Get(0x450C9F40, 0x148DA703, "RaidCrown", "RaidCrown"),
