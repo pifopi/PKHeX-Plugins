@@ -65,29 +65,29 @@ public static class RegenUtil
     private const char Splitter = ':';
     public const char EncounterFilterPrefix = '~';
 
-    public static bool IsEncounterFilter(string line, [NotNullWhen(true)] out StringInstruction? result)
+    public static bool IsEncounterFilter(ReadOnlySpan<char> line, [NotNullWhen(true)] out StringInstruction? result)
     {
         result = null;
         if (!line.StartsWith(EncounterFilterPrefix))
             return false;
-        if (line.AsSpan(2).StartsWith("Version="))
+        if (line[2..].StartsWith("Version="))
             return false;
         var replaced = line[1..];
         return StringInstruction.TryParseFilter(replaced, out result);
     }
 
-    public static bool IsVersionFilter(string line, [NotNullWhen(true)] out StringInstruction? result)
+    public static bool IsVersionFilter(ReadOnlySpan<char> line, [NotNullWhen(true)] out StringInstruction? result)
     {
         result = null;
         if (!line.StartsWith(EncounterFilterPrefix))
             return false;
-        if (!line.AsSpan(2).StartsWith("Version="))
+        if (!line[2..].StartsWith("Version="))
             return false;
         var replaced = line[1..];
         return StringInstruction.TryParseFilter(replaced, out result);
     }
 
-    public static bool TrySplit(string line, out (string Key, string Value) result)
+    public static bool TrySplit(ReadOnlySpan<char> line, out (string Key, string Value) result)
     {
         result = default;
         var index = line.IndexOf(Splitter);
@@ -95,8 +95,8 @@ public static class RegenUtil
             return false;
 
         var key = line[..index];
-        var value = line.Substring(index + 1, line.Length - key.Length - 1).Trim();
-        result = (key, value);
+        var value = line[(index + 1)..].Trim();
+        result = (key.ToString(), value.ToString());
         return true;
     }
 
