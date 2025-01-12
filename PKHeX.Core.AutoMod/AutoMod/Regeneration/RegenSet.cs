@@ -30,7 +30,8 @@ public sealed class RegenSet
         var tr = new SimpleTrainerInfo(pk.Version) { OT = pk.OriginalTrainerName, TID16 = pk.TID16, SID16 = pk.SID16, Gender = pk.OriginalTrainerGender };
         Trainer = tr;
         HasTrainerSettings = true;
-        VersionFilters = RegenUtil.GetVersionFilters([$"~=Version={pk.Version}"]);
+        _ = StringInstruction.TryParseFilter($"=Version={pk.Version}", out var verFilter);
+        VersionFilters = [verFilter!];
 
         List<string> modified = [];
         var ribbons = RibbonInfo.GetRibbonInfo(pk);
@@ -49,17 +50,52 @@ public sealed class RegenSet
             Batch = new StringInstructionSet(modified.ToArray().AsSpan());
     }
 
-    public RegenSet(ICollection<string> lines, byte format, Shiny shiny = Shiny.Never)
+    public RegenSet(IList<string> lines, byte format, Shiny shiny = Shiny.Never)
     {
-        var modified = lines.Select(z => z.Replace(">=", "≥").Replace("<=", "≤")).ToArray();
-
         Extra = new RegenSetting { ShinyType = shiny };
-        HasExtraSettings = Extra.SetRegenSettings(modified);
-        HasTrainerSettings = RegenUtil.GetTrainerInfo(modified, format, out var tr);
+        HasExtraSettings = Extra.SetRegenSettings(lines);
+        HasTrainerSettings = RegenUtil.GetTrainerInfo(lines, format, out var tr);
         Trainer = tr;
-        Batch = new StringInstructionSet(modified);
-        EncounterFilters = RegenUtil.GetEncounterFilters(modified);
-        VersionFilters = RegenUtil.GetVersionFilters(modified);
+
+        if (lines.Count == 0)
+        {
+            Batch = new StringInstructionSet(Array.Empty<string>());
+            EncounterFilters = [];
+            VersionFilters = [];
+            return;
+        }
+
+        List<StringInstruction> eFilter = [];
+        List<StringInstruction> vFilter = [];
+        List<StringInstruction> mods = [];
+        for (int i = 0; i < lines.Count;)
+        {
+            var line = lines[i];
+            var sanitized = line.Replace(">=", "≥").Replace("<=", "≤");
+            if (StringInstruction.TryParseInstruction(sanitized, out var mod))
+            {
+                mods.Add(mod);
+                lines.RemoveAt(i);
+                continue;
+            }
+
+            if (RegenUtil.IsEncounterFilter(sanitized, out var e))
+            {
+                eFilter.Add(e);
+                lines.RemoveAt(i);
+                continue;
+            }
+            if (RegenUtil.IsVersionFilter(sanitized, out var v))
+            {
+                vFilter.Add(v);
+                lines.RemoveAt(i);
+                continue;
+            }
+            i++;
+        }
+        Batch = new([], mods);
+        EncounterFilters = eFilter;
+        VersionFilters = vFilter;
     }
 
     public string GetSummary()

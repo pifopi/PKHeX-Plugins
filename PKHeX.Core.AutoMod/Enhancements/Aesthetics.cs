@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using static PKHeX.Core.RibbonIndex;
 using static PKHeX.Core.Ball;
 using static PKHeX.Core.PersonalColor;

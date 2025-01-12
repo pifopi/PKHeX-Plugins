@@ -305,7 +305,7 @@ public static class ModLogic
             case Scatterbug or Spewpa when form == 19:
                 return true;
         }
-        if (FormInfo.IsBattleOnlyForm(pk.Species, form, generation))
+        if (FormInfo.IsBattleOnlyForm(species, form, generation))
             return true;
 
         if (form == 0)
@@ -493,7 +493,9 @@ public static class ModLogic
             showstring += $"EVs: {ivs[0]} HP / {ivs[1]} Atk / {ivs[2]} Def / {ivs[3]} SpA / {ivs[4]} SpD / {ivs[5]} Spe\n";
             var m = new ushort[4];
             rough.GetMoveSet(m, true);
-            showstring += $"- {GameInfo.MoveDataSource.First(z => z.Value == m[0]).Text}\n- {GameInfo.MoveDataSource.First(z => z.Value == m[1]).Text}\n- {GameInfo.MoveDataSource.First(z => z.Value == m[2]).Text}\n- {GameInfo.MoveDataSource.First(z => z.Value == m[3]).Text}";
+
+            var moves = GameInfo.GetStrings("en").Move;
+            showstring += $"- {moves[m[0]]}\n- {moves[m[1]]}\n- {moves[m[2]]}\n- {moves[m[3]]}";
             showstring += "\n\n";
             var nullcheck = tr.GetLegalFromSet(new ShowdownSet(showstring));
             if (nullcheck.Status != LegalizationResult.Regenerated)

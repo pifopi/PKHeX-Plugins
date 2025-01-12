@@ -260,9 +260,16 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             throw new Exception("Invalid Pointer string.");
 
         var item_blk = psb.com.ReadBytes(addr, UG_ITEM_BLOCK_SIZE_RAM);
-        var extra_data = new byte[] { 0x0, 0x0, 0x0, 0x0 };
-        var items = ArrayUtil.EnumerateSplit(item_blk, 0x8).Select(z => z.Concat(extra_data).ToArray()).ToArray();
-        return ArrayUtil.ConcatAll(items);
+
+        // 8 byte entries need to be expanded to 12 bytes
+        var result = new byte[12 * (item_blk.Length / 8)];
+        for (int i = 0, j = 0; i < item_blk.Length; i += 8, j += 12)
+        {
+            var src = item_blk.AsSpan(i, 8);
+            var dest = result.AsSpan(j, 12);
+            src.CopyTo(dest);
+        }
+        return result;
     }
 
     private static void SetUGItemBlock(PokeSysBotMini psb, byte[] data)

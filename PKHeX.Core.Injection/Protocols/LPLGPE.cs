@@ -20,7 +20,7 @@ public sealed class LPLGPE(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             var StoredLength = psb.SlotSize - 0x1C;
             var stored = bytes.AsSpan().Slice(currofs, StoredLength).ToArray();
             var party = bytes.AsSpan().Slice(currofs + StoredLength + 0x70, 0x1C).ToArray();
-            allpkm.Add(ArrayUtil.ConcatAll(stored, party));
+            allpkm.Add([..stored, ..party]);
             currofs += psb.SlotSize + psb.GapSize;
         }
         return ArrayUtil.ConcatAll(allpkm.ToArray());
@@ -32,7 +32,7 @@ public sealed class LPLGPE(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         var StoredLength = psb.SlotSize - 0x1C;
         var stored = bytes.AsSpan()[..StoredLength].ToArray();
         var party = bytes.AsSpan().Slice(StoredLength + 0x70, 0x1C).ToArray();
-        return ArrayUtil.ConcatAll(stored, party);
+        return [..stored, ..party];
     }
 
     public override void SendSlot(PokeSysBotMini psb, ReadOnlySpan<byte> data, int box, int slot)

@@ -81,14 +81,14 @@ public static class APILegality
         if (gamelist is [GameVersion.DP])
             gamelist = [GameVersion.D, GameVersion.P];
 
+        var mutations = EncounterMutationUtil.GetSuggested(dest.Context, set.Level);
         var encounters = GetAllEncounters(pk: template, moves: new ReadOnlyMemory<ushort>(set.Moves), gamelist);
-        var criteria = EncounterCriteria.GetCriteria(set, template.PersonalInfo);
+        var criteria = EncounterCriteria.GetCriteria(set, template.PersonalInfo, mutations);
         if (regen.EncounterFilters.Any())
             encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(regen.EncounterFilters, enc));
 
         // For sets that require a specific level, force the level maximum that the generator will yield.
         // Most encounters generate with minimum level; only those with checked PID/IV will have non-minimum levels.
-        criteria.LevelMax = set.Level; // TODO: Crank this depending on how many level-ups. This is only useful for underleveled/low level encounters.
 
         PKM? last = null;
         var timer = Stopwatch.StartNew();
@@ -693,7 +693,7 @@ public static class APILegality
 
         // Game exceptions (IHyperTrain exists because of the field but game disallows hyper training)
         var history = EvolutionChain.GetEvolutionChainsAllGens(pk, enc);
-        if (!t.IsHyperTrainingAvailable(history))
+        if (!t.IsHyperTrainingAvailable())
             return;
         if (t.GetHyperTrainMinLevel(history, pk.Context) > pk.CurrentLevel)
             return;
@@ -784,7 +784,7 @@ public static class APILegality
             pk.Language = tr.Language;
             pk.SetTrainerData(tr);
         }
-        pk.EggLocation = Locations.TradedEggLocation(pk.Generation, pk.Version);
+        pk.EggLocation = Locations.TradedEggLocation(enc.Generation, enc.Version);
     }
 
     /// <summary>
@@ -857,7 +857,7 @@ public static class APILegality
                 pk.SetEncounterTradeIVs();
                 return; // Fixed PID, no need to mutate
             default:
-                FindPIDIV(pk, method, hpType, set.Shiny, enc, set, criteria);
+                FindPIDIV(pk, method, hpType, set.Shiny, enc, set);
                 ValidateGender(pk, enc);
                 break;
         }
@@ -890,7 +890,7 @@ public static class APILegality
     /// <summary>
     /// Set PIDIV for raid PKM via XOROSHIRO incase it is transferred to future generations to preserve the IVs
     /// </summary>
-    /// <param name="pk">Pokemon to be edited</param>
+    /// <param name="pk">Pokémon to be edited</param>
     /// <param name="enc">Raid encounter encounterable</param>
     /// <param name="set">Set to pass in requested IVs</param>
     /// <param name="criteria"></param>
@@ -921,32 +921,14 @@ public static class APILegality
         }
         else if (enc is IOverworldCorrelation8 eo)
         {
+            if (eo.GetRequirement(pk) != OverworldCorrelation8Requirement.MustHave)
+                return;
             var flawless = 0;
             if (enc is EncounterStatic8 estatic8)
-            {
-                if (estatic8.ScriptedNoMarks || estatic8.Gift)
-                    return;
-
                 flawless = estatic8.FlawlessIVCount;
-            }
-
-            var pk8 = (PK8)pk;
-            if (eo.GetRequirement(pk8) != OverworldCorrelation8Requirement.MustHave)
-                return;
-
-            Shiny shiny;
-            if (set is RegenTemplate r)
-            {
-                shiny = r.Regen.Extra.ShinyType;
-            }
-            else
-            {
-                shiny = set.Shiny ? Shiny.Always : Shiny.Never;
-            }
-
-            var cloned = new int[set.IVs.Length];
 
             // Attempt to give them requested 0 ivs at the very least unless they specifically request for all random ivs
+            Span<int> cloned = stackalloc int[set.IVs.Length];
             if (set.IVs.Contains(31) || set.IVs.Contains(0))
             {
                 for (int i = 0; i < set.IVs.Length; i++)
@@ -957,47 +939,18 @@ public static class APILegality
                 cloned = set.IVs;
             }
 
+            var pk8 = (PK8)pk;
+            var shiny = set is RegenTemplate r ? r.Regen.Extra.ShinyType : set.Shiny ? Shiny.Always : Shiny.Never;
             if (!SimpleEdits.TryApplyHardcodedSeedWild8(pk8, enc, cloned, shiny))
                 FindWildPIDIV8(pk8, shiny, flawless);
-        }
-        else if (enc is IStaticCorrelation8b esc)
-        {
-            var flawless = 0;
-            if (enc is EncounterStatic8b s)
-                flawless = s.FlawlessIVCount;
-
-            if (esc.GetRequirement(pk) != StaticCorrelation8bRequirement.MustHave)
-                return;
-
-            Shiny shiny;
-            if (set is RegenTemplate r)
-            {
-                shiny = r.Regen.Extra.ShinyType;
-            }
-            else
-            {
-                shiny = set.Shiny ? Shiny.Always : Shiny.Never;
-            }
-
-            Roaming8bRNG.ApplyDetails(pk, EncounterCriteria.Unrestricted, shiny, flawless);
-            pk.MetLocation = SimpleEdits.RoamingMetLocationBDSP[0];
         }
         else if (enc is EncounterEgg && GameVersion.BDSP.Contains(enc.Version))
         {
             pk.SetIVs(set.IVs);
-            Shiny shiny;
-            if (set is RegenTemplate r)
-            {
-                shiny = r.Regen.Extra.ShinyType;
-            }
-            else
-            {
-                shiny = set.Shiny ? Shiny.Always : Shiny.Never;
-            }
-
-            FindEggPIDIV8b(pk, shiny, set.Gender, criteria);
+            Shiny shiny = set is RegenTemplate r ? r.Regen.Extra.ShinyType : set.Shiny ? Shiny.Always : Shiny.Never;
+            FindEggPIDIV8b(pk, shiny, criteria, enc);
         }
-        else if (enc is EncounterSlot3 enc3 && pk.Species == (ushort)Species.Unown)
+        else if (enc is EncounterSlot3 { Species: (ushort)Species.Unown } enc3)
         {
             enc3.SetFromIVsUnown((PK3)pk, criteria);
         }
@@ -1079,7 +1032,7 @@ public static class APILegality
                 if (ivs[i] == -1)
                     ivs[i] = (int)rand.NextInt(32);
             }
-            if (!criteria.IsIVsCompatibleSpeedLast(ivs,9))
+            if (!criteria.IsIVsCompatibleSpeedLast(ivs))
                 continue;
             pk.IV_HP = ivs[0];
             pk.IV_ATK = ivs[1];
@@ -1104,7 +1057,7 @@ public static class APILegality
                 PersonalInfo.RatioMagicMale => Gender.Male,
                 _ => (Gender)Encounter9RNG.GetGender(gr, rand.NextInt(100)),
             };
-            if (!criteria.IsGenderSatisfied((byte)gender))
+            if (!criteria.IsSatisfiedGender((byte)gender))
                 continue;
             pk.Gender = (byte)gender;
 
@@ -1124,10 +1077,11 @@ public static class APILegality
             finalseed = (uint)seed;
             break;
         } while (++count < uint.MaxValue);
+
         var type = Tera9RNG.GetTeraType(finalseed, enc.TeraType, enc.Species, enc.Form);
         pk.TeraTypeOriginal = (MoveType)type;
-        if (criteria.TeraType != -1 && type != criteria.TeraType && TeraTypeUtil.CanChangeTeraType(enc.Species))
-            pk.SetTeraType((MoveType)criteria.TeraType);
+        if (set.TeraType != MoveType.Any && (MoveType)type != set.TeraType && TeraTypeUtil.CanChangeTeraType(enc.Species))
+            pk.SetTeraType(set.TeraType);
     }
 
     /// <summary>
@@ -1143,7 +1097,6 @@ public static class APILegality
         // EC -> PID -> Flawless IV rolls -> Non-flawless IVs -> height -> weight
         uint seed;
         Xoroshiro128Plus rng;
-        Span<int> ivs = [-1, -1, -1, -1, -1, -1];
 
         if (fixedseed != null)
         {
@@ -1166,8 +1119,10 @@ public static class APILegality
                 var xor = pk.ShinyXor;
                 switch (shiny)
                 {
-                    case Shiny.AlwaysStar when xor is 0 or > 15:
                     case Shiny.Never when xor < 16:
+                    case Shiny.Always when xor >= 16:
+                    case Shiny.AlwaysStar when xor is 0 or >= 16:
+                    case Shiny.AlwaysSquare when xor != 0:
                         continue;
                 }
 
@@ -1178,14 +1133,17 @@ public static class APILegality
 
         // Square shiny: if not xor0, force xor0
         // Always shiny: if not xor0-15, force xor0
-        var editnecessary = (shiny == Shiny.AlwaysSquare && pk.ShinyXor != 0) || (shiny == Shiny.Always && pk.ShinyXor > 15);
-        if (editnecessary)
+        bool editnecessary = shiny switch
         {
+            Shiny.AlwaysSquare when pk.ShinyXor != 0 => true,
+            Shiny.Always when !pk.IsShiny => true,
+            _ => false,
+        };
+        if (editnecessary)
             pk.PID = SimpleEdits.GetShinyPID(pk.TID16, pk.SID16, pk.PID, 0);
-        }
 
         // RNG is fixed now, and you have the requested shiny!
-
+        Span<int> ivs = [-1, -1, -1, -1, -1, -1];
         for (int i = ivs.Count(31); i < flawless; i++)
         {
             int index = (int)rng.NextInt(6);
@@ -1221,15 +1179,14 @@ public static class APILegality
     /// </summary>
     /// <param name="pk">Pokémon to edit</param>
     /// <param name="shiny">Shinytype requested</param>
-    /// <param name="gender"></param>
     /// <param name="criteria"></param>
-    public static void FindEggPIDIV8b(PKM pk, Shiny shiny, byte? gender, EncounterCriteria criteria)
+    public static void FindEggPIDIV8b(PKM pk, Shiny shiny, EncounterCriteria criteria, IEncounterTemplate enc)
     {
         Span<int> ivs = stackalloc int[6];
         ReadOnlySpan<int> requiredIVs = [pk.IV_HP, pk.IV_ATK, pk.IV_DEF, pk.IV_SPA, pk.IV_SPD, pk.IV_SPE];
-        var pi = PersonalTable.BDSP.GetFormEntry(pk.Species, pk.Form);
+        var pi = PersonalTable.BDSP.GetFormEntry(enc.Species, enc.Form);
         var ratio = pi.Gender;
-        var species = (int)pk.Species;
+        var species = enc.Species;
 
         Span<uint> randomivs = stackalloc uint[6];
         while (true)
@@ -1252,17 +1209,17 @@ public static class APILegality
             }
             else if (species == (int)Species.Indeedee)
             {
-                if (rng.NextUInt(2) != pk.Form)
+                if (rng.NextUInt(2) != enc.Form)
                     continue;
             }
 
-            if (ratio is not PersonalInfo.RatioMagicMale and not PersonalInfo.RatioMagicFemale and not PersonalInfo.RatioMagicGenderless)
+            if (ratio is not (PersonalInfo.RatioMagicMale or PersonalInfo.RatioMagicFemale or PersonalInfo.RatioMagicGenderless))
             {
                 var rand = rng.NextUInt(252) + 1;
-                if (gender is not null and not (byte)Gender.Genderless)
+                if (criteria.IsSpecifiedGender())
                 {
                     var roll = rand < ratio ? 1 : 0;
-                    if (gender != roll)
+                    if ((byte)criteria.Gender != roll)
                         continue;
                 }
             }
@@ -1302,7 +1259,7 @@ public static class APILegality
                     ivs[i] = (int)randomivs[i];
             }
 
-            if (!criteria.IsIVsCompatibleSpeedLast(ivs, 8))
+            if (!criteria.IsIVsCompatibleSpeedLast(ivs))
                 continue;
             pk.IV_HP = ivs[0];
             pk.IV_ATK = ivs[1];
@@ -1350,25 +1307,11 @@ public static class APILegality
     /// <param name="shiny">Only used for CHANNEL RNG type</param>
     /// <param name="enc"></param>
     /// <param name="set"></param>
-    /// <param name="criteria"></param>
-    private static void FindPIDIV(PKM pk, PIDType method, int hiddenPower, bool shiny, IEncounterTemplate enc, IBattleTemplate set, EncounterCriteria criteria)
+    private static void FindPIDIV(PKM pk, PIDType method, int hiddenPower, bool shiny, IEncounterTemplate enc, IBattleTemplate set)
     {
-        if (enc.Generation == 4 && pk.Species == (ushort)Species.Unown)
-            pk.Form = set.Form;
         if (method == PIDType.None)
         {
-            if (enc is EncounterGift3 wc3)
-            {
-                method = wc3.Method;
-            }
-            else
-            {
-                method = FindLikelyPIDType(enc, pk);
-            }
-
-            if (pk.Version == GameVersion.CXD && method != PIDType.PokeSpot)
-                method = PIDType.CXD;
-
+            method = FindLikelyPIDType(enc);
             if (method == PIDType.None && enc.Generation >= 3)
                 pk.SetPIDGender(pk.Gender);
         }
@@ -1386,7 +1329,6 @@ public static class APILegality
             request.SetAbilityIndex(ability_idx);
 
         var count = 0;
-        var isWishmaker = method == PIDType.BACD_R && shiny && enc is EncounterGift3 { OriginalTrainerName: "WISHMKR" };
         var compromise = false;
         var gr = pk.PersonalInfo.Gender;
         uint seed = Util.Rand32();
@@ -1398,11 +1340,6 @@ public static class APILegality
                 compromise = true;
 
             seed = Util.Rand32();
-            if (isWishmaker)
-            {
-                seed = WC3Seeds.GetShinyWishmakerSeed(request.Nature);
-                isWishmaker = false;
-            }
             if (PokeWalkerSeedFail(seed, method, pk, request))
                 continue;
             PIDGenerator.SetValuesFromSeed(pk, method, seed);
@@ -1421,12 +1358,6 @@ public static class APILegality
 
             if (pk.Gender != EntityGender.GetFromPIDAndRatio(pk.PID, gr))
                 continue;
-            if (enc is EncounterSlot4 s4)
-            {
-                var lvl = new SingleLevelRange(enc.LevelMin);
-                if (!LeadFinder.TryGetLeadInfo4(s4, lvl, pk.HGSS, seed, 4, out _))
-                    continue;
-            }
 
             if (pk.Version == GameVersion.CXD && method == PIDType.CXD) // verify locks
             {
@@ -1440,21 +1371,7 @@ public static class APILegality
                 if (la.Info.PIDIV.Type is not PIDType.CXD and not PIDType.CXD_ColoStarter || !la.Info.PIDIVMatches || !pk.IsValidGenderPID(enc))
                     continue;
             }
-            if (enc.Species == (ushort)Species.Unown)
-            {
-                if (enc is EncounterSlot4 enc4)
-                {
-                    var pi = PersonalTable.HGSS[enc.Species];
-                    PK4 pk4 = (PK4)pk; // unconverted
-                    if (pk.HGSS)
-                        enc4.SetFromIVsK(pk4, pi, criteria, out _);
-                    else
-                        enc4.SetFromIVsJ(pk4, pi, criteria, out _);
-                }
-                if (enc is EncounterSlot3 && pk.Form != EntityPID.GetUnownForm3(pk.PID))
-                    continue;
-            }
-            var pidxor = ((pk.TID16 ^ pk.SID16 ^ (int)(pk.PID & 0xFFFF) ^ (int)(pk.PID >> 16)) & ~0x7) == 8;
+            var pidxor = (pk.ShinyXor & ~0x7) == 8;
             if (method == PIDType.Channel && (shiny != pk.IsShiny || pidxor))
                 continue;
             if (method == PIDType.Channel && !ChannelJirachi.IsPossible(seed))
@@ -1482,32 +1399,7 @@ public static class APILegality
 
         if (pk.Gender != EntityGender.GetFromPIDAndRatio(pk.PID, gr))
             return false;
-        if (enc is EncounterSlot4 s4)
-        {
-            var lvl = new SingleLevelRange(enc.LevelMin);
-            if (!LeadFinder.TryGetLeadInfo4(s4, lvl, pk.HGSS, seed, 4, out _))
-                return false;
-        }
 
-        if (pk.Version == GameVersion.CXD && Method == PIDType.CXD) // verify locks
-        {
-            pk.EncryptionConstant = pk.PID;
-            var ec = pk.PID;
-            bool xorPID = ((pk.TID16 ^ pk.SID16 ^ (int)(ec & 0xFFFF) ^ (int)(ec >> 16)) & ~0x7) == 8;
-            if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee && (shiny != pk.IsShiny || xorPID)) // Starter Correlation
-                return false;
-
-            var la = new LegalityAnalysis(pk);
-            if (la.Info.PIDIV.Type is not PIDType.CXD and not PIDType.CXD_ColoStarter || !la.Info.PIDIVMatches || !pk.IsValidGenderPID(enc))
-                return false;
-        }
-        if (pk.Species == (ushort)Species.Unown)
-        {
-            if (pk.Form != request.Form)
-                return false;
-            if (enc.Generation == 3 && pk.Form != EntityPID.GetUnownForm3(pk.PID))
-                return false;
-        }
         var pidxor = ((pk.TID16 ^ pk.SID16 ^ (int)(pk.PID & 0xFFFF) ^ (int)(pk.PID >> 16)) & ~0x7) == 8;
         if (Method == PIDType.Channel && (shiny != pk.IsShiny || pidxor))
             return false;
@@ -1558,36 +1450,27 @@ public static class APILegality
     /// Secondary fallback if PIDType.None to slot the PKM into its most likely type
     /// </summary>
     /// <param name="enc"></param>
-    /// <param name="pk">PKM to modify</param>
     /// <returns>PIDType that is likely used</returns>
-    private static PIDType FindLikelyPIDType(IEncounterTemplate enc, PKM pk)
+    private static PIDType FindLikelyPIDType(IEncounterTemplate enc) => enc switch
     {
-        if (enc is PGT { GiftType : GiftType4.ManaphyEgg } && pk.IsShiny)
-        {
-            pk.EggLocation = Locations.LinkTrade4; // todo: really shouldn't be doing this, don't modify pkm
-            return PIDType.Method_1;
-        }
-        return enc switch
-        {
-            EncounterSlot3 s3 => s3.Species == (int)Species.Unown ? PIDType.Method_1_Unown : PIDType.Method_1,
-            EncounterStatic3 => PIDType.Method_1,
-            EncounterSlot3XD => PIDType.PokeSpot,
-            EncounterGift3 g => g.Method,
-            EncounterGift3JPN or EncounterGift3NY => PIDType.BACD_U_AX,
-            EncounterGift3Colo  or { Version: GameVersion.COLO or GameVersion.XD } => PIDType.CXD,
+        EncounterSlot3 s3 => s3.Species == (int)Species.Unown ? PIDType.Method_1_Unown : PIDType.Method_1,
+        EncounterStatic3 => PIDType.Method_1,
+        EncounterSlot3XD => PIDType.PokeSpot,
+        EncounterGift3 g => g.Method,
+        EncounterGift3JPN or EncounterGift3NY => PIDType.BACD_U_AX,
+        EncounterGift3Colo  or { Version: GameVersion.COLO or GameVersion.XD } => PIDType.CXD,
 
-            EncounterStatic4 s => s.Shiny switch
-            {
-                Shiny.Always => PIDType.ChainShiny, // Lake of Rage Gyarados
-                Shiny.Never => PIDType.Pokewalker, // Spiky Eared Pichu
-                _ => PIDType.Method_1,
-            },
-            EncounterStatic4Pokewalker => PIDType.Pokewalker,
-            PGT { GiftType: GiftType4.ManaphyEgg } => PIDType.Method_1,
+        EncounterStatic4 s => s.Shiny switch
+        {
+            Shiny.Always => PIDType.ChainShiny, // Lake of Rage Gyarados
+            Shiny.Never => PIDType.Pokewalker, // Spiky Eared Pichu
+            _ => PIDType.Method_1,
+        },
+        EncounterStatic4Pokewalker => PIDType.Pokewalker,
+        PGT { GiftType: GiftType4.ManaphyEgg } => PIDType.Method_1,
 
-            _ => PIDType.None,
-        };
-    }
+        _ => PIDType.None,
+    };
 
     /// <summary>
     /// Method to get the correct met level for a Pokémon. Move up the met level till all moves are legal

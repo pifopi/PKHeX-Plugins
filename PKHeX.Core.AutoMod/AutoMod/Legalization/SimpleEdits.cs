@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using static PKHeX.Core.Species;
 
@@ -9,13 +8,6 @@ public static class SimpleEdits
 {
     // Make PKHeX use our own marking method
     static SimpleEdits() => MarkingApplicator.MarkingMethod = FlagIVsAutoMod;
-
-    internal static ReadOnlySpan<ushort> RoamingMetLocationBDSP =>
-    [
-        197, 201,
-        354, 355, 356, 357, 358, 359, 361, 362, 364, 365, 367, 373, 375, 377, 378, 379,
-        383, 385, 392, 394, 395, 397, 400, 403, 404, 407, 411, 412, 414, 416, 420,
-    ];
 
     internal static ReadOnlySpan<ushort> AlolanOriginForms =>
     [
@@ -70,16 +62,13 @@ public static class SimpleEdits
 
         // value, index
         static int GetSimpleMarking(int val, int _) => val == 31 ? 1 : 0;
-        static int GetComplexMarking(int val, int _)
+        static int GetComplexMarking(int val, int _) => val switch
         {
-            return val switch
-            {
-                31 => 1,
-                1 => 2,
-                0 => 2,
-                _ => 0,
-            };
-        }
+            31 => 1,
+            1 => 2,
+            0 => 2,
+            _ => 0,
+        };
     }
 
     /// <summary>

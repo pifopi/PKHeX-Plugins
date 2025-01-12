@@ -36,24 +36,6 @@ public static class ArrayUtil
         return result;
     }
 
-    public static T[][] Split<T>(this ReadOnlySpan<T> data, int size)
-    {
-        var result = new T[data.Length / size][];
-        for (int i = 0; i < data.Length; i += size)
-            result[i / size] = data.Slice(i, size).ToArray();
-
-        return result;
-    }
-
-    internal static T[] ConcatAll<T>(T[] arr1, T[] arr2)
-    {
-        int len = arr1.Length + arr2.Length;
-        var result = new T[len];
-        arr1.CopyTo(result, 0);
-        arr2.CopyTo(result, arr1.Length);
-        return result;
-    }
-
     public static IEnumerable<T[]> EnumerateSplit<T>(T[] bin, int size, int start = 0)
     {
         for (int i = start; i < bin.Length; i += size)

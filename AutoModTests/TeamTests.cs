@@ -219,8 +219,8 @@ public static class TeamTests
 
     public record TestResult(GameVersion Version)
     {
-        public List<FailedTest> Failed = [];
-        public List<RegenTemplate> Legal = [];
+        public readonly List<FailedTest> Failed = [];
+        public readonly List<RegenTemplate> Legal = [];
     }
 
     public record FailedTest(RegenTemplate Set, LegalityAnalysis Result);
