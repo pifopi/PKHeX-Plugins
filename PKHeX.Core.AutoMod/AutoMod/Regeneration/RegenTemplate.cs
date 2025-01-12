@@ -77,8 +77,6 @@ public sealed class RegenTemplate : IBattleTemplate
         Shiny = Regen.Extra.IsShiny;
         if (Ability == -1)
             Ability = RegenUtil.GetRegenAbility(set.Species, gen, Regen.Extra.Ability);
-
-        set.InvalidLines.Clear();
     }
 
     public RegenTemplate(PKM pk, byte gen = PKX.Generation) : this(new ShowdownSet(pk), gen)

@@ -1,22 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace PKHeX.Core.AutoMod;
 
 public static class RegenUtil
 {
-    public static bool GetTrainerInfo(IEnumerable<string> lines, byte format, out ITrainerInfo tr)
+    /// <summary>
+    /// Ingests lines from <see cref="lines"/> and removes any that were consumed.
+    /// </summary>
+    public static bool GetTrainerInfo(IList<string> lines, byte format, out ITrainerInfo tr)
     {
         var sti = new SimpleTrainerInfo { Generation = format };
 
-        var split = Split(lines);
         bool any = false;
         int TID7 = -1;
         int SID7 = -1;
-        foreach (var (key, value) in split)
+
+        for (int i = 0; i < lines.Count;)
         {
+            if (!TrySplit(lines[i], out var split))
+            {
+                i++;
+                continue;
+            }
+            var key = split.Key;
+            var value = split.Value;
             switch (key)
             {
                 case "OT":
@@ -36,6 +46,7 @@ public static class RegenUtil
             }
 
             any = true;
+            lines.RemoveAt(i);
         }
 
         tr = sti;
@@ -54,41 +65,39 @@ public static class RegenUtil
     private const char Splitter = ':';
     public const char EncounterFilterPrefix = '~';
 
-    public static IReadOnlyList<StringInstruction> GetEncounterFilters(IEnumerable<string> lines)
+    public static bool IsEncounterFilter(string line, [NotNullWhen(true)] out StringInstruction? result)
     {
-        var valid = lines.Where(z => z.StartsWith(EncounterFilterPrefix.ToString()) && !z.Contains("Version")).ToList();
-        return CleanFilters(valid);
+        result = null;
+        if (!line.StartsWith(EncounterFilterPrefix))
+            return false;
+        if (line.AsSpan(2).StartsWith("Version="))
+            return false;
+        var replaced = line[1..];
+        return StringInstruction.TryParseFilter(replaced, out result);
     }
 
-    public static IReadOnlyList<StringInstruction> GetVersionFilters(IEnumerable<string> lines)
+    public static bool IsVersionFilter(string line, [NotNullWhen(true)] out StringInstruction? result)
     {
-        var valid = lines.Where(z => z.StartsWith(EncounterFilterPrefix.ToString()) && z.Contains("Version")).ToList();
-        return CleanFilters(valid);
+        result = null;
+        if (!line.StartsWith(EncounterFilterPrefix))
+            return false;
+        if (!line.AsSpan(2).StartsWith("Version="))
+            return false;
+        var replaced = line[1..];
+        return StringInstruction.TryParseFilter(replaced, out result);
     }
 
-    private static StringInstruction[] CleanFilters(List<string> lines)
+    public static bool TrySplit(string line, out (string Key, string Value) result)
     {
-        if (lines.Count == 0)
-            return [];
+        result = default;
+        var index = line.IndexOf(Splitter);
+        if (index < 0)
+            return false;
 
-        var cleaned = lines.Select(z => z.TrimStart(EncounterFilterPrefix));
-        var filters = StringInstruction.GetFilters(cleaned).ToArray();
-        BatchEditing.ScreenStrings(filters);
-        return filters;
-    }
-
-    public static IEnumerable<KeyValuePair<string, string>> Split(IEnumerable<string> lines)
-    {
-        foreach (var line in lines)
-        {
-            var index = line.IndexOf(Splitter);
-            if (index < 0)
-                continue;
-
-            var key = line[..index];
-            var value = line.Substring(index + 1, line.Length - key.Length - 1).Trim();
-            yield return new KeyValuePair<string, string>(key, value);
-        }
+        var key = line[..index];
+        var value = line.Substring(index + 1, line.Length - key.Length - 1).Trim();
+        result = (key, value);
+        return true;
     }
 
     public static string GetSummary(RegenSetting extra) => extra.GetSummary();

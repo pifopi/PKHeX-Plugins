@@ -13,12 +13,26 @@ public sealed class RegenSetting
 
     public bool IsShiny => ShinyType != Shiny.Never;
 
-    public bool SetRegenSettings(IEnumerable<string> lines)
+    public bool SetRegenSettings(IList<string> lines)
     {
-        var split = RegenUtil.Split(lines);
         bool any = false;
-        foreach (var (key, value) in split)
-            any |= IngestSetting(key, value);
+
+        for (int i = 0; i < lines.Count;)
+        {
+            if (RegenUtil.TrySplit(lines[i], out var split))
+            {
+                var key = split.Key;
+                var value = split.Value;
+                bool imported = IngestSetting(key, value);
+                if (imported)
+                {
+                    lines.RemoveAt(i);
+                    any = true;
+                    continue;
+                }
+            }
+            i++; // ignore line
+        }
         return any;
     }
 
