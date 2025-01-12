@@ -1057,7 +1057,7 @@ public static class APILegality
                 PersonalInfo.RatioMagicMale => Gender.Male,
                 _ => (Gender)Encounter9RNG.GetGender(gr, rand.NextInt(100)),
             };
-            if (!criteria.IsSatisfiedGender((byte)gender))
+            if (criteria.IsSpecifiedGender() && !criteria.IsSatisfiedGender((byte)gender))
                 continue;
             pk.Gender = (byte)gender;
 
