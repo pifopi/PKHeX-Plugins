@@ -186,7 +186,6 @@ public static class WinFormsTranslator
         }
     }
 
-
     public static void DumpAll(params string[] banlist)
     {
         var results = Context.Select(z => new { Lang = z.Key, Lines = z.Value.Write() });
