@@ -91,6 +91,11 @@ public sealed class RegenSet
                 lines.RemoveAt(i);
                 continue;
             }
+            if (line == string.Empty)
+            {
+                lines.RemoveAt(i);
+                continue;
+            }
             i++;
         }
         Batch = new([], mods);
