@@ -42,6 +42,7 @@ public static class RegenUtil
                     sti.Gender = value is "Female" or "F" ? (byte)1 : (byte)0;
                     break;
                 default:
+                    i++; //increment to avoid infinite loop
                     continue;
             }
 
