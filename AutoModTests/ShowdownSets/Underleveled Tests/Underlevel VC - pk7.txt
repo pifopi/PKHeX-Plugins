@@ -584,7 +584,7 @@ IVs: 8 HP / 2 Def / 20 Spe
 Ability: Tangled Feet
 Level: 29
 Naive Nature
-~=Generation=2
+~=Generation=1
 - Peck
 - Growl
 - Fury Attack
