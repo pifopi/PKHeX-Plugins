@@ -1309,6 +1309,8 @@ public static class APILegality
     /// <param name="set"></param>
     private static void FindPIDIV(PKM pk, PIDType method, int hiddenPower, bool shiny, IEncounterTemplate enc, IBattleTemplate set)
     {
+        if (enc.Generation == 4 && pk.Species == (ushort)Species.Unown) // set unown form for gen 4 encounters because otherwise you get a random form from database
+            pk.Form = set.Form;  //this setting of the form could probably be replaced with adding Form to EncounterCriteria so that it comes out of the database correctly.
         if (method == PIDType.None)
         {
             method = FindLikelyPIDType(enc);
