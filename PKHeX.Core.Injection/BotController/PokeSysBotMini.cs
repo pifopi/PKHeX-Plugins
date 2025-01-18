@@ -18,9 +18,9 @@ public sealed class PokeSysBotMini(LiveHeXVersion lv, ICommunicator communicator
 
     public ulong GetBoxOffset(int box) => (ulong)BoxStart + (ulong)((SlotSize + GapSize) * SlotCount * box);
 
-    public byte[] ReadSlot(int box, int slot) => Injector.ReadSlot(this, box, slot);
+    public Span<byte> ReadSlot(int box, int slot) => Injector.ReadSlot(this, box, slot);
 
-    public byte[] ReadBox(int box, int len)
+    public Span<byte> ReadBox(int box, int len)
     {
         var allpkm = new List<byte[]>();
         return Injector.ReadBox(this, box, len, allpkm);
@@ -35,5 +35,5 @@ public sealed class PokeSysBotMini(LiveHeXVersion lv, ICommunicator communicator
         Injector.SendBox(this, boxData, box);
     }
 
-    public byte[] ReadOffset(ulong offset) => com.ReadBytes(offset, SlotSize);
+    public Span<byte> ReadOffset(ulong offset) => com.ReadBytes(offset, SlotSize);
 }

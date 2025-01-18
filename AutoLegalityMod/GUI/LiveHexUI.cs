@@ -251,7 +251,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         {
             Remote.Bot = new PokeSysBotMini(version, com, _settings.UseCachedPointers);
             var data = Remote.Bot.ReadSlot(0, 0);
-            var pkm = SAV.SAV.GetDecryptedPKM(data);
+            var pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
             bool valid = pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
                          pkm is { Species: 0, EncryptionConstant: 0 } or { Species: not 0, Language: not (int)LanguageID.Hacked and not (int)LanguageID.UNUSED_6 };
             if (valid)
@@ -313,7 +313,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         PKM? pkm = null;
         try
         {
-            pkm = SAV.SAV.GetDecryptedPKM(data);
+            pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
         }
         catch
         {
@@ -424,7 +424,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         try
         {
-            byte[] result;
+            Span<byte> result;
             if (Remote.Bot.com is not ICommunicatorNX cnx)
             {
                 result = Remote.ReadRAM(offset, size);
@@ -446,14 +446,14 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             PKM? pkm = null;
             if (blockview)
             {
-                pkm = SAV.SAV.GetDecryptedPKM(result);
+                pkm = SAV.SAV.GetDecryptedPKM(result.ToArray());
                 if (!pkm.ChecksumValid)
                 {
                     blockview = false;
                 }
             }
 
-            using var form = new SimpleHexEditor(result, Remote.Bot, offset, GetRWMethod());
+            using var form = new SimpleHexEditor(result.ToArray(), Remote.Bot, offset, GetRWMethod());
             var loadgrid = blockview && ReflectUtil.GetPropertiesCanWritePublicDeclared(pkm!.GetType()).Count() > 1;
             if (loadgrid)
             {
@@ -477,7 +477,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
                 }
                 else
                 {
-                    form.Bytes = result;
+                    form.Bytes = result.ToArray();
                     WinFormsUtil.Error("Size mismatch. Please report this issue on the Discord server.");
                 }
             }
@@ -628,7 +628,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         try
         {
             var header = 0;
-            byte[] result = sb.ReadBytesAbsolute(address, size);
+            Span<byte> result = sb.ReadBytesAbsolute(address, size);
             if (blk_key)
             {
                 bool typeView = (ModifierKeys & Keys.Alt) == Keys.Alt;
@@ -652,14 +652,14 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             PKM? pkm = null;
             if (blockview)
             {
-                pkm = SAV.SAV.GetDecryptedPKM(result);
+                pkm = SAV.SAV.GetDecryptedPKM(result.ToArray());
                 if (!pkm.ChecksumValid)
                 {
                     blockview = false;
                 }
             }
 
-            using (var form = new SimpleHexEditor(result, Remote.Bot, address, RWMethod.Absolute, blk_key, keyval, header))
+            using (var form = new SimpleHexEditor(result.ToArray(), Remote.Bot, address, RWMethod.Absolute, blk_key, keyval, header))
             {
                 var loadgrid = blockview && ReflectUtil.GetPropertiesCanWritePublicDeclared(pkm!.GetType()).Count() > 1;
                 if (loadgrid)
@@ -681,7 +681,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
                         }
                         else
                         {
-                            form.Bytes = result;
+                            form.Bytes = result.ToArray();
                             WinFormsUtil.Error("Size mismatch. Please report this issue on the discord server.");
                         }
                     }
@@ -827,7 +827,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     private static byte[] GetBlockDataRaw(object sb, byte[] data) =>
         sb switch
         {
-            SCBlock sc => sc.Data,
+            SCBlock sc => sc.Data.ToArray(),
             IDataIndirect sv => sv.Data.ToArray(),
             _ => data,
         };

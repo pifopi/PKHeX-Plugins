@@ -53,7 +53,7 @@ public sealed class NTRClient : ICommunicator
         _lastMemoryRead = args.Data;
     }
 
-    public byte[] ReadBytes(ulong offset, int length)
+    public Span<byte> ReadBytes(ulong offset, int length)
     {
         lock (_sync)
         {

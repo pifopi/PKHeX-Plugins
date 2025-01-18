@@ -14,7 +14,7 @@ public interface ICommunicator
     void Connect();
     void Disconnect();
     void WriteBytes(ReadOnlySpan<byte> data, ulong offset);
-    byte[] ReadBytes(ulong offset, int length);
+    Span<byte> ReadBytes(ulong offset, int length);
     bool Connected { get; set; }
     int Port { get; set; }
     string IP { get; set; }

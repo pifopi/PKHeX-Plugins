@@ -66,7 +66,7 @@ public partial class SimpleHexEditor : Form
             byte[] result;
             if (psb.com is not ICommunicatorNX cnx)
             {
-                result = psb.com.ReadBytes(address, length);
+                result = psb.com.ReadBytes(address, length).ToArray();
             }
             else
             {
@@ -74,7 +74,7 @@ public partial class SimpleHexEditor : Form
                 {
                     RWMethod.Main => cnx.ReadBytesMain(address, length + headersize),
                     RWMethod.Absolute => cnx.ReadBytesAbsolute(address, length + headersize),
-                    _ => psb.com.ReadBytes(address, length + headersize),
+                    _ => psb.com.ReadBytes(address, length + headersize).ToArray(),
                 };
                 if (decrypt)
                 {

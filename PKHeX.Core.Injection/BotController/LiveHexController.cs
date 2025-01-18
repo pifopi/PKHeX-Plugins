@@ -33,7 +33,7 @@ public sealed class LiveHeXController
     {
         var sav = SAV.SAV;
         var len = sav.BoxSlotCount * (RamOffsets.GetSlotSize(Bot.Version) + RamOffsets.GetGapSize(Bot.Version));
-        var data = Bot.ReadBox(box, len).AsSpan();
+        var data = Bot.ReadBox(box, len);
         sav.SetBoxBinary(data, box);
         SAV.ReloadSlots();
     }
@@ -55,14 +55,14 @@ public sealed class LiveHeXController
     public void ReadActiveSlot(int box, int slot)
     {
         var data = Bot.ReadSlot(box, slot);
-        var pkm = SAV.SAV.GetDecryptedPKM(data);
+        var pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
         Editor.PopulateFields(pkm);
     }
 
     public bool ReadOffset(ulong offset, RWMethod method = RWMethod.Heap)
     {
         var data = ReadData(offset, method);
-        var pkm = SAV.SAV.GetDecryptedPKM(data);
+        var pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
 
         // Since data might not actually exist at the user-specified offset, double check that the pkm data is valid.
         if (!pkm.ChecksumValid)
@@ -72,7 +72,7 @@ public sealed class LiveHeXController
         return true;
     }
 
-    private byte[] ReadData(ulong offset, RWMethod method)
+    private Span<byte> ReadData(ulong offset, RWMethod method)
     {
         return Bot.com is not ICommunicatorNX nx ? Bot.ReadOffset(offset) : method switch
         {
@@ -83,7 +83,7 @@ public sealed class LiveHeXController
         };
     }
 
-    public byte[] ReadRAM(ulong offset, int size) => Bot.com.ReadBytes(offset, size);
+    public Span<byte> ReadRAM(ulong offset, int size) => Bot.com.ReadBytes(offset, size);
 
     public void WriteRAM(ulong offset, byte[] data) => Bot.com.WriteBytes(data, offset);
 }

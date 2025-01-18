@@ -58,9 +58,9 @@ public abstract class InjectionBase(LiveHeXVersion lv, bool useCache) : PointerC
         return new LPBasic(version, useCache);
     }
 
-    public virtual byte[] ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm) => [];
+    public virtual Span<byte> ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm) => [];
 
-    public virtual byte[] ReadSlot(PokeSysBotMini psb, int box, int slot) => [];
+    public virtual Span<byte> ReadSlot(PokeSysBotMini psb, int box, int slot) => [];
 
     public virtual void SendBox(PokeSysBotMini psb, ReadOnlySpan<byte> boxData, int box) { }
 

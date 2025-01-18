@@ -133,7 +133,7 @@ public sealed class UsbBotMini : ICommunicatorNX, IPokeBlocks
         }
     }
 
-    public byte[] ReadBytes(ulong offset, int length) => ReadBytesUSB(offset, length, RWMethod.Heap);
+    public Span<byte> ReadBytes(ulong offset, int length) => ReadBytesUSB(offset, length, RWMethod.Heap);
 
     public void WriteBytes(ReadOnlySpan<byte> data, ulong offset) => WriteBytesUSB(data, offset, RWMethod.Heap);
 

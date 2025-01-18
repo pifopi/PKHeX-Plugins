@@ -109,7 +109,7 @@ public sealed class SysBotMini : ICommunicatorNX, IPokeBlocks
         }
     }
 
-    public byte[] ReadBytes(ulong offset, int length, RWMethod method)
+    public Span<byte> ReadBytes(ulong offset, int length, RWMethod method)
     {
         var result = new byte[length];
         ReadBytes(offset, length, method, result);
@@ -257,7 +257,7 @@ public sealed class SysBotMini : ICommunicatorNX, IPokeBlocks
         return ulong.TryParse(Encoding.ASCII.GetString(buffer).Trim(), out var value) && value == 1;
     }
 
-    public byte[] ReadBytes(ulong offset, int length) => ReadLargeBytes(offset, length, RWMethod.Heap);
+    public Span<byte> ReadBytes(ulong offset, int length) => ReadLargeBytes(offset, length, RWMethod.Heap);
 
     public void WriteBytes(ReadOnlySpan<byte> data, ulong offset) => WriteLargeBytes(data, offset, RWMethod.Heap);
 

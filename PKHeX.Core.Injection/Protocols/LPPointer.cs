@@ -210,7 +210,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
         _ => string.Empty,
     };
 
-    public override byte[] ReadBox(PokeSysBotMini psb, int box, int _, List<byte[]> allpkm)
+    public override Span<byte> ReadBox(PokeSysBotMini psb, int box, int _, List<byte[]> allpkm)
     {
         if (psb.com is not ICommunicatorNX sb)
             return ArrayUtil.ConcatAll(allpkm.ToArray());
@@ -222,7 +222,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
         return psb.com.ReadBytes(boxstart, boxsize);
     }
 
-    public override byte[] ReadSlot(PokeSysBotMini psb, int box, int slot)
+    public override Span<byte> ReadSlot(PokeSysBotMini psb, int box, int slot)
     {
         if (psb.com is not ICommunicatorNX sb)
             return new byte[psb.SlotSize];
@@ -288,11 +288,11 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
                 scb.ChangeData(ram);
                 if (read is null)
                 {
-                    read = [ram];
+                    read = [ram.ToArray()];
                     continue;
                 }
 
-                read.Add(ram);
+                read.Add(ram.ToArray());
             }
             return true;
         }
@@ -331,7 +331,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
         var lv = psb.Version;
         var ptr = SCBlocks[lv].First(z => z.Name == "MyStatus").Pointer;
         var ofs = psb.GetCachedPointer(sb, ptr);
-        return ofs == 0 ? null : psb.com.ReadBytes(ofs, LA_MYSTATUS_BLOCK_SIZE);
+        return ofs == 0 ? null : psb.com.ReadBytes(ofs, LA_MYSTATUS_BLOCK_SIZE).ToArray();
     };
 
     public static readonly Func<PokeSysBotMini, byte[]?> GetTrainerDataSV = psb =>
@@ -342,6 +342,6 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
         var lv = psb.Version;
         var ptr = SCBlocks[lv].First(z => z.Name == "MyStatus").Pointer;
         var ofs = psb.GetCachedPointer(sb, ptr);
-        return ofs == 0 ? null : psb.com.ReadBytes(ofs, SV_MYSTATUS_BLOCK_SIZE);
+        return ofs == 0 ? null : psb.com.ReadBytes(ofs, SV_MYSTATUS_BLOCK_SIZE).ToArray();
     };
 }

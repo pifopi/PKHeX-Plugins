@@ -66,10 +66,10 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             throw new Exception("Invalid Pointer string.");
 
         var b = psb.com.ReadBytes(addr, count * 8);
-        var boxptr = ArrayUtil.EnumerateSplit(b, 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
+        var boxptr = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
         b = sb.ReadBytesAbsolute(boxptr, psb.SlotCount * 8);
 
-        var pkmptrs = ArrayUtil.EnumerateSplit(b, 8).Select(z => ReadUInt64LittleEndian(z)).ToArray();
+        var pkmptrs = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray();
         return pkmptrs;
     }
 
@@ -125,7 +125,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         _ => null,
     };
 
-    public override byte[] ReadBox(PokeSysBotMini psb, int box, int _, List<byte[]> allpkm)
+    public override Span<byte> ReadBox(PokeSysBotMini psb, int box, int _, List<byte[]> allpkm)
     {
         if (psb.com is not ICommunicatorNX sb)
             return ArrayUtil.ConcatAll(allpkm.ToArray());
@@ -136,7 +136,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         return sb.ReadBytesAbsoluteMulti(offsets);
     }
 
-    public override byte[] ReadSlot(PokeSysBotMini psb, int box, int slot)
+    public override Span<byte> ReadSlot(PokeSysBotMini psb, int box, int slot)
     {
         if (psb.com is not ICommunicatorNX sb)
             return new byte[psb.SlotSize];
@@ -186,13 +186,13 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         var extra = psb.com.ReadBytes(ram_block, MYSTATUS_BLOCK_SIZE_RAM);
         // TID, SID, Money, Male
-        extra.AsSpan(0x8, 0x9).CopyTo(retval.AsSpan(0x1C));
+        extra.Slice(0x8, 0x9).CopyTo(retval.AsSpan(0x1C));
         // Region Code, Badge Count, TrainerView, ROMCode, GameClear
-        extra.AsSpan(0x11, 0x5).CopyTo(retval.AsSpan(0x28));
+        extra.Slice(0x11, 0x5).CopyTo(retval.AsSpan(0x28));
         // BodyType, Fashion ID
-        extra.AsSpan(0x16, 0x2).CopyTo(retval.AsSpan(0x30));
+        extra.Slice(0x16, 0x2).CopyTo(retval.AsSpan(0x30));
         // StarterType, DSPlayer, FollowIndex, X, Y, Height, Rotation
-        extra.AsSpan(0x18).ToArray().CopyTo(retval, 0x34);
+        extra.Slice(0x18).ToArray().CopyTo(retval, 0x34);
 
         return retval;
     };
@@ -209,7 +209,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             throw new Exception("Invalid Pointer string.");
 
         var item_blk = psb.com.ReadBytes(addr, ITEM_BLOCK_SIZE_RAM);
-        var items = ArrayUtil.EnumerateSplit(item_blk, 0xC).Select(z =>
+        var items = ArrayUtil.EnumerateSplit(item_blk.ToArray(), 0xC).Select(z =>
         {
             var retval = new byte[0x10];
             var zSpan = z.AsSpan();
@@ -265,7 +265,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         var result = new byte[12 * (item_blk.Length / 8)];
         for (int i = 0, j = 0; i < item_blk.Length; i += 8, j += 12)
         {
-            var src = item_blk.AsSpan(i, 8);
+            var src = item_blk.Slice(i, 8);
             var dest = result.AsSpan(j, 12);
             src.CopyTo(dest);
         }
@@ -331,11 +331,10 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         var parent_one = psb.com.ReadBytes(p1ptr, 0x158);
         var parent_two = psb.com.ReadBytes(p2ptr, 0x158);
         var extra = psb.com.ReadBytes(addr + 0x8, 0x18);
-        var extra_arr = ArrayUtil.EnumerateSplit(extra, 0x8).ToArray();
+        var extra_arr = ArrayUtil.EnumerateSplit(extra.ToArray(), 0x8).ToArray();
         var block = new byte[DAYCARE_BLOCK_SIZE];
-
-        parent_one.CopyTo(block, 0);
-        parent_two.CopyTo(block, 0x158);
+        parent_one.CopyTo(block);
+        parent_two.CopyTo(block.AsSpan(0x158));
         extra_arr[0].AsSpan(0, 4).CopyTo(block.AsSpan(0x158 * 2));
         extra_arr[1].CopyTo(block, (0x158 * 2) + 0x4);
         extra_arr[2].AsSpan(0, 4).CopyTo(block.AsSpan((0x158 * 2) + 0x4 + 0x8));

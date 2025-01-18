@@ -59,9 +59,9 @@ public sealed class LPBasic(LiveHeXVersion lv, bool useCache) : InjectionBase(lv
         { "Pokedex Crown", "B_OpenPokedex_Click" },
     };
 
-    public override byte[] ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm)
+    public override Span<byte> ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm)
     {
-        var bytes = psb.com.ReadBytes(psb.GetBoxOffset(box), len).AsSpan();
+        var bytes = psb.com.ReadBytes(psb.GetBoxOffset(box), len);
         if (psb.GapSize == 0)
             return bytes.ToArray();
 
@@ -76,7 +76,7 @@ public sealed class LPBasic(LiveHeXVersion lv, bool useCache) : InjectionBase(lv
         return ArrayUtil.ConcatAll(allpkm.ToArray());
     }
 
-    public override byte[] ReadSlot(PokeSysBotMini psb, int box, int slot) => psb.com.ReadBytes(psb.GetSlotOffset(box, slot), psb.SlotSize + psb.GapSize);
+    public override Span<byte> ReadSlot(PokeSysBotMini psb, int box, int slot) => psb.com.ReadBytes(psb.GetSlotOffset(box, slot), psb.SlotSize + psb.GapSize);
 
     public override void SendSlot(PokeSysBotMini psb, ReadOnlySpan<byte> data, int box, int slot) => psb.com.WriteBytes(data, psb.GetSlotOffset(box, slot));
 
@@ -96,7 +96,7 @@ public sealed class LPBasic(LiveHeXVersion lv, bool useCache) : InjectionBase(lv
             return null;
 
         var data = psb.com.ReadBytes(ofs, size);
-        return data;
+        return data.ToArray();
     };
 
     // Reflection method
@@ -117,14 +117,14 @@ public sealed class LPBasic(LiveHeXVersion lv, bool useCache) : InjectionBase(lv
                 var offset = sub.Offset;
                 var scb = scba.GetBlock(scbkey);
                 var ram = psb.com.ReadBytes(offset, scb.Data.Length);
-                ram.CopyTo(scb.Data, 0);
+                ram.CopyTo(scb.Data);
                 if (read == null)
                 {
-                    read = [ram];
+                    read = [ram.ToArray()];
                 }
                 else
                 {
-                    read.Add(ram);
+                    read.Add(ram.ToArray());
                 }
             }
 
