@@ -1574,7 +1574,8 @@ public static class APILegality
             return criteria;
         if (enc is EncounterStatic8U)
             criteria = criteria with { Shiny = Shiny.Never };
-
+        if(enc.Generation > 7)
+            criteria = criteria with { Nature = Nature.Random };
         return enc.Species switch
         {
             (int)Species.Kartana when criteria is { Nature: Nature.Timid, IV_ATK: <= 21 } => // Beast Boost: Speed
