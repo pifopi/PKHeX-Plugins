@@ -1725,20 +1725,16 @@ public static class APILegality
         return res.Length > 0 ? res : [version];
     }
 
-    public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result, bool nativeOnly = false)
+    public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result)
     {
         result = LegalizationResult.Failed;
         var template = EntityBlank.GetBlank(dest.Generation);
         template.ApplySetDetails(set);
-        var native = ModLogic.Config.NativeOnly && nativeOnly;
         var destVer = dest.Version;
         if (destVer <= 0 && dest is SaveFile s)
             destVer = s.Version;
         if (dest.Generation <= 2)
             template.EXP = 0; // no relearn moves in gen 1/2 so pass level 1 to generator
-
-        
-
         var encounters = GetAllEncounters(template, template.Moves, [dest.Version]);
         encounters = encounters.Where(z => z.IsEgg);
         if (!encounters.Any())
