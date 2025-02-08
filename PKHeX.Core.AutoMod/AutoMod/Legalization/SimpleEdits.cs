@@ -546,7 +546,7 @@ public static class SimpleEdits
 
     private static void SetDateLocksWC8(PKM pk, WC8 w)
     {
-        var locked = EncounterServerDate.WC8Gifts.TryGetValue(w.CardID, out var time);
+        var locked = EncounterServerDate.GetDistributionWindow(w, out var time);
         if (locked)
             pk.MetDate = time.Start;
     }
