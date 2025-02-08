@@ -80,6 +80,8 @@ public static class APILegality
         var gamelist = FilteredGameList(template, destVer, AllowBatchCommands, set, native);
         if (gamelist is [GameVersion.DP])
             gamelist = [GameVersion.D, GameVersion.P];
+        if (gamelist is [GameVersion.RS])
+            gamelist = [GameVersion.R, GameVersion.S];
 
         var mutations = EncounterMutationUtil.GetSuggested(dest.Context, set.Level);
         var encounters = GetAllEncounters(pk: template, moves: new ReadOnlyMemory<ushort>(set.Moves), gamelist);
