@@ -137,7 +137,9 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             return;
 
         var data = tdata(Remote.Bot);
-        data?.CopyTo(dest);
+        if (data is null || data.Length == 0)
+            return;
+        data.CopyTo(dest);
     }
 
     private void ChangeBox(object? sender, EventArgs e)

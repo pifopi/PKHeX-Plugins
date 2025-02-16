@@ -67,6 +67,8 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         var b = psb.com.ReadBytes(addr, count * 8);
         var boxptr = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
+        if (boxptr == 0x20)
+            return Array.Empty<ulong>();
         b = sb.ReadBytesAbsolute(boxptr, psb.SlotCount * 8);
 
         var pkmptrs = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray();
@@ -131,7 +133,8 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return ArrayUtil.ConcatAll(allpkm.ToArray());
 
         var pkmptrs = GetPokemonPointers(psb, box);
-
+        if (pkmptrs.Length == 0)
+            return Array.Empty<byte>();
         var offsets = pkmptrs.ToDictionary(p => p + 0x20, _ => psb.SlotSize);
         return sb.ReadBytesAbsoluteMulti(offsets);
     }
@@ -141,7 +144,10 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         if (psb.com is not ICommunicatorNX sb)
             return new byte[psb.SlotSize];
 
-        var pkmptr = GetPokemonPointers(psb, box)[slot];
+        var pkmptrs = GetPokemonPointers(psb, box);
+        if (pkmptrs.Length == 0)
+            return Array.Empty<byte>();
+        var pkmptr = pkmptrs[slot];
         return sb.ReadBytesAbsolute(pkmptr + 0x20, psb.SlotSize);
     }
 

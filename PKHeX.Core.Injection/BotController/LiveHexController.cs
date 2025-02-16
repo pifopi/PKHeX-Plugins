@@ -34,6 +34,8 @@ public sealed class LiveHeXController
         var sav = SAV.SAV;
         var len = sav.BoxSlotCount * (RamOffsets.GetSlotSize(Bot.Version) + RamOffsets.GetGapSize(Bot.Version));
         var data = Bot.ReadBox(box, len);
+        if (data.Length == 0)
+            return;
         sav.SetBoxBinary(data, box);
         SAV.ReloadSlots();
     }
