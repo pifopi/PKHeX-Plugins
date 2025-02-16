@@ -200,7 +200,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             if (_settings.EnableDevMode && lv is LiveHeXVersion.Unknown)
                 Text += " [Forced DevMode]";
 
-            if (Remote.Bot.com is IPokeBlocks)
+            if (Remote.Bot.com is IPokeBlocks && lv is not LiveHeXVersion.Unknown)
             {
                 var cblist = GetSortedBlockList(currVer).ToArray();
                 if (cblist.Length > 0)
@@ -325,7 +325,8 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         bool valid = pkm is not null && pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
                      pkm is { Species: 0, EncryptionConstant: 0 }
                          or { Species: not 0, Language: not (int)LanguageID.Hacked and not (int)LanguageID.UNUSED_6 };
-        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : (LiveHeXValidation.None, "", lv);
+        valid = pkm.Species is not 0;
+        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : !valid ? (LiveHeXValidation.GameVersion,"Invalid data found.",LiveHeXVersion.Unknown): (LiveHeXValidation.None, "", lv);
     }
 
     private void B_Disconnect_Click(object sender, EventArgs e)
