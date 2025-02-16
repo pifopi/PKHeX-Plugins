@@ -146,7 +146,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         var pkmptrs = GetPokemonPointers(psb, box);
         if (pkmptrs.Length == 0)
-            return new byte[psb.SlotSize];
+            return Array.Empty<byte>();
         var pkmptr = pkmptrs[slot];
         return sb.ReadBytesAbsolute(pkmptr + 0x20, psb.SlotSize);
     }
