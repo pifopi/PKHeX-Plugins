@@ -66,11 +66,10 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             throw new Exception("Invalid Pointer string.");
 
         var b = psb.com.ReadBytes(addr, count * 8);
-        var boxptr = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
-        if (boxptr == 0x20)
+        if (b[0] == 0)
             return Array.Empty<ulong>();
+        var boxptr = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
         b = sb.ReadBytesAbsolute(boxptr, psb.SlotCount * 8);
-
         var pkmptrs = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray();
         return pkmptrs;
     }
