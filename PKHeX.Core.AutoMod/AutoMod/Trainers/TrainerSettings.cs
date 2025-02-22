@@ -131,7 +131,7 @@ public static class TrainerSettings
     public static ITrainerInfo GetSavedTrainerData(GameVersion version, byte gen, ITrainerInfo? fallback = null, LanguageID? lang = null)
     {
         var byVer = Database.GetTrainer(version, lang);
-        return byVer ?? GetSavedTrainerData(gen, version, fallback, lang);
+        return byVer ?? DefaultFallback(version, lang);
     }
 
     /// <summary>

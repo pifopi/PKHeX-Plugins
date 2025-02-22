@@ -305,7 +305,7 @@ public static class APILegality
 
         var versionlist = GameUtil.GetVersionsWithinRange(template, template.Format);
         var gamelist = !nativeOnly ? [.. versionlist.OrderByDescending(c => c.GetGeneration())] : GetPairedVersions(destVer, versionlist);
-        if (PrioritizeGame && !nativeOnly)
+        if (PrioritizeGame)
             gamelist = PrioritizeGameVersion == GameVersion.Any ? PrioritizeVersion(gamelist, destVer.GetIsland()) : PrioritizeVersion(gamelist, PrioritizeGameVersion);
 
         if (template.AbilityNumber == 4 && destVer.GetGeneration() < 8)
@@ -1792,7 +1792,8 @@ public static class APILegality
                 raw.Language = (int)LanguageID.Japanese; // japanese;
 
             }
-
+            if (raw is PB8)
+                raw.NicknameTrash.Clear();
             raw.IsNicknamed = EggStateLegality.IsNicknameFlagSet(raw);
             raw.Nickname = SpeciesName.GetEggName(raw.Language, raw.Format);
 
