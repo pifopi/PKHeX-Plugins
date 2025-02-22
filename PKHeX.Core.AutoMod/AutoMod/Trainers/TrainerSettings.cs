@@ -55,18 +55,9 @@ public static class TrainerSettings
             return;
 
         var files = Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories);
-        foreach (var f in files)
-        {
-            var len = new FileInfo(f).Length;
-            if (!EntityDetection.IsSizePlausible(len))
-                return;
-
-            var data = File.ReadAllBytes(f);
-            var prefer = EntityFileExtension.GetContextFromExtension(f, EntityContext.None);
-            var pk = EntityFormat.GetFromBytes(data, prefer);
-            if (pk != null)
-                Database.Register(new PokeTrainerDetails(pk.Clone()));
-        }
+        var pk = BoxUtil.GetPKMsFromPaths(files, EntityContext.None);
+        foreach (var f in pk)
+            Database.RegisterCopy(f);
     }
 
     /// <summary>
