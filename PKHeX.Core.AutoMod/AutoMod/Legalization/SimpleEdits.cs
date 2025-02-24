@@ -546,7 +546,7 @@ public static class SimpleEdits
 
     private static void SetDateLocksWC8(PKM pk, WC8 w)
     {
-        var locked = EncounterServerDate.GetDistributionWindow(w, out var time);
+        var locked = w.GetDistributionWindow(out var time);
         if (locked)
             pk.MetDate = time.Start;
     }

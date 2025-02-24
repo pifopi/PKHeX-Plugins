@@ -72,7 +72,7 @@ public static class LivingDexTests
     private readonly record struct GenerateResult(bool Success, int Expected, int Generated);
 
     // Ideally should use purely PKHeX's methods or known total counts so that we're not verifying against ourselves.
-    private static int GetExpectedDexCount(this ITrainerInfo sav, IPersonalTable personal, LivingDexConfig cfg)
+    private static int GetExpectedDexCount(this SimpleTrainerInfo sav, IPersonalTable personal, LivingDexConfig cfg)
     {
         Dictionary<ushort, List<byte>> speciesDict = [];
         var context = sav.Context;

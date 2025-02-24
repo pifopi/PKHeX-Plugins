@@ -140,8 +140,7 @@ public static class APILegality
                     case IGenerateSeed64 GS64:
                         var converted64 = Convert.ToUInt64(regen.SeedFilters[0], 16);
                         GS64.GenerateSeed64(raw, converted64); break;
-                };
-                
+                }
             }
             else
             {
@@ -164,7 +163,6 @@ public static class APILegality
 
             // Apply final details
             ApplySetDetails(pk, set, dest, enc, regen, criteria);
-            
             // Apply final tweaks to the data.
             if (pk is IGigantamax gmax && gmax.CanGigantamax != set.CanGigantamax)
             {
@@ -1790,7 +1788,6 @@ public static class APILegality
             else if (raw is PK3)
             {
                 raw.Language = (int)LanguageID.Japanese; // japanese;
-
             }
             if (raw is PB8)
                 raw.NicknameTrash.Clear();

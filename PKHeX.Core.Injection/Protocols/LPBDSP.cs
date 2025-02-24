@@ -67,7 +67,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         var b = psb.com.ReadBytes(addr, count * 8);
         if (b[0] == 0)
-            return Array.Empty<ulong>();
+            return [];
         var boxptr = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray()[box] + 0x20; // add 0x20 to remove vtable bytes
         b = sb.ReadBytesAbsolute(boxptr, psb.SlotCount * 8);
         var pkmptrs = ArrayUtil.EnumerateSplit(b.ToArray(), 8).Select(z => ReadUInt64LittleEndian(z)).ToArray();
@@ -145,7 +145,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         var pkmptrs = GetPokemonPointers(psb, box);
         if (pkmptrs.Length == 0)
-            return Array.Empty<byte>();
+            return [];
         var pkmptr = pkmptrs[slot];
         return sb.ReadBytesAbsolute(pkmptr + 0x20, psb.SlotSize);
     }
@@ -202,7 +202,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         // BodyType, Fashion ID
         extra.Slice(0x16, 0x2).CopyTo(retval.AsSpan(0x30));
         // StarterType, DSPlayer, FollowIndex, X, Y, Height, Rotation
-        extra.Slice(0x18).ToArray().CopyTo(retval, 0x34);
+        extra[0x18..].ToArray().CopyTo(retval, 0x34);
 
         return retval;
     };

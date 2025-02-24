@@ -312,8 +312,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             return (LiveHeXValidation.None, "", lv);
 
         var data = Remote.Bot.ReadSlot(0, 0);
-        PKM? pkm = null;
-        pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
+        PKM? pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
         bool valid = pkm is not null && pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
                      pkm is { Species: 0, EncryptionConstant: 0 }
                          or { Species: not 0, Language: not (int)LanguageID.Hacked and not (int)LanguageID.UNUSED_6 };

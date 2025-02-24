@@ -16,8 +16,8 @@ public class LivingDex : AutoModPlugin
 
     protected override void AddPluginControl(ToolStripDropDownItem modmenu)
     {
-        var ctrl = new ToolStripMenuItem(Name) 
-        { 
+        var ctrl = new ToolStripMenuItem(Name)
+        {
             Image = Resources.livingdex,
             ShortcutKeys = Keys.Alt | Keys.E,
         };
@@ -63,12 +63,11 @@ public class LivingDex : AutoModPlugin
             generated++;
             if (TryAdd(sav, extra, pk, ref slot))
                 continue;
-            while (true)
+            do
             {
                 slot++;
-                if (TryAdd(sav, extra, pk, ref slot))
-                    break;
             }
+            while (!TryAdd(sav, extra, pk, ref slot));
         }
         return generated;
     }

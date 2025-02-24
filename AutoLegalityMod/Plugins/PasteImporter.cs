@@ -39,15 +39,14 @@ public class PasteImporter : AutoModPlugin
 
     private void Downkey(object? sender, KeyEventArgs e)
     {
-        if (e.KeyCode is not (Keys.NumPad6 or Keys.D6 or Keys.E) || !e.Control)
-            return;
-
-        if (WinFormsUtil.Prompt(MessageBoxButtons.OKCancel, "Generate 6 Random Pokemon?") != DialogResult.OK)
+        if (e.KeyCode is not (Keys.NumPad6 or Keys.D6 or Keys.A) || !e.Control)
             return;
         PKM[] result = [];
         var sav = SaveFileEditor.SAV;
-        if (e.KeyCode is not Keys.E)
+        if (e.KeyCode is not Keys.A)
         {
+            if (WinFormsUtil.Prompt(MessageBoxButtons.OKCancel, "Generate 6 Random Pokemon?") != DialogResult.OK)
+                return;
             APILegality.RandTypes = _settings.RandomTypes;
             APILegality.RandTypes = _settings.RandomTypes;
             result = sav.GetSixRandomMons();
@@ -57,11 +56,11 @@ public class PasteImporter : AutoModPlugin
             var text = GetTextShowdownData();
             if (string.IsNullOrWhiteSpace(text))
                 return;
-            var made = sav.GenerateEgg(new ShowdownSet(text), out var legalized);
-            result.Append(made);
+            if (WinFormsUtil.Prompt(MessageBoxButtons.YesNo, "Make an Egg from this set?", text) != DialogResult.Yes)
+                return;
+            var made = sav.GenerateEgg(new ShowdownSet(text), out _);
             PKMEditor.PopulateFields(made);
         }
-            
 
         const int slotIndexStart = 0;
         var slot = slotIndexStart - 1;
