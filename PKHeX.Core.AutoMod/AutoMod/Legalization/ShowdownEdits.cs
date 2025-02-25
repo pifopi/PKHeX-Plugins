@@ -186,7 +186,7 @@ public static class ShowdownEdits
         if (pk.Format < 3 && newnick.Length == 0)
             newnick = SpeciesName.GetSpeciesName(pk.Species, (int)finallang);
         var nickname = newnick.Length > maxlen ? newnick[..maxlen] : newnick;
-        if (!WordFilter.IsFiltered(nickname, out _,pk.Context))
+        if (!WordFilter.IsFiltered(nickname, out _,pk.Context) && newnick != SpeciesName.GetSpeciesName(pk.Species,(int)finallang))
             pk.SetNickname(nickname);
         else
             pk.ClearNickname();
