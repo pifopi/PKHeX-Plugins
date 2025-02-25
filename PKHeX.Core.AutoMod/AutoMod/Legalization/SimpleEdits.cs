@@ -185,7 +185,8 @@ public static class SimpleEdits
             return;
         }
 
-        pk.SetShinySID(); // no mg = no lock
+        TrainerIDVerifier.TryGetShinySID(pk.PID, pk.TID16, pk.Version, out var sid);
+        pk.SID16 = sid;
         if (isShiny && enc.Generation is 1 or 2)
             pk.SetShiny();
         if (enc.Generation != 5)
