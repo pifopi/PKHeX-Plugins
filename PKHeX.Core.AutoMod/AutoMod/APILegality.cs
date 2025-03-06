@@ -90,8 +90,6 @@ public static class APILegality
             encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(regen.EncounterFilters, enc));
         if (regen.SeedFilters.Any())
             encounters = encounters.Where(enc => enc is (IGenerateSeed32 or IGenerateSeed64)); // Only allow seed generation for seed encounters
-        // For sets that require a specific level, force the level maximum that the generator will yield.
-        // Most encounters generate with minimum level; only those with checked PID/IV will have non-minimum levels.
 
         PKM? last = null;
         var timer = Stopwatch.StartNew();
@@ -557,6 +555,7 @@ public static class APILegality
         IStaticCorrelation8b s when s.GetRequirement(pk) == StaticCorrelation8bRequirement.MustHave => true,
         EncounterSlot3 when pk.Species == (ushort)Species.Unown => true,
         EncounterEgg when GameVersion.BDSP.Contains(enc.Version) => true,
+        EncounterGift3 when pk.Species == (ushort)Species.Jirachi => true, //PKHeX handles this now for both Wishmkr and CHANNEL
         _ => false,
     };
 
@@ -1395,11 +1394,6 @@ public static class APILegality
                 if (la.Info.PIDIV.Type is not PIDType.CXD and not PIDType.CXD_ColoStarter || !la.Info.PIDIVMatches || !pk.IsValidGenderPID(enc))
                     continue;
             }
-            var pidxor = (pk.ShinyXor & ~0x7) == 8;
-            if (method == PIDType.Channel && (shiny != pk.IsShiny || pidxor))
-                continue;
-            if (method == PIDType.Channel && !ChannelJirachi.IsPossible(seed))
-                continue;
             if (pk.TID16 == 06930 && !MystryMew.IsValidSeed(seed))
                 continue;
 
@@ -1422,12 +1416,6 @@ public static class APILegality
             return false;
 
         if (pk.Gender != EntityGender.GetFromPIDAndRatio(pk.PID, gr))
-            return false;
-
-        var pidxor = ((pk.TID16 ^ pk.SID16 ^ (int)(pk.PID & 0xFFFF) ^ (int)(pk.PID >> 16)) & ~0x7) == 8;
-        if (Method == PIDType.Channel && (shiny != pk.IsShiny || pidxor))
-            return false;
-        if (pk.Species == (ushort)Species.Jirachi)
             return false;
         if (Method == PIDType.Pokewalker)
             return false;

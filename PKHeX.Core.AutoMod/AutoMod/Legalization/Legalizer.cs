@@ -34,7 +34,7 @@ public static class Legalizer
     public static PKM Legalize(this ITrainerInfo tr, PKM pk)
     {
         var set = new ShowdownSet(pk); //Regen Template may carry illegal traits, Use basic Showdown set to revert to a legal template.
-        var almres = tr.GetLegalFromSet(set);
+        var almres = tr.GetLegalFromSet(set,pk); //keep the current pkm as template
         var result = almres.Status;
         return result == LegalizationResult.VersionMismatch ? throw new MissingMethodException("PKHeX and Plugins have a version mismatch") : almres.Created;
     }
