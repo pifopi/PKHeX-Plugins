@@ -100,7 +100,7 @@ public class LegalizeBoxes : AutoModPlugin
         }
 
         var sav = SaveFileEditor.SAV;
-        var result = sav.Legalize(pk);
+        var result = sav.Legalize(pk,la);
 
         // let's double check
 

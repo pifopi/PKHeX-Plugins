@@ -45,7 +45,7 @@ public static class APILegality
     /// <param name="set">Showdown set object</param>
     /// <param name="satisfied">If the final result is legal or not</param>
     /// <param name="nativeOnly"></param>
-    public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, bool nativeOnly = false)
+    public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, bool nativeOnly = false, IEncounterable? ogenc = null)
     {
         RegenSet regen;
         if (set is RegenTemplate t)
@@ -90,7 +90,8 @@ public static class APILegality
             encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(regen.EncounterFilters, enc));
         if (regen.SeedFilters.Any())
             encounters = encounters.Where(enc => enc is (IGenerateSeed32 or IGenerateSeed64)); // Only allow seed generation for seed encounters
-
+        if (ogenc is not null)
+            encounters = encounters.OrderByDescending(e => e == ogenc);
         PKM? last = null;
         var timer = Stopwatch.StartNew();
         foreach (var enc in encounters)
@@ -1652,7 +1653,7 @@ public static class APILegality
     /// <summary>
     /// Wrapper function for GetLegalFromTemplate but with a Timeout
     /// </summary>
-    public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false)
+    public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false, IEncounterable? enc = null)
     {
         AsyncLegalizationResult GetLegal()
         {
@@ -1661,7 +1662,7 @@ public static class APILegality
                 if (!EnableDevMode && ALMVersion.GetIsMismatch())
                     return new(template, LegalizationResult.VersionMismatch);
 
-                var res = dest.GetLegalFromTemplate(template, set, out var s, nativeOnly);
+                var res = dest.GetLegalFromTemplate(template, set, out var s, nativeOnly, enc);
                 return new AsyncLegalizationResult(res, s);
             }
             catch (MissingMethodException)
