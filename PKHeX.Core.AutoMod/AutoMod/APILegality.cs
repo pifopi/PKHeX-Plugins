@@ -923,18 +923,9 @@ public static class APILegality
         if (enc is ITeraRaid9)
         {
             var pk9 = (PK9)pk;
-            switch (enc)
-            {
-                case EncounterTera9 e:
-                    FindTeraPIDIV(pk9, e, set, criteria);
-                    break;
-                case EncounterDist9 e:
-                    FindTeraPIDIV(pk9, e, set, criteria);
-                    break;
-                case EncounterMight9 e:
-                    FindTeraPIDIV(pk9, e, set, criteria);
-                    break;
-            }
+            if (enc is EncounterTera9 t) FindTeraPIDIV(pk9, t, set, criteria);
+            else if (enc is EncounterDist9 d) FindTeraPIDIV(pk9, d, set, criteria);
+            else if (enc is EncounterMight9 m) FindTeraPIDIV(pk9, m, set, criteria);
             if (set.TeraType != MoveType.Any && set.TeraType != pk9.TeraType)
                 pk9.SetTeraType(set.TeraType);
         }
