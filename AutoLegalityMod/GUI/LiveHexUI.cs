@@ -80,7 +80,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         if (!type.IsContentChange())
             return;
-
+        SAV.SAV.AdaptToSaveFile(pkm);
         Remote.Bot.SendSlot(RamOffsets.WriteBoxData(Remote.Bot.Version) ? pkm.EncryptedBoxData : pkm.EncryptedPartyData, box, slotpkm);
     }
 

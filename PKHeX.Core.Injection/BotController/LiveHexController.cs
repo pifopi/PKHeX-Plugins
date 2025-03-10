@@ -50,6 +50,7 @@ public sealed class LiveHeXController
     {
         var pkm = Editor.PreparePKM();
         pkm.ResetPartyStats();
+        SAV.SAV.AdaptToSaveFile(pkm);
         var data = RamOffsets.WriteBoxData(Bot.Version) ? pkm.EncryptedBoxData : pkm.EncryptedPartyData;
         Bot.SendSlot(data, box, slot);
     }
