@@ -55,7 +55,7 @@ public class LegalizeBoxes : AutoModPlugin
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/santcrab2/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Installing-PKHeX-Plugins",
                     UseShellExecute = true,
                 });
             }
@@ -119,7 +119,7 @@ public class LegalizeBoxes : AutoModPlugin
             {
                 Process.Start(new ProcessStartInfo
                 {
-                    FileName = "https://github.com/santcrab2/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
+                    FileName = "https://github.com/santacrab2/PKHeX-Plugins/wiki/Getting-Started-with-Auto-Legality-Mod",
                     UseShellExecute = true,
                 });
             }
