@@ -43,7 +43,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         TB_IP.Text = _settings.LatestIP;
         var default_port = RamOffsets.IsSwitchTitle(sav.SAV) ? 6000 : 8000; // default port for loaded save
-        TB_Port.Text = int.Parse(_settings.LatestPort) is 6000 or 8000 ? default_port.ToString() : _settings.LatestPort;
+        TB_Port.Text = default_port.ToString();
         SetInjectionTypeView();
 
         // add an event to the editor
@@ -355,7 +355,6 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         x.Slots.Publisher.Subscribers.Remove(this);
         _settings.LatestIP = TB_IP.Text;
-        _settings.LatestPort = TB_Port.Text;
         _settings.Save();
     }
 
