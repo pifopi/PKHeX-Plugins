@@ -13042,5 +13042,3 @@ Timid Nature
 - Crunch
 - Moonblast
 - Springtide Storm
-
-Generated 1108 Showdown sets, skipped 11 sets.

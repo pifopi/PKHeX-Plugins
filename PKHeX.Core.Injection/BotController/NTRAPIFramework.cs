@@ -362,18 +362,25 @@ public sealed class NTR
         string pidaddr = log.Substring(log.IndexOf(pname, StringComparison.Ordinal) - 10, 10);
         PID = Convert.ToInt32(pidaddr, 16);
 
+        // NFC patch to keep connection on. Write the last byte only.
+        // NFC ON: E3A01001, NFC OFF: E3A01000
+        uint offset = 0;
         if (log.Contains("niji_loc"))
         {
-            Write(0x3E14C0, BitConverter.GetBytes(0xE3A01000), PID);
+            offset = 0x3E14C0; // Sun and Moon
         }
         else if (log.Contains("momiji"))
         {
             if (log.Contains("1b5100"))
-                Write(0x3F3428, BitConverter.GetBytes(0xE3A01000), PID); // Ultra Moon // NFC ON: E3A01001 NFC OFF: E3A01000
+                offset = 0x3F3428; // Ultra Moon 
             else
-                Write(0x3F3424, BitConverter.GetBytes(0xE3A01000), PID); // Ultra Sun  // NFC ON: E3A01001 NFC OFF: E3A01000
-            
+                offset = 0x3F3424; // Ultra Sun
         }
+        else
+        {
+            return;
+        }
+        Write(offset, [0], PID);
     }
 
     private void HandleDataReady(object? sender, DataReadyEventArgs e)

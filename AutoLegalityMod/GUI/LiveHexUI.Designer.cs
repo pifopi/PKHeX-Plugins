@@ -138,7 +138,8 @@
             this.TB_Port.Name = "TB_Port";
             this.TB_Port.Size = new System.Drawing.Size(42, 20);
             this.TB_Port.TabIndex = 5;
-            this.TB_Port.Text = "65535";
+            this.TB_Port.Text = "6000";
+            this.TB_Port.ReadOnly = true;
             // 
             // L_Port
             // 
