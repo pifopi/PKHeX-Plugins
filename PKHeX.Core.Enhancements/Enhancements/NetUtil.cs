@@ -53,43 +53,4 @@ public static class NetUtil
         using var reader = new StreamReader(dataStream);
         return reader.ReadToEnd();
     }
-
-    /// <summary>
-    /// GPSS upload function. POST request using multipart form-data
-    /// </summary>
-    /// <param name="data">pkm data in bytes.</param>
-    /// <param name="generation">The generation for the game the Pokémon is being uploaded from.</param>
-    /// <param name="Url">location to fetch from</param>
-    public static async Task<HttpResponseMessage> GPSSPost(byte[] data, byte generation, string Url = "flagbrew.org")
-    {
-        using var client = new HttpClient();
-
-        var uploadData = new MultipartFormDataContent
-        {
-            { new ByteArrayContent(data), "pkmn", "pkmn" },
-        };
-
-        uploadData.Headers.Add("source", "PKHeX AutoMod Plugins");
-        uploadData.Headers.Add("generation", generation.ToString());
-
-        var response = await client.PostAsync($"https://{Url}/api/v2/gpss/upload/Pokémon", uploadData);
-        return response;
-    }
-
-    /// <summary>
-    /// GPSS downloader
-    /// </summary>
-    /// <param name="code">url long</param>
-    /// <param name="Url">location to fetch from</param>
-    /// <returns>byte array corresponding to a pkm</returns>
-    public static byte[]? GPSSDownload(long code, string Url = "flagbrew.org")
-    {
-        // code is returned as a long
-        var json = DownloadString($"https://{Url}/api/v2/gpss/download/Pokémon/{code}");
-        if (!json.Contains("\"Pokémon\":\""))
-            return null;
-
-        var b64 = json.Split("\"Pokémon\":\"")[1].Split("\"")[0];
-        return System.Convert.FromBase64String(b64);
-    }
 }

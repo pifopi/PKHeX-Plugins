@@ -129,11 +129,8 @@ public class PluginSettings
     [Category(TransferDex)]
     [Description("Generate Transfer Living Dex destination game")]
     public GameVersion TransferVersion { get; set; } = GameVersion.VL;
-    // Miscellaneous
-    [Category(Miscellaneous)]
-    [Description("Base URL for Flagbrew's Global PKSM Sharing Service (GPSS) features.")]
-    public string GPSSBaseURL { get; set; } = "flagbrew.org";
 
+    // Miscellaneous
     [Category(Miscellaneous)]
     [Description("Used for \"Generate Smogon Sets\". If set to true, ALM will ask for approval for each set before attempting to generate it.")]
     public bool PromptForSmogonImport { get; set; } = false;

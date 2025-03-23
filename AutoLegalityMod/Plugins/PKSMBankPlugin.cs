@@ -16,7 +16,7 @@ public class PKSMBankPlugin : AutoModPlugin
 
         var c1 = new ToolStripMenuItem("Merge PKM into PKSM Bank")
         {
-            Image = Resources.uploadgpss,
+            Image = Resources.upload,
         };
         c1.Click += (_, _) => Import();
         c1.Name = "Menu_CreatePKSMBank";
