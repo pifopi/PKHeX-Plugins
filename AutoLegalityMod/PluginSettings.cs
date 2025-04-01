@@ -160,7 +160,7 @@ public class PluginSettings
     {
         JsonSerializerOptions options = new() { WriteIndented = true };
         string output = JsonSerializer.Serialize(this, options);
-        using StreamWriter sw = new(ConfigPath ?? Path.Combine( Path.GetDirectoryName(Environment.ProcessPath)!, "almconfig.json"));
+        using StreamWriter sw = new(Path.Combine(Path.GetDirectoryName(Environment.ProcessPath)!, "almconfig.json"));
         sw.WriteLine(output);
     }
 }
