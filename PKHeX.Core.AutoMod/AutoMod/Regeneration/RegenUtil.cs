@@ -30,7 +30,7 @@ public static class RegenUtil
             switch (key)
             {
                 case "OT":
-                    sti.OT = value;
+                    sti = sti with { OT = value };
                     break;
                 case "TID" when int.TryParse(value, out int tid) && tid >= 0:
                     TID7 = tid;
@@ -39,7 +39,7 @@ public static class RegenUtil
                     SID7 = sid;
                     break;
                 case "OTGender":
-                    sti.Gender = value is "Female" or "F" ? (byte)1 : (byte)0;
+                    sti = sti with { Gender = value is "Female" or "F" ? (byte)1 : (byte)0 };
                     break;
                 default:
                     i++; //increment to avoid infinite loop
@@ -58,8 +58,7 @@ public static class RegenUtil
         SID7 = Math.Max(SID7, 0);
         const int mil = 1_000_000;
         uint repack = ((uint)SID7 * mil) + (uint)TID7;
-        tr.TID16 = format < 7 ? (ushort)TID7 : (ushort)(repack & 0xFFFF);
-        tr.SID16 = format < 7 ? (ushort)SID7 : (ushort)(repack >> 16);
+        tr = sti with { TID16 = format < 7 ? (ushort)TID7 : (ushort)(repack & 0xFFFF), SID16 = format < 7 ? (ushort)SID7 : (ushort)(repack >> 16) };
         return true;
     }
 

@@ -34,7 +34,7 @@ public sealed class RegenTemplate : IBattleTemplate
 
     private readonly string ParentLines;
 
-    private RegenTemplate(ShowdownSet set, byte gen = PKX.Generation, string _ = "")
+    private RegenTemplate(ShowdownSet set, byte gen = Latest.Generation, string _ = "")
     {
         Species = set.Species;
         Context = set.Context;
@@ -60,7 +60,7 @@ public sealed class RegenTemplate : IBattleTemplate
         SanitizeMoves(set, Moves);
     }
 
-    public RegenTemplate(ShowdownSet set, byte gen = PKX.Generation) : this(set, gen, set.Text)
+    public RegenTemplate(ShowdownSet set, byte gen = Latest.Generation) : this(set, gen, set.Text)
     {
         this.SanitizeForm(gen);
         this.SanitizeBattleMoves();
@@ -79,7 +79,7 @@ public sealed class RegenTemplate : IBattleTemplate
             Ability = RegenUtil.GetRegenAbility(set.Species, gen, Regen.Extra.Ability);
     }
 
-    public RegenTemplate(PKM pk, byte gen = PKX.Generation) : this(new ShowdownSet(pk), gen)
+    public RegenTemplate(PKM pk, byte gen = Latest.Generation) : this(new ShowdownSet(pk), gen)
     {
         this.FixGender(pk.PersonalInfo);
         if (!pk.IsNicknamed)

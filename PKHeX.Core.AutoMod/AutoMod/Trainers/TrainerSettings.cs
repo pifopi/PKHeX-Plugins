@@ -38,9 +38,7 @@ public static class TrainerSettings
 
         var ctx = ver.GetContext();
         var fallback = lang == null ? new SimpleTrainerInfo(ver) { Context = ctx } : new SimpleTrainerInfo(ver) { Language = (int)lang, Context = ctx };
-        fallback.OT = DefaultOT;
-        fallback.TID16 = DefaultTID16;
-        fallback.SID16 = DefaultSID16;
+        fallback = fallback with { OT = DefaultOT, TID16 = DefaultTID16, SID16 = DefaultSID16 };
         return fallback;
     }
 
