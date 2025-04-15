@@ -156,9 +156,6 @@ public static class APILegality
             if (pk == null)
                 continue;
 
-            if (!EntityConverter.IsCompatibleGB(pk, template.Japanese, pk.Japanese))
-                continue;
-
             if (dest.Generation >= 8 && HomeTrackerUtil.IsRequired(enc, pk) && !AllowHOME)
                 continue;
 
@@ -810,7 +807,8 @@ public static class APILegality
             pk.Language = tr.Language;
             pk.SetTrainerData(tr);
         }
-        pk.EggLocation = Locations.TradedEggLocation(enc.Generation, enc.Version);
+        else
+            pk.EggLocation = Locations.TradedEggLocation(enc.Generation, enc.Version);
     }
 
     /// <summary>
