@@ -871,6 +871,7 @@ public static class APILegality
         switch (enc)
         {
             case EncounterSlot3XD:
+            case EncounterShadow3XD:
             case PCD:
             case EncounterEgg:
                 return;
@@ -1410,6 +1411,8 @@ public static class APILegality
         if (pk.Gender != EntityGender.GetFromPIDAndRatio(pk.PID, gr))
             return false;
         if (Method == PIDType.Pokewalker)
+            return false;
+        if (pk.Version == GameVersion.CXD && Method == PIDType.CXD)
             return false;
         if (!new LegalityAnalysis(pk).Valid)
             return false;
