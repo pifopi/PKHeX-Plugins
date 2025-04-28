@@ -96,6 +96,10 @@ public class PasteImporter : AutoModPlugin
             var txt = Clipboard.GetText();
             if (ShowdownUtil.IsTextShowdownData(txt))
                 return txt;
+            if (ShowdownTeam.IsURL(txt, out var url) && ShowdownTeam.TryGetSets(url, out var content))
+                return content;
+            else if (PokepasteTeam.IsURL(txt, out url) && PokepasteTeam.TryGetSets(url, out content))
+                return content;
         }
         if (!WinFormsUtil.OpenSAVPKMDialog(["txt"], out var path))
         {
