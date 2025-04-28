@@ -161,7 +161,7 @@ public static class RegenUtil
     /// <param name="ver"></param>
     public static ITrainerInfo MutateLanguage(this ITrainerInfo tr, LanguageID? lang, GameVersion ver)
     {
-        if (lang is LanguageID.UNUSED_6 or LanguageID.Hacked or null)
+        if (lang is LanguageID.UNUSED_6 or LanguageID.None or null)
             return tr;
 
         if (tr is PokeTrainerDetails p)
