@@ -103,7 +103,10 @@ public static class RegenUtil
         var index = line.IndexOf(Splitter);
         if (index < 0)
             return false;
-
+        line = line[(index+2)..]; // remove "Unknown Token: " from invalid lines to process
+        index = line.IndexOf(Splitter);
+        if (index < 0)
+            return false;
         var key = line[..index];
         var value = line[(index + 1)..].Trim();
         result = (key.ToString(), value.ToString());
