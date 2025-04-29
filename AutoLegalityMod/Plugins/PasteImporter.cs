@@ -48,7 +48,6 @@ public class PasteImporter : AutoModPlugin
             if (WinFormsUtil.Prompt(MessageBoxButtons.OKCancel, "Generate 6 Random Pokemon?") != DialogResult.OK)
                 return;
             APILegality.RandTypes = _settings.RandomTypes;
-            APILegality.RandTypes = _settings.RandomTypes;
             result = sav.GetSixRandomMons();
         }
         else
