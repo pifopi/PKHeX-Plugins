@@ -30,11 +30,11 @@ public static class APILegality
     public static bool AllowTrainerOverride { get; set; }
     public static bool AllowBatchCommands { get; set; } = true;
     public static bool ForceLevel100for50 { get; set; } = true;
-    public static bool AllowHOMETransferGeneration { get; set; } = true;
+    public static BattleTemplateDisplayStyle ExportFormat { get; set; } = BattleTemplateDisplayStyle.Showdown;
     public static MoveType[] RandTypes { get; set; } = [];
     public static int Timeout { get; set; } = 15;
 
-    private static bool AllowHOME => ParseSettings.Settings.HOMETransfer.HOMETransferTrackerNotPresent != Severity.Invalid;
+    public static bool AllowHOME => ParseSettings.Settings.HOMETransfer.HOMETransferTrackerNotPresent != Severity.Invalid;
 
     /// <summary>
     /// Main function that auto legalizes based on the legality
