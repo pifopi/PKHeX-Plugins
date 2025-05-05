@@ -872,6 +872,7 @@ public static class APILegality
         {
             case EncounterSlot3XD:
             case EncounterShadow3XD:
+            case EncounterShadow3Colo:
             case PCD:
             case EncounterEgg:
                 return;
