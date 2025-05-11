@@ -394,12 +394,12 @@ public static class SimpleEdits
 
     internal static void HyperTrain(this IHyperTrain t, PKM pk, ReadOnlySpan<int> ivs, EncounterCriteria criteria)
     {
-        t.HT_HP  = pk.IV_HP  != 31 && criteria.IV_HP is not 31 or -1;
-        t.HT_ATK = pk.IV_ATK != 31 && ivs[1] > 2 && criteria.IV_ATK is not 31 or -1;
-        t.HT_DEF = pk.IV_DEF != 31 && criteria.IV_DEF is not 31 or -1;
-        t.HT_SPA = pk.IV_SPA != 31 && ivs[4] > 2 && criteria.IV_SPA is not 31 or -1;
-        t.HT_SPD = pk.IV_SPD != 31 && criteria.IV_SPD is not 31 or -1;
-        t.HT_SPE = pk.IV_SPE != 31 && ivs[3] > 2 && criteria.IV_SPE is not 31 or -1;
+        t.HT_HP  = pk.IV_HP  != 31 && criteria.IV_HP is -1;
+        t.HT_ATK = pk.IV_ATK != 31 && ivs[1] > 2 && criteria.IV_ATK is -1;
+        t.HT_DEF = pk.IV_DEF != 31 && criteria.IV_DEF is -1;
+        t.HT_SPA = pk.IV_SPA != 31 && ivs[4] > 2 && criteria.IV_SPA is -1;
+        t.HT_SPD = pk.IV_SPD != 31 && criteria.IV_SPD is -1;
+        t.HT_SPE = pk.IV_SPE != 31 && ivs[3] > 2 && criteria.IV_SPE is -1;
 
         if (pk is PB7 pb)
             pb.ResetCP();
