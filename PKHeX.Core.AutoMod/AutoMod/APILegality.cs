@@ -94,6 +94,8 @@ public static class APILegality
             encounters = encounters.Where(enc => enc is (IGenerateSeed32 or IGenerateSeed64)); // Only allow seed generation for seed encounters
         if (ogenc is not null)
             encounters = encounters.OrderByDescending(e => e == ogenc);
+        if (set.Shiny)
+            encounters = encounters.OrderByDescending(e => e.Shiny == Shiny.Always);
         PKM? last = null;
         var timer = Stopwatch.StartNew();
         foreach (var enc in encounters)
