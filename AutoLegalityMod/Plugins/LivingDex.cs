@@ -7,6 +7,8 @@ using PKHeX.Core.AutoMod;
 using System.Collections.Generic;
 using Microsoft.VisualBasic.Devices;
 using System.Threading.Tasks;
+using AutoModPlugins.GUI;
+using System.Threading;
 
 namespace AutoModPlugins;
 
@@ -36,8 +38,27 @@ public class LivingDex : AutoModPlugin
         if (new Keyboard().AltKeyDown)
             egg = true;
         var sav = SaveFileEditor.SAV;
-        var dex = await Task.Run(()=> egg?sav.GenerateLivingEggDex(sav.Personal):sav.GenerateLivingDex(sav.Personal));
+        var t = new ALMStatusBar("Living Dex", sav.MaxSpeciesID);
+        t.Count = ModLogic.trackingCount;
+        t.Show();
+
+        // After showing the form, start a polling loop
+        Task.Run(() =>
+        {
+            int lastCount = -1;
+            while (!t.IsDisposed)
+            {
+                if (ModLogic.trackingCount != lastCount)
+                {
+                    lastCount = ModLogic.trackingCount;
+                    t.Invoke(() => t.Count = lastCount);
+                }
+            }
+        });
+
+        var dex = await Task.Run(() => egg ? sav.GenerateLivingEggDex(sav.Personal) : sav.GenerateLivingDex(sav.Personal));
         List<PKM> extra = [];
+        t.Close();
         int generated = IngestToBoxes(sav, dex, extra);
         System.Diagnostics.Debug.WriteLine($"Generated Living Dex with {generated} entries.");
         SaveFileEditor.ReloadSlots();
