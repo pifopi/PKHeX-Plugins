@@ -38,8 +38,10 @@ public class LivingDex : AutoModPlugin
         if (new Keyboard().AltKeyDown)
             egg = true;
         var sav = SaveFileEditor.SAV;
-        var t = new ALMStatusBar("Living Dex", sav.MaxSpeciesID);
-        t.Count = ModLogic.trackingCount;
+        var t = new ALMStatusBar("Living Dex", sav.MaxSpeciesID)
+        {
+            Count = ModLogic.TrackingCount
+        };
         t.Show();
 
         // After showing the form, start a polling loop
@@ -48,9 +50,9 @@ public class LivingDex : AutoModPlugin
             int lastCount = -1;
             while (!t.IsDisposed)
             {
-                if (ModLogic.trackingCount != lastCount)
+                if (ModLogic.TrackingCount != lastCount)
                 {
-                    lastCount = ModLogic.trackingCount;
+                    lastCount = ModLogic.TrackingCount;
                     t.Invoke(() => t.Count = lastCount);
                 }
             }
