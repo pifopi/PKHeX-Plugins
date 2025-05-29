@@ -45,18 +45,7 @@ public class LivingDex : AutoModPlugin
         t.Show();
 
         // After showing the form, start a polling loop
-        Task.Run(() =>
-        {
-            int lastCount = -1;
-            while (!t.IsDisposed)
-            {
-                if (ModLogic.TrackingCount != lastCount)
-                {
-                    lastCount = ModLogic.TrackingCount;
-                    t.Invoke(() => t.Count = lastCount);
-                }
-            }
-        });
+        _ = Task.Run(()=>PollingLoop(t)); 
 
         var dex = await Task.Run(() => egg ? sav.GenerateLivingEggDex(sav.Personal) : sav.GenerateLivingDex(sav.Personal));
         List<PKM> extra = [];
@@ -78,7 +67,18 @@ public class LivingDex : AutoModPlugin
         foreach (var f in extra)
             File.WriteAllBytes($"{ofd.SelectedPath}/{f.FileName}", f.DecryptedPartyData);
     }
-
+    private static void PollingLoop(ALMStatusBar t)
+    {
+        int lastCount = -1;
+        while (!t.IsDisposed)
+        {
+            if (ModLogic.TrackingCount != lastCount)
+            {
+                lastCount = ModLogic.TrackingCount;
+                t.Invoke(() => t.Count = lastCount);
+            }
+        }
+    }
     private static int IngestToBoxes(SaveFile sav, IEnumerable<PKM> list, IList<PKM> extra, int slot = 0)
     {
         int generated = 0;
