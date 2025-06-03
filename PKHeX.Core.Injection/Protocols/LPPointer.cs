@@ -20,6 +20,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
         SV_v202,
         SV_v300,
         SV_v301,
+        SV_v400,
         LA_v100,
         LA_v101,
         LA_v102,
@@ -156,6 +157,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
     // LiveHexVersion -> Blockname -> List of <SCBlock Keys, OffsetValues>
     public static readonly Dictionary<LiveHeXVersion, BlockData[]> SCBlocks = new()
     {
+        {SV_v400, Blocks_SV_v300 },
         { SV_v301, Blocks_SV_v300 },
         { SV_v300, Blocks_SV_v300 },
         { SV_v202, Blocks_SV_v202 },
