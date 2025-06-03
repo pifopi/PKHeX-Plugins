@@ -186,7 +186,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
     private static string GetB1S1Pointer(LiveHeXVersion lv) => lv switch
     {
-        SV_v300 or SV_v301 => "[[[[main+47350d8]+1C0]+30]+9D0]",
+        SV_v300 or SV_v301 or SV_v400 => "[[[[main+47350d8]+1C0]+30]+9D0]",
         SV_v202 => "[[[[main+4623A30]+198]+30]+9D0]",
         SV_v201 => "[[[[main+4622A30]+198]+30]+9D0]",
         SV_v132 => "[[[main+44C1C18]+130]+9B0]",
@@ -203,7 +203,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
     public static string GetSaveBlockPointer(LiveHeXVersion lv) => lv switch
     {
-        SV_v300 or SV_v301 => "[[[[[main+47350d8]+D8]]]+30]",
+        SV_v300 or SV_v301 or SV_v400 => "[[[[[main+47350d8]+D8]]]+30]",
         SV_v202 => "[[[[[main+4617648]+D8]]]+30]",
         SV_v201 => "[[[[[main+4616648]+D8]]]+30]",
         SV_v132 => "[[[[[main+44B71A8]+D8]]]+30]",
