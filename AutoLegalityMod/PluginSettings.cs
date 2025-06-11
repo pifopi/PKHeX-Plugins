@@ -66,13 +66,13 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description(
-        "If enabled, tries to generate a Pokémon based on PrioritizeGameVersion first."
+        "If enabled, tries to generate a Pokémon based on PriorityOrder first."
     )]
     public bool PrioritizeGame { get; set; } = false;
 
     [Category(Customization)]
     [Description("Setting this to \"Any\" prioritizes the current save game, and setting a specific game prioritizes that instead.")]
-    public GameVersion PriorityGameVersion { get; set; } = GameVersion.Any;
+    public List<GameVersion> PriorityOrder { get; set; } = [];
 
     [Category(Customization)]
     [Description("Adds all ribbons that are legal according to PKHeX legality.")]
