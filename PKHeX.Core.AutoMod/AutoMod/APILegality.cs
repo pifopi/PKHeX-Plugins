@@ -94,7 +94,7 @@ public static class APILegality
             encounters = encounters.Where(enc => enc is (IGenerateSeed32 or IGenerateSeed64)); // Only allow seed generation for seed encounters
         if (ogenc is not null)
             encounters = encounters.OrderByDescending(e => e == ogenc);
-        if (set.Shiny)
+        if (set.Shiny && set.Species == (ushort)Species.Keldeo) //Keldeo seems to be the only recent shiny unlock impacted by this encounter order failure, add edge case for it until a better solution can be found
             encounters = encounters.OrderByDescending(e => e.Shiny == Shiny.Always);
         PKM? last = null;
         var timer = Stopwatch.StartNew();
