@@ -71,7 +71,7 @@ public static class APILegality
         var batchedit = AllowBatchCommands && regen.HasBatchSettings;
         var native = ModLogic.Config.NativeOnly && nativeOnly;
         var destType = template.GetType();
-        var destVer = dest.Version;
+        var destVer = dest.GetSingleVersion();
         if (destVer == GameVersion.HGSS)
             destVer = GameVersion.SS; // HGSS as the destination version returns 0 for maxGameSpeciesID which then fails dest.ExistsInGame check.
         if (destVer <= 0 && dest is SaveFile s)
