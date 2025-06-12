@@ -233,12 +233,7 @@ public static class ShowdownSetLoader
         APILegality.UseMarkings = settings.UseMarkings;
         APILegality.EnableDevMode = settings.EnableDevMode;
         APILegality.PrioritizeGame = settings.PrioritizeGame;
-        // If the version is in GameUtil.GetVersionsWithinRange then continue, if its not, then remove it. If the list is missing any from GameUtil.GetVersionsWithinRange, add them
-        // Synchronize PriorityOrder with GameUtil.GetVersionsWithinRange
-        var validVersions = GameUtil.GetVersionsWithinRange(SaveFileEditor.SAV,SaveFileEditor.SAV.Generation).ToList();
-        // Remove any versions from PriorityOrder that are not in validVersions
-        settings.PriorityOrder.RemoveAll(ver => !validVersions.Contains(ver));
-        // Add any versions from validVersions that are missing in PriorityOrder
+        GameVersion[] validVersions = [.. Enum.GetValues<GameVersion>().Where(ver => ver <= (GameVersion)51)];
         foreach (var ver in validVersions)
         {
             if (!settings.PriorityOrder.Contains(ver))

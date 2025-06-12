@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using PKHeX.Core;
 
@@ -72,7 +73,7 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description("Setting this to \"Any\" prioritizes the current save game, and setting a specific game prioritizes that instead.")]
-    public List<GameVersion> PriorityOrder { get; set; } = [];
+    public List<GameVersion> PriorityOrder { get; set; } = [..Enum.GetValues<GameVersion>().Where(ver => ver <=(GameVersion)51)];
 
     [Category(Customization)]
     [Description("Adds all ribbons that are legal according to PKHeX legality.")]

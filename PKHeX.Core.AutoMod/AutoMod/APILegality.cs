@@ -304,7 +304,7 @@ public static class APILegality
         var versionlist = GameUtil.GetVersionsWithinRange(template, template.Generation);
         var gamelist = !nativeOnly ? [.. versionlist.OrderByDescending(c => c.GetGeneration())] : GetPairedVersions(destVer, versionlist);
         if (PrioritizeGame)
-            gamelist = [..PriorityOrder];
+            gamelist = [..PriorityOrder.Where(z=>versionlist.Contains(z))];
 
         if (template.AbilityNumber == 4 && destVer.GetGeneration() < 8)
             gamelist = [.. gamelist.Where(z => z.GetGeneration() is not 3 and not 4)];
