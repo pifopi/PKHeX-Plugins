@@ -67,12 +67,12 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description(
-        "If enabled, tries to generate a Pokémon based on PriorityOrder first."
+        "If enabled, tries to generate a Pokémon based on PriorityOrder."
     )]
     public bool PrioritizeGame { get; set; } = false;
 
     [Category(Customization)]
-    [Description("Setting this to \"Any\" prioritizes the current save game, and setting a specific game prioritizes that instead.")]
+    [Description("The order of GameVersions ALM will attempt to legalize from.")]
     public List<GameVersion> PriorityOrder { get; set; } =
         [..Enum.GetValues<GameVersion>().Where(ver => ver > GameVersion.Any && ver <= (GameVersion)51)];
 
