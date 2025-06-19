@@ -245,7 +245,6 @@ public static class ShowdownSetLoader
         APILegality.Timeout = settings.Timeout;
         APILegality.ForceLevel100for50 = settings.ForceLevel100for50;
         APILegality.ExportFormat = settings.ExportFormat;
-        //APILegality.AllowHOMETransferGeneration = settings.AllowHOMETransferGeneration;
         APILegality.RandTypes = settings.RandomTypes;
         Legalizer.EnableEasterEggs = settings.EnableEasterEggs;
         SmogonGenner.PromptForImport = settings.PromptForSmogonImport;
