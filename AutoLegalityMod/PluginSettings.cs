@@ -73,7 +73,8 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description("Setting this to \"Any\" prioritizes the current save game, and setting a specific game prioritizes that instead.")]
-    public List<GameVersion> PriorityOrder { get; set; } = [..Enum.GetValues<GameVersion>().Where(ver => ver <=(GameVersion)51)];
+    public List<GameVersion> PriorityOrder { get; set; } =
+        [..Enum.GetValues<GameVersion>().Where(ver => ver > GameVersion.Any && ver <= (GameVersion)51)];
 
     [Category(Customization)]
     [Description("Adds all ribbons that are legal according to PKHeX legality.")]

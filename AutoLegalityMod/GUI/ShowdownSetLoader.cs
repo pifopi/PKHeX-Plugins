@@ -233,7 +233,7 @@ public static class ShowdownSetLoader
         APILegality.UseMarkings = settings.UseMarkings;
         APILegality.EnableDevMode = settings.EnableDevMode;
         APILegality.PrioritizeGame = settings.PrioritizeGame;
-        GameVersion[] validVersions = [.. Enum.GetValues<GameVersion>().Where(ver => ver <= (GameVersion)51)];
+        GameVersion[] validVersions = [.. Enum.GetValues<GameVersion>().Where(ver => ver <= (GameVersion)51 && ver > GameVersion.Any)];
         foreach (var ver in validVersions)
         {
             if (!settings.PriorityOrder.Contains(ver))
