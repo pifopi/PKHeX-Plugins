@@ -112,11 +112,9 @@ public static class TrainerSettings
     /// Gets a possible Trainer Data for the requested <see cref="version"/>.
     /// </summary>
     /// <param name="version">Version of origin requested.</param>
-    /// <param name="gen">Generation of origin requested.</param>
-    /// <param name="fallback">Fallback trainer data if no new parent is found.</param>
     /// <param name="lang">Language to request for</param>
     /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="fallback"/>.</returns>
-    public static ITrainerInfo GetSavedTrainerData(GameVersion version, byte gen, ITrainerInfo? fallback = null, LanguageID? lang = null)
+    public static ITrainerInfo GetSavedTrainerData(GameVersion version, LanguageID? lang = null)
     {
         var byVer = Database.GetTrainer(version, lang);
         return byVer ?? DefaultFallback(version, lang);

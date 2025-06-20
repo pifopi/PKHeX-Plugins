@@ -63,7 +63,7 @@ public static class ModLogic
     public static IEnumerable<PKM> GenerateLivingDex(this ITrainerInfo sav, IPersonalTable personal, LivingDexConfig cfg)
     {
         var pklist = new ConcurrentBag<PKM>();
-        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Version,sav.Generation) : sav;
+        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Version) : sav;
         var context = sav.Context;
         var generation = sav.Generation;
         TrackingCount = 0;
@@ -126,7 +126,7 @@ public static class ModLogic
         var generation = cfg.TransferVersion.GetGeneration();
 
         ConcurrentBag<PKM> pklist = [];
-        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(src.Version, src.Generation, fallback: src, lang: (LanguageID)src.Language) : src;
+        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(src.Version, lang: (LanguageID)src.Language) : src;
 
         Parallel.For(1, srcPersonal.MaxSpeciesID+1, id => //parallel For's end is exclusive
         {

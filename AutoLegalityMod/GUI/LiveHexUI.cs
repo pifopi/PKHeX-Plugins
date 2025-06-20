@@ -883,10 +883,10 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         }
         else
         {
-            var subblocks = Remote.Bot.Injector switch
+            BlockData[] subblocks = Remote.Bot.Injector switch
             {
-                LPBasic => LPBasic.SCBlocks[version].Where(z => z.Display == display).ToArray(),
-                LPPointer => LPPointer.SCBlocks[version].Where(z => z.Display == display).ToArray(),
+                LPBasic => [.. LPBasic.SCBlocks[version].Where(z => z.Display == display)],
+                LPPointer =>[.. LPPointer.SCBlocks[version].Where(z => z.Display == display)],
                 _ => [],
             };
 
@@ -899,10 +899,10 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
                 return false;
 
             var allblocks = props.GetValue(sav) ?? throw new Exception("Blocks not present.");
-            var blockprop = allblocks.GetType().GetProperty(subblocks[index].Name);
+            var blockprop = allblocks.GetType().GetProperty(subblocks.ToArray()[index].Name);
             if (allblocks is SCBlockAccessor scba && blockprop is null)
             {
-                sb = scba.GetBlock(subblocks[index].SCBKey);
+                sb = scba.GetBlock(subblocks.ToArray()[index].SCBKey);
             }
             else
             {

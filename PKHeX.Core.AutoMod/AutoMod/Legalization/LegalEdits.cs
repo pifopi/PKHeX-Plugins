@@ -43,7 +43,7 @@ public static class LegalEdits
         if (matching)
         {
             bool isShiny = pk.IsShiny;
-            var color = !isShiny ? PersonalColorUtil.GetColor(pk) : Aesthetics.GetShinyColor(pk.Species, pk.Form);
+            var color = !isShiny ? PersonalColorUtil.GetColor(pk) : Aesthetics.GetShinyColor(pk.Species);
             BallApplicator.ApplyBallLegalByColor(pk, color); // TODO: use overload with enc on next NuGet release
         }
     }

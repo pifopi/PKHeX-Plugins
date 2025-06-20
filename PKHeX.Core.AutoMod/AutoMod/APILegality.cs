@@ -392,7 +392,6 @@ public static class APILegality
     private static ITrainerInfo GetTrainer(RegenSet regen, IEncounterTemplate enc, IBattleTemplate set, ITrainerInfo dest)
     {
         var ver = enc.Version;
-        var gen = enc.Generation;
         var mutate = regen.Extra.Language;
 
         // Edge case override for Meister Magikarp
@@ -403,32 +402,7 @@ public static class APILegality
         if (AllowTrainerOverride && regen is { HasTrainerSettings: true, Trainer: not null })
             return regen.Trainer.MutateLanguage(mutate, ver);
 
-        return UseTrainerData ? TrainerSettings.GetSavedTrainerData(ver, gen).MutateLanguage(mutate, ver) : TrainerSettings.DefaultFallback(ver, regen.Extra.Language??(LanguageID)dest.Language);
-    }
-
-    /// <summary>
-    /// Gives the currently loaded save priority over other saves in the same generation. Otherwise, generational order is preserved
-    /// </summary>
-    /// <param name="gamelist">Array of GameVersion which needs to be prioritized</param>
-    /// <param name="game">GameVersion to prioritize</param>
-    /// <returns>A prioritized GameVersion list</returns>
-    private static GameVersion[] PrioritizeVersion(ReadOnlySpan<GameVersion> gamelist, GameVersion game)
-    {
-        var matched = 0;
-        var retval = new List<GameVersion>();
-        foreach (GameVersion poss in gamelist)
-        {
-            if (poss == game || game.Contains(poss))
-            {
-                retval.Insert(matched, poss);
-                matched++;
-            }
-            else
-            {
-                retval.Add(poss);
-            }
-        }
-        return [.. retval];
+        return UseTrainerData ? TrainerSettings.GetSavedTrainerData(ver).MutateLanguage(mutate, ver) : TrainerSettings.DefaultFallback(ver, regen.Extra.Language??(LanguageID)dest.Language);
     }
 
     /// <summary>
@@ -626,54 +600,6 @@ public static class APILegality
         pk.SetSuggestedBall(enc, SetMatchingBalls, ForceSpecifiedBall, regen.Extra.Ball);
         pk.ApplyMarkings(UseMarkings);
         pk.ApplyBattleVersion(handler);
-    }
-
-    /// <summary>
-    /// Validate and Set the gender if needed
-    /// </summary>
-    /// <param name="pk">PKM to modify</param>
-    /// <param name="enc"></param>
-    private static void ValidateGender(PKM pk, IEncounterTemplate enc)
-    {
-        bool genderValid = pk.IsGenderValid();
-        if (!genderValid)
-        {
-            if (pk is { Format: 4, Species: (ushort)Species.Shedinja }) // Shedinja glitch
-            {
-                // should match original gender
-                var gender = EntityGender.GetFromPIDAndRatio(pk.PID, 0x7F); // 50-50
-                if (gender == pk.Gender)
-                    genderValid = true;
-            }
-            else if (pk is { Format: > 5, Species: (ushort)Species.Marill or (ushort)Species.Azumarill })
-            {
-                var gv = pk.PID & 0xFF;
-                if (gv > 63 && pk.Gender == 1) // evolved from Azurill after transferring to keep gender
-                    genderValid = true;
-            }
-        }
-        else
-        {
-            // check for mixed->fixed gender incompatibility by checking the gender of the original species
-            if (SpeciesCategory.IsFixedGenderFromDual(pk.Species) && pk.Gender != 2) // Shedinja
-                pk.Gender = EntityGender.GetFromPID(enc.Species, pk.EncryptionConstant);
-            // genderValid = true; already true if we reach here
-        }
-        if (genderValid)
-            return;
-
-        switch (pk.Gender)
-        {
-            case 0:
-                pk.Gender = 1;
-                break;
-            case 1:
-                pk.Gender = 0;
-                break;
-            default:
-                pk.GetSaneGender();
-                break;
-        }
     }
 
     /// <summary>
@@ -1315,34 +1241,6 @@ public static class APILegality
             return false;
         return template.Shiny == pk.IsShiny;
     }
-
-    
-
-    private static bool IsMatchFromPKHeX(PKM pk, PKM request, int hiddenPower, byte gr, PIDType Method)
-    {
-        if (pk.AbilityNumber != request.AbilityNumber && pk.Nature != request.Nature)
-            return false;
-
-        if (pk.PIDAbility != request.PIDAbility)
-            return false;
-
-        if (hiddenPower >= 0 && pk.HPType != hiddenPower)
-            return false;
-
-        if (pk.PID % 25 != (int)request.Nature) // Util.Rand32 is the way to go
-            return false;
-
-        if (pk.Gender != EntityGender.GetFromPIDAndRatio(pk.PID, gr))
-            return false;
-        if (Method == PIDType.Pokewalker)
-            return false;
-        if (pk.Version == GameVersion.CXD && Method == PIDType.CXD)
-            return false;
-        if (!new LegalityAnalysis(pk).Valid)
-            return false;
-        return true;
-    }
-
     private static int GetRequiredAbilityIdx(PKM pkm, IBattleTemplate set)
     {
         if (set.Ability == -1)
@@ -1356,52 +1254,6 @@ public static class APILegality
 
         return temp.PersonalInfo.GetIndexOfAbility(set.Ability);
     }
-
-    /// <summary>
-    /// Checks if a Pokewalker seed failed, and if it did, randomizes TID and SID (to retry in the future)
-    /// </summary>
-    /// <param name="seed">Seed</param>
-    /// <param name="method">RNG method (every method except pokewalker is ignored)</param>
-    /// <param name="pk">PKM object</param>
-    /// <param name="original">original encounter pkm</param>
-    private static bool PokeWalkerSeedFail(uint seed, PIDType method, PKM pk, PKM original)
-    {
-        if (method != PIDType.Pokewalker)
-            return false;
-
-        if (seed % 24 != (int)original.Nature)
-            return true;
-
-        pk.TID16 = (ushort)Util.Rand.Next(65535);
-        pk.SID16 = (ushort)Util.Rand.Next(65535);
-        return false;
-    }
-
-    /// <summary>
-    /// Secondary fallback if PIDType.None to slot the PKM into its most likely type
-    /// </summary>
-    /// <param name="enc"></param>
-    /// <returns>PIDType that is likely used</returns>
-    private static PIDType FindLikelyPIDType(IEncounterTemplate enc) => enc switch
-    {
-        EncounterSlot3 s3 => s3.Species == (int)Species.Unown ? PIDType.Method_1_Unown : PIDType.Method_1,
-        EncounterStatic3 => PIDType.Method_1,
-        EncounterSlot3XD => PIDType.PokeSpot,
-        EncounterGift3 g => g.Method,
-        EncounterGift3JPN or EncounterGift3NY => PIDType.BACD_U_AX,
-        EncounterGift3Colo  or { Version: GameVersion.COLO or GameVersion.XD } => PIDType.CXD,
-
-        EncounterStatic4 s => s.Shiny switch
-        {
-            Shiny.Always => PIDType.ChainShiny, // Lake of Rage Gyarados
-            Shiny.Never => PIDType.Pokewalker, // Spiky Eared Pichu
-            _ => PIDType.Method_1,
-        },
-        EncounterStatic4Pokewalker => PIDType.Pokewalker,
-        PGT { GiftType: GiftType4.ManaphyEgg } => PIDType.Method_1,
-
-        _ => PIDType.None,
-    };
 
     /// <summary>
     /// Method to get the correct met level for a Pokémon. Move up the met level till all moves are legal

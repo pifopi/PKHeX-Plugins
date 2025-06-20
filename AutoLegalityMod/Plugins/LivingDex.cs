@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using Microsoft.VisualBasic.Devices;
 using System.Threading.Tasks;
 using AutoModPlugins.GUI;
-using System.Threading;
 
 namespace AutoModPlugins;
 

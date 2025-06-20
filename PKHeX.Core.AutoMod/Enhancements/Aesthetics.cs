@@ -7,7 +7,7 @@ namespace PKHeX.Core.AutoMod;
 
 public static class Aesthetics
 {
-    public static PersonalColor GetShinyColor(ushort species, byte form) => ShinyMap[species];
+    public static PersonalColor GetShinyColor(ushort species) => ShinyMap[species];
 
     private static ReadOnlySpan<PersonalColor> ShinyMap =>
     [

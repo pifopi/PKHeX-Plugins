@@ -31,7 +31,6 @@ public class LiveHeX : AutoModPlugin
             else
             {
                 editor.Focus();
-                // WinFormsUtil.Alert("LiveHeX already open!");
             }
         };
         c1.Name = "Menu_LiveHeX";
