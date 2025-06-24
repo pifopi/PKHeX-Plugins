@@ -1505,7 +1505,17 @@ public static class APILegality
         var res = versionlist.Where(v => group.Contains(v)).ToArray();
         return res.Length > 0 ? res : [version];
     }
-
+    /// <summary>
+    /// Generates a legal egg Pokémon based on the provided <see cref="ShowdownSet"/> and trainer information.
+    /// </summary>
+    /// <param name="dest">The destination trainer information to use for the generated egg.</param>
+    /// <param name="set">The <see cref="ShowdownSet"/> containing the desired Pokémon details.</param>
+    /// <param name="result">
+    /// Output parameter that will contain the <see cref="LegalizationResult"/> indicating the outcome of the generation process.
+    /// </param>
+    /// <returns>
+    /// A <see cref="PKM"/> instance representing the generated egg, or a template if generation failed.
+    /// </returns>
     public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result)
     {
         result = LegalizationResult.Failed;

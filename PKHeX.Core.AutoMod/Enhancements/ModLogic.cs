@@ -115,7 +115,18 @@ public static class ModLogic
         return pklist.OrderBy(z => z.Species);
     }
     public static int TrackingCount { get; set; } = 0;
+    /// <summary>
+    /// Generates a living dex for transfer between games, considering both source and destination game restrictions.
+    /// </summary>
+    /// <param name="src">The source trainer information.</param>
+    /// <returns>An enumerable of generated <see cref="PKM"/> objects valid for transfer.</returns>
     public static IEnumerable<PKM> GenerateTransferLivingDex(this ITrainerInfo src) => src.GenerateTransferLivingDex(Config);
+    /// <summary>
+    /// Generates a living dex for transfer between games, considering both source and destination game restrictions.
+    /// </summary>
+    /// <param name="src">The source trainer information.</param>
+    /// <param name="cfg">The living dex configuration specifying transfer options.</param>
+    /// <returns>An enumerable of generated <see cref="PKM"/> objects valid for transfer.</returns>
     public static IEnumerable<PKM> GenerateTransferLivingDex(this ITrainerInfo src, LivingDexConfig cfg)
     {
         var srcPersonal = GameData.GetPersonal(src.Version);
@@ -128,7 +139,7 @@ public static class ModLogic
         ConcurrentBag<PKM> pklist = [];
         var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(src.Version, lang: (LanguageID)src.Language) : src;
 
-        Parallel.For(1, srcPersonal.MaxSpeciesID+1, id => //parallel For's end is exclusive
+        Parallel.For(1, srcPersonal.MaxSpeciesID + 1, id => //parallel For's end is exclusive
         {
             var s = (ushort)id;
             if (!srcPersonal.IsSpeciesInGame(s))
@@ -406,10 +417,20 @@ public static class ModLogic
 
         return ctr;
     }
-
+    /// <summary>
+    /// Generates a team of six random legal Pokémon for the given trainer and personal table.
+    /// </summary>
+    /// <param name="tr">Trainer information to use for generating Pokémon.</param>
+    /// <returns>An array of six legal <see cref="PKM"/> objects.</returns>
     public static PKM[] GetSixRandomMons(this ITrainerInfo tr) =>
         tr.GetSixRandomMons(GameData.GetPersonal(tr.Version));
 
+    /// <summary>
+    /// Generates a team of six random legal Pokémon for the given trainer and personal table.
+    /// </summary>
+    /// <param name="tr">Trainer information to use for generating Pokémon.</param>
+    /// <param name="personal">Personal table containing species and form data.</param>
+    /// <returns>An array of six legal <see cref="PKM"/> objects.</returns>
     public static PKM[] GetSixRandomMons(this ITrainerInfo tr, IPersonalTable personal)
     {
         var result = new PKM[6];
@@ -510,6 +531,12 @@ public static class ModLogic
 
         return result;
     }
+    /// <summary>
+    /// Generates a living egg dex (one egg per species) for the given trainer and personal table.
+    /// </summary>
+    /// <param name="sav">Trainer information to use for generating eggs.</param>
+    /// <param name="personal">Personal table containing species data.</param>
+    /// <returns>An enumerable of generated <see cref="PKM"/> egg objects, one per species.</returns>
     public static IEnumerable<PKM> GenerateLivingEggDex(this ITrainerInfo sav, IPersonalTable personal)
     {
         var pklist = new ConcurrentBag<PKM>();
