@@ -946,16 +946,16 @@ public static class APILegality
             {
                 var tid = (ushort)fakeTID;
                 var sid = (ushort)(fakeTID >> 16);
-                if (!ShinyUtil.GetIsShiny(fakeTID, pid)) // battled
+                if (!ShinyUtil.GetIsShiny6(fakeTID, pid)) // battled
                     pid = ShinyUtil.GetShinyPID(tid, sid, pid, 0);
-                if (!ShinyUtil.GetIsShiny(pk.ID32, pid)) // captured
+                if (!ShinyUtil.GetIsShiny6(pk.ID32, pid)) // captured
                     pid = ShinyUtil.GetShinyPID(pk.TID16, pk.SID16, pid, ShinyUtil.GetShinyXor(pid, fakeTID) == 0 ? 0u : 1u);
             }
             else // Never
             {
-                if (ShinyUtil.GetIsShiny(fakeTID, pid)) // battled
+                if (ShinyUtil.GetIsShiny6(fakeTID, pid)) // battled
                     pid ^= 0x1000_0000;
-                if (ShinyUtil.GetIsShiny(pk.ID32, pid)) // captured
+                if (ShinyUtil.GetIsShiny6(pk.ID32, pid)) // captured
                     pid ^= 0x1000_0000;
             }
             pk.PID = pid;
