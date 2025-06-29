@@ -542,7 +542,6 @@ public static class APILegality
     private static PKM SanityCheckLocation(this PKM pk, IEncounterTemplate enc)
     {
         const int SharedNest = 162; // Shared Nest for online encounter
-        const int MaxLair = 244; // Dynamax Adventures
         pk.MetLocation = enc switch
         {
             EncounterStatic8N or EncounterStatic8ND or EncounterStatic8NC => SharedNest,

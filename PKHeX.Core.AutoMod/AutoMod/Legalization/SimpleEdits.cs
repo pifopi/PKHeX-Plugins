@@ -142,7 +142,7 @@ public static class SimpleEdits
 
         if (enc is EncounterStatic8N or EncounterStatic8NC or EncounterStatic8ND)
         {
-            pk.SetRaidShiny(shiny, enc); //handles SWSH raids
+            pk.SetRaidShiny(shiny); //handles SWSH raids
             return;
         }
 
@@ -230,7 +230,7 @@ public static class SimpleEdits
     /// <param name="pk">The PKM to modify.</param>
     /// <param name="shiny">The shiny type to set.</param>
     /// <param name="enc">The encounter template.</param>
-    public static void SetRaidShiny(this PKM pk, Shiny shiny, IEncounterTemplate enc)
+    public static void SetRaidShiny(this PKM pk, Shiny shiny)
     {
         if (pk.IsShiny)
             return;
