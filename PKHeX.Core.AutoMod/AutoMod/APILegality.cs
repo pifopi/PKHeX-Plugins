@@ -72,8 +72,6 @@ public static class APILegality
         var native = ModLogic.Config.NativeOnly && nativeOnly;
         var destType = template.GetType();
         var destVer = dest.GetSingleVersion();
-        if (destVer == GameVersion.HGSS)
-            destVer = GameVersion.SS; // HGSS as the destination version returns 0 for maxGameSpeciesID which then fails dest.ExistsInGame check.
         if (destVer <= 0 && dest is SaveFile s)
             destVer = s.Version;
         if (dest.Generation <= 2)
@@ -548,7 +546,6 @@ public static class APILegality
         pk.MetLocation = enc switch
         {
             EncounterStatic8N or EncounterStatic8ND or EncounterStatic8NC => SharedNest,
-            EncounterStatic8U => MaxLair,
             _ => pk.MetLocation,
         };
         return pk;
@@ -857,11 +854,6 @@ public static class APILegality
             else if (enc is EncounterMight9 m) FindTeraPIDIV(pk9, m, set, criteria);
             if (set.TeraType != MoveType.Any && set.TeraType != pk9.TeraType)
                 pk9.SetTeraType(set.TeraType);
-        }
-        else if (enc is EncounterStatic8U && set.Shiny)
-        {
-            // Dynamax Adventure shinies are always XOR 1 (thanks santacrab!)
-            pk.PID = SimpleEdits.GetShinyPID(pk.TID16, pk.SID16, pk.PID, 1);
         }
         else if (enc is IOverworldCorrelation8 eo)
         {
@@ -1353,8 +1345,6 @@ public static class APILegality
     {
         if (enc is IEncounterEgg && enc is not EncounterEgg8b)
             return criteria;
-        if (enc is EncounterStatic8U)
-            criteria = criteria with { Shiny = Shiny.Never };
         if(enc.Generation > 7)
             criteria = criteria with { Nature = Nature.Random };
         return enc.Species switch

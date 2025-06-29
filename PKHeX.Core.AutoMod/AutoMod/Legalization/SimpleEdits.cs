@@ -140,9 +140,9 @@ public static class SimpleEdits
             return;
         }
 
-        if (enc is EncounterStatic8N or EncounterStatic8NC or EncounterStatic8ND or EncounterStatic8U)
+        if (enc is EncounterStatic8N or EncounterStatic8NC or EncounterStatic8ND)
         {
-            pk.SetRaidShiny(shiny, enc); //handles SWSH raids and max lair
+            pk.SetRaidShiny(shiny, enc); //handles SWSH raids
             return;
         }
 
@@ -192,17 +192,14 @@ public static class SimpleEdits
             bool IsBit3Set() => ((pk.TID16 ^ pk.SID16 ^ (int)(pk.PID & 0xFFFF) ^ (int)(pk.PID >> 16)) & ~0x7) == 8;
             return;
         }
-        if (pk.Version == GameVersion.CXD && method == PIDType.CXD_ColoStarter) // eevee
+        if (pk.Version == GameVersion.CXD && method == PIDType.CXD && criteria.Shiny.IsShiny())  // CXD handling
         {
-            MethodCXD.SetStarterFromIVs((XK3)pk, criteria);
-            return;
+            if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee)
+                MethodCXD.SetStarterFromIVs((XK3)pk, in criteria);
+            else if (pk is XK3 xk)
+                MethodCXD.SetFromIVs(xk, in criteria, xk.PersonalInfo, false);
         }
-        if (pk is XK3 xk)
-        {
-            MethodCXD.SetFromIVs(xk, criteria, (PersonalInfo3)pk.PersonalInfo, false); // XD shinies
-            return;
-        }
-        TrainerIDVerifier.TryGetShinySID(pk.PID, pk.TID16, pk.Version, out var sid); // last ditch effort with SID setting
+        TrainerIDVerifier.TryGetShinySID(pk.PID, pk.TID16, pk.Version, out var sid); //gets a valid SID for the given TID and PID for shiny
         pk.SID16 = sid;
         if (isShiny && enc.Generation is 1 or 2)
             pk.SetShiny(); // lol there is no SID in gen 1/2.
@@ -245,9 +242,6 @@ public static class SimpleEdits
                 return;
 
             var xor = pk.ShinyXor;
-            if (enc is EncounterStatic8U && xor != 1 && shiny != Shiny.AlwaysSquare)
-                continue;
-
             if ((shiny == Shiny.AlwaysStar && xor == 1) || (shiny == Shiny.AlwaysSquare && xor == 0) || ((shiny is Shiny.Always or Shiny.Random) && xor < 2)) // allow xor1 and xor0 for den shinies
                 return;
         }
