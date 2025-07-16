@@ -540,7 +540,7 @@ public static class ModLogic
     public static IEnumerable<PKM> GenerateLivingEggDex(this ITrainerInfo sav, IPersonalTable personal)
     {
         var pklist = new ConcurrentBag<PKM>();
-        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Generation) : sav;
+        var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Version) : sav;
         var context = sav.Context;
         var generation = sav.Generation;
         Parallel.For(1, personal.MaxSpeciesID + 1, id => //parallel For's end is exclusive

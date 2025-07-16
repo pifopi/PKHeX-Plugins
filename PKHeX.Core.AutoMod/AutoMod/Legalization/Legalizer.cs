@@ -21,7 +21,7 @@ public static class Legalizer
     /// <returns>Legalized PKM (hopefully legal)</returns>
     public static PKM Legalize(this PKM pk)
     {
-        var tr = TrainerSettings.GetSavedTrainerData(pk.Format);
+        var tr = TrainerSettings.GetSavedTrainerData(pk.Version);
         return tr.MutateLanguage((LanguageID)pk.Language, pk.Version).Legalize(pk);
     }
 
@@ -242,7 +242,7 @@ public static class Legalizer
 
         var pkm = almres.Created;
         var trainer = TrainerSettings.GetSavedTrainerData(pkm, tr);
-        pkm.SetAllTrainerData(trainer);
+        pkm.SetAllTrainerData(tr);
         return new AsyncLegalizationResult(pkm, almres.Status);
     }
 

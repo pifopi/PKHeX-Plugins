@@ -21,7 +21,7 @@ public static class ShowdownSetGenningTests
         var sav = SaveUtil.GetBlankSAV(game, "ALM");
         TrainerSettings.Register(sav);
 
-        var trainer = TrainerSettings.GetSavedTrainerData(game.GetGeneration(), game);
+        var trainer = TrainerSettings.GetSavedTrainerData(game);
         RecentTrainerCache.SetRecentTrainer(trainer);
 
         var set = new ShowdownSet(txt);

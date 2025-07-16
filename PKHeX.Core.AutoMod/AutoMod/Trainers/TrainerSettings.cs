@@ -12,8 +12,10 @@ public static class TrainerSettings
     private static readonly string ProcessPath = Environment.ProcessPath ?? string.Empty;
     private static readonly TrainerDatabase Database = new();
     private static readonly string TrainerPath = Path.Combine(Path.GetDirectoryName(ProcessPath) ?? string.Empty , "trainers");
+    private static readonly SimpleTrainerInfo DefaultFallback9 = new(GameVersion.VL) { Generation = 9 };
     private static readonly SimpleTrainerInfo DefaultFallback8 = new(GameVersion.SW) { Generation = 8 };
     private static readonly SimpleTrainerInfo DefaultFallback7 = new(GameVersion.UM) { Generation = 7 };
+    
     private static ReadOnlySpan<GameVersion> FringeVersions =>
     [
         GameVersion.GG,
@@ -27,7 +29,7 @@ public static class TrainerSettings
 
     public static ITrainerInfo DefaultFallback(byte gen = 8, LanguageID? lang = null)
     {
-        var fallback = gen > 7 ? DefaultFallback8 : DefaultFallback7;
+        var fallback = gen > 8 ? DefaultFallback9 : gen > 7 ? DefaultFallback8 : DefaultFallback7;
         return lang == null ? fallback : (ITrainerInfo)new SimpleTrainerInfo(fallback.Version) { Language = (int)lang };
     }
 
