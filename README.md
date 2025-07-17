@@ -4,7 +4,7 @@ This Fork is owned by [@santacrab2](https://github.com/santacrab2)
 The original project is owned by [@architdate](https://github.com/architdate) (Discord: thecommondude#8240) and [@kwsch](https://github.com/kwsch) (Discord: Kurt#6024).
 
 ## Building  
-This project requires an IDE that supports compiling .NET based code, such as Visual Studio 2022, and the [.NET 8.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0).
+This project requires an IDE that supports compiling .NET based code, such as Visual Studio 2022, and the [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
 
 **Regular Builds**  
 Regular builds will usually succeed unless there are changes that are incompatible with the NuGet [PKHeX.Core](https://www.nuget.org/packages/PKHeX.Core) package dependency specified in the `.csproj` files of the projects. If building fails, use the bleeding edge method instead.
