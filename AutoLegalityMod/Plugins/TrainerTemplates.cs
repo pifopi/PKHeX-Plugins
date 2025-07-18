@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoModPlugins.Properties;
 using PKHeX.Core;
@@ -41,6 +42,21 @@ namespace AutoModPlugins
                     continue;
                 }
             }
+            var page = new TaskDialogPage();
+            page.Text = $"The randomized templates were created in {TrainerPath}, edit them to match your preferences.";
+            var ok = new TaskDialogButton("OK");
+            var gotofolder = new TaskDialogButton("Open Folder");
+            page.Buttons.Add(ok);
+            page.Buttons.Add(gotofolder);
+            gotofolder.Click += (s, args) =>
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = TrainerPath,
+                    UseShellExecute = true
+                });
+            };
+            TaskDialog.ShowDialog(page);
         }
 
     }
