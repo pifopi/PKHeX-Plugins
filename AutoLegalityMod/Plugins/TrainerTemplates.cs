@@ -46,6 +46,7 @@ namespace AutoModPlugins
             page.Text = $"The randomized templates were created in {TrainerPath}, edit them to match your preferences.";
             var ok = new TaskDialogButton("OK");
             var gotofolder = new TaskDialogButton("Open Folder");
+            page.AllowCancel = true;
             page.Buttons.Add(ok);
             page.Buttons.Add(gotofolder);
             gotofolder.Click += (s, args) =>
