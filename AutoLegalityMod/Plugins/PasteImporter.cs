@@ -41,7 +41,7 @@ public class PasteImporter : AutoModPlugin
         if (e.KeyCode is not (Keys.NumPad6 or Keys.D6 or Keys.A) || !e.Control)
             return;
         PKM[] result = [];
-        var sav = SaveFileEditor.SAV;
+        var sav = TrainerSettings.GetSavedTrainerData(SaveFileEditor.SAV.Version);
         if (e.KeyCode is not Keys.A)
         {
             if (WinFormsUtil.Prompt(MessageBoxButtons.OKCancel, "Generate 6 Random Pokemon?") != DialogResult.OK)
@@ -64,10 +64,10 @@ public class PasteImporter : AutoModPlugin
         var slot = slotIndexStart - 1;
         foreach (var pk in result)
         {
-            slot = sav.NextOpenBoxSlot(slot);
+            slot = SaveFileEditor.SAV.NextOpenBoxSlot(slot);
             if (slot == -1)
                 break;
-            sav.SetBoxSlotAtIndex(pk, slot);
+            SaveFileEditor.SAV.SetBoxSlotAtIndex(pk, slot);
         }
         SaveFileEditor.ReloadSlots();
     }
