@@ -26,22 +26,28 @@ namespace AutoModPlugins
         {
             if (!Directory.Exists(TrainerPath))
                 Directory.CreateDirectory(TrainerPath);
+            var preservesettings = ParseSettings.Settings.Handler.CheckActiveHandler;
+            ParseSettings.Settings.Handler.CheckActiveHandler = false;
             for (int i = 1; i < 52; i++)
             {
-                try
-                {
-                    var gen = ((GameVersion)i).GetGeneration() == 0 ? 1 : ((GameVersion)i).GetGeneration();
-                    var text = $"Pikachu\nOT: {TrainerSettings.DefaultOT}\nTID: {Random.Shared.Next(ushort.MaxValue)}\nSID: {Random.Shared.Next(ushort.MaxValue)}\n.Version={(GameVersion)i}";
-                    var set = new RegenTemplate(new ShowdownSet(text), (byte)gen);
-                    var temp = SaveUtil.GetBlankSAV((GameVersion)i, TrainerSettings.DefaultOT);
-                    var result = temp.GetLegalFromSet(set);
-                    File.WriteAllBytes(TrainerPath + "/" + result.Created.FileName, result.Created.EncryptedBoxData);
-                }
-                catch (Exception ex)
-                {
+                if (!Enum.IsDefined(typeof(GameVersion), (byte)i))
                     continue;
+                var gen = ((GameVersion)i).GetGeneration() == 0 ? 1 : ((GameVersion)i).GetGeneration();
+                var TID = (ushort)Random.Shared.Next(ushort.MaxValue);
+                var SID = (ushort)Random.Shared.Next(ushort.MaxValue);
+                while (TrainerIDVerifier.IsOTIDSuspicious(TID,SID))
+                {
+                    TID = (ushort)Random.Shared.Next(ushort.MaxValue);
+                    SID = (ushort)Random.Shared.Next(ushort.MaxValue);
                 }
+                var text = $"Pikachu\nOT: {TrainerSettings.DefaultOT}\nTID: {Random.Shared.Next(ushort.MaxValue)}\nSID: {Random.Shared.Next(ushort.MaxValue)}\n.Version={(GameVersion)i}";
+                var set = new RegenTemplate(new ShowdownSet(text), (byte)gen);
+
+                var temp = SaveUtil.GetBlankSAV((GameVersion)i, TrainerSettings.DefaultOT); 
+                var result = temp.GetLegalFromSet(set);
+                File.WriteAllBytes(TrainerPath + "/" + result.Created.FileName, result.Created.EncryptedBoxData);
             }
+            ParseSettings.Settings.Handler.CheckActiveHandler = preservesettings;
             var page = new TaskDialogPage();
             page.Text = $"The randomized templates were created in {TrainerPath}, edit them to match your preferences.";
             var ok = new TaskDialogButton("OK");
