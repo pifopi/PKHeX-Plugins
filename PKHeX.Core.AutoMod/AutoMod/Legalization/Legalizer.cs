@@ -241,7 +241,7 @@ public static class Legalizer
             return almres;
 
         var pkm = almres.Created;
-        var trainer = TrainerSettings.GetSavedTrainerData(pkm, tr);
+        var trainer = TrainerSettings.GetSavedTrainerData(pkm.Version);
         pkm.SetAllTrainerData(tr);
         return new AsyncLegalizationResult(pkm, almres.Status);
     }

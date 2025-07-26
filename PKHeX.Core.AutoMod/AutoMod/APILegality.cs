@@ -845,6 +845,7 @@ public static class APILegality
     /// <param name="criteria"></param>
     private static void PreSetPIDIV(this PKM pk, IEncounterTemplate enc, IBattleTemplate set, EncounterCriteria criteria)
     {
+        var pidiv = MethodFinder.Analyze(pk);
         if (enc is ITeraRaid9)
         {
             var pk9 = (PK9)pk;
@@ -882,6 +883,12 @@ public static class APILegality
         else if (enc is EncounterSlot3 { Species: (ushort)Species.Unown } enc3)
         {
             enc3.SetFromIVsUnown((PK3)pk, criteria);
+        }
+        if (pk.Version == GameVersion.CXD && pidiv.Type == PIDType.CXD && criteria.Shiny.IsShiny())  // CXD handling
+        {
+            if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee)
+                MethodCXD.SetStarterFromIVs((XK3)pk, in criteria);
+            
         }
     }
 

@@ -192,13 +192,8 @@ public static class SimpleEdits
             bool IsBit3Set() => ((pk.TID16 ^ pk.SID16 ^ (int)(pk.PID & 0xFFFF) ^ (int)(pk.PID >> 16)) & ~0x7) == 8;
             return;
         }
-        if (pk.Version == GameVersion.CXD && method == PIDType.CXD && criteria.Shiny.IsShiny())  // CXD handling
-        {
-            if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee)
-                MethodCXD.SetStarterFromIVs((XK3)pk, in criteria);
-            else if (pk is XK3 xk)
-                MethodCXD.SetFromIVs(xk, in criteria, xk.PersonalInfo, false);
-        }
+        if (pk.Version == GameVersion.CXD && method == PIDType.CXD && criteria.Shiny.IsShiny() && pk is XK3 xk && pk.Species != (ushort)Eevee)
+            MethodCXD.SetFromIVs(xk, in criteria, xk.PersonalInfo, false);
         TrainerIDVerifier.TryGetShinySID(pk.PID, pk.TID16, pk.Version, out var sid); //gets a valid SID for the given TID and PID for shiny
         pk.SID16 = sid;
         if (isShiny && enc.Generation is 1 or 2)

@@ -129,11 +129,9 @@ public static class TrainerSettings
     /// <param name="template_save">Fallback trainer data if no new parent is found.</param>
     /// <param name="lang">Language to request for</param>
     /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="template_save"/>.</returns>
-    public static ITrainerInfo GetSavedTrainerData(PKM pk, ITrainerInfo template_save, LanguageID? lang = null)
+    public static ITrainerInfo GetSavedTrainerData(PKM pk, LanguageID? lang = null)
     {
-        byte origin = pk.Generation;
-        byte format = pk.Format;
-        return format != origin ? GetSavedTrainerData(format, template_save.Version, fallback: template_save, lang: lang) : GetSavedTrainerData((byte)origin, pk.Version, template_save, lang);
+        return GetSavedTrainerData(pk.Version,lang);
     }
 
     /// <summary>
