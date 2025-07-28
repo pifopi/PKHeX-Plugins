@@ -21,7 +21,6 @@ public static class TestUtil
                 return;
 
             EncounterEvent.RefreshMGDB([]);
-            RibbonStrings.ResetDictionary(GameInfo.Strings.ribbons);
             Legalizer.EnableEasterEggs = false;
             APILegality.SetAllLegalRibbons = false;
             APILegality.Timeout = 99999;
