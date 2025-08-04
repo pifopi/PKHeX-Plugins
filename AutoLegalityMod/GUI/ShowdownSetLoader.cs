@@ -222,7 +222,7 @@ public static class ShowdownSetLoader
 
     public static void SetAPILegalitySettings(PluginSettings settings)
     {
-        APILegality.UseTrainerData = settings.UseTrainerData;
+        APILegality.UseTrainerData = settings.UseTrainerFolder;
         TrainerSettings.DefaultOT = settings.DefaultOT;
         TrainerSettings.DefaultTID16 = settings.DefaultTID16;
         TrainerSettings.DefaultSID16 = settings.DefaultSID16;

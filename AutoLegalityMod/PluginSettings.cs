@@ -31,7 +31,7 @@ public class PluginSettings
 
     [Category(Trainer)]
     [Description("Enables use of custom trainer data based on the \"trainers\" folder.")]
-    public bool UseTrainerData { get; set; } = true;
+    public bool UseTrainerFolder { get; set; } = true;
 
     [Category(Trainer)]
     [Description("Default OT Name to use while generating Pokémon.")]

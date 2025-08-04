@@ -70,26 +70,9 @@ public static class TrainerSettings
     public static ITrainerInfo GetSavedTrainerData(byte generation, GameVersion ver = GameVersion.Any, ITrainerInfo? fallback = null, LanguageID? lang = null)
     {
         bool isSpecialVersion = IsSpecialVersion(ver);
-        if (isSpecialVersion)
-        {
-            var tr = ver switch
-            {
-                GameVersion.BD => GameVersion.SP,
-                GameVersion.SP => GameVersion.BD,
-                GameVersion.GE => GameVersion.GP,
-                GameVersion.GP => GameVersion.GE,
-                _ => GameVersion.PLA,
-            };
-            var trainer = Database.GetTrainer(tr, lang);
-            if (trainer is not null)
-                return trainer;
-        }
-        else
-        {
-            var trainer = Database.GetTrainerFromGen(generation, lang);
-            if (trainer is not null)
-                return trainer;
-        }
+        var trainer = Database.GetTrainerFromGen(generation, lang);
+        if (trainer is not null)
+            return trainer;
 
         if (fallback == null)
             return isSpecialVersion ? DefaultFallback(ver, lang) : DefaultFallback(generation, lang);

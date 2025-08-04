@@ -164,7 +164,9 @@ public abstract class AutoModPlugin : IPlugin
         Console.WriteLine($"{Name} was notified that a Save File was just loaded.");
         if (SaveFileEditor.SAV.State.Exportable)
         {   // Register the trainer data for the current save file
-            TrainerSettings.Register(SaveFileEditor.SAV);
+            _settings.DefaultOT = SaveFileEditor.SAV.OT;
+            _settings.DefaultTID16 = SaveFileEditor.SAV.TID16;
+            _settings.DefaultSID16 = SaveFileEditor.SAV.SID16;
         }
     }
 
