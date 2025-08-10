@@ -43,7 +43,7 @@ namespace AutoModPlugins
                 var text = $"Pikachu\nOT: {TrainerSettings.DefaultOT}\nTID: {Random.Shared.Next(ushort.MaxValue)}\nSID: {Random.Shared.Next(ushort.MaxValue)}\n.Version={(GameVersion)i}";
                 var set = new RegenTemplate(new ShowdownSet(text), (byte)gen);
 
-                var temp = SaveUtil.GetBlankSAV((GameVersion)i, TrainerSettings.DefaultOT); 
+                var temp = BlankSaveFile.Get((GameVersion)i, TrainerSettings.DefaultOT); 
                 var result = temp.GetLegalFromSet(set);
                 File.WriteAllBytes(TrainerPath + "/" + result.Created.FileName, result.Created.EncryptedBoxData);
             }

@@ -86,13 +86,13 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         if (!checkBox2.Checked || !Remote.Bot.Connected)
             return;
 
-        if (slot is not SlotInfoBox(var box, var slotpkm))
+        if (slot is not SlotInfoBox SIB)
             return;
 
         if (!type.IsContentChange())
             return;
         SAV.SAV.AdaptToSaveFile(pkm);
-        Remote.Bot.SendSlot(RamOffsets.WriteBoxData(Remote.Bot.Version) ? pkm.EncryptedBoxData : pkm.EncryptedPartyData, box, slotpkm);
+        Remote.Bot.SendSlot(RamOffsets.WriteBoxData(Remote.Bot.Version) ? pkm.EncryptedBoxData : pkm.EncryptedPartyData, SIB.Box, SIB.Slot);
     }
 
     private void SetTrainerData(SaveFile sav)
