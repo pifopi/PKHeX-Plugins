@@ -10,7 +10,7 @@ public static class RegenUtil
     /// <summary>
     /// Ingests lines from <see cref="lines"/> and removes any that were consumed.
     /// </summary>
-    public static bool GetTrainerInfo(IList<string> lines, byte format, out ITrainerInfo tr)
+    public static bool GetTrainerInfo(IList<BattleTemplateParseError> lines, byte format, out ITrainerInfo tr)
     {
         var sti = new SimpleTrainerInfo { Generation = format };
 
@@ -20,7 +20,7 @@ public static class RegenUtil
 
         for (int i = 0; i < lines.Count;)
         {
-            if (!TrySplit(lines[i], out var split))
+            if (!TrySplit(lines[i].Value, out var split))
             {
                 i++;
                 continue;

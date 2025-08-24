@@ -51,7 +51,7 @@ public sealed class RegenSet
             Batch = new StringInstructionSet(modified.ToArray().AsSpan());
     }
 
-    public RegenSet(IList<string> lines, byte format, Shiny shiny = Shiny.Never)
+    public RegenSet(IList<BattleTemplateParseError> lines, byte format, Shiny shiny = Shiny.Never)
     {
         Extra = new RegenSetting { ShinyType = shiny };
         HasExtraSettings = Extra.SetRegenSettings(lines);
@@ -74,12 +74,12 @@ public sealed class RegenSet
         for (int i = 0; i < lines.Count;)
         {
             var line = lines[i];
-            if (line.Contains("Unknown Ability")) // remove non-uniform parsing error messages
+            if (line.Value.Contains("Unknown Ability")) // remove non-uniform parsing error messages
             {
                 lines.RemoveAt(i);
                 continue; 
             }
-            var sanitized = line.Replace(">=", "≥").Replace("<=", "≤").Replace("Unknown Token: ","");
+            var sanitized = line.Value.Replace(">=", "≥").Replace("<=", "≤").Replace("Unknown Token: ","");
             if (StringInstruction.TryParseInstruction(sanitized, out var mod))
             {
                 mods.Add(mod);
@@ -105,7 +105,7 @@ public sealed class RegenSet
                 lines.RemoveAt(i);
                 continue;
             }
-            if (line == string.Empty)
+            if (line.Value == string.Empty)
             {
                 lines.RemoveAt(i);
                 continue;
