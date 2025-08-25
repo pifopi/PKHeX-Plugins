@@ -20,6 +20,11 @@ public static class RegenUtil
 
         for (int i = 0; i < lines.Count;)
         {
+            if (lines[i].Type != BattleTemplateParseErrorType.TokenFailParse)
+            {
+                i++;
+                continue;
+            }
             if (!TrySplit(lines[i].Value, out var split))
             {
                 i++;
@@ -103,8 +108,6 @@ public static class RegenUtil
         var index = line.IndexOf(Splitter);
         if (index < 0)
             return false;
-        if (line.ToString().Contains("Unknown")) // handle non-uniform invalid line initial strings
-            line = line[(index+2)..]; // remove "Unknown Token: " from invalid lines to process
         index = line.IndexOf(Splitter);
         if (index < 0)
             return false;

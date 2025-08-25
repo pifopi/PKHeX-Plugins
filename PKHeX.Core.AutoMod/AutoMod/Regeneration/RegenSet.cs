@@ -74,41 +74,44 @@ public sealed class RegenSet
         for (int i = 0; i < lines.Count;)
         {
             var line = lines[i];
-            if (line.Value.Contains("Unknown Ability")) // remove non-uniform parsing error messages
+            if (line.Type == BattleTemplateParseErrorType.LineLength && line.Value.Length != 0)
             {
-                lines.RemoveAt(i);
-                continue; 
-            }
-            var sanitized = line.Value.Replace(">=", "≥").Replace("<=", "≤").Replace("Unknown Token: ","");
-            if (StringInstruction.TryParseInstruction(sanitized, out var mod))
-            {
-                mods.Add(mod);
-                lines.RemoveAt(i);
+                i++;
                 continue;
             }
+            if (line.Type == BattleTemplateParseErrorType.TokenUnknown)
+            {
+                var sanitized = line.Value.Replace(">=", "≥").Replace("<=", "≤");
+                if (StringInstruction.TryParseInstruction(sanitized, out var mod))
+                {
+                    mods.Add(mod);
+                    lines.RemoveAt(i);
+                    continue;
+                }
 
-            if (RegenUtil.IsEncounterFilter(sanitized, out var e))
-            {
-                eFilter.Add(e);
-                lines.RemoveAt(i);
-                continue;
-            }
-            if (RegenUtil.IsVersionFilter(sanitized, out var v))
-            {
-                vFilter.Add(v);
-                lines.RemoveAt(i);
-                continue;
-            }
-            if (RegenUtil.IsSeedFilter(sanitized,out var s))
-            {
-                sFilter.Add(s);
-                lines.RemoveAt(i);
-                continue;
-            }
-            if (line.Value == string.Empty)
-            {
-                lines.RemoveAt(i);
-                continue;
+                if (RegenUtil.IsEncounterFilter(sanitized, out var e))
+                {
+                    eFilter.Add(e);
+                    lines.RemoveAt(i);
+                    continue;
+                }
+                if (RegenUtil.IsVersionFilter(sanitized, out var v))
+                {
+                    vFilter.Add(v);
+                    lines.RemoveAt(i);
+                    continue;
+                }
+                if (RegenUtil.IsSeedFilter(sanitized, out var s))
+                {
+                    sFilter.Add(s);
+                    lines.RemoveAt(i);
+                    continue;
+                }
+                if (line.Value == string.Empty)
+                {
+                    lines.RemoveAt(i);
+                    continue;
+                }
             }
             i++;
         }
