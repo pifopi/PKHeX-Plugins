@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 
 namespace PKHeX.Core.AutoMod;
@@ -73,7 +73,7 @@ public static class ShowdownEdits
 
     /// <summary>
     /// Sets the ability of the given <see cref="PKM"/> based on the provided <see cref="IBattleTemplate"/> and <see cref="AbilityPermission"/> preference.
-    /// Handles hidden abilities, ability number selection, and special cases for transferred Pok�mon.
+    /// Handles hidden abilities, ability number selection, and special cases for transferred Pokémon.
     /// </summary>
     /// <param name="pk">The <see cref="PKM"/> to modify.</param>
     /// <param name="set">The <see cref="IBattleTemplate"/> containing the desired ability information.</param>
@@ -176,8 +176,17 @@ public static class ShowdownEdits
 
         if (enc is IFixedTrainer { IsFixedTrainer: true })
         {
-            // Set this beforehand in case it is true. Will early return if it is also IFixedNickname
-            // Wait for PKHeX to expose this instead of using reflection
+            if (enc is EncounterTrade1 et1 && pk.Context >= EntityContext.Gen7)
+            {
+                pk.OriginalTrainerName = (LanguageID)pk.Language switch
+                {
+                    LanguageID.Japanese => "トレーナー",
+                    LanguageID.French => "Dresseur",
+                    LanguageID.Italian => "Allenatore",
+                    LanguageID.Spanish => "Entrenador",
+                    _ => "Trainer",
+                };
+            }
         }
         // don't bother checking EncounterTrade nicknames for length validity
         if (enc is IFixedNickname { IsFixedNickname: true } et)
