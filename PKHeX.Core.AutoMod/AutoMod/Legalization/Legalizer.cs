@@ -232,7 +232,6 @@ public static class Legalizer
     /// <param name="tr">trainer data</param>
     /// <param name="set">showdown set to legalize from</param>
     /// <param name="template">pkm file to legalize</param>
-    /// <param name="nativeOnly"></param>
     /// <returns>LegalizationResult</returns>
     public static AsyncLegalizationResult TryAPIConvert(this ITrainerInfo tr, IBattleTemplate set, PKM template, IEncounterable? enc = null)
     {

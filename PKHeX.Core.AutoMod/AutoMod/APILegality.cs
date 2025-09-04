@@ -44,7 +44,6 @@ public static class APILegality
     /// <param name="template">rough pkm that has all the <see cref="set"/> values entered</param>
     /// <param name="set">Showdown set object</param>
     /// <param name="satisfied">If the final result is legal or not</param>
-    /// <param name="nativeOnly"></param>
     public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, IEncounterable? ogenc = null)
     {
         RegenSet regen;
@@ -290,8 +289,6 @@ public static class APILegality
     /// <param name="destVer">Version in which the Pokémon needs to be imported</param>
     /// <param name="batchEdit">Whether settings currently allow batch commands</param>
     /// <param name="set">Set information to be used to filter the game list</param>
-    /// <param nativeOnly="set">Whether to only return encounters from the current version</param>
-    /// <param name="nativeOnly"></param>
     /// <returns>List of filtered games to check encounters for</returns>
     internal static GameVersion[] FilteredGameList(PKM template, GameVersion destVer, bool batchEdit, IBattleTemplate set)
     {
