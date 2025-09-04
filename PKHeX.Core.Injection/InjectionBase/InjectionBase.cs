@@ -5,7 +5,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public abstract class InjectionBase(LiveHeXVersion lv)
+public abstract class InjectionBase()
 {
     public const decimal BotbaseVersion = 2.4m;
 
