@@ -44,18 +44,18 @@ public abstract class InjectionBase()
     protected static InjectionBase GetInjector(LiveHeXVersion version)
     {
         if (LPLGPE.SupportedVersions.Contains(version))
-            return new LPLGPE(version);
+            return new LPLGPE();
 
         if (LPBDSP.SupportedVersions.Contains(version))
-            return new LPBDSP(version);
+            return new LPBDSP();
 
         if (LPPointer.SupportedVersions.Contains(version))
-            return new LPPointer(version);
+            return new LPPointer();
 
         if (!LPBasic.SupportedVersions.Contains(version))
             throw new ArgumentOutOfRangeException(nameof(version), version, $"Unknown {nameof(LiveHeXVersion)}.");
 
-        return new LPBasic(version);
+        return new LPBasic();
     }
 
     public virtual Span<byte> ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm) => [];

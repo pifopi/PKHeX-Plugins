@@ -8,7 +8,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public sealed class LPBDSP(LiveHeXVersion lv) : InjectionBase(lv)
+public sealed class LPBDSP : InjectionBase
 {
     public static ReadOnlySpan<LiveHeXVersion> SupportedVersions =>
     [

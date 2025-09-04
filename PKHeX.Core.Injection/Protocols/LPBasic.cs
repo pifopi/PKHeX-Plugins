@@ -6,7 +6,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public sealed class LPBasic(LiveHeXVersion lv) : InjectionBase(lv)
+public sealed class LPBasic : InjectionBase
 {
     public static ReadOnlySpan<LiveHeXVersion> SupportedVersions =>
     [
