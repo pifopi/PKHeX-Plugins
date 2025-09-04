@@ -19,14 +19,12 @@ public static class ModLogic
         IncludeForms = false,
         SetShiny = false,
         SetAlpha = false,
-        NativeOnly = false,
         TransferVersion = GameVersion.SL,
     };
 
     public static bool IncludeForms { get; set; }
     public static bool SetShiny { get; set; }
     public static bool SetAlpha { get; set; }
-    public static bool NativeOnly { get; set; }
     public static GameVersion TransferVersion { get; set; }
     /// <summary>
     /// Exports the <see cref="SaveFile.CurrentBox"/> to <see cref="ShowdownSet"/> as a single string.
@@ -100,7 +98,7 @@ public static class ModLogic
 
                 if (!personal.IsPresentInGame(s, form) || FormInfo.IsLordForm(s, form, context) || FormInfo.IsBattleOnlyForm(s, form, generation) || FormInfo.IsFusedForm(s, form, generation) || (FormInfo.IsTotemForm(s, form) && context is not EntityContext.Gen7))
                     continue;
-                var pk = AddPKM(sav, tr, s, form, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly);
+                var pk = AddPKM(sav, tr, s, form, cfg.SetShiny, cfg.SetAlpha);
                 if (pk is null || pklist.Any(x => x.Species == pk.Species && x.Form == pk.Form && x.Species != 869))
                     continue;
 
@@ -156,7 +154,7 @@ public static class ModLogic
                 if (!destPersonal.IsPresentInGame(s, f) || FormInfo.IsLordForm(s, f, context) || FormInfo.IsBattleOnlyForm(s, f, generation) || FormInfo.IsFusedForm(s, f, generation) || (FormInfo.IsTotemForm(s, f) && context is not EntityContext.Gen7))
                     continue;
                 var form = cfg.IncludeForms ? f : GetBaseForm((Species)s, f, src);
-                var pk = AddPKM(src, tr, s, form, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly);
+                var pk = AddPKM(src, tr, s, form, cfg.SetShiny, cfg.SetAlpha);
                 if (pk is null || pklist.Any(x => x.Species == pk.Species && x.Form == pk.Form))
                     continue;
 
@@ -193,9 +191,9 @@ public static class ModLogic
         return f;
     }
 
-    private static PKM? AddPKM(ITrainerInfo sav, ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha, bool nativeOnly)
+    private static PKM? AddPKM(ITrainerInfo sav, ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha)
     {
-        if (sav.GetRandomEncounter(species, form, shiny, alpha, nativeOnly, out var pk) && pk is { Species: not 0 })
+        if (sav.GetRandomEncounter(species, form, shiny, alpha, out var pk) && pk is { Species: not 0 })
         {
             pk.Heal();
             return pk;
@@ -206,7 +204,7 @@ public static class ModLogic
             return null;
 
         tr = new SimpleTrainerInfo(GameVersion.YW) { Language = tr.Language, OT = tr.OT, TID16 = tr.TID16 };
-        var enc = tr.GetRandomEncounter(species, form, shiny, alpha, nativeOnly, out var pkm);
+        var enc = tr.GetRandomEncounter(species, form, shiny, alpha, out var pkm);
         if (enc && pkm is PK1 pk1)
             return pk1.ConvertToPK2();
         return null;
@@ -223,10 +221,10 @@ public static class ModLogic
     /// <param name="nativeOnly"></param>
     /// <param name="pk">Result legal pkm</param>
     /// <returns>True if a valid result was generated, false if the result should be ignored.</returns>
-    public static bool GetRandomEncounter(this ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha, bool nativeOnly, out PKM? pk)
+    public static bool GetRandomEncounter(this ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha, out PKM? pk)
     {
         var blank = EntityBlank.GetBlank(tr);
-        pk = GetRandomEncounter(blank, tr, species, form, shiny, alpha, nativeOnly);
+        pk = GetRandomEncounter(blank, tr, species, form, shiny, alpha);
         if (pk is null)
             return false;
 
@@ -245,7 +243,7 @@ public static class ModLogic
     /// <param name="alpha"></param>
     /// <param name="nativeOnly"></param>
     /// <returns>Result legal pkm, null if data should be ignored.</returns>
-    private static PKM? GetRandomEncounter(PKM blank, ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha, bool nativeOnly)
+    private static PKM? GetRandomEncounter(PKM blank, ITrainerInfo tr, ushort species, byte form, bool shiny, bool alpha)
     {
         blank.Species = species;
         blank.Gender = blank.GetSaneGender();
@@ -282,7 +280,7 @@ public static class ModLogic
         template.ApplySetDetails(set);
 
         var t = template.Clone();
-        var almres = tr.TryAPIConvert(set, t, nativeOnly);
+        var almres = tr.TryAPIConvert(set, t);
         var pk = almres.Created;
         var success = almres.Status;
 
@@ -294,7 +292,7 @@ public static class ModLogic
         template.ApplySetDetails(set);
 
         t = template.Clone();
-        almres = tr.TryAPIConvert(set, t, nativeOnly);
+        almres = tr.TryAPIConvert(set, t);
         pk = almres.Created;
         success = almres.Status;
         if (pk.Species is (ushort)Gholdengo)

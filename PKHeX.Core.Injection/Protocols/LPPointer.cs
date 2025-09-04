@@ -6,7 +6,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(lv, useCache)
+public sealed class LPPointer(LiveHeXVersion lv) : InjectionBase(lv)
 {
     public static ReadOnlySpan<LiveHeXVersion> SupportedVersions =>
     [
@@ -218,7 +218,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
             return ArrayUtil.ConcatAll(allpkm.ToArray());
 
         var lv = psb.Version;
-        var b1s1 = psb.GetCachedPointer(sb, GetB1S1Pointer(lv));
+        var b1s1 = sb.GetPointerAddress(GetB1S1Pointer(lv));
         var boxsize = RamOffsets.GetSlotCount(lv) * RamOffsets.GetSlotSize(lv);
         var boxstart = b1s1 + (ulong)(box * boxsize);
         return psb.com.ReadBytes(boxstart, boxsize);
@@ -231,7 +231,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
         var lv = psb.Version;
         var slotsize = RamOffsets.GetSlotSize(lv);
-        var b1s1 = psb.GetCachedPointer(sb, GetB1S1Pointer(lv));
+        var b1s1 = sb.GetPointerAddress(GetB1S1Pointer(lv));
         var boxsize = RamOffsets.GetSlotCount(lv) * slotsize;
         var boxstart = b1s1 + (ulong)(box * boxsize);
         var slotstart = boxstart + (ulong)(slot * slotsize);
@@ -245,7 +245,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
         var lv = psb.Version;
         var slotsize = RamOffsets.GetSlotSize(lv);
-        var b1s1 = psb.GetCachedPointer(sb, GetB1S1Pointer(lv));
+        var b1s1 = sb.GetPointerAddress(GetB1S1Pointer(lv));
         var boxsize = RamOffsets.GetSlotCount(lv) * slotsize;
         var boxstart = b1s1 + (ulong)(box * boxsize);
         var slotstart = boxstart + (ulong)(slot * slotsize);
@@ -258,7 +258,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
             return;
 
         var lv = psb.Version;
-        var b1s1 = psb.GetCachedPointer(sb, GetB1S1Pointer(lv));
+        var b1s1 = sb.GetPointerAddress(GetB1S1Pointer(lv));
         var boxsize = RamOffsets.GetSlotCount(lv) * RamOffsets.GetSlotSize(lv);
         var boxstart = b1s1 + (ulong)(box * boxsize);
         psb.com.WriteBytes(boxData, boxstart);
@@ -286,7 +286,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
                 if (scb.Type == SCTypeCode.None && sub.Type != SCTypeCode.None)
                     ReflectUtil.SetValue(scb, "Type", sub.Type);
 
-                var ram = psb.com.ReadBytes(psb.GetCachedPointer(sb, offset), scb.Data.Length);
+                var ram = psb.com.ReadBytes(sb.GetPointerAddress(offset), scb.Data.Length);
                 scb.ChangeData(ram);
                 if (read is null)
                 {
@@ -321,7 +321,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
             var scbkey = sub.SCBKey;
             var offset = sub.Pointer;
             var scb = scba.GetBlock(scbkey);
-            psb.com.WriteBytes(scb.Data, psb.GetCachedPointer(sb, offset));
+            psb.com.WriteBytes(scb.Data, sb.GetPointerAddress(offset));
         }
     }
 
@@ -332,7 +332,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
         var lv = psb.Version;
         var ptr = SCBlocks[lv].First(z => z.Name == "MyStatus").Pointer;
-        var ofs = psb.GetCachedPointer(sb, ptr);
+        var ofs = sb.GetPointerAddress(ptr);
         return ofs == 0 ? null : psb.com.ReadBytes(ofs, LA_MYSTATUS_BLOCK_SIZE).ToArray();
     };
 
@@ -343,7 +343,7 @@ public sealed class LPPointer(LiveHeXVersion lv, bool useCache) : InjectionBase(
 
         var lv = psb.Version;
         var ptr = SCBlocks[lv].First(z => z.Name == "MyStatus").Pointer;
-        var ofs = psb.GetCachedPointer(sb, ptr);
+        var ofs = sb.GetPointerAddress(ptr);
         return ofs == 0 ? null : psb.com.ReadBytes(ofs, SV_MYSTATUS_BLOCK_SIZE).ToArray();
     };
 }

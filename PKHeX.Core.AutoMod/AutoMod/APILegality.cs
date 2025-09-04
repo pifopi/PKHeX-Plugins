@@ -24,7 +24,7 @@ public static class APILegality
     public static bool UseMarkings { get; set; } = true;
     public static bool EnableDevMode { get; set; }
     public static string LatestAllowedVersion { get; set; } = "0.0.0.0";
-    public static bool PrioritizeGame { get; set; } = true;
+    public static GameVersionPriorityType GameVersionPriority { get; set; } = GameVersionPriorityType.NewestFirst;
     public static List<GameVersion> PriorityOrder { get; set; } = [];
     public static bool SetBattleVersion { get; set; }
     public static bool AllowTrainerOverride { get; set; }
@@ -45,7 +45,7 @@ public static class APILegality
     /// <param name="set">Showdown set object</param>
     /// <param name="satisfied">If the final result is legal or not</param>
     /// <param name="nativeOnly"></param>
-    public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, bool nativeOnly = false, IEncounterable? ogenc = null)
+    public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, IEncounterable? ogenc = null)
     {
         RegenSet regen;
         if (set is RegenTemplate t)
@@ -69,7 +69,6 @@ public static class APILegality
 
         var abilityreq = GetRequestedAbility(template, set);
         var batchedit = AllowBatchCommands && regen.HasBatchSettings;
-        var native = ModLogic.Config.NativeOnly && nativeOnly;
         var destType = template.GetType();
         var destVer = dest.GetSingleVersion();
         if (destVer <= 0 && dest is SaveFile s)
@@ -77,7 +76,7 @@ public static class APILegality
         if (dest.Generation <= 2)
             template.EXP = 0; // no relearn moves in gen 1/2 so pass level 1 to generator
 
-        var gamelist = FilteredGameList(template, destVer, AllowBatchCommands, set, native);
+        var gamelist = FilteredGameList(template, destVer, AllowBatchCommands, set);
         if (gamelist is [GameVersion.DP])
             gamelist = [GameVersion.D, GameVersion.P];
         if (gamelist is [GameVersion.RS])
@@ -294,15 +293,18 @@ public static class APILegality
     /// <param nativeOnly="set">Whether to only return encounters from the current version</param>
     /// <param name="nativeOnly"></param>
     /// <returns>List of filtered games to check encounters for</returns>
-    internal static GameVersion[] FilteredGameList(PKM template, GameVersion destVer, bool batchEdit, IBattleTemplate set, bool nativeOnly = false)
+    internal static GameVersion[] FilteredGameList(PKM template, GameVersion destVer, bool batchEdit, IBattleTemplate set)
     {
         if (batchEdit && set is RegenTemplate { Regen.VersionFilters: { Count: not 0 } x } && TryGetSingleVersion(x, out var single))
             return single;
 
         var versionlist = GameUtil.GetVersionsWithinRange(template, template.Generation);
-        var gamelist = !nativeOnly ? [.. versionlist.OrderByDescending(c => c.GetGeneration())] : GetPairedVersions(destVer, versionlist);
-        if (PrioritizeGame)
-            gamelist = [..PriorityOrder.Where(z=>versionlist.Contains(z))];
+        GameVersion[] gamelist = APILegality.GameVersionPriority switch
+        {
+            GameVersionPriorityType.NativeOnly => [..GetPairedVersions(destVer, versionlist)],
+            GameVersionPriorityType.PriorityOrder => [.. PriorityOrder.Where(z => versionlist.Contains(z))],
+            _ => [.. versionlist.OrderByDescending(z => z).ToArray()]
+        };
 
         if (template.AbilityNumber == 4 && destVer.GetGeneration() < 8)
             gamelist = [.. gamelist.Where(z => z.GetGeneration() is not 3 and not 4)];
@@ -1302,7 +1304,7 @@ public static class APILegality
     /// <summary>
     /// Wrapper function for GetLegalFromTemplate but with a Timeout
     /// </summary>
-    public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false, IEncounterable? enc = null)
+    public static AsyncLegalizationResult GetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, IEncounterable? enc = null)
     {
         AsyncLegalizationResult GetLegal()
         {
@@ -1311,7 +1313,7 @@ public static class APILegality
                 if (!EnableDevMode && ALMVersion.GetIsMismatch())
                     return new(template, LegalizationResult.VersionMismatch);
 
-                var res = dest.GetLegalFromTemplate(template, set, out var s, nativeOnly, enc);
+                var res = dest.GetLegalFromTemplate(template, set, out var s, enc);
                 return new AsyncLegalizationResult(res, s);
             }
             catch (MissingMethodException)
@@ -1325,10 +1327,10 @@ public static class APILegality
         return first ?? new AsyncLegalizationResult(template, LegalizationResult.Timeout);
     }
 
-    public static AsyncLegalizationResult AsyncGetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false) =>
-        GetLegalFromTemplateTimeoutAsync(dest, template, set, nativeOnly).ConfigureAwait(false).GetAwaiter().GetResult();
+    public static AsyncLegalizationResult AsyncGetLegalFromTemplateTimeout(this ITrainerInfo dest, PKM template, IBattleTemplate set) =>
+        GetLegalFromTemplateTimeoutAsync(dest, template, set).ConfigureAwait(false).GetAwaiter().GetResult();
 
-    public static async Task<AsyncLegalizationResult> GetLegalFromTemplateTimeoutAsync(this ITrainerInfo dest, PKM template, IBattleTemplate set, bool nativeOnly = false)
+    public static async Task<AsyncLegalizationResult> GetLegalFromTemplateTimeoutAsync(this ITrainerInfo dest, PKM template, IBattleTemplate set)
     {
         AsyncLegalizationResult GetLegal()
         {
@@ -1337,7 +1339,7 @@ public static class APILegality
                 if (!EnableDevMode && ALMVersion.GetIsMismatch())
                     return new(template, LegalizationResult.VersionMismatch);
 
-                var res = dest.GetLegalFromTemplate(template, set, out var s, nativeOnly);
+                var res = dest.GetLegalFromTemplate(template, set, out var s);
                 return new AsyncLegalizationResult(res, s);
             }
             catch (MissingMethodException)

@@ -190,7 +190,7 @@ public static class Legalizer
             return template;
 
         template.Form = f;
-        var legalencs = tr.GetRandomEncounter(species, f, set.Shiny, false, false, out var legal);
+        var legalencs = tr.GetRandomEncounter(species, f, set.Shiny, false, out var legal);
         if (legalencs && legal != null)
             template = legal;
 
@@ -234,9 +234,9 @@ public static class Legalizer
     /// <param name="template">pkm file to legalize</param>
     /// <param name="nativeOnly"></param>
     /// <returns>LegalizationResult</returns>
-    public static AsyncLegalizationResult TryAPIConvert(this ITrainerInfo tr, IBattleTemplate set, PKM template, bool nativeOnly = false, IEncounterable? enc = null)
+    public static AsyncLegalizationResult TryAPIConvert(this ITrainerInfo tr, IBattleTemplate set, PKM template, IEncounterable? enc = null)
     {
-        var almres = tr.GetLegalFromTemplateTimeout(template, set, nativeOnly,enc: enc);
+        var almres = tr.GetLegalFromTemplateTimeout(template, set,enc);
         if (almres.Status != LegalizationResult.Regenerated)
             return almres;
 

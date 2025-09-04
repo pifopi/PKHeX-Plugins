@@ -5,7 +5,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public abstract class InjectionBase(LiveHeXVersion lv, bool useCache) : PointerCache(lv, useCache)
+public abstract class InjectionBase(LiveHeXVersion lv)
 {
     public const decimal BotbaseVersion = 2.4m;
 
@@ -41,21 +41,21 @@ public abstract class InjectionBase(LiveHeXVersion lv, bool useCache) : PointerC
 
     public virtual Dictionary<string, string> SpecialBlocks { get; } = [];
 
-    protected static InjectionBase GetInjector(LiveHeXVersion version, bool useCache)
+    protected static InjectionBase GetInjector(LiveHeXVersion version)
     {
         if (LPLGPE.SupportedVersions.Contains(version))
-            return new LPLGPE(version, useCache);
+            return new LPLGPE(version);
 
         if (LPBDSP.SupportedVersions.Contains(version))
-            return new LPBDSP(version, useCache);
+            return new LPBDSP(version);
 
         if (LPPointer.SupportedVersions.Contains(version))
-            return new LPPointer(version, useCache);
+            return new LPPointer(version);
 
         if (!LPBasic.SupportedVersions.Contains(version))
             throw new ArgumentOutOfRangeException(nameof(version), version, $"Unknown {nameof(LiveHeXVersion)}.");
 
-        return new LPBasic(version, useCache);
+        return new LPBasic(version);
     }
 
     public virtual Span<byte> ReadBox(PokeSysBotMini psb, int box, int len, List<byte[]> allpkm) => [];

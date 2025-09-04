@@ -232,14 +232,8 @@ public static class ShowdownSetLoader
         APILegality.UseCompetitiveMarkings = settings.UseCompetitiveMarkings;
         APILegality.UseMarkings = settings.UseMarkings;
         APILegality.EnableDevMode = settings.EnableDevMode;
-        APILegality.PrioritizeGame = settings.PrioritizeGame;
-        GameVersion[] validVersions = [.. Enum.GetValues<GameVersion>().Where(ver => ver <= (GameVersion)51 && ver > GameVersion.Any)];
-        foreach (var ver in validVersions)
-        {
-            if (!settings.PriorityOrder.Contains(ver))
-                settings.PriorityOrder.Add(ver);
-        }
-        APILegality.PriorityOrder = settings.PriorityOrder;
+        APILegality.GameVersionPriority = settings.GameVersionPriority;
+        settings.PriorityOrder = APILegality.PriorityOrder = SettingsUtil.SanitizePriorityOrder(settings.PriorityOrder);
         APILegality.SetBattleVersion = settings.SetBattleVersion;
         APILegality.AllowTrainerOverride = settings.AllowTrainerOverride;
         APILegality.Timeout = settings.Timeout;
@@ -253,7 +247,6 @@ public static class ShowdownSetLoader
             IncludeForms = settings.IncludeForms,
             SetShiny = settings.SetShiny,
             SetAlpha = settings.SetAlpha,
-            NativeOnly = settings.NativeOnly,
             TransferVersion = settings.TransferVersion,
         };
 

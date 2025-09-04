@@ -14,7 +14,7 @@ public sealed class LiveHeXController
         Editor = editor;
         var ValidVers = RamOffsets.GetValidVersions(boxes.SAV);
         var com = RamOffsets.GetCommunicator(SAV.SAV, ict);
-        Bot = new PokeSysBotMini(ValidVers[0], com, useCache);
+        Bot = new PokeSysBotMini(ValidVers[0], com);
     }
 
     public void ChangeBox(int box)

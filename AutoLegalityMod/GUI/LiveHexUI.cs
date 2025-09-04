@@ -36,7 +36,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         _settings = settings;
         CurrentInjectionType = _settings.USBBotBasePreferred ? InjectorCommunicationType.USB : InjectorCommunicationType.SocketNetwork;
-        Remote = new LiveHeXController(sav, editor, CurrentInjectionType, _settings.UseCachedPointers);
+        Remote = new LiveHeXController(sav, editor, CurrentInjectionType);
 
         InitializeComponent();
         this.TranslateInterface(WinFormsTranslator.CurrentLanguage);
@@ -262,7 +262,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     {
         foreach (var version in versions)
         {
-            Remote.Bot = new PokeSysBotMini(version, com, _settings.UseCachedPointers);
+            Remote.Bot = new PokeSysBotMini(version, com);
             var data = Remote.Bot.ReadSlot(0, 0);
             var pkm = SAV.SAV.GetDecryptedPKM(data.ToArray());
             bool valid = pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
@@ -318,7 +318,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         }
 
         var connect_ver = lv is LiveHeXVersion.Unknown ? RamOffsets.GetValidVersions(SAV.SAV).Reverse().ToArray()[0] : lv;
-        Remote.Bot = new PokeSysBotMini(connect_ver, nx, _settings.UseCachedPointers);
+        Remote.Bot = new PokeSysBotMini(connect_ver, nx);
         if (lv is LiveHeXVersion.Unknown && _settings.EnableDevMode)
             return (LiveHeXValidation.None, "", lv);
 
@@ -384,7 +384,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     {
         bool readPointer = (ModifierKeys & Keys.Control) == Keys.Control;
         var txt = TB_Offset.Text;
-        var offset = readPointer && Remote.Bot.com is ICommunicatorNX nx ? Remote.Bot.GetCachedPointer(nx, TB_Pointer.Text) : Util.GetHexValue64(txt);
+        var offset = readPointer && Remote.Bot.com is ICommunicatorNX nx ? nx.GetPointerAddress(TB_Pointer.Text) : Util.GetHexValue64(txt);
         if ((offset.ToString("X16") != txt.ToUpper().PadLeft(16, '0') && !readPointer)|| offset == InjectionUtil.INVALID_PTR)
         {
             WinFormsUtil.Alert("Specified offset is not a valid hex string.");
@@ -554,7 +554,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     public ulong GetPointerAddress(ICommunicatorNX sb)
     {
         var ptr = TB_Pointer.Text.Contains("[key]") ? TB_Pointer.Text.Replace("[key]", "").Trim() : TB_Pointer.Text.Trim();
-        var address = Remote.Bot.GetCachedPointer(sb, ptr, false);
+        var address = sb.GetPointerAddress(ptr);
         return address;
     }
 
@@ -965,7 +965,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
             case LiveHeXValidation.BlankSAV or LiveHeXValidation.GameVersion:
                 {
-                    Remote.Bot = new PokeSysBotMini(version, nx, _settings.UseCachedPointers);
+                    Remote.Bot = new PokeSysBotMini(version, nx);
                     Text += $" SAV/Version (Detected: {gameVer} | Forced: {version})";
 
                     var error = WinFormsUtil.ALMErrorBasic(msg);

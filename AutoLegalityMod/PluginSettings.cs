@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using PKHeX.Core;
+using PKHeX.Core.AutoMod;
 
 namespace AutoModPlugins;
 
@@ -58,9 +59,6 @@ public class PluginSettings
     [Description("Allows LiveHeX to use USB-Botbase instead of sys-botbase.")]
     public bool USBBotBasePreferred { get; set; } = false;
 
-    [Category(Connection)]
-    [Description("Stores pointer addresses to cache for faster lookups.")]
-    public bool UseCachedPointers { get; set; } = false;
 
     // Customization
     [Category(Customization)]
@@ -69,13 +67,16 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description(
-        "If enabled, tries to generate a Pokémon based on PriorityOrder."
+        @"The priority order for what games ALM will try.
+            NewestFirst - will use descending game order latest first.
+            NativeOnly - will use the GamePair for the current save file only.
+            PriorityOrder - will use the Priority Order setting"
     )]
-    public bool PrioritizeGame { get; set; } = false;
+    public GameVersionPriorityType GameVersionPriority { get; set; } = GameVersionPriorityType.NewestFirst;
 
     [Category(Customization)]
     [Description("The order of GameVersions ALM will attempt to legalize from.")]
-    public List<GameVersion> PriorityOrder { get; set; } = [.. Enum.GetValues<GameVersion>().Where(ver => ver > GameVersion.Any && ver <= (GameVersion)51)];
+    public List<GameVersion> PriorityOrder { get; set; } = [.. Enum.GetValues<GameVersion>().Where(ver => ver > GameVersion.Any && ver <= (GameVersion)51).Reverse()];
 
     [Category(Customization)]
     [Description("Adds all ribbons that are legal according to PKHeX legality.")]
@@ -129,10 +130,6 @@ public class PluginSettings
     [Category(LivingDex)]
     [Description("Try to generate the alpha version of the Pokémon if possible.")]
     public bool SetAlpha { get; set; } = false;
-
-    [Category(LivingDex)]
-    [Description("Only generate Pokémon natively available in the game version pair.")]
-    public bool NativeOnly { get; set; } = true;
 
     [Category(TransferDex)]
     [Description("Generate Transfer Living Dex destination game")]

@@ -58,7 +58,7 @@ public static class InjectionUtil
         if (psb.com is not ICommunicatorNX nx)
             return 0;
 
-        var ptr = psb.GetCachedPointer(nx, saveblocks, false);
+        var ptr = nx.GetPointerAddress(saveblocks);
         var dt = nx.ReadBytesAbsolute(ptr + 8, 16).AsSpan();
         var start = ReadUInt64LittleEndian(dt[..8]);
         var end   = ReadUInt64LittleEndian(dt[8..]);

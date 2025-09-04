@@ -8,7 +8,7 @@ using static PKHeX.Core.Injection.LiveHeXVersion;
 
 namespace PKHeX.Core.Injection;
 
-public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv, useCache)
+public sealed class LPBDSP(LiveHeXVersion lv) : InjectionBase(lv)
 {
     public static ReadOnlySpan<LiveHeXVersion> SupportedVersions =>
     [
@@ -61,7 +61,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
     {
         var sb = (ICommunicatorNX)psb.com;
         var (ptr, count) = RamOffsets.BoxOffsets(psb.Version);
-        var addr = psb.GetCachedPointer(sb, ptr);
+        var addr = sb.GetPointerAddress(ptr);
         if (addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -183,12 +183,12 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return null;
 
         var retval = new byte[MYSTATUS_BLOCK_SIZE];
-        var ram_block = psb.GetCachedPointer(sb, ptr);
+        var ram_block = sb.GetPointerAddress(ptr);
         if (ram_block == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
         var trainer_name = ptr.ExtendPointer(0x14);
-        var trainer_name_addr = psb.GetCachedPointer(sb, trainer_name);
+        var trainer_name_addr = sb.GetPointerAddress(trainer_name);
         if (trainer_name_addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -214,7 +214,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return null;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
+        var addr = nx.GetPointerAddress(ptr);
         if (addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -239,7 +239,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
+        var addr = nx.GetPointerAddress(ptr);
         if (addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -265,7 +265,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return null;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
+        var addr = nx.GetPointerAddress(ptr);
         if (addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -289,7 +289,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
+        var addr = nx.GetPointerAddress(ptr);
         if (addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -310,7 +310,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
 
         data = data.AsSpan(0, MYSTATUS_BLOCK_SIZE).ToArray();
         var trainer_name = ptr.ExtendPointer(0x14);
-        var trainer_name_addr = psb.GetCachedPointer(sb, trainer_name);
+        var trainer_name_addr = sb.GetPointerAddress(trainer_name);
         if (trainer_name_addr == InjectionUtil.INVALID_PTR)
             throw new Exception("Invalid Pointer string.");
 
@@ -325,7 +325,7 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
         data.AsSpan(0x34).ToArray().CopyTo(retval, 0x18);
 
         psb.com.WriteBytes(data.AsSpan(0, 0x1A), trainer_name_addr);
-        psb.com.WriteBytes(retval.AsSpan(0x8).ToArray(), psb.GetCachedPointer(sb, ptr) + 0x8);
+        psb.com.WriteBytes(retval.AsSpan(0x8).ToArray(), sb.GetPointerAddress(ptr) + 0x8);
     }
 
     private static byte[]? GetDaycareBlock(PokeSysBotMini psb)
@@ -335,9 +335,9 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return null;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
-        var p1ptr = psb.GetCachedPointer(nx, ptr.ExtendPointer(0x20, 0x20));
-        var p2ptr = psb.GetCachedPointer(nx, ptr.ExtendPointer(0x28, 0x20));
+        var addr = nx.GetPointerAddress(ptr);
+        var p1ptr = nx.GetPointerAddress(ptr.ExtendPointer(0x20, 0x20));
+        var p2ptr = nx.GetPointerAddress(ptr.ExtendPointer(0x28, 0x20));
         var parent_one = psb.com.ReadBytes(p1ptr, 0x158);
         var parent_two = psb.com.ReadBytes(p2ptr, 0x158);
         var extra = psb.com.ReadBytes(addr + 0x8, 0x18);
@@ -358,9 +358,9 @@ public sealed class LPBDSP(LiveHeXVersion lv, bool useCache) : InjectionBase(lv,
             return;
 
         var nx = (ICommunicatorNX)psb.com;
-        var addr = psb.GetCachedPointer(nx, ptr);
-        var parent_one_addr = psb.GetCachedPointer(nx, ptr.ExtendPointer(0x20, 0x20));
-        var parent_two_addr = psb.GetCachedPointer(nx, ptr.ExtendPointer(0x28, 0x20));
+        var addr = nx.GetPointerAddress(ptr);
+        var parent_one_addr = nx.GetPointerAddress(ptr.ExtendPointer(0x20, 0x20));
+        var parent_two_addr = nx.GetPointerAddress(ptr.ExtendPointer(0x28, 0x20));
 
         data = data.AsSpan(0, DAYCARE_BLOCK_SIZE).ToArray();
         psb.com.WriteBytes(data.AsSpan(0, 0x158), parent_one_addr);

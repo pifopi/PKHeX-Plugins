@@ -98,7 +98,7 @@ public static class TransferDexTests
                 if (!destpersonal.Personal.IsPresentInGame(s, f) || FormInfo.IsFusedForm(s, f, sav.Generation) || FormInfo.IsBattleOnlyForm(s, f, sav.Generation) || (FormInfo.IsTotemForm(s, f) && sav.Context is not EntityContext.Gen7) || FormInfo.IsLordForm(s, f, sav.Context))
                     continue;
 
-                var valid = sav.GetRandomEncounter(s, f, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly, out PKM? pk);
+                var valid = sav.GetRandomEncounter(s, f, cfg.SetShiny, cfg.SetAlpha, out PKM? pk);
                 if (pk is not null && valid && pk.Form == f && !forms.Contains(f))
                 {
                     forms.Add(f);

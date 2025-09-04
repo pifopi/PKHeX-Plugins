@@ -110,7 +110,7 @@ public static class LivingDexTests
                 if (!personal.IsPresentInGame(s, form) || FormInfo.IsFusedForm(s, form, generation) || FormInfo.IsBattleOnlyForm(s, form, generation) || (FormInfo.IsTotemForm(s, form) && context is not EntityContext.Gen7) || FormInfo.IsLordForm(s, form, context))
                     continue;
 
-                var valid = sav.GetRandomEncounter(s, form, cfg.SetShiny, cfg.SetAlpha, cfg.NativeOnly, out PKM? pk);
+                var valid = sav.GetRandomEncounter(s, form, cfg.SetShiny, cfg.SetAlpha, out PKM? pk);
                 if (pk is null || !valid || pk.Form != form)
                     continue;
 
