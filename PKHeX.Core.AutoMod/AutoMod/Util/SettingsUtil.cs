@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PKHeX.Core.AutoMod
 {
-    public class SettingsUtil
+    public static class SettingsUtil
     {
-        
         public static List<GameVersion> SanitizePriorityOrder(List<GameVersion> versionList) // Thank you Anubis and Koi
         {
             var validVersions = Enum.GetValues<GameVersion>()
