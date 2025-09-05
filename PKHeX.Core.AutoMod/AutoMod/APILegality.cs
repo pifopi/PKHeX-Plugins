@@ -1397,7 +1397,7 @@ public static class APILegality
     public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result)
     {
         result = LegalizationResult.Failed;
-        var template = EntityBlank.GetBlank(dest.Generation);
+        var template = EntityBlank.GetBlank(dest);
         template.ApplySetDetails(set);
         var destVer = dest.Version;
         if (destVer <= 0 && dest is SaveFile s)
