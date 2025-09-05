@@ -1397,7 +1397,7 @@ public static class APILegality
     public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result)
     {
         result = LegalizationResult.Failed;
-        var template = EntityBlank.GetBlank(dest.Generation);
+        var template = EntityBlank.GetBlank(dest);
         template.ApplySetDetails(set);
         var destVer = dest.Version;
         if (destVer <= 0 && dest is SaveFile s)
@@ -1430,7 +1430,7 @@ public static class APILegality
                 var loc = isTraded
                     ? Locations.TradedEggLocation(sav.Generation, sav.Version)
                     : LocationEdits.GetNoneLocation(raw);
-                raw.MetLocation = (ushort)loc;
+                raw.MetLocation = loc;
             }
             else if (raw is PK3)
             {
@@ -1440,6 +1440,10 @@ public static class APILegality
                 raw.NicknameTrash.Clear();
             raw.IsNicknamed = EggStateLegality.IsNicknameFlagSet(raw);
             raw.Nickname = SpeciesName.GetEggName(raw.Language, raw.Format);
+
+            // Wipe met date
+            if (raw.Format >= 5)
+                raw.MetDate = null;
 
             // Wipe egg memories
             if (raw.Format >= 6)
