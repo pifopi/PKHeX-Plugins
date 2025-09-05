@@ -1441,6 +1441,10 @@ public static class APILegality
             raw.IsNicknamed = EggStateLegality.IsNicknameFlagSet(raw);
             raw.Nickname = SpeciesName.GetEggName(raw.Language, raw.Format);
 
+            // Wipe met date
+            if (raw.Format >= 5)
+                raw.MetDate = null;
+
             // Wipe egg memories
             if (raw.Format >= 6)
                 raw.ClearMemories();
