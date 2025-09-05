@@ -1430,7 +1430,7 @@ public static class APILegality
                 var loc = isTraded
                     ? Locations.TradedEggLocation(sav.Generation, sav.Version)
                     : LocationEdits.GetNoneLocation(raw);
-                raw.MetLocation = (ushort)loc;
+                raw.MetLocation = loc;
             }
             else if (raw is PK3)
             {
