@@ -36,14 +36,15 @@ public abstract class AutoModPlugin : IPlugin
     protected IPKMView PKMEditor { get; private set; } = null!;
     internal static readonly string almconfig = Path.Combine(Path.GetDirectoryName(Environment.ProcessPath)!, "almconfig.json");
     internal static PluginSettings _settings = new() { ConfigPath = almconfig };
+    internal static ToolStrip Menu { get; private set; } = null!;
 
     public void Initialize(params object[] args)
     {
         Debug.WriteLine($"{LoggingPrefix} Loading {Name}");
         SaveFileEditor = (ISaveFileProvider)(Array.Find(args, z => z is ISaveFileProvider) ?? throw new Exception("Null ISaveFileProvider"));
         PKMEditor = (IPKMView)(Array.Find(args, z => z is IPKMView) ?? throw new Exception("Null IPKMView"));
-        var menu = (ToolStrip)(Array.Find(args, z => z is ToolStrip) ?? throw new Exception("Null ToolStrip"));
-        LoadMenuStrip(menu);
+        Menu = (ToolStrip)(Array.Find(args, z => z is ToolStrip) ?? throw new Exception("Null ToolStrip"));
+        LoadMenuStrip(Menu);
 
         // Load settings
         if (File.Exists(_settings.ConfigPath))
@@ -63,11 +64,11 @@ public abstract class AutoModPlugin : IPlugin
                 {
                     if (error.InvokeRequired)
                     {
-                        await error.InvokeAsync(() => ShowAlmErrorDialog(error, menu));
+                        await error.InvokeAsync(() => ShowAlmErrorDialog(error, Menu));
                     }
                     else
                     {
-                        ShowAlmErrorDialog(error, menu);
+                        ShowAlmErrorDialog(error, Menu);
                     }
                 }
             },

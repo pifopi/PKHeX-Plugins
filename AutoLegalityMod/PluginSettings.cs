@@ -57,7 +57,7 @@ public class PluginSettings
 
     [Category(Connection)]
     [Description("Allows LiveHeX to use USB-Botbase instead of sys-botbase.")]
-    public bool USBBotBasePreferred { get; set; } = false;
+    public bool USBBotBasePreferred { get; set; }
 
 
     // Customization
@@ -76,7 +76,7 @@ public class PluginSettings
 
     [Category(Customization)]
     [Description("The order of GameVersions ALM will attempt to legalize from.")]
-    public List<GameVersion> PriorityOrder { get; set; } = [.. Enum.GetValues<GameVersion>().Where(ver => ver > GameVersion.Any && ver <= (GameVersion)51).Reverse()];
+    public List<GameVersion> PriorityOrder { get; set; } = [.. Enum.GetValues<GameVersion>().Where(GameUtil.IsValidSavedVersion).Reverse()];
 
     [Category(Customization)]
     [Description("Adds all ribbons that are legal according to PKHeX legality.")]
@@ -116,29 +116,29 @@ public class PluginSettings
 
     [Category(Legality)]
     [Description("Produces an Easter Egg Pokémon if the provided set is illegal.")]
-    public bool EnableEasterEggs { get; set; } = false;
+    public bool EnableEasterEggs { get; set; }
 
     // Living Dex
     [Category(LivingDex)]
     [Description("Generate all forms of the Pokémon. Note that some generations may not have enough box space for all forms.")]
-    public bool IncludeForms { get; set; } = false;
+    public bool IncludeForms { get; set; }
 
     [Category(LivingDex)]
     [Description("Try to generate the shiny version of the Pokémon if possible.")]
-    public bool SetShiny { get; set; } = false;
+    public bool SetShiny { get; set; }
 
     [Category(LivingDex)]
     [Description("Try to generate the alpha version of the Pokémon if possible.")]
-    public bool SetAlpha { get; set; } = false;
+    public bool SetAlpha { get; set; }
 
     [Category(TransferDex)]
     [Description("Generate Transfer Living Dex destination game")]
-    public GameVersion TransferVersion { get; set; } = GameVersion.VL;
+    public GameVersion TransferVersion { get; set; } = Latest.Version;
 
     // Miscellaneous
     [Category(Miscellaneous)]
     [Description("Used for \"Generate Smogon Sets\". If set to true, ALM will ask for approval for each set before attempting to generate it.")]
-    public bool PromptForSmogonImport { get; set; } = false;
+    public bool PromptForSmogonImport { get; set; }
 
     [Category(Miscellaneous)]
     [Description("Sets markings on the Pokémon based on IVs.")]
@@ -155,7 +155,7 @@ public class PluginSettings
     // Development
     [Category(Development)]
     [Description("If enabled, ignores version mismatch warnings until the next PKHeX.Core release. Also bypasses Switch connection checks.")]
-    public bool EnableDevMode { get; set; } = false;
+    public bool EnableDevMode { get; set; }
 
     [Browsable(false)]
     public string LatestAllowedVersion { get; set; } = "0.0.0.0";

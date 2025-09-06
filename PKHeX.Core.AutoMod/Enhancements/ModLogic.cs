@@ -26,6 +26,7 @@ public static class ModLogic
     public static bool SetShiny { get; set; }
     public static bool SetAlpha { get; set; }
     public static GameVersion TransferVersion { get; set; }
+
     /// <summary>
     /// Exports the <see cref="SaveFile.CurrentBox"/> to <see cref="ShowdownSet"/> as a single string.
     /// </summary>
@@ -50,6 +51,7 @@ public static class ModLogic
     /// Gets a living dex (one per species, not every form)
     /// </summary>
     /// <param name="sav">Save File to receive the generated <see cref="PKM"/>.</param>
+    /// <param name="personal">Personal table containing species and form data.</param>
     /// <returns>Consumable list of newly generated <see cref="PKM"/> data.</returns>
     public static IEnumerable<PKM> GenerateLivingDex(this ITrainerInfo sav, IPersonalTable personal) => sav.GenerateLivingDex(personal, Config);
 
@@ -57,6 +59,8 @@ public static class ModLogic
     /// Gets a living dex (one per species, not every form)
     /// </summary>
     /// <param name="sav">Save File to receive the generated <see cref="PKM"/>.</param>
+    /// <param name="personal">Personal table containing species and form data.</param>
+    /// <param name="cfg">Configuration specifying living dex options.</param>
     /// <returns>Consumable list of newly generated <see cref="PKM"/> data.</returns>
     public static IEnumerable<PKM> GenerateLivingDex(this ITrainerInfo sav, IPersonalTable personal, LivingDexConfig cfg)
     {
@@ -112,7 +116,7 @@ public static class ModLogic
         });
         return pklist.OrderBy(z => z.Species);
     }
-    public static int TrackingCount { get; set; } = 0;
+    public static int TrackingCount { get; set; }
     /// <summary>
     /// Generates a living dex for transfer between games, considering both source and destination game restrictions.
     /// </summary>
@@ -537,8 +541,6 @@ public static class ModLogic
     {
         var pklist = new ConcurrentBag<PKM>();
         var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(sav.Version) : sav;
-        var context = sav.Context;
-        var generation = sav.Generation;
         Parallel.For(1, personal.MaxSpeciesID + 1, id => //parallel For's end is exclusive
         {
             var s = (Species)id;

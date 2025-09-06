@@ -33,9 +33,7 @@ public class LivingDex : AutoModPlugin
         var prompt = WinFormsUtil.Prompt(MessageBoxButtons.YesNo, "Generate a Living Dex?");
         if (prompt != DialogResult.Yes)
             return;
-        bool egg = false;
-        if (new Keyboard().AltKeyDown)
-            egg = true;
+        bool egg = new Keyboard().AltKeyDown;
         var sav = SaveFileEditor.SAV;
         var t = new ALMStatusBar("Living Dex", sav.MaxSpeciesID)
         {
@@ -44,7 +42,7 @@ public class LivingDex : AutoModPlugin
         t.Show();
 
         // After showing the form, start a polling loop
-        _ = Task.Run(()=>PollingLoop(t)); 
+        _ = Task.Run(() => PollingLoop(t));
 
         var dex = await Task.Run(() => egg ? sav.GenerateLivingEggDex(sav.Personal) : sav.GenerateLivingDex(sav.Personal));
         List<PKM> extra = [];
@@ -64,8 +62,9 @@ public class LivingDex : AutoModPlugin
             return;
 
         foreach (var f in extra)
-            File.WriteAllBytes($"{ofd.SelectedPath}/{f.FileName}", f.DecryptedPartyData);
+            await File.WriteAllBytesAsync($"{ofd.SelectedPath}/{f.FileName}", f.DecryptedPartyData);
     }
+
     private static void PollingLoop(ALMStatusBar t)
     {
         int lastCount = -1;

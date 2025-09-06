@@ -64,17 +64,14 @@ public static class WinFormsUtil
     public static bool OpenSAVPKMDialog(IEnumerable<string> Extensions, out string? path)
     {
         string supported = string.Join(";", Extensions.Select(s => $"*.{s}").Concat(["*.pkm"]));
-        using var ofd = new OpenFileDialog
-        {
-            Filter =
-                "All Files|*.*"
-                + $"|Supported Files (*.*)|main;*.bin;{supported};*.bak"
-                + "|Save Files (*.sav)|main"
-                + "|Decrypted PKM File (*.pkm)|"
-                + supported
-                + "|Binary File|*.bin"
-                + "|Backup File|*.bak",
-        };
+        using var ofd = new OpenFileDialog();
+        ofd.Filter = "All Files|*.*"
+                     + $"|Supported Files (*.*)|main;*.bin;{supported};*.bak"
+                     + "|Save Files (*.sav)|main"
+                     + "|Decrypted PKM File (*.pkm)|"
+                     + supported
+                     + "|Binary File|*.bin"
+                     + "|Backup File|*.bak";
         if (ofd.ShowDialog() != DialogResult.OK)
         {
             path = null;

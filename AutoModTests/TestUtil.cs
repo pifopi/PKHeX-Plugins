@@ -20,7 +20,7 @@ public static class TestUtil
             if (Initialized)
                 return;
 
-            EncounterEvent.RefreshMGDB([]);
+            EncounterEvent.RefreshMGDB();
             Legalizer.EnableEasterEggs = false;
             APILegality.SetAllLegalRibbons = false;
             APILegality.Timeout = 99999;

@@ -15,7 +15,7 @@ public static class TrainerSettings
     private static readonly SimpleTrainerInfo DefaultFallback9 = new(GameVersion.VL) { Generation = 9 };
     private static readonly SimpleTrainerInfo DefaultFallback8 = new(GameVersion.SW) { Generation = 8 };
     private static readonly SimpleTrainerInfo DefaultFallback7 = new(GameVersion.UM) { Generation = 7 };
-    
+
     private static ReadOnlySpan<GameVersion> FringeVersions =>
     [
         GameVersion.GG,
@@ -98,7 +98,7 @@ public static class TrainerSettings
     /// </summary>
     /// <param name="version">Version of origin requested.</param>
     /// <param name="lang">Language to request for</param>
-    /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="fallback"/>.</returns>
+    /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="DefaultFallback(GameVersion, LanguageID?)"/>.</returns>
     public static ITrainerInfo GetSavedTrainerData(GameVersion version, LanguageID? lang = null)
     {
         var byVer = Database.GetTrainer(version, lang);
@@ -108,13 +108,12 @@ public static class TrainerSettings
     /// <summary>
     /// Gets a possible Trainer Data for the provided <see cref="pk"/>.
     /// </summary>
-    /// <param name="pk">Pok�mon that will receive the trainer details.</param>
-    /// <param name="template_save">Fallback trainer data if no new parent is found.</param>
+    /// <param name="pk">Pokémon that will receive the trainer details.</param>
     /// <param name="lang">Language to request for</param>
-    /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="template_save"/>.</returns>
+    /// <returns>Parent trainer data that originates from the <see cref="PKM.Version"/>. If none found, will return the <see cref="DefaultFallback(GameVersion, LanguageID?)"/>.</returns>
     public static ITrainerInfo GetSavedTrainerData(PKM pk, LanguageID? lang = null)
     {
-        return GetSavedTrainerData(pk.Version,lang);
+        return GetSavedTrainerData(pk.Version, lang);
     }
 
     /// <summary>

@@ -176,7 +176,7 @@ public static class ShowdownEdits
 
         if (enc is IFixedTrainer { IsFixedTrainer: true })
         {
-            if (enc is EncounterTrade1 et1 && pk.Context >= EntityContext.Gen7)
+            if (enc is EncounterTrade1 && pk.Context >= EntityContext.Gen7)
             {
                 pk.OriginalTrainerName = (LanguageID)pk.Language switch
                 {
@@ -209,7 +209,7 @@ public static class ShowdownEdits
         if (pk.Format < 3 && newnick.Length == 0)
             newnick = SpeciesName.GetSpeciesName(pk.Species, (int)finallang);
         var nickname = newnick.Length > maxlen ? newnick[..maxlen] : newnick;
-        if (!WordFilter.IsFiltered(nickname,pk.Context,out _, out _) && newnick != SpeciesName.GetSpeciesName(pk.Species,(int)finallang))
+        if (!WordFilter.IsFiltered(nickname, pk.Context, out _, out _) && newnick != SpeciesName.GetSpeciesName(pk.Species, (int)finallang))
             pk.SetNickname(nickname);
         else
             pk.ClearNickname();
@@ -281,9 +281,8 @@ public static class ShowdownEdits
     {
         // If no moves are requested, just keep the encounter moves
         if (set.Moves[0] != 0)
-            pk.SetMoves(set.Moves, pk is not PA8);
-        else
-            pk.SetMoves(pk.Moves, pk is not PA8);
+            pk.SetMoves(set.Moves, Legal.IsPPUpAvailable(pk));
+
         var la = new LegalityAnalysis(pk);
         // Remove invalid encounter moves (eg. Kyurem Encounter -> Requested Kyurem black)
         if (set.Moves[0] == 0 && la.Info.Moves.Any(z => z.Judgement == Severity.Invalid))

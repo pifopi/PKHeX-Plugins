@@ -1069,9 +1069,7 @@ public static class Aesthetics
     {
         var valid = Enum.TryParse(value, out LanguageID lang);
         if (!valid)
-        {
             return null;
-        }
 
         return lang is LanguageID.None or LanguageID.UNUSED_6 ? LanguageID.English : lang;
     }
@@ -1100,8 +1098,8 @@ public static class Aesthetics
         if (count == 0)
             return false;
 
-        var randomindex = Util.Rand.Next(count);
-        mark = marks[randomindex];
+        var index = Util.Rand.Next(count);
+        mark = marks[index];
         return true;
     }
 
