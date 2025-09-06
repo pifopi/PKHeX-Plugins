@@ -9,11 +9,8 @@ namespace PKHeX.Core.AutoMod
         public static List<GameVersion> SanitizePriorityOrder(List<GameVersion> versionList) // Thank you Anubis and Koi
         {
             var validVersions = Enum.GetValues<GameVersion>()
-                .Where(ver => ver is > GameVersion.Any and <= GameVersion.VL)
+                .Where(GameUtil.IsValidSavedVersion).Reverse()
                 .ToList();
-
-            // Reverse the order of entries in validVersions since users will prefer latest games.
-            validVersions.Reverse();
 
             foreach (var ver in validVersions)
             {
