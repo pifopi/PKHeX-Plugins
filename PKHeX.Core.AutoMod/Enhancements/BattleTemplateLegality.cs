@@ -30,12 +30,14 @@ public static class BattleTemplateLegality
             failed.Version = sav.Version;
 
         var species_name = SpeciesName.GetSpeciesNameGeneration(set.Species, (int)LanguageID.English, sav.Generation);
-        var analysis = set.Form == 0 ? string.Format(SPECIES_UNAVAILABLE, species_name) : string.Format(SPECIES_UNAVAILABLE_FORM, species_name, set.FormName);
 
         // Species checks
         var gv = sav.Version;
         if (!gv.ExistsInGame(set.Species, set.Form))
-            return analysis; // Species does not exist in the game
+        {
+            // Species does not exist in the game
+            return set.Form == 0 ? string.Format(SPECIES_UNAVAILABLE, species_name) : string.Format(SPECIES_UNAVAILABLE_FORM, species_name, set.FormName);
+        }
 
         // Species exists -- check if it has at least one move.
         // If it has no moves, and it didn't generate, that makes the mon still illegal in game (moves are set to legal ones)
@@ -49,10 +51,10 @@ public static class BattleTemplateLegality
         if (destVer <= 0 && sav is SaveFile s)
             destVer = s.Version;
 
-        var gamelist = APILegality.FilteredGameList(failed, destVer, APILegality.AllowBatchCommands, set);
+        var versions = APILegality.FilteredGameList(failed, destVer, APILegality.AllowBatchCommands, set);
 
         // Move checks
-        var bestCombination = GetValidMovesetWithMostPresent(set, sav, moves, failed, gamelist);
+        var bestCombination = GetValidMovesetWithMostPresent(set, sav, moves, failed, versions);
         if (bestCombination.Length != moves.Length)
         {
             if (bestCombination.Length == 0)
@@ -63,7 +65,7 @@ public static class BattleTemplateLegality
         }
 
         // All moves possible, get encounters
-        var encounters = EncounterMovesetGenerator.GenerateEncounters(pk: failed, moves, gamelist).ToList();
+        var encounters = EncounterMovesetGenerator.GenerateEncounters(pk: failed, moves, versions).ToList();
         var initialcount = encounters.Count;
         if (set is RegenTemplate { Regen.EncounterFilters: { } x })
             encounters.RemoveAll(enc => !BatchEditing.IsFilterMatch(x, enc));
@@ -140,23 +142,23 @@ public static class BattleTemplateLegality
         }
     }
 
-    private static ReadOnlySpan<ushort> GetValidMovesetWithMostPresent(IBattleTemplate set, ITrainerInfo sav, Memory<ushort> moves, PKM blank, GameVersion[] gamelist)
+    private static ReadOnlySpan<ushort> GetValidMovesetWithMostPresent(IBattleTemplate set, ITrainerInfo sav, Memory<ushort> moves, PKM blank, ReadOnlyMemory<GameVersion> versions)
     {
         if (sav.Generation <= 2)
             blank.EXP = 0; // no relearn moves in gen 1/2 so pass level 1 to generator
 
         // Eager check: current moveset is valid
-        if (HasAnyEncounterForMoves(set, blank, moves, gamelist))
+        if (HasAnyEncounterForMoves(set, blank, moves, versions))
             return moves.Span;
 
         // Okay, at least one move is invalid. Recursively permute combinations to find the moveset with most moves valid.
         moves = moves.ToArray(); // copy to not disturb the original array.
-        var count = Recurse(set, moves, blank, gamelist, [..moves.Span]);
+        var count = Recurse(set, moves, blank, versions, [..moves.Span]);
         // The moves array is now the most-populated combination of moves that are valid.
         return moves.Span[..count];
     }
 
-    private static int Recurse(IBattleTemplate set, Memory<ushort> request, PKM blank, GameVersion[] gamelist, List<ushort> moves)
+    private static int Recurse(IBattleTemplate set, Memory<ushort> request, PKM blank, ReadOnlyMemory<GameVersion> versions, List<ushort> moves)
     {
         if (moves.Count <= 1)
             return 0;
@@ -170,7 +172,7 @@ public static class BattleTemplateLegality
             var move = moves[0];
             moves.RemoveAt(0);
             moves.CopyTo(request.Span);
-            if (HasAnyEncounterForMoves(set, blank, request, gamelist))
+            if (HasAnyEncounterForMoves(set, blank, request, versions))
                 return moves.Count;
             moves.Add(move);
         }
@@ -180,7 +182,7 @@ public static class BattleTemplateLegality
         {
             var move = moves[0];
             moves.RemoveAt(0);
-            var count = Recurse(set, request, blank, gamelist, moves);
+            var count = Recurse(set, request, blank, versions, moves);
             if (count != 0) // ignore 0, the removed move might be valid in a different combination
                 return count;
             moves.Add(move);
@@ -188,15 +190,14 @@ public static class BattleTemplateLegality
         return 0;
     }
 
-    private static bool HasAnyEncounterForMoves(IBattleTemplate set, PKM blank,
-        ReadOnlyMemory<ushort> moves, GameVersion[] gamelist)
+    private static bool HasAnyEncounterForMoves(IBattleTemplate set, PKM blank, ReadOnlyMemory<ushort> moves, ReadOnlyMemory<GameVersion> versions)
     {
         // Do we even need to set the moves to the template?
         Span<ushort> tmp = stackalloc ushort[4];
         moves.Span.CopyTo(tmp);
         blank.SetMoves(tmp);
 
-        var encounters = EncounterMovesetGenerator.GenerateEncounters(blank, moves, gamelist);
+        var encounters = EncounterMovesetGenerator.GenerateEncounters(blank, moves, versions);
         if (set is not RegenTemplate { Regen.EncounterFilters: { Count: not 0 } x })
             return encounters.Any();
         encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(x, enc));

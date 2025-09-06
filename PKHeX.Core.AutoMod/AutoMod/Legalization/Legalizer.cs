@@ -30,11 +30,12 @@ public static class Legalizer
     /// </summary>
     /// <param name="tr">Source/Destination trainer</param>
     /// <param name="pk">Currently invalid pkm data</param>
+    /// <param name="la">Legality analysis, if available</param>
     /// <returns>Legalized PKM (hopefully legal)</returns>
     public static PKM Legalize(this ITrainerInfo tr, PKM pk, LegalityAnalysis? la = null)
     {
         var set = new ShowdownSet(pk); //Regen Template may carry illegal traits, Use basic Showdown set to revert to a legal template.
-        var almres = tr.GetLegalFromSet(set,pk,la?.EncounterOriginal); //keep the current pkm as template
+        var almres = tr.GetLegalFromSet(set, pk, la?.EncounterOriginal); //keep the current pkm as template
         var result = almres.Status;
         return result == LegalizationResult.VersionMismatch ? throw new MissingMethodException("PKHeX and Plugins have a version mismatch") : almres.Created;
     }
@@ -155,19 +156,21 @@ public static class Legalizer
         }
         return await Task.Run(GetLegal);
     }
+
     /// <summary>
     /// Regenerates the set by searching for an encounter that can generate the template.
     /// </summary>
     /// <param name="tr">Trainer Data that was passed in</param>
     /// <param name="set">Showdown set being used</param>
     /// <param name="template">template PKM to legalize</param>
+    /// <param name="enc">Encounter to generate with, if available</param>
     /// <returns>Legalization Result</returns>
     private static AsyncLegalizationResult GetLegalFromSet(this ITrainerInfo tr, IBattleTemplate set, PKM template, IEncounterable? enc = null)
     {
         if (set is ShowdownSet s)
             set = new RegenTemplate(s, tr.Generation);
 
-        var almres = tr.TryAPIConvert(set, template,enc: enc);
+        var almres = tr.TryAPIConvert(set, template, enc: enc);
         if (almres.Status == LegalizationResult.Regenerated)
             return almres;
 
@@ -232,17 +235,17 @@ public static class Legalizer
     /// <param name="tr">trainer data</param>
     /// <param name="set">showdown set to legalize from</param>
     /// <param name="template">pkm file to legalize</param>
+    /// <param name="enc">Encounter to generate with, if available</param>
     /// <returns>LegalizationResult</returns>
     public static AsyncLegalizationResult TryAPIConvert(this ITrainerInfo tr, IBattleTemplate set, PKM template, IEncounterable? enc = null)
     {
-        var almres = tr.GetLegalFromTemplateTimeout(template, set,enc);
+        var almres = tr.GetLegalFromTemplateTimeout(template, set, enc);
         if (almres.Status != LegalizationResult.Regenerated)
             return almres;
 
         var pkm = almres.Created;
-        var trainer = TrainerSettings.GetSavedTrainerData(pkm.Version);
         pkm.SetAllTrainerData(tr);
-        return new AsyncLegalizationResult(pkm, almres.Status);
+        return almres;
     }
 
     /// <summary>

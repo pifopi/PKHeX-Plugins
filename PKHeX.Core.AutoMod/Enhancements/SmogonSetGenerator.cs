@@ -319,9 +319,7 @@ public sealed class SmogonSetGenerator
                 return form.Replace("50%", string.Empty);
             case (int)Core.Species.Minior:
                 if (form.StartsWith("M-"))
-                {
                     return "Meteor";
-                }
 
                 return form.Replace("C-", string.Empty);
             case (int)Core.Species.Necrozma when form == "Dusk":

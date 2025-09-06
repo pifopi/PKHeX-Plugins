@@ -5,7 +5,7 @@ namespace PKHeX.Core.AutoMod;
 
 public static class Overworld8Search
 {
-    private static readonly Dictionary<int, uint> ZeroFixedIvs = new()
+    private static readonly Dictionary<int, uint> ZeroFlawless = new()
     {
         { ComputeIV32([31, 31, 31, 31, 00, 00]), 0x005DC65E },
         { ComputeIV32([31, 00, 31, 00, 31, 31]), 0x022F7135 },
@@ -68,7 +68,7 @@ public static class Overworld8Search
         { ComputeIV32([31, 31, 31, 00, 00, 00]), 0xE66E8A08 },
     };
 
-    private static readonly Dictionary<int, uint> one_fixed_ivs = new()
+    private static readonly Dictionary<int, uint> OneFlawless = new()
     {
         { ComputeIV32([00, 00, 31, 31, 00, 00]), 0x0002129F },
         { ComputeIV32([31, 31, 00, 00, 31, 31]), 0x0006C34D },
@@ -135,7 +135,7 @@ public static class Overworld8Search
         { ComputeIV32([00, 00, 00, 31, 00, 00]), 0x3582A115 },
     };
 
-    private static readonly Dictionary<int, uint> two_fixed_ivs = new()
+    private static readonly Dictionary<int, uint> TwoFlawless = new()
     {
         { ComputeIV32([31, 00, 31, 31, 31, 31]), 0x00009BEC },
         { ComputeIV32([00, 31, 31, 00, 31, 31]), 0x00010626 },
@@ -196,7 +196,7 @@ public static class Overworld8Search
         { ComputeIV32([00, 00, 00, 31, 31, 00]), 0x0394F8DC },
     };
 
-    private static readonly Dictionary<int, uint> three_fixed_ivs = new()
+    private static readonly Dictionary<int, uint> ThreeFlawless = new()
     {
         { ComputeIV32([31, 31, 31, 00, 31, 00]), 0x000033F7 },
         { ComputeIV32([31, 31, 31, 00, 00, 31]), 0x0000443F },
@@ -242,7 +242,7 @@ public static class Overworld8Search
         { ComputeIV32([31, 31, 00, 00, 31, 00]), 0x002D61F4 },
     };
 
-    private static readonly Dictionary<int, uint> four_fixed_ivs = new()
+    private static readonly Dictionary<int, uint> FourFlawless = new()
     {
         { ComputeIV32([31, 00, 31, 31, 31, 31]), 0x6ACF03B6 },
         { ComputeIV32([31, 31, 31, 31, 00, 31]), 0x6ACF049D },
@@ -268,7 +268,7 @@ public static class Overworld8Search
         { ComputeIV32([31, 31, 00, 31, 00, 31]), 0x6ACFC2BC },
     };
 
-    private static readonly Dictionary<int, uint> five_fixed_ivs = new()
+    private static readonly Dictionary<int, uint> FiveFlawless = new()
     {
         { ComputeIV32([31, 31, 31, 31, 31, 31]), 0x112AAE7B },
         { ComputeIV32([00, 31, 31, 31, 31, 31]), 0x112AAE98 },
@@ -297,17 +297,19 @@ public static class Overworld8Search
 
     private static bool CheckValidSeed(int fixedCount, int iv32, out uint seed)
     {
-        var seeds = fixedCount switch
-        {
-            1 => one_fixed_ivs,
-            2 => two_fixed_ivs,
-            3 => three_fixed_ivs,
-            4 => four_fixed_ivs,
-            5 => five_fixed_ivs,
-            _ => ZeroFixedIvs,
-        };
+        var seeds = GetSeedSet(fixedCount);
         return seeds.TryGetValue(iv32, out seed);
     }
+
+    private static Dictionary<int, uint> GetSeedSet(int fixedCount) => fixedCount switch
+    {
+        1 => OneFlawless,
+        2 => TwoFlawless,
+        3 => ThreeFlawless,
+        4 => FourFlawless,
+        5 => FiveFlawless,
+        _ => ZeroFlawless,
+    };
 
     private static ReadOnlySpan<int> FlawlessWild8 => [0, 2, 3];
 
@@ -323,13 +325,11 @@ public static class Overworld8Search
         };
     }
 
-    private static int ComputeIV32(ReadOnlySpan<int> arr)
+    private static int ComputeIV32(ReadOnlySpan<byte> arr)
     {
         int result = 0;
         for (int i = 0; i < arr.Length; i++)
-        {
-            result |= (arr[i] << (i * 5));
-        }
+            result |= arr[i] << (i * 5);
 
         return result;
     }

@@ -107,7 +107,7 @@ public sealed class RegenSet
                     lines.RemoveAt(i);
                     continue;
                 }
-                if (line.Value == string.Empty)
+                if (line.Value.Length == 0)
                 {
                     lines.RemoveAt(i);
                     continue;
@@ -139,7 +139,7 @@ public sealed class RegenSet
         if (VersionFilters.Any())
             sb.AppendLine(RegenUtil.GetSummary(VersionFilters));
 
-        if(SeedFilters.Any())
+        if (SeedFilters.Any())
             sb.AppendLine(SeedFilters[0]);
 
         return sb.ToString();

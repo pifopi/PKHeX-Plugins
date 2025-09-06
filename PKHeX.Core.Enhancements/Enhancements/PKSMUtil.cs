@@ -146,7 +146,7 @@ public static class PKSMUtil
         PKSMStorageFormat.SEVEN => 232,
         PKSMStorageFormat.LGPE => 232,
         PKSMStorageFormat.EIGHT => 328,
-        _ => 0,
+        _ => throw new ArgumentOutOfRangeException(nameof(format), format, null),
     };
 
     private static int GetBankSize(PKSMBankVersion v) => v switch
@@ -154,7 +154,7 @@ public static class PKSMUtil
         PKSMBankVersion.VERSION1 => 264,
         PKSMBankVersion.VERSION2 => 264,
         PKSMBankVersion.VERSION3 => 336,
-        _ => 336,
+        _ => throw new ArgumentOutOfRangeException(nameof(v), v, null),
     };
 
     private static int GetBankStartIndex(PKSMBankVersion v) => v switch
@@ -162,7 +162,7 @@ public static class PKSMUtil
         PKSMBankVersion.VERSION1 => 12,
         PKSMBankVersion.VERSION2 => 16,
         PKSMBankVersion.VERSION3 => 16,
-        _ => 16,
+        _ => throw new ArgumentOutOfRangeException(nameof(v), v, null),
     };
 
     private static PKSMStorageFormat GetPKSMFormat(PKM pk) => pk switch

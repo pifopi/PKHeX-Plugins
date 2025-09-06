@@ -224,7 +224,6 @@ public static class SimpleEdits
     /// </summary>
     /// <param name="pk">The PKM to modify.</param>
     /// <param name="shiny">The shiny type to set.</param>
-    /// <param name="enc">The encounter template.</param>
     public static void SetRaidShiny(this PKM pk, Shiny shiny)
     {
         if (pk.IsShiny)
@@ -272,6 +271,7 @@ public static class SimpleEdits
     /// </summary>
     /// <param name="pk">The PKM to modify.</param>
     /// <param name="enc">The encounter template.</param>
+    /// <param name="signed">Apply correlated height/weight/scale values based on PID/EC.</param>
     public static void ApplyHeightWeight(this PKM pk, IEncounterTemplate enc, bool signed = true)
     {
         if (enc is { Generation: < 8, Context: not EntityContext.Gen7b } && pk.Format >= 8) // height and weight don't apply prior to GG

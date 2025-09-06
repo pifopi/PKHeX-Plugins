@@ -44,6 +44,7 @@ public static class APILegality
     /// <param name="template">rough pkm that has all the <see cref="set"/> values entered</param>
     /// <param name="set">Showdown set object</param>
     /// <param name="satisfied">If the final result is legal or not</param>
+    /// <param name="ogenc">Original encounter to prioritize, if available</param>
     public static PKM GetLegalFromTemplate(this ITrainerInfo dest, PKM template, IBattleTemplate set, out LegalizationResult satisfied, IEncounterable? ogenc = null)
     {
         RegenSet regen;
@@ -82,15 +83,15 @@ public static class APILegality
             gamelist = [GameVersion.R, GameVersion.S];
 
         var mutations = EncounterMutationUtil.GetSuggested(dest.Context, set.Level);
-        var encounters = GetAllEncounters(pk: template, dest,moves: new ReadOnlyMemory<ushort>(set.Moves), gamelist);
+        var encounters = GetAllEncounters(pk: template, dest, moves: new ReadOnlyMemory<ushort>(set.Moves), gamelist);
         var criteria = EncounterCriteria.GetCriteria(set, template.PersonalInfo, mutations);
         if (regen.EncounterFilters.Any())
             encounters = encounters.Where(enc => BatchEditing.IsFilterMatch(regen.EncounterFilters, enc));
         if (regen.SeedFilters.Any())
             encounters = encounters.Where(enc => enc is (IGenerateSeed32 or IGenerateSeed64)); // Only allow seed generation for seed encounters
         if (ogenc is not null)
-            encounters = encounters.OrderByDescending(e => e == ogenc);
-        if (set.Shiny && set.Species == (ushort)Species.Keldeo) //Keldeo seems to be the only recent shiny unlock impacted by this encounter order failure, add edge case for it until a better solution can be found
+            encounters = encounters.OrderByDescending(e => ReferenceEquals(e, ogenc));
+        if (set is { Shiny: true, Species: (ushort)Species.Keldeo }) //Keldeo seems to be the only recent shiny unlock impacted by this encounter order failure, add edge case for it until a better solution can be found
             encounters = encounters.OrderByDescending(e => e.Shiny == Shiny.Always);
         PKM? last = null;
         var timer = Stopwatch.StartNew();
@@ -222,7 +223,7 @@ public static class APILegality
         return basepkm;
     }
 
-    private static IEnumerable<IEncounterable> GetAllEncounters(PKM pk,ITrainerInfo sav, ReadOnlyMemory<ushort> moves, params GameVersion[] vers)
+    private static IEnumerable<IEncounterable> GetAllEncounters(PKM pk, ITrainerInfo sav, ReadOnlyMemory<ushort> moves, params GameVersion[] vers)
     {
         var orig_encs = EncounterMovesetGenerator.GenerateEncounters(pk, sav, moves, vers);
         foreach (var enc in orig_encs)
@@ -579,7 +580,7 @@ public static class APILegality
         pk.SetGVs();
         pk.SetHyperTrainingFlags(set, enc, criteria);
         pk.SetEncryptionConstant(enc);
-        pk.SetShinyBoolean(set.Shiny, enc, regen.Extra.ShinyType,pidiv.Type,criteria);
+        pk.SetShinyBoolean(set.Shiny, enc, regen.Extra.ShinyType, pidiv.Type, criteria);
         pk.FixGender(set);
 
         // Final tweaks
@@ -631,7 +632,8 @@ public static class APILegality
     /// </summary>
     /// <param name="pk">passed pkm object</param>
     /// <param name="set">showdown set to base hyper training on</param>
-    /// <param name="enc"></param>
+    /// <param name="enc">Encounter used to generate the Pokémon</param>
+    /// <param name="criteria">Criteria used to generate the encounter</param>
     private static void SetHyperTrainingFlags(this PKM pk, IBattleTemplate set, IEncounterTemplate enc, EncounterCriteria criteria)
     {
         if (pk is not IHyperTrain t || pk.Species == (ushort)Species.Stakataka)
@@ -806,8 +808,6 @@ public static class APILegality
             case EncounterTrade4RanchGift:
                 pk.SetEncounterTradeIVs();
                 return; // Fixed PID, no need to mutate
-            default:
-                break;
         }
 
         // Handle mismatching abilities due to a PID re-roll
@@ -887,7 +887,6 @@ public static class APILegality
         {
             if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee)
                 MethodCXD.SetStarterFromIVs((XK3)pk, in criteria);
-            
         }
     }
 
@@ -954,7 +953,7 @@ public static class APILegality
                 continue;
 
             ivs.Fill(-1);
-            for (int i = 0; i < ((IFlawlessIVCount)enc).FlawlessIVCount; i++)
+            for (int i = 0; i < enc.FlawlessIVCount; i++)
             {
                 int index;
                 do { index = (int)rand.NextInt(6); }
@@ -1231,9 +1230,9 @@ public static class APILegality
     /// </summary>
     public static EncounterCriteria SetSpecialCriteria(EncounterCriteria criteria, IEncounterTemplate enc, IBattleTemplate set)
     {
-        if (enc is IEncounterEgg && enc is not EncounterEgg8b)
+        if (enc is (IEncounterEgg and not EncounterEgg8b))
             return criteria;
-        if(enc.Generation > 7)
+        if (enc.Generation > 7)
             criteria = criteria with { Nature = Nature.Random };
         return enc.Species switch
         {
@@ -1359,7 +1358,7 @@ public static class APILegality
     /// <summary>
     /// Async Related actions for global timer.
     /// </summary>
-    public record AsyncLegalizationResult(PKM Created, LegalizationResult Status);
+    public sealed record AsyncLegalizationResult(PKM Created, LegalizationResult Status);
 
     private static async Task<AsyncLegalizationResult?>? TimeoutAfter(this Task<AsyncLegalizationResult> task, TimeSpan timeout)
     {
@@ -1399,22 +1398,22 @@ public static class APILegality
         result = LegalizationResult.Failed;
         var template = EntityBlank.GetBlank(dest);
         template.ApplySetDetails(set);
-        var destVer = dest.Version;
-        if (destVer <= 0 && dest is SaveFile s)
-            destVer = s.Version;
         if (dest.Generation <= 2)
             template.EXP = 0; // no relearn moves in gen 1/2 so pass level 1 to generator
-        var encounters = GetAllEncounters(template, dest, template.Moves, [dest.Version]);
+        var encounters = GetAllEncounters(template, dest, template.Moves, dest.Version);
         encounters = encounters.Where(z => z.IsEgg);
-        if (!encounters.Any())
+
+        var peek = new PeekEnumerator<IEncounterable>(encounters);
+        if (!peek.PeekIsNext())
         {
             result = LegalizationResult.Failed;
             return template;
         }
         var mutations = EncounterMutationUtil.GetSuggested(dest.Context, set.Level);
         var criteria = EncounterCriteria.GetCriteria(set, template.PersonalInfo, mutations);
-        foreach (var enc in encounters)
+        while (peek.MoveNext())
         {
+            var enc = peek.Current;
             criteria = SetSpecialCriteria(criteria, enc, set);
 
             // Create the PKM from the template.
@@ -1451,7 +1450,7 @@ public static class APILegality
 
             if (raw is PK9) // Eggs in S/V have a Version value of 0 until hatched.
                 raw.Version = 0;
-            if(new LegalityAnalysis(raw).Valid)
+            if (new LegalityAnalysis(raw).Valid)
             {
                 result = LegalizationResult.Regenerated;
                 return raw;
