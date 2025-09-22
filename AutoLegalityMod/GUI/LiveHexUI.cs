@@ -554,7 +554,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     public ulong GetPointerAddress(ICommunicatorNX sb)
     {
         var ptr = TB_Pointer.Text.Contains("[key]") ? TB_Pointer.Text.Replace("[key]", "").Trim() : TB_Pointer.Text.Trim();
-        var address = sb.GetPointerAddress(ptr);
+        var address = sb.GetPointerAddress(ptr,false);
         return address;
     }
 
