@@ -10,7 +10,7 @@ public sealed class RegenSetting
     public LanguageID? Language { get; set; }
     public AbilityRequest Ability { get; set; } = AbilityRequest.Any;
     public bool Alpha { get; set; }
-
+    public bool Egg { get; set; }
     public bool IsShiny => ShinyType != Shiny.Never;
 
     public bool SetRegenSettings(IList<BattleTemplateParseError> lines)
@@ -57,6 +57,9 @@ public sealed class RegenSetting
                 return true;
             case nameof(Alpha):
                 Alpha = value is "Yes";
+                return true;
+            case nameof(Egg):
+                Egg = value is "Yes";
                 return true;
             default:
                 return false;

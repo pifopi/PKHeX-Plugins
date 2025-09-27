@@ -272,16 +272,16 @@ public static class ShowdownEdits
     };
 
     /// <summary>
-    /// Set Moves, EVs and Items for a specific PKM. These should not affect legality after being vetted by GeneratePKMs
+    /// Set Moves for a specific PKM. These should not affect legality after being vetted by GeneratePKMs
     /// </summary>
     /// <param name="pk">PKM to modify</param>
     /// <param name="set">Showdown Set to refer</param>
     /// <param name="enc">Encounter to reference</param>
-    public static void SetMovesEVs(this PKM pk, IBattleTemplate set, IEncounterTemplate enc)
+    public static void SetALMMoves(this PKM pk, IBattleTemplate set, IEncounterTemplate enc)
     {
         // If no moves are requested, just keep the encounter moves
         if (set.Moves[0] != 0)
-            pk.SetMoves(set.Moves, Legal.IsPPUpAvailable(pk));
+            pk.SetMoves(set.Moves, (Legal.IsPPUpAvailable(pk) && !pk.IsEgg));
 
         var la = new LegalityAnalysis(pk);
         // Remove invalid encounter moves (eg. Kyurem Encounter -> Requested Kyurem black)
@@ -305,6 +305,16 @@ public static class ShowdownEdits
         if (la.Info.Relearn.Any(z => z.Judgement == Severity.Invalid))
             pk.ClearRelearnMoves();
 
+        
+    }
+    /// <summary>
+    /// Set EVs and Items for a specific PKM. These should not affect legality after being vetted by GeneratePKMs
+    /// </summary>
+    /// <param name="pk">PKM to modify</param>
+    /// <param name="set">Showdown Set to refer</param>
+    /// <param name="enc">Encounter to reference</param>
+    public static void SetEV(this PKM pk, IBattleTemplate set, IEncounterTemplate enc)
+    {
         if (pk is IAwakened)
         {
             pk.SetAwakenedValues(set);
@@ -320,7 +330,6 @@ public static class ShowdownEdits
 
         pk.SetEVs(set.EVs);
     }
-
     /// <summary>
     /// Set encounter trade IVs for a specific encounter trade
     /// </summary>

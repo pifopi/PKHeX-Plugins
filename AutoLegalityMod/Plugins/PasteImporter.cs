@@ -56,7 +56,7 @@ public class PasteImporter : AutoModPlugin
                 return;
             if (WinFormsUtil.Prompt(MessageBoxButtons.YesNo, "Make an Egg from this set?", text) != DialogResult.Yes)
                 return;
-            var made = sav.GenerateEgg(new ShowdownSet(text), out _);
+            var made = sav.GenerateEgg(new RegenTemplate(new ShowdownSet(text)), out _);
             PKMEditor.PopulateFields(made);
         }
 

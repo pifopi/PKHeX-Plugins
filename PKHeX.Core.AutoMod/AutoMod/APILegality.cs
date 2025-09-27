@@ -575,7 +575,8 @@ public static class APILegality
         pk.SetRecordFlags(set.Moves);
 
         // Legality Fixing
-        pk.SetMovesEVs(set, enc);
+        pk.SetALMMoves(set, enc);
+        pk.SetEV(set, enc);
         pk.SetCorrectMetLevel(enc);
         pk.SetGVs();
         pk.SetHyperTrainingFlags(set, enc, criteria);
@@ -1308,8 +1309,12 @@ public static class APILegality
             {
                 if (!EnableDevMode && ALMVersion.GetIsMismatch())
                     return new(template, LegalizationResult.VersionMismatch);
-
-                var res = dest.GetLegalFromTemplate(template, set, out var s, enc);
+                PKM? res;
+                LegalizationResult s;
+                if (set is RegenTemplate rs && rs.Regen.Extra.Egg)
+                    res = dest.GenerateEgg(rs, out s);
+                else
+                    res = dest.GetLegalFromTemplate(template, set, out s, enc);
                 return new AsyncLegalizationResult(res, s);
             }
             catch (MissingMethodException)
@@ -1393,7 +1398,7 @@ public static class APILegality
     /// <returns>
     /// A <see cref="PKM"/> instance representing the generated egg, or a template if generation failed.
     /// </returns>
-    public static PKM GenerateEgg(this ITrainerInfo dest, ShowdownSet set, out LegalizationResult result)
+    public static PKM GenerateEgg(this ITrainerInfo dest, RegenTemplate set, out LegalizationResult result)
     {
         result = LegalizationResult.Failed;
         var template = EntityBlank.GetBlank(dest);
@@ -1418,9 +1423,18 @@ public static class APILegality
 
             // Create the PKM from the template.
             var raw = enc.GetPokemonFromEncounter(dest, criteria, set);
+            var movestorage = set.Moves;
+            set.Moves = raw.Moves;
+            var length = set.Moves.Where(z => z != 0).Count();
+            for (int i = 0; i < movestorage.Where(z => z != 0).Count(); i++)
+            {
+                var index = (i + length) % 4;
+                set.Moves[index] = movestorage[i];
+            }
             raw.IsEgg = true;
+            raw.SetALMMoves(set, enc);
             raw.CurrentFriendship = (byte)EggStateLegality.GetMinimumEggHatchCycles(raw);
-
+            
             // if egg wasn't originally obtained by OT => Link Trade, else => None
             if (raw.Format >= 4)
             {

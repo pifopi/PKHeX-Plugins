@@ -44,7 +44,7 @@ public static class EggTests
                 try
                 {
                     Debug.Write($"Checking Set {i:000} [Species: {(Species)set.Species}] from File {file} using Save {s}: ");
-                    var created = sav.GenerateEgg(set, out var almres);
+                    var created = sav.GenerateEgg(new RegenTemplate(set), out var almres);
                     var la = new LegalityAnalysis(created);
                     if (almres is LegalizationResult.Regenerated && la.Valid)
                     {
