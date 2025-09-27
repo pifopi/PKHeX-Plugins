@@ -32,6 +32,8 @@ public class TrainerTemplates : AutoModPlugin
         {
             if (!Enum.IsDefined(typeof(GameVersion), (byte)i))
                 continue;
+            if (i == 34)
+                continue;
             var gen = ((GameVersion)i).GetGeneration() == 0 ? 1 : ((GameVersion)i).GetGeneration();
             var TID = (ushort)Random.Shared.Next(ushort.MaxValue);
             var SID = (ushort)Random.Shared.Next(ushort.MaxValue);
