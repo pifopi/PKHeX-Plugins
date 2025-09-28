@@ -1423,16 +1423,8 @@ public static class APILegality
 
             // Create the PKM from the template.
             var raw = enc.GetPokemonFromEncounter(dest, criteria, set);
-            var movestorage = set.Moves;
-            set.Moves = raw.Moves;
-            var length = set.Moves.Where(z => z != 0).Count();
-            for (int i = 0; i < movestorage.Where(z => z != 0).Count(); i++)
-            {
-                var index = (i + length) % 4;
-                set.Moves[index] = movestorage[i];
-            }
             raw.IsEgg = true;
-            raw.SetALMMoves(set, enc);
+            raw.SetEggMoves(set, enc);
             raw.CurrentFriendship = (byte)EggStateLegality.GetMinimumEggHatchCycles(raw);
             
             // if egg wasn't originally obtained by OT => Link Trade, else => None
