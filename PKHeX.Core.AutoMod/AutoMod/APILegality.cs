@@ -1457,8 +1457,7 @@ public static class APILegality
             if (raw is PK9) // Eggs in S/V have a Version value of 0 until hatched.
                 raw.Version = 0;
 
-            if (set is RegenTemplate rt)
-                raw.SetSuggestedBall(enc, SetMatchingBalls, ForceSpecifiedBall, rt.Regen.Extra.Ball);
+            raw.SetSuggestedBall(enc, SetMatchingBalls, ForceSpecifiedBall, set.Regen.Extra.Ball);
 
             if (new LegalityAnalysis(raw).Valid)
             {
