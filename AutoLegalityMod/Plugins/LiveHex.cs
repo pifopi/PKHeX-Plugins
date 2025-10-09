@@ -34,6 +34,7 @@ public class LiveHeX : AutoModPlugin
             }
         };
         c1.Name = "Menu_LiveHeX";
+        c1.ShortcutKeys = Keys.Control | Keys.L;
         modmenu.DropDownItems.Add(c1);
     }
 
