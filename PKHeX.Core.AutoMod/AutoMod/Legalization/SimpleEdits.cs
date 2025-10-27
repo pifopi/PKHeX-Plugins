@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection.Emit;
 using static PKHeX.Core.Species;
 
 namespace PKHeX.Core.AutoMod;
@@ -334,6 +335,12 @@ public static class SimpleEdits
             {
                 height = (int)(pk.PID >> 16) % 0xFF;
                 weight = (int)(pk.PID & 0xFFFF) % 0xFF;
+                scale = (int)(pk.PID >> 8) % 0xFF;
+            }
+            else if (pk.ZA)
+            {
+                height = 0;
+                weight = 0;
                 scale = (int)(pk.PID >> 8) % 0xFF;
             }
         }
@@ -691,7 +698,7 @@ public static class SimpleEdits
     /// <param name="moves">Moves to set record flags for.</param>
     public static void SetRecordFlags(this PKM pk, ReadOnlySpan<ushort> moves)
     {
-        if (pk is ITechRecord tr and not PA8)
+        if (pk is ITechRecord tr and not PA8 and not PA9)
         {
             if (pk.Species == (ushort)Hydrapple)
             {
@@ -716,6 +723,11 @@ public static class SimpleEdits
 
         if (pk is IMoveShop8Mastery master)
             master.SetMoveShopFlags(pk);
+        if (pk is IPlusRecord pr)
+        {
+            var (learn, plus) = LearnSource9ZA.GetLearnsetAndPlus(pk.Species, pk.Form);
+            pr.SetPlusFlags(pk.PersonalInfo as PersonalInfo9ZA, new LegalityAnalysis(pk), true, true);
+        }
     }
 
     /// <summary>

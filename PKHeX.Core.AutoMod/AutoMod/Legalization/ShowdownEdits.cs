@@ -289,7 +289,7 @@ public static class ShowdownEdits
         {
             Span<ushort> moves = stackalloc ushort[4];
             la.GetSuggestedCurrentMoves(moves);
-            pk.SetMoves(moves, pk is not PA8);
+            pk.SetMoves(moves, pk is not PA8 and not PA9);
             pk.FixMoves();
         }
 
