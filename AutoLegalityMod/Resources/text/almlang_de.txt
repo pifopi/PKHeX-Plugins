@@ -35,6 +35,8 @@ LiveHeXUI.L_Block=Block:
 
 SimpleHexEditor=RAM Editor
 SimpleHexEditor.B_Update=Aktualisieren
+SimpleHexEditor.B_Load=Load
+SimpleHexEditor.B_Save=Save
 
 Main.Menu_AutoLegality=Auto-Legality Mod
 Main.Menu_ExportBoxtoShowdown=Exportiere Box für ALM Showdown Template

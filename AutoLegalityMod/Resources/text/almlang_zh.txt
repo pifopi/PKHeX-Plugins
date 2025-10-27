@@ -35,6 +35,8 @@ LiveHeXUI.L_Block=数据块:
 
 SimpleHexEditor=内存编辑
 SimpleHexEditor.B_Update=更新
+SimpleHexEditor.B_Load=Load
+SimpleHexEditor.B_Save=Save
 
 Main.Menu_AutoLegality=自动合法插件
 Main.Menu_ExportBoxtoShowdown=导出当前盒子到ALM Showdown模板
