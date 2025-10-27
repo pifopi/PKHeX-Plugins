@@ -726,7 +726,7 @@ public static class SimpleEdits
         if (pk is IPlusRecord pr)
         {
             var (learn, plus) = LearnSource9ZA.GetLearnsetAndPlus(pk.Species, pk.Form);
-            pr.SetPlusFlags(pk.PersonalInfo as PersonalInfo9ZA, new LegalityAnalysis(pk), true, true);
+            pr.SetPlusFlags((PersonalInfo9ZA)pk.PersonalInfo, new LegalityAnalysis(pk), true, true);
         }
     }
 
