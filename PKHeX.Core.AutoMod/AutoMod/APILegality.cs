@@ -810,7 +810,8 @@ public static class APILegality
                 pk.SetEncounterTradeIVs();
                 return; // Fixed PID, no need to mutate
         }
-
+        if (enc.Context is EntityContext.Gen9a)
+            return;
         // Handle mismatching abilities due to a PID re-roll
         // Check against ability index because the Pokémon could be a pre-evo at this point
         if (pk.Ability != set.Ability)
