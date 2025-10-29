@@ -35,6 +35,8 @@ LiveHeXUI.L_Block=Block:
 
 SimpleHexEditor=RAM編集
 SimpleHexEditor.B_Update=アップデイト
+SimpleHexEditor.B_Load=Load
+SimpleHexEditor.B_Save=Save
 
 Main.Menu_AutoLegality=自動合法性モッド
 Main.Menu_ExportBoxtoShowdown=ボックスをALM Showdownテンプレートにエクスポートする

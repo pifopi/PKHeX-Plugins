@@ -31,127 +31,151 @@ namespace AutoModPlugins.GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.B_Update = new System.Windows.Forms.Button();
-            this.PG_BlockView = new System.Windows.Forms.PropertyGrid();
-            this.CB_AutoRefresh = new System.Windows.Forms.CheckBox();
-            this.CB_CopyMethod = new System.Windows.Forms.ComboBox();
-            this.RTB_RAM = new AutoModPlugins.GUI.HexRichTextBox();
-            this.RT_Label = new System.Windows.Forms.Label();
-            this.RT_Timer = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.RT_Timer)).BeginInit();
-            this.SuspendLayout();
+            B_Update = new Button();
+            PG_BlockView = new PropertyGrid();
+            CB_AutoRefresh = new CheckBox();
+            CB_CopyMethod = new ComboBox();
+            RTB_RAM = new HexRichTextBox();
+            RT_Label = new Label();
+            RT_Timer = new NumericUpDown();
+            B_Load = new Button();
+            B_Save = new Button();
+            ((System.ComponentModel.ISupportInitialize)RT_Timer).BeginInit();
+            SuspendLayout();
             // 
             // B_Update
             // 
-            this.B_Update.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.B_Update.Location = new System.Drawing.Point(9, 308);
-            this.B_Update.Name = "B_Update";
-            this.B_Update.Size = new System.Drawing.Size(114, 26);
-            this.B_Update.TabIndex = 1;
-            this.B_Update.Text = "Update";
-            this.B_Update.UseVisualStyleBackColor = true;
-            this.B_Update.Click += new System.EventHandler(this.Update_Click);
+            B_Update.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            B_Update.Location = new System.Drawing.Point(10, 355);
+            B_Update.Margin = new Padding(4, 3, 4, 3);
+            B_Update.Name = "B_Update";
+            B_Update.Size = new System.Drawing.Size(133, 30);
+            B_Update.TabIndex = 1;
+            B_Update.Text = "Update";
+            B_Update.UseVisualStyleBackColor = true;
+            B_Update.Click += Update_Click;
             // 
             // PG_BlockView
             // 
-            this.PG_BlockView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PG_BlockView.Location = new System.Drawing.Point(9, 10);
-            this.PG_BlockView.Name = "PG_BlockView";
-            this.PG_BlockView.Size = new System.Drawing.Size(114, 130);
-            this.PG_BlockView.TabIndex = 15;
-            this.PG_BlockView.Visible = false;
+            PG_BlockView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            PG_BlockView.BackColor = System.Drawing.SystemColors.Control;
+            PG_BlockView.Location = new System.Drawing.Point(10, 12);
+            PG_BlockView.Margin = new Padding(4, 3, 4, 3);
+            PG_BlockView.Name = "PG_BlockView";
+            PG_BlockView.Size = new System.Drawing.Size(133, 150);
+            PG_BlockView.TabIndex = 15;
+            PG_BlockView.Visible = false;
             // 
             // CB_AutoRefresh
             // 
-            this.CB_AutoRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CB_AutoRefresh.AutoSize = true;
-            this.CB_AutoRefresh.Location = new System.Drawing.Point(319, 314);
-            this.CB_AutoRefresh.Name = "CB_AutoRefresh";
-            this.CB_AutoRefresh.Size = new System.Drawing.Size(63, 17);
-            this.CB_AutoRefresh.TabIndex = 16;
-            this.CB_AutoRefresh.Text = "Refresh";
-            this.CB_AutoRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CB_AutoRefresh.UseVisualStyleBackColor = true;
-            this.CB_AutoRefresh.CheckedChanged += new System.EventHandler(this.CB_AutoRefresh_CheckedChanged);
+            CB_AutoRefresh.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CB_AutoRefresh.AutoSize = true;
+            CB_AutoRefresh.Location = new System.Drawing.Point(381, 363);
+            CB_AutoRefresh.Margin = new Padding(4, 3, 4, 3);
+            CB_AutoRefresh.Name = "CB_AutoRefresh";
+            CB_AutoRefresh.Size = new System.Drawing.Size(65, 19);
+            CB_AutoRefresh.TabIndex = 16;
+            CB_AutoRefresh.Text = "Refresh";
+            CB_AutoRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            CB_AutoRefresh.UseVisualStyleBackColor = true;
+            CB_AutoRefresh.CheckedChanged += CB_AutoRefresh_CheckedChanged;
             // 
             // CB_CopyMethod
             // 
-            this.CB_CopyMethod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CB_CopyMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_CopyMethod.FormattingEnabled = true;
-            this.CB_CopyMethod.Location = new System.Drawing.Point(131, 312);
-            this.CB_CopyMethod.Name = "CB_CopyMethod";
-            this.CB_CopyMethod.Size = new System.Drawing.Size(92, 21);
-            this.CB_CopyMethod.TabIndex = 17;
-            this.CB_CopyMethod.SelectedIndexChanged += new System.EventHandler(this.ChangeCopyMethod);
+            CB_CopyMethod.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CB_CopyMethod.DropDownStyle = ComboBoxStyle.DropDownList;
+            CB_CopyMethod.FormattingEnabled = true;
+            CB_CopyMethod.Location = new System.Drawing.Point(153, 360);
+            CB_CopyMethod.Margin = new Padding(4, 3, 4, 3);
+            CB_CopyMethod.Name = "CB_CopyMethod";
+            CB_CopyMethod.Size = new System.Drawing.Size(107, 23);
+            CB_CopyMethod.TabIndex = 17;
+            CB_CopyMethod.SelectedIndexChanged += ChangeCopyMethod;
             // 
             // RTB_RAM
             // 
-            this.RTB_RAM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RTB_RAM.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RTB_RAM.Location = new System.Drawing.Point(9, 10);
-            this.RTB_RAM.Name = "RTB_RAM";
-            this.RTB_RAM.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.RTB_RAM.Size = new System.Drawing.Size(312, 292);
-            this.RTB_RAM.TabIndex = 0;
-            this.RTB_RAM.Text = "";
+            RTB_RAM.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            RTB_RAM.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            RTB_RAM.Location = new System.Drawing.Point(10, 12);
+            RTB_RAM.Margin = new Padding(4, 3, 4, 3);
+            RTB_RAM.Name = "RTB_RAM";
+            RTB_RAM.ScrollBars = RichTextBoxScrollBars.ForcedVertical;
+            RTB_RAM.Size = new System.Drawing.Size(363, 336);
+            RTB_RAM.TabIndex = 0;
+            RTB_RAM.Text = "";
             // 
             // RT_Label
             // 
-            this.RT_Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RT_Label.AutoSize = true;
-            this.RT_Label.Location = new System.Drawing.Point(226, 316);
-            this.RT_Label.Name = "RT_Label";
-            this.RT_Label.Size = new System.Drawing.Size(33, 13);
-            this.RT_Label.TabIndex = 19;
-            this.RT_Label.Text = "Timer";
+            RT_Label.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RT_Label.AutoSize = true;
+            RT_Label.Location = new System.Drawing.Point(264, 365);
+            RT_Label.Margin = new Padding(4, 0, 4, 0);
+            RT_Label.Name = "RT_Label";
+            RT_Label.Size = new System.Drawing.Size(37, 15);
+            RT_Label.TabIndex = 19;
+            RT_Label.Text = "Timer";
             // 
             // RT_Timer
             // 
-            this.RT_Timer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RT_Timer.Location = new System.Drawing.Point(261, 312);
-            this.RT_Timer.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.RT_Timer.Name = "RT_Timer";
-            this.RT_Timer.Size = new System.Drawing.Size(52, 20);
-            this.RT_Timer.TabIndex = 20;
-            this.RT_Timer.Value = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
+            RT_Timer.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RT_Timer.Location = new System.Drawing.Point(304, 360);
+            RT_Timer.Margin = new Padding(4, 3, 4, 3);
+            RT_Timer.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+            RT_Timer.Name = "RT_Timer";
+            RT_Timer.Size = new System.Drawing.Size(61, 23);
+            RT_Timer.TabIndex = 20;
+            RT_Timer.Value = new decimal(new int[] { 1000, 0, 0, 0 });
+            // 
+            // B_Load
+            // 
+            B_Load.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            B_Load.Location = new System.Drawing.Point(381, 12);
+            B_Load.Margin = new Padding(4, 3, 4, 3);
+            B_Load.Name = "B_Load";
+            B_Load.Size = new System.Drawing.Size(65, 30);
+            B_Load.TabIndex = 21;
+            B_Load.Text = "Load";
+            B_Load.UseVisualStyleBackColor = true;
+            B_Load.Click += B_Load_Click;
+            // 
+            // B_Save
+            // 
+            B_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            B_Save.Location = new System.Drawing.Point(381, 44);
+            B_Save.Margin = new Padding(4, 3, 4, 3);
+            B_Save.Name = "B_Save";
+            B_Save.Size = new System.Drawing.Size(65, 30);
+            B_Save.TabIndex = 22;
+            B_Save.Text = "Save";
+            B_Save.UseVisualStyleBackColor = true;
+            B_Save.Click += B_Save_Click;
             // 
             // SimpleHexEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 343);
-            this.Controls.Add(this.RT_Timer);
-            this.Controls.Add(this.RT_Label);
-            this.Controls.Add(this.CB_CopyMethod);
-            this.Controls.Add(this.CB_AutoRefresh);
-            this.Controls.Add(this.PG_BlockView);
-            this.Controls.Add(this.B_Update);
-            this.Controls.Add(this.RTB_RAM);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SimpleHexEditor";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "RAMEdit";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SimpleHexEditor_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.RT_Timer)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(448, 396);
+            Controls.Add(B_Save);
+            Controls.Add(B_Load);
+            Controls.Add(RT_Timer);
+            Controls.Add(RT_Label);
+            Controls.Add(CB_CopyMethod);
+            Controls.Add(CB_AutoRefresh);
+            Controls.Add(PG_BlockView);
+            Controls.Add(B_Update);
+            Controls.Add(RTB_RAM);
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SimpleHexEditor";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "RAMEdit";
+            FormClosing += SimpleHexEditor_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)RT_Timer).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
         #endregion
@@ -163,5 +187,7 @@ namespace AutoModPlugins.GUI
         private ComboBox CB_CopyMethod;
         private Label RT_Label;
         private NumericUpDown RT_Timer;
+        private Button B_Load;
+        private Button B_Save;
     }
 }

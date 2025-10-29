@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
@@ -123,6 +124,55 @@ public partial class SimpleHexEditor : Form
         Bytes = Decoder.StringToByteArray(bytestring);
         DialogResult = DialogResult.OK;
         Close();
+    }
+
+
+    private void B_Load_Click(object sender, EventArgs e)
+    {
+        OpenFileDialog Open = new()
+        {
+            Title = "Select a File",
+            Filter = "Binary File (*.bin)|*.bin|All Files (*.*)|*.*",
+            FilterIndex = 1,
+            RestoreDirectory = true,
+            Multiselect = false
+        };
+        if (Open.ShowDialog() == DialogResult.OK)
+        {
+            var file = Open.FileName;
+            try
+            {
+                var bytes = File.ReadAllBytes(file);
+                var r_text = string.Join(" ", bytes.Select(z => $"{z:X2}"));
+                if (InvokeRequired) Invoke(() => RTB_RAM.Text = r_text);
+                else RTB_RAM.Text = r_text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error reading file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
+
+    private void B_Save_Click(object sender, EventArgs e)
+    {
+        var bytestring = RTB_RAM.Text.Replace("\t", "").Replace(" ", "").Trim();
+        Bytes = Decoder.StringToByteArray(bytestring);
+
+        SaveFileDialog Save = new()
+        {
+            Filter = "Binary File (*.bin)|*.bin|All Files (*.*)|*.*",
+            Title = "Save As...",
+        };
+        if (Save.ShowDialog() == DialogResult.OK)
+        {
+            FileStream fs = new(Save.FileName, FileMode.Create);
+            BinaryWriter bw = new(fs);
+
+            bw.Write(Bytes);
+            fs.Close();
+            bw.Close();
+        }
     }
 
     private void ChangeCopyMethod(object sender, EventArgs e)
