@@ -8,7 +8,7 @@ public sealed class LiveHeXController
     public readonly IPKMView Editor;
     public PokeSysBotMini Bot;
 
-    public LiveHeXController(ISaveFileProvider boxes, IPKMView editor, InjectorCommunicationType ict, bool useCache = false)
+    public LiveHeXController(ISaveFileProvider boxes, IPKMView editor, InjectorCommunicationType ict)
     {
         SAV = boxes;
         Editor = editor;

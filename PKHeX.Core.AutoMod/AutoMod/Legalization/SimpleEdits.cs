@@ -513,6 +513,7 @@ public static class SimpleEdits
         EntityContext.Gen8a => PersonalTable.LA  [species, form].BaseFriendship,
         EntityContext.Gen8b => PersonalTable.BDSP[species, form].BaseFriendship,
         EntityContext.Gen9  => PersonalTable.SV  [species, form].BaseFriendship,
+        EntityContext.Gen9a => PersonalTable.ZA  [species, form].BaseFriendship,
         _ => throw new IndexOutOfRangeException(),
     };
 
@@ -719,10 +720,8 @@ public static class SimpleEdits
         if (pk is IMoveShop8Mastery master)
             master.SetMoveShopFlags(pk);
         if (pk is IPlusRecord pr)
-        {
-            var (learn, plus) = LearnSource9ZA.GetLearnsetAndPlus(pk.Species, pk.Form);
             pr.SetPlusFlags((PersonalInfo9ZA)pk.PersonalInfo, new LegalityAnalysis(pk), true, true);
-        }
+        
     }
 
     /// <summary>

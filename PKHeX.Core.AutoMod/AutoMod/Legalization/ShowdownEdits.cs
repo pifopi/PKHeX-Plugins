@@ -357,7 +357,7 @@ public static class ShowdownEdits
     /// <param name="pk">PKM to modify</param>
     /// <param name="set">Showdown Set to refer</param>
     /// <param name="enc">Encounter to reference</param>
-    public static void SetEV(this PKM pk, IBattleTemplate set, IEncounterTemplate enc)
+    public static void SetEV(this PKM pk, IBattleTemplate set)
     {
         if (pk is IAwakened)
         {

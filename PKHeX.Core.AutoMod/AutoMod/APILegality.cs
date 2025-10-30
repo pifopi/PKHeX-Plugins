@@ -576,7 +576,7 @@ public static class APILegality
 
         // Legality Fixing
         pk.SetALMMoves(set, enc);
-        pk.SetEV(set, enc);
+        pk.SetEV(set);
         pk.SetCorrectMetLevel(enc);
         pk.SetGVs();
         pk.SetHyperTrainingFlags(set, enc, criteria);
