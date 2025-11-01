@@ -278,7 +278,7 @@ public static class ModLogic
         if ((shiny && !SimpleEdits.IsShinyLockedSpeciesForm(species, blank.Form)) || (shiny && tr.Generation != 6 && blank.Species != (ushort)Vivillon && blank.Form != 18))
             setText += Environment.NewLine + "Shiny: Yes";
 
-        if (template is IAlphaReadOnly && alpha && tr.Version == GameVersion.PLA)
+        if (template is IAlphaReadOnly && alpha && tr.Version >= GameVersion.PLA)
             setText += Environment.NewLine + "Alpha: Yes";
 
         var sset = new ShowdownSet(setText);
