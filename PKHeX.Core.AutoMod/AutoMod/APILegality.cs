@@ -299,7 +299,7 @@ public static class APILegality
         var versionlist = GameUtil.GetVersionsWithinRange(template, template.Generation);
         GameVersion[] gamelist = APILegality.GameVersionPriority switch
         {
-            GameVersionPriorityType.NativeOnly => [..GetPairedVersions(destVer, versionlist)],
+            GameVersionPriorityType.NativeOnly => [..GetPairedVersions(destVer, versionlist).OrderByDescending(j=>j==destVer)],
             GameVersionPriorityType.PriorityOrder => [.. PriorityOrder.Where(z => versionlist.Contains(z))],
             _ => [.. versionlist.OrderByDescending(z => z).ToArray()]
         };
