@@ -51,7 +51,13 @@ public static class ShowdownEdits
 
             return;
         }
-
+        if (enc is IEncounter9a || enc is WA9)
+        {
+            pk.StatNature = val;
+            if (pk.StatNature is 0 or Nature.Docile or Nature.Bashful or >= Nature.Quirky) // Only Serious Mint for Neutral Natures
+                pk.StatNature = Nature.Serious;
+            return;
+        }
         pk.SetNature(val);
         if (enc.Generation is not (3 or 4))
         {
@@ -80,6 +86,8 @@ public static class ShowdownEdits
     /// <param name="preference">The <see cref="AbilityPermission"/> indicating the preferred ability slot.</param>
     public static void SetAbility(PKM pk, IBattleTemplate set, AbilityPermission preference)
     {
+        if (pk.ZA)
+            return;
         if (pk.Ability != set.Ability)
             pk.RefreshAbility(pk is PK5 { HiddenAbility: true } ? 2 : pk.AbilityNumber >> 1);
         if (pk.Ability != set.Ability && pk.Context >= EntityContext.Gen6 && set.Ability != -1)
@@ -125,7 +133,7 @@ public static class ShowdownEdits
         var UnownFormSet = pk.Species == (ushort)Species.Unown && enc.Generation is 3 or 4;
         if (evolutionRequired)
             pk.Species = set.Species;
-
+            
         if (formchange && !UnownFormSet)
             pk.Form = form;
         if (enc.Version is GameVersion.BD or GameVersion.SP && pk.Species == (ushort)Species.Unown)
@@ -282,8 +290,29 @@ public static class ShowdownEdits
         // If no moves are requested, just keep the encounter moves
         if (set.Moves[0] != 0)
             pk.SetMoves(set.Moves, Legal.IsPPUpAvailable(pk));
-
+        
         var la = new LegalityAnalysis(pk);
+        if (enc is IEncounter9a or WA9 && set.Moves.Count(z=>z != 0) < 4)
+        {
+            Span<ushort> suggmoves = stackalloc ushort[4];
+            la.GetSuggestedCurrentMoves(suggmoves);
+            ushort[] movesArr = [.. set.Moves];
+            int srcIndex = 0;
+            for (int i = 0; i < movesArr.Length; i++)
+            {
+                if (movesArr[i] == 0)
+                {
+                    // Skip any source values already in target
+                    while (srcIndex < suggmoves.Length && movesArr.Contains(suggmoves[srcIndex]))
+                        srcIndex++;
+
+                    if (srcIndex < suggmoves.Length)
+                        movesArr[i] = suggmoves[srcIndex];
+                }
+            }
+            pk.SetMoves(movesArr, Legal.IsPPUpAvailable(pk));
+
+        }
         // Remove invalid encounter moves (eg. Kyurem Encounter -> Requested Kyurem black)
         if (set.Moves[0] == 0 && la.Info.Moves.Any(z => z.Judgement == Severity.Invalid))
         {
@@ -305,7 +334,6 @@ public static class ShowdownEdits
         if (la.Info.Relearn.Any(z => z.Judgement == Severity.Invalid))
             pk.ClearRelearnMoves();
 
-        
     }
 
     public static void SetEggMoves(this PKM pk, IBattleTemplate set, IEncounterTemplate enc)

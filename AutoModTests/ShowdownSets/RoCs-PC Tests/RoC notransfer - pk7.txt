@@ -13,7 +13,7 @@ IVs: 13 Def / 22 SpA / 26 SpD
 Ability: Sweet Veil
 Level: 50
 Quirky Nature
-=MetLevel=50
+~=Level=50
 ~=Location=202
 ~=Version=USUM
 .Version=32
@@ -27,7 +27,7 @@ IVs: 14 Def / 20 SpD / 26 Spe
 Ability: Water Bubble
 Level: 25
 Adamant Nature
-=MetLevel=25
+~=Level=25
 ~=Location=202
 ~=Version=USUM
 .Version=33
@@ -41,7 +41,7 @@ IVs: 24 HP / 11 SpA / 29 SpD
 Ability: Sturdy
 Level: 35
 Relaxed Nature
-=MetLevel=35
+~=Level=35
 ~=Location=202
 ~=Version=USUM
 .Version=33

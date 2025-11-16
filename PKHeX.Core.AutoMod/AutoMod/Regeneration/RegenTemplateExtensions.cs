@@ -8,7 +8,10 @@ public static class RegenTemplateExtensions
 {
     public static void SanitizeForm(this RegenTemplate set, byte gen)
     {
-        // Scatterbug and Spewpa must be Fancy - not anymore
+        // Scatterbug must be Meadow, Spewpa must be Meadow or Marine (M&Ms only)
+        if (set.Context == EntityContext.Gen9a && (set.Species == (ushort)Species.Scatterbug || set.Species == (ushort)Species.Spewpa && set.Form is not 8 || set.Species == (ushort)Species.Vivillon && set.Form is not 8))
+            set.Form = 6;
+        
         if (!FormInfo.IsBattleOnlyForm(set.Species, set.Form, gen))
             return;
 

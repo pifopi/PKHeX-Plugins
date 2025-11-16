@@ -35,7 +35,7 @@ Level: 36
 Gigantamax: Yes
 Shiny: Yes
 Bold Nature
-=Generation=2
+~=Generation=2
 - Bubble Beam
 - Submission
 
@@ -108,8 +108,7 @@ Ability: Surge Surfer
 Shiny: Yes
 Timid Nature
 Language: English
-=OriginalTrainerName=Psytrice
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Nasty Plot
@@ -179,7 +178,7 @@ Ability: Drought
 Level: 62
 Shiny: Yes
 Timid Nature
-=Generation=2
+~=Generation=2
 - Double Team
 - Burning Jealousy
 - Solar Beam
@@ -239,7 +238,7 @@ EVs: 252 HP / 252 Def / 6 SpD
 Ability: Regenerator
 Shiny: Square
 Relaxed Nature
-=Generation=2
+~=Generation=2
 - Scald
 - Teleport
 - Slack Off
@@ -262,7 +261,7 @@ IVs: 0 SpA
 EVs: 252 HP / 252 Def / 6 Spe
 Ability: Overcoat
 Jolly Nature
-=Generation=2
+~=Generation=2
 - Steel Roller
 - Mimic
 - Curse
@@ -381,7 +380,7 @@ Bold Nature
 Weezing-Galar (M)
 Ability: Levitate
 Rash Nature
-=Generation=2
+~=Generation=2
 - Zap Cannon
 - Bide
 - Rage
@@ -402,7 +401,6 @@ Rhydon (M) @ Eviolite
 EVs: 248 HP / 248 Atk / 14 Spe
 Ability: Lightning Rod
 Adamant Nature
-=FatefulEncounter=True
 ~=Version=CXD
 - Earthquake
 - Stone Edge
@@ -428,7 +426,6 @@ IVs: 27 Atk
 Ability: Natural Cure
 Shiny: Yes
 Bold Nature
-=FatefulEncounter=True
 ~=Version=FRLG
 .Version=5
 - Wish
@@ -551,7 +548,6 @@ IVs: 12 Atk
 EVs: 6 Def / 252 SpA / 252 Spe
 Ability: Static
 Timid Nature
-=FatefulEncounter=True
 ~=Version=CXD
 - Thunderbolt
 - Hurricane
@@ -620,7 +616,7 @@ Ability: Unnerve
 Level: 70
 Shiny: Yes
 Timid Nature
-=Generation=2
+~=Generation=1
 - Curse
 - Mud-Slap
 - Barrier
@@ -684,7 +680,7 @@ Ability: Infiltrator
 Level: 65
 Shiny: Square
 Jolly Nature
-=Generation=2
+~=Generation=2
 - Take Down
 - Dual Wingbeat
 - Brave Bird
@@ -722,7 +718,7 @@ EVs: 252 HP / 252 Def / 6 SpA
 Ability: Regenerator
 Shiny: Square
 Bold Nature
-=Generation=2
+~=Generation=2
 - Teleport
 - Scald
 - Psyshock
@@ -746,7 +742,6 @@ IVs: 0 Atk
 Ability: Damp
 Timid Nature
 Language: Japanese
-=FatefulEncounter=True
 ~=Version=B2W2
 .Version=23
 - Clear Smog
@@ -810,7 +805,7 @@ Ability: Multiscale
 Level: 60
 Shiny: Yes
 Bold Nature
-=Generation=2
+~=Generation=2
 - Curse
 - Zap Cannon
 - Nightmare
@@ -961,7 +956,7 @@ Ability: Regenerator
 Level: 99
 Shiny: Square
 Calm Nature
-=Generation=2
+~=Generation=2
 - Ancient Power
 - Mimic
 - Skull Bash
@@ -1050,7 +1045,7 @@ Ability: Levitate
 Level: 1
 Shiny: Yes
 Adamant Nature
-=MetLevel=1
+~=Level=1
 ~=Version=HGSS
 .Version=8
 - Dragon Breath

@@ -64,6 +64,11 @@ public static class TeamTests
                     var regen = new RegenTemplate(set, sav.Generation);
                     var almres = sav.GetLegalFromSet(regen);
                     var la = new LegalityAnalysis(almres.Created);
+                    if (set.InvalidLines.Count > 0 && set.InvalidLines[0].Type != BattleTemplateParseErrorType.HiddenPowerIncompatibleIVs)
+                    {
+                        result.Failed.Add(new(regen, new LegalityAnalysis(almres.Created)));
+                        continue;
+                    }
                     if (la.Valid)
                     {
                         Debug.WriteLine("Valid");
@@ -96,6 +101,7 @@ public static class TeamTests
     [InlineData(AnubisPK7, new[] { SW, US })]
     [InlineData(AnubisPK8, new[] { SW })]
     [InlineData(AnubisPK9, new[] { SL })]
+    [InlineData(AnubisPA9, new[] { ZA })]
     [InlineData(AnubisNTPB7, new[] { GE })]
     [InlineData(AnubisTPK7, new[] { SW, US })]
     [InlineData(AnubisTPK8, new[] { SW })]
@@ -180,6 +186,7 @@ public static class TeamTests
     private const string AnubisPK7 = "Anubis Tests/Anubis - pk7.txt";
     private const string AnubisPK8 = "Anubis Tests/Anubis - pk8.txt";
     private const string AnubisPK9 = "Anubis Tests/Anubis - pk9.txt";
+    private const string AnubisPA9 = "Anubis Tests/Anubis - pa9.txt";
     private const string AnubisNTPB7 = "Anubis Tests/Anubis notransfer - pb7.txt";
     private const string AnubisTPK7 = "Anubis Tests/Anubis transferred - pk7.txt";
     private const string AnubisTPK8 = "Anubis Tests/Anubis transferred - pk8.txt";

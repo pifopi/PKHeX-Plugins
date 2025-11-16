@@ -3,7 +3,7 @@ IVs: 12 HP / 8 Atk / 14 Def / 13 SpA / 29 SpD / 16 Spe
 Ability: Overgrow
 Level: 32
 Adamant Nature
-=MetLevel=10
+~=Level=10
 ~=Location=12
 ~=Version=USUM
 .Version=33
@@ -17,7 +17,7 @@ IVs: 7 HP / 30 Atk / 3 Def / 11 SpA / 27 SpD / 8 Spe
 Ability: Blaze
 Level: 36
 Quiet Nature
-=MetLevel=12
+~=Level=12
 ~=Location=10
 ~=Version=USUM
 .Version=33
@@ -31,7 +31,7 @@ IVs: 7 HP / 27 Atk / 5 Def / 19 SpA / 13 SpD / 16 Spe
 Ability: Torrent
 Level: 36
 Hardy Nature
-=MetLevel=12
+~=Level=12
 ~=Location=42
 ~=Version=USUM
 .Version=33
@@ -94,7 +94,7 @@ IVs: 6 Atk / 14 Def / 11 SpA / 6 SpD / 16 Spe
 Ability: Swarm
 Level: 14
 Serious Nature
-=MetLevel=14
+~=Level=14
 ~=Location=50
 ~=Version=USUM
 .Version=33
@@ -119,7 +119,7 @@ IVs: 16 HP / 9 Atk / 16 Def / 7 SpA / 25 SpD
 Ability: Keen Eye
 Level: 29
 Bashful Nature
-=MetLevel=29
+~=Level=29
 ~=Location=106
 ~=Version=USUM
 .Version=33
@@ -160,7 +160,7 @@ IVs: 17 Def / 24 SpA / 6 SpD
 Ability: Thick Fat
 Level: 20
 Bashful Nature
-=MetLevel=20
+~=Level=20
 ~=Location=202
 ~=Version=USUM
 .Version=33
@@ -202,7 +202,7 @@ IVs: 25 HP / 1 Atk / 0 Def / 4 SpA / 7 SpD
 Ability: Intimidate
 Level: 22
 Hasty Nature
-=MetLevel=10
+~=Level=10
 ~=Location=12
 ~=Version=USUM
 .Version=33
@@ -216,7 +216,7 @@ IVs: 16 HP / 17 SpA / 30 Spe
 Ability: Static
 Level: 40
 Careful Nature
-=MetLevel=40
+~=Level=40
 ~=Location=70
 ~=Version=USUM
 .Version=33
@@ -522,8 +522,7 @@ Ability: No Guard
 Level: 9
 Brave Nature
 Language: English
-=OriginalTrainerName=Hila
-=MetLocation=30001
+~=Location=30001
 ~=Version=SM
 .Version=31
 - Leer
@@ -607,8 +606,7 @@ Ability: Magnet Pull
 Level: 32
 Impish Nature
 Language: English
-=OriginalTrainerName=Sill
-=MetLocation=30001
+~=Location=30001
 ~=Version=SM
 .Version=31
 - Smack Down
@@ -747,7 +745,7 @@ IVs: 15 HP / 23 Atk / 15 Def / 16 SpA / 3 SpD / 9 Spe
 Ability: Rock Head
 Level: 14
 Relaxed Nature
-=MetLevel=14
+~=Level=14
 ~=Location=34
 ~=Version=USUM
 .Version=33
@@ -789,7 +787,7 @@ IVs: 1 HP / 23 Atk / 22 Def / 24 SpA / 20 SpD / 4 Spe
 Ability: Soundproof
 Level: 60
 Hasty Nature
-=MetLevel=60
+~=Level=60
 ~=Location=224
 ~=Version=USUM
 .Version=33
@@ -859,7 +857,7 @@ IVs: 13 HP / 21 SpA / 10 SpD / 24 Spe
 Ability: Lightning Rod
 Level: 42
 Impish Nature
-=MetLevel=32
+~=Level=32
 ~=Location=138
 ~=Version=USUM
 .Version=33
@@ -1027,7 +1025,7 @@ IVs: 15 HP / 23 Atk / 24 Def / 21 SpA / 24 SpD / 1 Spe
 Ability: Hyper Cutter
 Level: 42
 Brave Nature
-=MetLevel=42
+~=Level=42
 ~=Location=184
 ~=Version=USUM
 .Version=33
@@ -1042,8 +1040,7 @@ Ability: Intimidate
 Level: 59
 Jolly Nature
 Language: English
-=OriginalTrainerName=Anga
-=MetLocation=30001
+~=Location=30001
 ~=Version=USUM
 .Version=33
 - Take Down
@@ -1150,7 +1147,7 @@ IVs: 15 HP / 2 Atk / 9 SpA / 29 SpD / 17 Spe
 Ability: Trace
 Level: 30
 Adamant Nature
-=MetLevel=30
+~=Level=30
 ~=Location=116
 ~=Version=USUM
 .Version=33
@@ -1164,7 +1161,7 @@ IVs: 2 HP / 5 Atk / 22 Def / 27 SpD / 5 Spe
 Ability: Shell Armor
 Level: 40
 Quiet Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=32
@@ -1178,7 +1175,7 @@ IVs: 9 HP / 0 Atk / 25 Def / 3 Spe
 Ability: Swift Swim
 Level: 40
 Timid Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -1192,7 +1189,7 @@ IVs: 19 HP / 7 Atk / 8 Def / 6 SpA / 30 SpD / 22 Spe
 Ability: Rock Head
 Level: 40
 Lonely Nature
-=MetLevel=40
+~=Level=40
 ~=Location=172
 ~=Version=SM
 .Version=31
@@ -1219,7 +1216,7 @@ IVs: 23 Atk / 3 SpD / 21 Spe
 Ability: Pressure
 Level: 60
 Gentle Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -1233,7 +1230,7 @@ IVs: 3 Def / 15 SpA / 16 Spe
 Ability: Pressure
 Level: 60
 Brave Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -1247,7 +1244,7 @@ IVs: 4 HP / 30 SpA / 2 Spe
 Ability: Pressure
 Level: 60
 Naughty Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -1303,7 +1300,7 @@ IVs: 20 HP / 19 Def / 16 SpD
 Ability: Pressure
 Level: 60
 Brave Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -1630,7 +1627,7 @@ IVs: 6 HP / 16 SpD / 22 Spe
 Ability: Damp
 Level: 60
 Careful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -1742,7 +1739,7 @@ IVs: 15 HP / 23 Atk / 15 Def / 16 SpA / 3 SpD / 9 Spe
 Ability: Rock Head
 Level: 14
 Relaxed Nature
-=MetLevel=14
+~=Level=14
 ~=Location=34
 ~=Version=USUM
 .Version=33
@@ -1812,7 +1809,7 @@ IVs: 13 Def / 5 SpA / 10 Spe
 Ability: Flame Body
 Level: 60
 Timid Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -1949,7 +1946,7 @@ IVs: 15 HP / 2 Atk / 9 SpA / 29 SpD / 17 Spe
 Ability: Trace
 Level: 30
 Adamant Nature
-=MetLevel=30
+~=Level=30
 ~=Location=116
 ~=Version=USUM
 .Version=33
@@ -2044,7 +2041,7 @@ IVs: 26 Def / 22 SpD / 21 Spe
 Ability: Pressure
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -2058,7 +2055,7 @@ IVs: 8 HP / 18 Def / 19 Spe
 Ability: Pressure
 Level: 60
 Hardy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2072,7 +2069,7 @@ IVs: 25 Atk / 10 Def / 15 SpA
 Ability: Pressure
 Level: 60
 Bashful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2100,7 +2097,7 @@ IVs: 24 Atk / 27 Def / 4 Spe
 Ability: Pressure
 Level: 60
 Modest Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2114,7 +2111,7 @@ IVs: 0 SpD / 30 Spe
 Ability: Pressure
 Level: 60
 Careful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -2128,7 +2125,7 @@ IVs: 10 HP / 24 Def / 11 SpA / 14 SpD / 18 Spe
 Ability: Overgrow
 Level: 36
 Hasty Nature
-=MetLevel=16
+~=Level=16
 ~=Location=52
 ~=Version=USUM
 .Version=33
@@ -2142,7 +2139,7 @@ IVs: 8 HP / 6 Atk / 20 Def / 9 SpA / 7 SpD / 1 Spe
 Ability: Blaze
 Level: 36
 Bashful Nature
-=MetLevel=20
+~=Level=20
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -2156,7 +2153,7 @@ IVs: 17 HP / 28 Atk / 17 Def / 14 SpA / 6 SpD / 8 Spe
 Ability: Torrent
 Level: 36
 Timid Nature
-=MetLevel=17
+~=Level=17
 ~=Location=86
 ~=Version=USUM
 .Version=33
@@ -2170,7 +2167,7 @@ IVs: 9 SpA / 18 SpD / 4 Spe
 Ability: Swift Swim
 Level: 60
 Naughty Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2184,7 +2181,7 @@ IVs: 8 HP / 8 Atk / 9 Def
 Ability: Chlorophyll
 Level: 60
 Mild Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2198,7 +2195,7 @@ IVs: 13 Atk / 19 Def / 24 Spe
 Ability: Guts
 Level: 60
 Hasty Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2239,7 +2236,7 @@ IVs: 13 HP / 0 Atk / 13 Def / 12 SpA / 28 SpD / 2 Spe
 Ability: Trace
 Level: 30
 Hardy Nature
-=MetLevel=17
+~=Level=17
 ~=Location=54
 ~=Version=USUM
 .Version=33
@@ -2377,7 +2374,7 @@ IVs: 18 HP / 1 Atk / 0 Def / 4 SpA / 17 SpD / 6 Spe
 Ability: Sturdy
 Level: 57
 Quirky Nature
-=MetLevel=57
+~=Level=57
 ~=Location=166
 ~=Version=USUM
 .Version=33
@@ -2391,7 +2388,7 @@ IVs: 6 HP / 17 Def / 0 SpD
 Ability: Pure Power
 Level: 60
 Calm Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2489,7 +2486,7 @@ IVs: 10 HP / 16 Def / 7 SpD
 Ability: Thick Fat
 Level: 60
 Mild Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2530,7 +2527,7 @@ IVs: 7 Def / 25 SpA / 0 Spe
 Ability: Natural Cure
 Level: 60
 Jolly Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2614,7 +2611,7 @@ IVs: 24 HP / 10 Atk / 11 Def / 15 SpA / 10 SpD / 29 Spe
 Ability: Suction Cups
 Level: 40
 Quiet Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -2628,7 +2625,7 @@ IVs: 12 HP / 28 Atk / 12 Def / 27 SpA / 18 SpD / 10 Spe
 Ability: Battle Armor
 Level: 40
 Quirky Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=32
@@ -2739,7 +2736,7 @@ IVs: 11 HP / 21 Atk / 21 Def / 30 SpA / 6 SpD / 29 Spe
 Ability: Ice Body
 Level: 44
 Brave Nature
-=MetLevel=19
+~=Level=19
 ~=Location=56
 ~=Version=USUM
 .Version=33
@@ -2879,7 +2876,7 @@ IVs: 6 HP / 10 Atk / 20 SpD
 Ability: Clear Body
 Level: 60
 Gentle Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2893,7 +2890,7 @@ IVs: 15 HP / 3 Def / 8 Spe
 Ability: Clear Body
 Level: 60
 Careful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2907,7 +2904,7 @@ IVs: 10 HP / 26 SpA / 3 Spe
 Ability: Clear Body
 Level: 60
 Brave Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2921,7 +2918,7 @@ IVs: 8 Atk / 12 Def / 7 Spe
 Ability: Levitate
 Level: 60
 Modest Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2935,7 +2932,7 @@ IVs: 8 HP / 24 SpD / 29 Spe
 Ability: Levitate
 Level: 60
 Lax Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -2949,7 +2946,7 @@ IVs: 12 Atk / 10 Def / 15 Spe
 Ability: Drizzle
 Level: 60
 Careful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2963,7 +2960,7 @@ IVs: 5 SpA / 21 SpD / 17 Spe
 Ability: Drought
 Level: 60
 Bold Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -2977,7 +2974,7 @@ IVs: 4 Atk / 29 Def / 0 Spe
 Ability: Air Lock
 Level: 60
 Sassy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -2991,7 +2988,7 @@ IVs: 21 HP / 23 Atk / 29 Def / 11 SpA / 12 SpD / 5 Spe
 Ability: Overgrow
 Level: 37
 Relaxed Nature
-=MetLevel=36
+~=Level=36
 ~=Location=128
 ~=Version=USUM
 .Version=33
@@ -3005,7 +3002,7 @@ IVs: 8 HP / 2 Atk / 16 Def / 22 SpA / 21 SpD / 6 Spe
 Ability: Blaze
 Level: 36
 Naive Nature
-=MetLevel=29
+~=Level=29
 ~=Location=108
 ~=Version=USUM
 .Version=33
@@ -3019,7 +3016,7 @@ IVs: 30 HP / 11 Atk / 28 Def / 15 SpA / 19 SpD / 2 Spe
 Ability: Torrent
 Level: 36
 Jolly Nature
-=MetLevel=35
+~=Level=35
 ~=Location=118
 ~=Version=USUM
 .Version=33
@@ -3075,7 +3072,7 @@ IVs: 21 HP / 26 Atk / 5 Def / 12 SpA / 20 SpD / 8 Spe
 Ability: Mold Breaker
 Level: 30
 Bold Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=SM
 .Version=30
@@ -3089,7 +3086,7 @@ IVs: 9 HP / 30 Atk / 27 Def / 23 SpA / 28 SpD / 13 Spe
 Ability: Sturdy
 Level: 30
 Mild Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -3103,7 +3100,7 @@ IVs: 25 Atk / 26 SpA / 0 Spe
 Ability: Swift Swim
 Level: 60
 Jolly Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3118,8 +3115,7 @@ Ability: Storm Drain
 Level: 44
 Quiet Nature
 Language: English
-=OriginalTrainerName=Kumu
-=MetLocation=30001
+~=Location=30001
 ~=Version=USUM
 .Version=33
 - Hidden Power [Steel]
@@ -3314,7 +3310,7 @@ IVs: 28 Atk / 7 Def / 6 Spe
 Ability: Sand Stream
 Level: 60
 Hardy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3328,7 +3324,7 @@ IVs: 2 Atk / 29 SpA / 13 Spe
 Ability: Battle Armor
 Level: 60
 Serious Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3384,7 +3380,7 @@ IVs: 25 HP / 7 Atk / 11 Spe
 Ability: Snow Warning
 Level: 60
 Impish Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3440,7 +3436,7 @@ IVs: 13 HP / 21 SpA / 10 SpD / 24 Spe
 Ability: Lightning Rod
 Level: 42
 Impish Nature
-=MetLevel=32
+~=Level=32
 ~=Location=138
 ~=Version=USUM
 .Version=33
@@ -3496,7 +3492,7 @@ IVs: 24 HP / 4 SpA / 8 Spe
 Ability: Tinted Lens
 Level: 60
 Sassy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3538,7 +3534,7 @@ IVs: 15 HP / 2 Atk / 9 SpA / 29 SpD / 17 Spe
 Ability: Adaptability
 Level: 30
 Adamant Nature
-=MetLevel=30
+~=Level=30
 ~=Location=116
 ~=Version=USUM
 .Version=33
@@ -3552,7 +3548,7 @@ IVs: 13 HP / 0 Atk / 13 Def / 12 SpA / 28 SpD / 2 Spe
 Ability: Steadfast
 Level: 20
 Hardy Nature
-=MetLevel=17
+~=Level=17
 ~=Location=54
 ~=Version=USUM
 .Version=33
@@ -3594,7 +3590,7 @@ IVs: 18 HP / 13 Def / 1 SpA / 5 SpD / 24 Spe
 Ability: Levitate
 Level: 61
 Gentle Nature
-=MetLevel=61
+~=Level=61
 ~=Location=170
 ~=Version=USUM
 .Version=33
@@ -3608,7 +3604,7 @@ IVs: 30 Atk / 10 Def / 13 SpA
 Ability: Levitate
 Level: 60
 Brave Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3622,7 +3618,7 @@ IVs: 17 Atk / 9 SpA / 9 Spe
 Ability: Levitate
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3636,7 +3632,7 @@ IVs: 24 Def / 10 SpD / 10 Spe
 Ability: Levitate
 Level: 60
 Lonely Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3650,7 +3646,7 @@ IVs: 6 HP / 26 Atk / 22 Def
 Ability: Pressure
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -3664,7 +3660,7 @@ IVs: 14 HP / 4 SpA / 14 SpD
 Ability: Pressure
 Level: 60
 Modest Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3678,7 +3674,7 @@ IVs: 3 Def / 9 SpA / 22 Spe
 Ability: Flash Fire
 Level: 60
 Brave Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -3692,7 +3688,7 @@ IVs: 30 Atk / 15 Def / 29 SpD
 Ability: Slow Start
 Level: 60
 Mild Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3706,7 +3702,7 @@ IVs: 27 HP / 7 Def / 21 SpD
 Ability: Pressure
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -3720,7 +3716,7 @@ IVs: 12 HP / 2 Def / 12 SpD
 Ability: Levitate
 Level: 60
 Hardy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -3854,7 +3850,7 @@ IVs: 16 HP / 15 Atk / 16 SpA
 Ability: Regenerator
 Level: 60
 Gentle Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4003,7 +3999,7 @@ IVs: 25 Atk / 10 SpD / 16 Spe
 Ability: Sturdy
 Level: 60
 Bashful Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4031,7 +4027,7 @@ IVs: 19 SpA / 28 SpD / 24 Spe
 Ability: Magic Guard
 Level: 60
 Calm Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4045,7 +4041,7 @@ IVs: 5 Atk / 27 Def / 13 SpD / 0 Spe
 Ability: Solid Rock
 Level: 37
 Bashful Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=SM
 .Version=30
@@ -4059,7 +4055,7 @@ IVs: 0 HP / 4 Atk / 8 Def / 7 SpA / 15 SpD / 11 Spe
 Ability: Defeatist
 Level: 37
 Lax Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -4170,7 +4166,7 @@ IVs: 16 Atk / 29 Def / 4 SpD
 Ability: Keen Eye
 Level: 60
 Gentle Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4240,7 +4236,7 @@ IVs: 24 HP / 19 Def / 2 SpA / 3 SpD / 6 Spe
 Ability: Cursed Body
 Level: 40
 Timid Nature
-=MetLevel=34
+~=Level=34
 ~=Location=126
 ~=Version=USUM
 .Version=33
@@ -4294,7 +4290,7 @@ IVs: 11 HP / 1 Def / 17 SpA / 10 SpD / 9 Spe
 Ability: Levitate
 Level: 55
 Calm Nature
-=MetLevel=55
+~=Level=55
 ~=Location=164
 ~=Version=USUM
 .Version=33
@@ -4322,7 +4318,7 @@ IVs: 15 HP / 19 Atk / 7 Def / 0 SpA / 19 SpD / 23 Spe
 Ability: Flash Fire
 Level: 41
 Quirky Nature
-=MetLevel=9
+~=Level=9
 ~=Location=38
 ~=Version=USUM
 .Version=33
@@ -4350,7 +4346,7 @@ IVs: 11 Def / 27 SpA / 0 SpD
 Ability: Limber
 Level: 60
 Bold Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4518,7 +4514,7 @@ IVs: 9 Def / 0 SpA / 19 Spe
 Ability: Justified
 Level: 60
 Calm Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4532,7 +4528,7 @@ IVs: 20 HP / 13 Def / 11 SpA
 Ability: Justified
 Level: 60
 Jolly Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4546,7 +4542,7 @@ IVs: 17 HP / 9 Def / 20 Spe
 Ability: Justified
 Level: 60
 Serious Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4560,7 +4556,7 @@ IVs: 6 Atk / 0 SpD / 8 Spe
 Ability: Prankster
 Level: 60
 Jolly Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -4574,7 +4570,7 @@ IVs: 28 HP / 23 SpA / 13 Spe
 Ability: Prankster
 Level: 60
 Mild Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4588,7 +4584,7 @@ IVs: 23 SpA / 21 SpD / 1 Spe
 Ability: Turboblaze
 Level: 60
 Calm Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -4602,7 +4598,7 @@ IVs: 17 Atk / 15 SpD / 10 Spe
 Ability: Teravolt
 Level: 60
 Quiet Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4616,7 +4612,7 @@ IVs: 0 HP / 10 Atk / 1 Def
 Ability: Sand Force
 Level: 60
 Serious Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4630,7 +4626,7 @@ IVs: 19 SpA / 29 SpD / 9 Spe
 Ability: Pressure
 Level: 60
 Lax Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4656,7 +4652,7 @@ IVs: 17 HP / 1 Atk / 2 Def / 30 SpA / 27 SpD / 22 Spe
 Ability: Overgrow
 Level: 45
 Brave Nature
-=MetLevel=45
+~=Level=45
 ~=Location=184
 ~=Version=USUM
 .Version=33
@@ -4682,7 +4678,7 @@ IVs: 19 HP / 20 Atk / 0 Def / 17 SpD / 9 Spe
 Ability: Blaze
 Level: 44
 Docile Nature
-=MetLevel=44
+~=Level=44
 ~=Location=160
 ~=Version=USUM
 .Version=33
@@ -4708,7 +4704,7 @@ IVs: 13 HP / 7 Atk / 21 Def / 15 SpA / 30 SpD / 28 Spe
 Ability: Torrent
 Level: 44
 Brave Nature
-=MetLevel=44
+~=Level=44
 ~=Location=158
 ~=Version=USUM
 .Version=33
@@ -4750,7 +4746,7 @@ IVs: 7 HP / 5 Atk / 8 Def / 20 SpA / 13 SpD / 27 Spe
 Ability: Compound Eyes
 Level: 12
 Gentle Nature
-=MetLevel=9
+~=Level=9
 ~=Location=20
 ~=Version=USUM
 .Version=33
@@ -4875,7 +4871,7 @@ IVs: 19 HP / 15 Atk / 17 SpA
 Ability: Tough Claws
 Level: 60
 Docile Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4917,7 +4913,7 @@ IVs: 30 Atk / 4 Def / 4 Spe
 Ability: Dry Skin
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -4931,7 +4927,7 @@ IVs: 3 HP / 13 Atk / 10 Def / 13 SpA / 22 SpD / 20 Spe
 Ability: Strong Jaw
 Level: 39
 Sassy Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=32
@@ -4945,7 +4941,7 @@ IVs: 20 HP / 15 Atk / 19 Def / 30 SpA / 11 SpD / 2 Spe
 Ability: Refrigerate
 Level: 39
 Bold Nature
-=MetLevel=15
+~=Level=15
 ~=Location=58
 ~=Version=USUM
 .Version=33
@@ -4974,8 +4970,7 @@ Ability: Unburden
 Level: 8
 Brave Nature
 Language: English
-=OriginalTrainerName=Hila
-=MetLocation=30001
+~=Location=30001
 ~=Version=USUM
 .Version=32
 - Tackle
@@ -5073,8 +5068,7 @@ Ability: Natural Cure
 Level: 33
 Calm Nature
 Language: English
-=OriginalTrainerName=Sill
-=MetLocation=30001
+~=Location=30001
 ~=Version=USUM
 .Version=32
 - Feint Attack
@@ -5115,7 +5109,7 @@ IVs: 3 Atk / 9 SpD / 16 Spe
 Ability: Fairy Aura
 Level: 60
 Sassy Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=32
@@ -5129,7 +5123,7 @@ IVs: 17 HP / 21 SpD / 19 Spe
 Ability: Dark Aura
 Level: 60
 Mild Nature
-=MetLevel=60
+~=Level=60
 ~=Location=222
 ~=Version=USUM
 .Version=33
@@ -5143,7 +5137,7 @@ IVs: 18 Atk / 11 SpA / 4 SpD
 Ability: Aura Break
 Level: 60
 Bold Nature
-=MetLevel=60
+~=Level=60
 ~=Location=182
 ~=Version=USUM
 .Version=33
@@ -5156,7 +5150,7 @@ Hedgewig (Decidueye) (M) @ Miracle Seed
 EVs: 252 Atk / 6 SpD / 252 Spe
 Ability: Overgrow
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Location=8
 ~=Version=USUM
 .Version=32
@@ -5170,7 +5164,7 @@ IVs: 8 HP / 13 Atk / 14 Def / 25 SpA / 2 SpD / 24 Spe
 Ability: Blaze
 Level: 34
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Location=8
 ~=Version=USUM
 .Version=32
@@ -5184,7 +5178,7 @@ IVs: 26 HP / 7 Atk / 3 SpA / 13 SpD / 4 Spe
 EVs: 6 HP / 252 SpA / 252 Spe
 Ability: Torrent
 Modest Nature
-=MetLevel=5
+~=Level=5
 ~=Location=24
 ~=Version=SM
 .Version=30
@@ -5263,7 +5257,7 @@ IVs: 17 Def / 6 SpA / 20 SpD
 Ability: Adaptability
 Level: 20
 Relaxed Nature
-=MetLevel=20
+~=Level=20
 ~=Location=202
 ~=Version=USUM
 .Version=32
@@ -5319,7 +5313,7 @@ IVs: 5 Def / 24 SpA / 17 SpD
 Ability: Levitate
 Level: 35
 Jolly Nature
-=MetLevel=35
+~=Level=35
 ~=Location=202
 ~=Version=USUM
 .Version=32
@@ -5529,7 +5523,7 @@ IVs: 16 Atk / 25 SpA / 18 Spe
 Ability: Leaf Guard
 Level: 30
 Quirky Nature
-=MetLevel=30
+~=Level=30
 ~=Location=202
 ~=Version=USUM
 .Version=32
@@ -5599,7 +5593,7 @@ IVs: 3 Atk / 30 Def / 25 Spe
 Ability: Corrosion
 Level: 30
 Careful Nature
-=MetLevel=30
+~=Level=30
 ~=Location=202
 ~=Version=USUM
 .Version=33
@@ -5627,7 +5621,7 @@ IVs: 26 HP / 26 Atk / 5 Def / 16 SpA / 3 SpD / 9 Spe
 Ability: Fluffy
 Level: 28
 Adamant Nature
-=MetLevel=28
+~=Level=28
 ~=Location=20
 ~=Version=USUM
 .Version=33
@@ -5642,8 +5636,7 @@ Ability: Leaf Guard
 Level: 16
 Adamant Nature
 Language: English
-=OriginalTrainerName=Kihei
-=MetLocation=30001
+~=Location=30001
 ~=Version=SM
 .Version=30
 - Splash
@@ -5657,8 +5650,7 @@ Ability: Leaf Guard
 Level: 43
 Careful Nature
 Language: English
-=OriginalTrainerName=Kumu
-=MetLocation=30001
+~=Location=30001
 ~=Version=SM
 .Version=31
 - Stomp
@@ -5768,7 +5760,7 @@ IVs: 5 SpA / 18 SpD / 16 Spe
 Ability: Battle Armor
 Level: 60
 Adamant Nature
-=MetLevel=60
+~=Level=60
 ~=Location=160
 ~=Version=USUM
 .Version=32
@@ -5782,7 +5774,7 @@ IVs: 7 Atk / 1 Def / 12 SpA
 Ability: RKS System
 Level: 61
 Lonely Nature
-=MetLevel=60
+~=Level=60
 ~=Location=160
 ~=Version=USUM
 .Version=33
@@ -5866,7 +5858,7 @@ IVs: 25 Atk / 1 Def / 30 SpA
 Ability: Disguise
 Level: 40
 Lonely Nature
-=MetLevel=40
+~=Level=40
 ~=Location=202
 ~=Version=USUM
 .Version=33
@@ -5964,7 +5956,7 @@ IVs: 23 Atk / 24 Def / 16 Spe
 Ability: Overcoat
 Level: 50
 Relaxed Nature
-=MetLevel=50
+~=Level=50
 ~=Location=202
 ~=Version=USUM
 .Version=33
@@ -6034,7 +6026,7 @@ IVs: 0 Atk / 25 SpA / 25 SpD
 Ability: Sturdy
 Level: 43
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Location=144
 ~=Version=USUM
 .Version=33
@@ -6047,7 +6039,7 @@ IVs: 30 Def / 22 SpD / 15 Spe
 Ability: Full Metal Body
 Level: 60
 Docile Nature
-=MetLevel=60
+~=Level=60
 ~=Location=28
 ~=Version=USUM
 .Version=32
@@ -6061,7 +6053,7 @@ IVs: 14 Def / 29 SpD / 1 Spe
 Ability: Shadow Shield
 Level: 60
 Lax Nature
-=MetLevel=60
+~=Level=60
 ~=Location=28
 ~=Version=USUM
 .Version=33
@@ -6214,7 +6206,7 @@ IVs: 21 Atk / 0 Def / 29 Spe
 Ability: Beast Boost
 Level: 40
 Naughty Nature
-=MetLevel=40
+~=Level=40
 ~=Location=208
 ~=Version=USUM
 .Version=32
@@ -6228,7 +6220,7 @@ IVs: 5 HP / 28 SpA / 23 SpD
 Ability: Beast Boost
 Level: 41
 Quirky Nature
-=MetLevel=40
+~=Level=40
 ~=Location=208
 ~=Version=USUM
 .Version=33

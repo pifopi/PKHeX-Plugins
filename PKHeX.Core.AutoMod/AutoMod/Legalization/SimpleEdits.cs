@@ -537,7 +537,7 @@ public static class SimpleEdits
     /// <param name="enc">Encounter template originated from</param>
     public static void SetHandlerAndMemory(this PKM pk, ITrainerInfo trainer, IEncounterTemplate enc)
     {
-        if (IsUntradeableEncounter(enc))
+        if (TradeRestrictions.IsUntradableEncounter(enc))
             return;
 
         var expect = trainer.IsFromTrainer(pk) ? 0 : 1;
@@ -675,18 +675,18 @@ public static class SimpleEdits
             sv.ResetWeight();
         }
     }
-
     /// <summary>
-    /// Determines if the encounter is untradeable.
+    /// Sets the Plus flags for the PKM.
     /// </summary>
-    /// <param name="enc">The encounter template.</param>
-    /// <returns>True if untradeable, otherwise false.</returns>
-    public static bool IsUntradeableEncounter(IEncounterTemplate enc) => enc switch
+    /// <param name="pk">The PKM to modify.</param>
+    /// <param name="pi">The PersonalInfo to use.</param>
+    /// <param name="seedofMastery">Whether to use Seed of Mastery.</param>
+    /// <param name="tms">Whether to use TMs.</param>
+    public static void SetPlusFlags(this PKM pk, PersonalInfo pi, bool seedofMastery = false, bool tms = false)
     {
-        EncounterStatic7b { Location: 28 } => true, // LGP/E Starter
-        _ => false,
-    };
-
+        if (pk is IPlusRecord pr)
+            pr.SetPlusFlags((PersonalInfo9ZA)pk.PersonalInfo, new LegalityAnalysis(pk), seedofMastery, tms);
+    }
     /// <summary>
     /// Sets record flags for the PKM based on the provided moves.
     /// </summary>
@@ -719,9 +719,6 @@ public static class SimpleEdits
 
         if (pk is IMoveShop8Mastery master)
             master.SetMoveShopFlags(pk);
-        if (pk is IPlusRecord pr)
-            pr.SetPlusFlags((PersonalInfo9ZA)pk.PersonalInfo, new LegalityAnalysis(pk), true, true);
-        
     }
 
     /// <summary>

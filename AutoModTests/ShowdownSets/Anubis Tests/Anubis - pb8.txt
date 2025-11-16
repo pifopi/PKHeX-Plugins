@@ -5,8 +5,7 @@ Level: 62
 Modest Nature
 Ball: Master Ball
 ~=Location=610
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Rush
 - Fire Spin
 - Inferno
@@ -19,8 +18,7 @@ Level: 59
 Naughty Nature
 Ball: Master Ball
 ~=Location=617
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Crunch
 - Fire Spin
 - Inferno
@@ -33,8 +31,7 @@ Level: 61
 Lax Nature
 Ball: Master Ball
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - String Shot
 - Bug Bite
@@ -46,8 +43,7 @@ Level: 18
 Hasty Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Thunder Wave
 - Double Team
 - Electro Ball
@@ -60,8 +56,7 @@ Level: 63
 Quiet Nature
 Ball: Master Ball
 ~=Location=590
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Supersonic
 - Flatter
 - Crunch
@@ -74,8 +69,7 @@ Level: 60
 Timid Nature
 Ball: Master Ball
 ~=Location=613
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Confusion
 - Flatter
 - Poison Jab
@@ -88,8 +82,7 @@ Level: 58
 Modest Nature
 Ball: Master Ball
 ~=Location=574
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Whirlwind
 - Haze
 - Venoshock
@@ -102,8 +95,7 @@ Level: 62
 Naive Nature
 Ball: Master Ball
 ~=Location=605
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Venoshock
 - Confuse Ray
@@ -116,8 +108,7 @@ Level: 58
 Quiet Nature
 Ball: Master Ball
 ~=Location=576
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hypnosis
 - Haze
 - Venoshock
@@ -130,8 +121,7 @@ Level: 61
 Sassy Nature
 Ball: Master Ball
 ~=Location=616
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wing Attack
 - Haze
 - Venoshock
@@ -144,8 +134,7 @@ Level: 58
 Naive Nature
 Ball: Master Ball
 ~=Location=607
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - After You
 - Grassy Terrain
 - Moonlight
@@ -158,8 +147,7 @@ Level: 60
 Timid Nature
 Ball: Master Ball
 ~=Location=544
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Teeter Dance
 - Grassy Terrain
 - Moonlight
@@ -172,8 +160,7 @@ Level: 59
 Hardy Nature
 Ball: Master Ball
 ~=Location=590
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Fell Stinger
 - Aromatherapy
 - Rage Powder
@@ -186,8 +173,7 @@ Level: 61
 Adamant Nature
 Ball: Master Ball
 ~=Location=613
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Baton Pass
 - Zen Headbutt
 - Poison Fang
@@ -200,8 +186,7 @@ Level: 63
 Bold Nature
 Ball: Master Ball
 ~=Location=555
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Agility
 - Zen Headbutt
 - Poison Fang
@@ -214,8 +199,7 @@ Level: 58
 Mild Nature
 Ball: Master Ball
 ~=Location=575
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rage Powder
 - Zen Headbutt
 - Poison Fang
@@ -228,8 +212,7 @@ Level: 62
 Bashful Nature
 Ball: Master Ball
 ~=Location=593
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Screech
 - Poison Fang
 - Psychic
@@ -242,8 +225,7 @@ Level: 58
 Lonely Nature
 Ball: Master Ball
 ~=Location=563
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Morning Sun
 - Zen Headbutt
 - Poison Fang
@@ -256,8 +238,7 @@ Level: 63
 Naive Nature
 Ball: Master Ball
 ~=Location=568
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rage Powder
 - Psychic
 - Bug Buzz
@@ -270,8 +251,7 @@ Level: 16
 Naive Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Feint
 - Scratch
 - Pay Day
@@ -283,8 +263,7 @@ EVs: 2 HP
 Ability: Cloud Nine
 Level: 17
 Bashful Nature
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Scratch
 - Tail Whip
 - Yawn
@@ -296,8 +275,7 @@ EVs: 8 HP / 18 Atk / 3 Def / 14 SpA / 3 SpD / 8 Spe
 Ability: Cloud Nine
 Level: 36
 Timid Nature
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Scratch
 - Tail Whip
 - Yawn
@@ -310,8 +288,7 @@ Level: 59
 Brave Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Night Slash
 - Stomping Tantrum
 - Outrage
@@ -324,8 +301,7 @@ Level: 63
 Naive Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Revenge
 - Stomping Tantrum
 - Outrage
@@ -338,8 +314,7 @@ Level: 61
 Jolly Nature
 Ball: Master Ball
 ~=Location=592
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Encore
 - Stomping Tantrum
 - Outrage
@@ -352,8 +327,7 @@ Level: 62
 Mild Nature
 Ball: Master Ball
 ~=Location=567
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Stomping Tantrum
 - Outrage
@@ -366,8 +340,7 @@ Level: 62
 Quirky Nature
 Ball: Master Ball
 ~=Location=605
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Night Slash
 - Stomping Tantrum
 - Outrage
@@ -380,8 +353,7 @@ Level: 62
 Bashful Nature
 Ball: Master Ball
 ~=Location=574
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Covet
 - Play Rough
 - Reversal
@@ -394,8 +366,7 @@ Level: 17
 Hasty Nature
 Ball: Master Ball
 ~=Location=365
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Focus Energy
 - Revenge
 - Low Sweep
@@ -408,8 +379,7 @@ Level: 44
 Serious Nature
 Ball: Master Ball
 ~=Location=544
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Close Combat
 - Strength
 - Dual Chop
@@ -421,8 +391,7 @@ Ability: Chlorophyll
 Level: 62
 Hardy Nature
 ~=Location=576
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Synthesis
 - Razor Leaf
 - Poison Jab
@@ -434,8 +403,7 @@ Ability: Chlorophyll
 Level: 57
 Quiet Nature
 ~=Location=545
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Encore
 - Razor Leaf
 - Poison Jab
@@ -449,8 +417,7 @@ Level: 58
 Naughty Nature
 Ball: Master Ball
 ~=Location=567
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ingrain
 - Razor Leaf
 - Poison Jab
@@ -463,8 +430,7 @@ Level: 63
 Sassy Nature
 Ball: Master Ball
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Knock Off
 - Surf
 - Sludge Wave
@@ -477,8 +443,7 @@ Level: 60
 Brave Nature
 Ball: Master Ball
 ~=Location=568
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Knock Off
 - Surf
 - Sludge Wave
@@ -491,8 +456,7 @@ Level: 60
 Brave Nature
 Ball: Master Ball
 ~=Location=577
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Surf
 - Sludge Wave
@@ -505,8 +469,7 @@ Level: 45
 Hardy Nature
 Ball: Master Ball
 ~=Location=553
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tickle
 - Hex
 - Acid Armor
@@ -519,8 +482,7 @@ Level: 41
 Serious Nature
 Ball: Master Ball
 ~=Location=486
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bubble Beam
 - Hex
 - Acid Armor
@@ -532,8 +494,7 @@ Ability: Rock Head
 Level: 22
 Bold Nature
 ~=Location=294
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Harden
 - Rock Throw
 - Smack Down
@@ -545,8 +506,7 @@ Ability: Sturdy
 Level: 41
 Hardy Nature
 ~=Location=560
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Autotomize
 - Explosion
 - Double-Edge
@@ -558,8 +518,7 @@ Ability: Sturdy
 Level: 57
 Lax Nature
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wide Guard
 - Explosion
 - Double-Edge
@@ -571,8 +530,7 @@ Ability: Sturdy
 Level: 24
 Mild Nature
 ~=Location=296
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rock Throw
 - Smack Down
 - Bulldoze
@@ -586,8 +544,7 @@ Level: 6
 Modest Nature
 Ball: Master Ball
 ~=Location=255
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Defense Curl
 - Sandstorm
@@ -599,8 +556,7 @@ Ability: Sturdy
 Level: 25
 Naive Nature
 ~=Location=551
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Bulldoze
 - Self-Destruct
@@ -612,8 +568,7 @@ Ability: Sturdy
 Level: 43
 Bold Nature
 ~=Location=557
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mega Punch
 - Rock Blast
 - Earthquake
@@ -625,8 +580,7 @@ Ability: Sturdy
 Level: 60
 Bold Nature
 ~=Location=617
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Autotomize
 - Explosion
 - Double-Edge
@@ -638,8 +592,7 @@ Ability: Rock Head
 Level: 44
 Careful Nature
 ~=Location=560
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Rock Blast
 - Earthquake
@@ -651,8 +604,7 @@ Ability: Rock Head
 Level: 62
 Careful Nature
 ~=Location=602
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Explosion
 - Double-Edge
@@ -665,8 +617,7 @@ Ability: Sturdy
 Level: 27
 Hardy Nature
 ~=Location=214
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rock Throw
 - Bulldoze
 - Self-Destruct
@@ -678,8 +629,7 @@ Ability: Rock Head
 Level: 62
 Serious Nature
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Explosion
 - Double-Edge
@@ -692,8 +642,7 @@ Level: 23
 Docile Nature
 Ball: Master Ball
 ~=Location=392
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Ember
 - Flame Charge
@@ -706,8 +655,7 @@ Level: 46
 Gentle Nature
 Ball: Master Ball
 ~=Location=557
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Horn Drill
 - Fire Spin
 - Take Down
@@ -721,8 +669,7 @@ Level: 48
 Rash Nature
 Ball: Master Ball
 ~=Location=377
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Smart Strike
 - Flame Charge
 - Flame Wheel
@@ -735,8 +682,7 @@ Level: 59
 Bashful Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Sound
 - Light Screen
 - Lock-On
@@ -749,8 +695,7 @@ Level: 60
 Bold Nature
 Ball: Master Ball
 ~=Location=582
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Sound
 - Light Screen
 - Lock-On
@@ -763,8 +708,7 @@ Level: 63
 Careful Nature
 Ball: Master Ball
 ~=Location=615
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Sound
 - Light Screen
 - Lock-On
@@ -777,8 +721,7 @@ Level: 62
 Naive Nature
 Ball: Master Ball
 ~=Location=595
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Air Slash
 - Leaf Blade
@@ -791,8 +734,7 @@ Level: 60
 Sassy Nature
 Ball: Master Ball
 ~=Location=613
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Simple Beam
 - Air Slash
 - Leaf Blade
@@ -805,8 +747,7 @@ Level: 61
 Hardy Nature
 Ball: Master Ball
 ~=Location=598
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Drill Peck
 - Endeavor
@@ -819,8 +760,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=569
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Supersonic
 - Drill Peck
 - Endeavor
@@ -833,8 +773,7 @@ Level: 58
 Naive Nature
 Ball: Master Ball
 ~=Location=574
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Brave Bird
 - Drill Peck
 - Endeavor
@@ -847,8 +786,7 @@ Level: 59
 Lonely Nature
 Ball: Master Ball
 ~=Location=588
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Slam
 - Ice Beam
 - Safeguard
@@ -861,8 +799,7 @@ Level: 59
 Bashful Nature
 Ball: Master Ball
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Belch
 - Dive
 - Aqua Tail
@@ -875,8 +812,7 @@ Level: 59
 Gentle Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Lick
 - Dive
 - Aqua Tail
@@ -889,8 +825,7 @@ Level: 59
 Lax Nature
 Ball: Master Ball
 ~=Location=583
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Spit Up
 - Dive
 - Aqua Tail
@@ -903,8 +838,7 @@ Level: 61
 Quiet Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stockpile
 - Aqua Tail
 - Ice Beam
@@ -917,8 +851,7 @@ Level: 61
 Quirky Nature
 Ball: Master Ball
 ~=Location=553
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stockpile
 - Aqua Tail
 - Ice Beam
@@ -931,8 +864,7 @@ Level: 63
 Sassy Nature
 Ball: Master Ball
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Horn Drill
 - Aqua Tail
 - Ice Beam
@@ -945,8 +877,7 @@ Level: 58
 Serious Nature
 Ball: Master Ball
 ~=Location=586
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stockpile
 - Dive
 - Aqua Tail
@@ -959,8 +890,7 @@ Level: 59
 Calm Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Scary Face
 - Shadow Ball
 - Destiny Bond
@@ -973,8 +903,7 @@ Level: 17
 Careful Nature
 Ball: Master Ball
 ~=Location=368
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hypnosis
 - Mean Look
 - Payback
@@ -987,8 +916,7 @@ Level: 45
 Bashful Nature
 Ball: Master Ball
 ~=Location=565
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Head Smash
 - Slam
 - Sandstorm
@@ -1001,8 +929,7 @@ Level: 33
 Careful Nature
 Ball: Master Ball
 ~=Location=301
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rock Slide
 - Screech
 - Sand Tomb
@@ -1015,8 +942,7 @@ Level: 60
 Mild Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rollout
 - Iron Tail
 - Stone Edge
@@ -1029,8 +955,7 @@ Level: 31
 Quirky Nature
 Ball: Master Ball
 ~=Location=302
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Rock Slide
 - Screech
@@ -1043,8 +968,7 @@ Level: 61
 Lax Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hammer Arm
 - Swords Dance
 - Crabhammer
@@ -1057,8 +981,7 @@ Level: 63
 Calm Nature
 Ball: Master Ball
 ~=Location=546
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Discharge
 - Explosion
 - Gyro Ball
@@ -1071,8 +994,7 @@ Level: 63
 Lonely Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Discharge
 - Explosion
 - Gyro Ball
@@ -1085,8 +1007,7 @@ Level: 58
 Lonely Nature
 Ball: Master Ball
 ~=Location=601
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Perish Song
 - Bonemerang
 - Thrash
@@ -1099,8 +1020,7 @@ Level: 62
 Sassy Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leer
 - Bonemerang
 - Thrash
@@ -1113,8 +1033,7 @@ Level: 63
 Adamant Nature
 Ball: Master Ball
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Belch
 - Slam
 - Power Whip
@@ -1127,8 +1046,7 @@ Level: 44
 Calm Nature
 Ball: Master Ball
 ~=Location=546
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Snore
 - Stomp
 - Knock Off
@@ -1141,8 +1059,7 @@ Level: 59
 Careful Nature
 Ball: Master Ball
 ~=Location=593
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Thrash
 - Screech
 - Slam
@@ -1155,8 +1072,7 @@ Level: 61
 Quirky Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Amnesia
 - Slam
 - Power Whip
@@ -1169,8 +1085,7 @@ Level: 59
 Impish Nature
 Ball: Master Ball
 ~=Location=573
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Earthquake
 - Stone Edge
@@ -1183,8 +1098,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=608
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Reversal
 - Stone Edge
 - Megahorn
@@ -1197,8 +1111,7 @@ Level: 58
 Relaxed Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Split
 - Earthquake
 - Stone Edge
@@ -1211,8 +1124,7 @@ Level: 62
 Timid Nature
 Ball: Master Ball
 ~=Location=556
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Stone Edge
 - Megahorn
@@ -1225,8 +1137,7 @@ Level: 62
 Adamant Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Curse
 - Earthquake
 - Stone Edge
@@ -1239,8 +1150,7 @@ Level: 58
 Naive Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Rush
 - Take Down
 - Earthquake
@@ -1253,8 +1163,7 @@ Level: 63
 Relaxed Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Burst
 - Earthquake
 - Stone Edge
@@ -1267,8 +1176,7 @@ Level: 18
 Gentle Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Echoed Voice
 - Life Dew
@@ -1281,8 +1189,7 @@ Level: 16
 Modest Nature
 Ball: Master Ball
 ~=Location=367
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Echoed Voice
 - Life Dew
@@ -1295,8 +1202,7 @@ Level: 60
 Adamant Nature
 Ball: Master Ball
 ~=Location=616
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Amnesia
 - Power Whip
 - Ingrain
@@ -1310,8 +1216,7 @@ Level: 58
 Naive Nature
 Ball: Master Ball
 ~=Location=615
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Surf
 - Recover
 - Cosmic Power
@@ -1324,8 +1229,7 @@ Level: 60
 Naughty Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Surf
 - Recover
 - Cosmic Power
@@ -1338,8 +1242,7 @@ Level: 41
 Bashful Nature
 Ball: Master Ball
 ~=Location=407
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Light Screen
 - Reflect
 - Safeguard
@@ -1352,8 +1255,7 @@ Level: 62
 Brave Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Future Sight
 - Dazzling Gleam
 - Psychic
@@ -1366,8 +1268,7 @@ Level: 60
 Lonely Nature
 Ball: Master Ball
 ~=Location=586
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Trick
 - Dazzling Gleam
 - Psychic
@@ -1380,8 +1281,7 @@ Level: 59
 Modest Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Trick
 - Dazzling Gleam
 - Psychic
@@ -1394,8 +1294,7 @@ Level: 58
 Modest Nature
 Ball: Master Ball
 ~=Location=583
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Confuse Ray
 - Dazzling Gleam
 - Psychic
@@ -1408,8 +1307,7 @@ Level: 58
 Quiet Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Magic Room
 - Dazzling Gleam
 - Psychic
@@ -1422,8 +1320,7 @@ Level: 60
 Relaxed Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hypnosis
 - Dazzling Gleam
 - Psychic
@@ -1438,8 +1335,7 @@ Shiny: Yes
 Gentle Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Power Split
 - Safeguard
 - Sucker Punch
@@ -1452,8 +1348,7 @@ Level: 43
 Docile Nature
 Ball: Master Ball
 ~=Location=612
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Feint
 - Agility
 - Air Slash
@@ -1466,8 +1361,7 @@ Level: 62
 Serious Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Baton Pass
 - X-Scissor
 - Laser Focus
@@ -1480,8 +1374,7 @@ Level: 63
 Rash Nature
 Ball: Master Ball
 ~=Location=575
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Swagger
 - Thrash
 - Double-Edge
@@ -1494,27 +1387,24 @@ Level: 15
 Brave Nature
 Ball: Safari Ball
 ~=Location=219
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Splash
 - Tackle
 
 Foppa (Magikarp) (F) @ Lum Berry
 IVs: 3 HP / 3 Atk / 11 SpA / 3 SpD / 2 Spe
-=MetLocation=30001
+~=Location=30001
 .Language=5
 Level: 45
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Splash
 
 Pador (Magikarp) (F) @ Lum Berry
 IVs: 3 HP / 3 Atk / 11 SpA / 3 SpD / 2 Spe
-=MetLocation=30001
+~=Location=30001
 .Language=1
 Level: 45
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Splash
 
 ポッちゃん (Magikarp) (F) @ Lum Berry
@@ -1523,10 +1413,8 @@ Ability: Swift Swim
 Level: 45
 Mild Nature
 Language: German
-=OriginalTrainerName=マイスター
-=MetLocation=30001
-~=Version=BDSP
-.Version=48
+~=Location=30001
+~=Version=BD
 - Splash
 
 Ditto
@@ -1536,8 +1424,7 @@ Level: 29
 Brave Nature
 Ball: Master Ball
 ~=Location=400
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Transform
 
 Eevee (M)
@@ -1548,8 +1435,7 @@ Level: 18
 Lax Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Sand Attack
 - Quick Attack
@@ -1562,8 +1448,7 @@ Level: 58
 Calm Nature
 Ball: Master Ball
 ~=Location=591
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Rain Dance
 - Dragon Dance
@@ -1576,8 +1461,7 @@ Level: 70
 Rash Nature
 Ball: Master Ball
 ~=Location=507
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Psychic
 - Power Swap
 - Guard Swap
@@ -1588,11 +1472,9 @@ IVs: 13 HP / 7 SpD / 27 Spe
 EVs: 45 HP / 106 Atk / 75 Def / 102 SpA / 37 SpD / 145 Spe
 Ability: Synchronize
 Mild Nature
-=MetLevel=1
-=FatefulEncounter=True
+~=Level=1
 ~=Location=438
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Nasty Plot
 - Psychic
 - Transform
@@ -1603,11 +1485,9 @@ IVs: 0 Atk
 Ability: Synchronize
 Level: 1
 Timid Nature
-=MetLevel=1
-=FatefulEncounter=True
+~=Level=1
 ~=Location=438
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Pound
 - Reflect Type
 
@@ -1617,8 +1497,7 @@ Ability: Overgrow
 Level: 59
 Hardy Nature
 ~=Location=577
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Safeguard
 - Aromatherapy
@@ -1631,8 +1510,7 @@ Level: 58
 Naughty Nature
 Ball: Master Ball
 ~=Location=588
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Double-Edge
 - Baton Pass
 - Reversal
@@ -1645,8 +1523,7 @@ Level: 59
 Hasty Nature
 Ball: Master Ball
 ~=Location=587
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Slash
 - Baton Pass
 - Reversal
@@ -1659,8 +1536,7 @@ Level: 61
 Jolly Nature
 Ball: Master Ball
 ~=Location=573
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Last Resort
 - Baton Pass
 - Reversal
@@ -1674,8 +1550,7 @@ Level: 60
 Quirky Nature
 Ball: Master Ball
 ~=Location=608
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Last Resort
 - Baton Pass
 - Reversal
@@ -1688,8 +1563,7 @@ Level: 44
 Gentle Nature
 Ball: Master Ball
 ~=Location=611
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Whirlwind
 - Moonblast
 - Hypnosis
@@ -1702,8 +1576,7 @@ Level: 59
 Hasty Nature
 Ball: Master Ball
 ~=Location=566
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Supersonic
 - Moonblast
 - Hypnosis
@@ -1716,8 +1589,7 @@ Level: 61
 Serious Nature
 Ball: Master Ball
 ~=Location=569
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hurricane
 - Moonblast
 - Hypnosis
@@ -1729,8 +1601,7 @@ Ability: Early Bird
 Level: 58
 Bashful Nature
 ~=Location=591
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Bug Buzz
 - Air Slash
@@ -1742,8 +1613,7 @@ Ability: Swarm
 Level: 58
 Calm Nature
 ~=Location=591
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Bug Buzz
 - Air Slash
@@ -1755,8 +1625,7 @@ Ability: Early Bird
 Level: 53
 Calm Nature
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Psybeam
 - Bug Buzz
 - Air Slash
@@ -1768,8 +1637,7 @@ Ability: Early Bird
 Level: 58
 Impish Nature
 ~=Location=597
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Knock Off
 - Bug Buzz
 - Air Slash
@@ -1783,8 +1651,7 @@ Level: 27
 Calm Nature
 Ball: Master Ball
 ~=Location=357
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Poison Fang
 - Cross Poison
 - Astonish
@@ -1797,8 +1664,7 @@ Level: 59
 Quiet Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Screech
 - Flail
 - Take Down
@@ -1811,8 +1677,7 @@ Level: 16
 Jolly Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Play Nice
 - Sweet Kiss
 - Nuzzle
@@ -1825,8 +1690,7 @@ Level: 58
 Adamant Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Feather Dance
 - Psychic
 - Wish
@@ -1839,8 +1703,7 @@ Level: 60
 Adamant Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Psychic
 - Wish
@@ -1853,8 +1716,7 @@ Level: 60
 Adamant Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Sucker Punch
 - Psychic
 - Wish
@@ -1867,8 +1729,7 @@ Level: 61
 Hasty Nature
 Ball: Master Ball
 ~=Location=580
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Drill Peck
 - Psychic
 - Wish
@@ -1881,8 +1742,7 @@ Level: 59
 Lonely Nature
 Ball: Master Ball
 ~=Location=580
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Feather Dance
 - Psychic
 - Wish
@@ -1895,8 +1755,7 @@ Level: 61
 Quirky Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Zen Headbutt
 - Psychic
 - Wish
@@ -1909,8 +1768,7 @@ Level: 61
 Sassy Nature
 Ball: Master Ball
 ~=Location=554
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Simple Beam
 - Psychic
 - Wish
@@ -1922,8 +1780,7 @@ Ability: Static
 Level: 58
 Modest Nature
 ~=Location=613
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Agility
 - Charge Beam
 - Light Screen
@@ -1936,8 +1793,7 @@ Level: 30
 Hasty Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Play Rough
 - Aqua Ring
 - Rain Dance
@@ -1949,8 +1805,7 @@ Ability: Chlorophyll
 Level: 62
 Mild Nature
 ~=Location=605
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Encore
 - Giga Drain
 - Bounce
@@ -1963,8 +1818,7 @@ Level: 60
 Bashful Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Amnesia
 - Toxic
@@ -1977,8 +1831,7 @@ Level: 22
 Calm Nature
 Ball: Safari Ball
 ~=Location=222
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Mist
 - Haze
 - Slam
@@ -1991,8 +1844,7 @@ Level: 22
 Timid Nature
 Ball: Safari Ball
 ~=Location=224
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mist
 - Haze
 - Slam
@@ -2005,8 +1857,7 @@ Level: 23
 Hardy Nature
 Ball: Safari Ball
 ~=Location=222
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Mist
 - Haze
 - Slam
@@ -2019,8 +1870,7 @@ Level: 23
 Quirky Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mist
 - Haze
 - Slam
@@ -2032,8 +1882,7 @@ Ability: Insomnia
 Level: 43
 Bashful Nature
 ~=Location=564
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Whirlwind
 - Taunt
 - Air Cutter
@@ -2045,8 +1894,7 @@ Ability: Super Luck
 Level: 60
 Hasty Nature
 ~=Location=613
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Perish Song
 - Tailwind
 - Sucker Punch
@@ -2058,8 +1906,7 @@ Ability: Insomnia
 Level: 59
 Quirky Nature
 ~=Location=584
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flatter
 - Foul Play
 - Tailwind
@@ -2072,8 +1919,7 @@ Level: 12
 Shiny: Yes
 Lonely Nature
 ~=Location=200
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Growl
 - Confusion
 - Spite
@@ -2086,8 +1932,7 @@ Level: 18
 Jolly Nature
 Ball: Master Ball
 ~=Location=243
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Grass]
 
 Unown
@@ -2097,8 +1942,7 @@ Level: 23
 Rash Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Dragon]
 
 Unown-B
@@ -2108,8 +1952,7 @@ Level: 15
 Hardy Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Water]
 
 Unown-C
@@ -2119,8 +1962,7 @@ Level: 24
 Adamant Nature
 Ball: Master Ball
 ~=Location=234
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Grass]
 
 Unown-C
@@ -2130,8 +1972,7 @@ Level: 18
 Impish Nature
 Ball: Master Ball
 ~=Location=236
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Flying]
 
 Unown-C
@@ -2141,8 +1982,7 @@ Level: 20
 Lonely Nature
 Ball: Master Ball
 ~=Location=227
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Water]
 
 Unown-D
@@ -2152,8 +1992,7 @@ Level: 19
 Timid Nature
 Ball: Master Ball
 ~=Location=240
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Poison]
 
 Unown-D
@@ -2163,8 +2002,7 @@ Level: 18
 Timid Nature
 Ball: Master Ball
 ~=Location=240
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Electric]
 
 Unown-E
@@ -2174,8 +2012,7 @@ Level: 16
 Lax Nature
 Ball: Master Ball
 ~=Location=239
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Flying]
 
 Unown-E
@@ -2185,8 +2022,7 @@ Level: 21
 Serious Nature
 Ball: Master Ball
 ~=Location=239
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-F
@@ -2196,8 +2032,7 @@ Level: 15
 Bold Nature
 Ball: Master Ball
 ~=Location=229
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Bug]
 
 Unown-F
@@ -2207,8 +2042,7 @@ Level: 19
 Calm Nature
 Ball: Master Ball
 ~=Location=229
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fire]
 
 Unown-F
@@ -2218,8 +2052,7 @@ Level: 22
 Mild Nature
 Ball: Master Ball
 ~=Location=229
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Flying]
 
 Unown-G
@@ -2229,8 +2062,7 @@ Level: 19
 Brave Nature
 Ball: Master Ball
 ~=Location=242
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Grass]
 
 Unown-G
@@ -2240,8 +2072,7 @@ Level: 23
 Serious Nature
 Ball: Master Ball
 ~=Location=241
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ghost]
 
 Unown-H
@@ -2251,8 +2082,7 @@ Level: 23
 Impish Nature
 Ball: Master Ball
 ~=Location=241
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Poison]
 
 Unown-I
@@ -2262,8 +2092,7 @@ Level: 20
 Lax Nature
 Ball: Master Ball
 ~=Location=237
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fire]
 
 Unown-I
@@ -2273,8 +2102,7 @@ Level: 19
 Naughty Nature
 Ball: Master Ball
 ~=Location=237
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Steel]
 
 Unown-J
@@ -2284,8 +2112,7 @@ Level: 17
 Lonely Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fire]
 
 Unown-K
@@ -2295,8 +2122,7 @@ Level: 23
 Gentle Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ice]
 
 Unown-L
@@ -2306,8 +2132,7 @@ Level: 25
 Timid Nature
 Ball: Master Ball
 ~=Location=232
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-M
@@ -2317,8 +2142,7 @@ Level: 19
 Adamant Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Water]
 
 Unown-M
@@ -2328,8 +2152,7 @@ Level: 22
 Naughty Nature
 Ball: Master Ball
 ~=Location=227
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ghost]
 
 Unown-N
@@ -2339,8 +2162,7 @@ Level: 17
 Relaxed Nature
 Ball: Master Ball
 ~=Location=238
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Poison]
 
 Unown-O
@@ -2350,8 +2172,7 @@ Level: 17
 Lonely Nature
 Ball: Master Ball
 ~=Location=233
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ghost]
 
 Unown-O
@@ -2361,8 +2182,7 @@ Level: 17
 Relaxed Nature
 Ball: Master Ball
 ~=Location=230
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fire]
 
 Unown-P
@@ -2372,8 +2192,7 @@ Level: 17
 Careful Nature
 Ball: Master Ball
 ~=Location=241
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ice]
 
 Unown-Q
@@ -2382,9 +2201,7 @@ Ability: Levitate
 Level: 17
 Calm Nature
 Ball: Master Ball
-~=Location=235
-~=Version=BDSP
-.Version=48
+~=Location=235~=Version=BD
 - Hidden Power [Poison]
 
 Unown-R
@@ -2393,9 +2210,7 @@ Ability: Levitate
 Level: 17
 Jolly Nature
 Ball: Master Ball
-~=Location=231
-~=Version=BDSP
-.Version=48
+~=Location=231~=Version=BD
 - Hidden Power [Rock]
 
 Unown-R
@@ -2404,9 +2219,7 @@ Ability: Levitate
 Level: 18
 Lax Nature
 Ball: Master Ball
-~=Location=231
-~=Version=BDSP
-.Version=48
+~=Location=231~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-R
@@ -2415,9 +2228,7 @@ Ability: Levitate
 Level: 20
 Quirky Nature
 Ball: Master Ball
-~=Location=231
-~=Version=BDSP
-.Version=48
+~=Location=231~=Version=BD
 - Hidden Power [Flying]
 
 Unown-S
@@ -2427,8 +2238,7 @@ Level: 15
 Calm Nature
 Ball: Master Ball
 ~=Location=235
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ground]
 
 Unown-S
@@ -2438,8 +2248,7 @@ Level: 21
 Rash Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Rock]
 
 Unown-T
@@ -2449,8 +2258,7 @@ Level: 23
 Jolly Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-T
@@ -2460,8 +2268,7 @@ Level: 17
 Quirky Nature
 Ball: Master Ball
 ~=Location=234
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Bug]
 
 Unown-U
@@ -2471,8 +2278,7 @@ Level: 17
 Lonely Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Bug]
 
 Unown-U
@@ -2482,8 +2288,7 @@ Level: 22
 Quirky Nature
 Ball: Master Ball
 ~=Location=236
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Hidden Power [Psychic]
 
 Unown-U
@@ -2493,8 +2298,7 @@ Level: 18
 Rash Nature
 Ball: Master Ball
 ~=Location=230
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Electric]
 
 Unown-U
@@ -2504,8 +2308,7 @@ Level: 16
 Rash Nature
 Ball: Master Ball
 ~=Location=234
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Dragon]
 
 Unown-U
@@ -2515,8 +2318,7 @@ Level: 17
 Timid Nature
 Ball: Master Ball
 ~=Location=242
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Water]
 
 Unown-V
@@ -2526,8 +2328,7 @@ Level: 19
 Mild Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Psychic]
 
 Unown-V
@@ -2537,8 +2338,7 @@ Level: 23
 Quiet Nature
 Ball: Master Ball
 ~=Location=235
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Psychic]
 
 Unown-W
@@ -2548,8 +2348,7 @@ Level: 19
 Gentle Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Dark]
 
 Unown-W
@@ -2559,8 +2358,7 @@ Level: 20
 Naughty Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ghost]
 
 Unown-W
@@ -2570,8 +2368,7 @@ Level: 19
 Rash Nature
 Ball: Master Ball
 ~=Location=243
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Poison]
 
 Unown-X
@@ -2581,8 +2378,7 @@ Level: 15
 Jolly Nature
 Ball: Master Ball
 ~=Location=243
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-Y
@@ -2592,8 +2388,7 @@ Level: 24
 Careful Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-Z
@@ -2603,8 +2398,7 @@ Level: 20
 Modest Nature
 Ball: Master Ball
 ~=Location=228
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Fighting]
 
 Unown-!
@@ -2614,8 +2408,7 @@ Level: 21
 Bold Nature
 Ball: Master Ball
 ~=Location=225
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Dragon]
 
 Unown-?
@@ -2625,8 +2418,7 @@ Level: 18
 Rash Nature
 Ball: Master Ball
 ~=Location=225
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hidden Power [Ice]
 
 1 (Girafarig) (F)
@@ -2636,8 +2428,7 @@ Level: 62
 Calm Nature
 Ball: Master Ball
 ~=Location=580
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Magic Coat
 - Baton Pass
 - Nasty Plot
@@ -2649,8 +2440,7 @@ Ability: Sand Veil
 Level: 59
 Hasty Nature
 ~=Location=596
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wing Attack
 - Earthquake
 - Swords Dance
@@ -2662,8 +2452,7 @@ Ability: Hyper Cutter
 Level: 60
 Lax Nature
 ~=Location=603
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Agility
 - Earthquake
 - Swords Dance
@@ -2677,8 +2466,7 @@ Level: 47
 Docile Nature
 Ball: Master Ball
 ~=Location=245
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stealth Rock
 - Slam
 - Sandstorm
@@ -2691,8 +2479,7 @@ Level: 62
 Gentle Nature
 Ball: Master Ball
 ~=Location=611
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Toxic
 - Aqua Tail
@@ -2705,8 +2492,7 @@ Level: 61
 Lax Nature
 Ball: Master Ball
 ~=Location=603
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Acid
 - Sticky Web
 - Power Trick
@@ -2719,8 +2505,7 @@ Level: 58
 Jolly Nature
 Ball: Master Ball
 ~=Location=589
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Feint
 - Beat Up
 - Agility
@@ -2733,8 +2518,7 @@ Level: 62
 Bashful Nature
 Ball: Master Ball
 ~=Location=609
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Heat Wave
 - Recover
 - Flamethrower
@@ -2747,8 +2531,7 @@ Level: 61
 Adamant Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Freeze-Dry
 - Take Down
 - Earthquake
@@ -2761,8 +2544,7 @@ Level: 63
 Gentle Nature
 Ball: Master Ball
 ~=Location=583
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Take Down
 - Earthquake
@@ -2775,8 +2557,7 @@ Level: 63
 Naughty Nature
 Ball: Master Ball
 ~=Location=615
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Take Down
 - Earthquake
@@ -2789,8 +2570,7 @@ Level: 58
 Sassy Nature
 Ball: Master Ball
 ~=Location=588
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bite
 - Take Down
 - Earthquake
@@ -2803,8 +2583,7 @@ Level: 59
 Mild Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Screech
 - Earth Power
 - Recover
@@ -2817,8 +2596,7 @@ Level: 63
 Docile Nature
 Ball: Master Ball
 ~=Location=589
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Present
 - Drill Peck
 - Splash
@@ -2830,8 +2608,7 @@ Level: 58
 Hardy Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Present
 - Drill Peck
 - Memento
@@ -2843,8 +2620,7 @@ Level: 59
 Lonely Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Present
 - Drill Peck
 - Future Sight
@@ -2856,8 +2632,7 @@ Level: 64
 Bashful Nature
 Ball: Master Ball
 ~=Location=610
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Flamethrower
 - Crunch
@@ -2870,8 +2645,7 @@ Level: 45
 Bold Nature
 Ball: Master Ball
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Fire Fang
 - Payback
@@ -2884,8 +2658,7 @@ Level: 67
 Brave Nature
 Ball: Master Ball
 ~=Location=562
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Reversal
 - Flamethrower
 - Crunch
@@ -2898,8 +2671,7 @@ Level: 46
 Gentle Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Reversal
 - Fire Fang
 - Payback
@@ -2912,8 +2684,7 @@ Level: 63
 Naughty Nature
 Ball: Master Ball
 ~=Location=601
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Spite
 - Foul Play
 - Flamethrower
@@ -2926,8 +2697,7 @@ Level: 60
 Hasty Nature
 Ball: Master Ball
 ~=Location=568
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Helping Hand
 - Fake Out
@@ -2940,8 +2710,7 @@ Level: 61
 Mild Nature
 Ball: Master Ball
 ~=Location=577
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mind Reader
 - Helping Hand
 - Fake Out
@@ -2954,8 +2723,7 @@ Level: 63
 Rash Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Role Play
 - Mean Look
 - Perish Song
@@ -2968,8 +2736,7 @@ Level: 58
 Jolly Nature
 Ball: Master Ball
 ~=Location=555
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Seismic Toss
 - Play Rough
 - Charm
@@ -2982,8 +2749,7 @@ Level: 70
 Mild Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Extrasensory
 - Discharge
 - Reflect
@@ -2996,8 +2762,7 @@ Level: 70
 Calm Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Extrasensory
 - Lava Plume
 - Swagger
@@ -3010,8 +2775,7 @@ Level: 70
 Lax Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Extrasensory
 - Surf
 - Mirror Coat
@@ -3024,8 +2788,7 @@ Level: 62
 Naughty Nature
 Ball: Master Ball
 ~=Location=608
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Assurance
 - Thrash
 - Sandstorm
@@ -3038,8 +2801,7 @@ Level: 70
 Bold Nature
 Ball: Master Ball
 ~=Location=507
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Extrasensory
 - Recover
 - Sacred Fire
@@ -3052,8 +2814,7 @@ Level: 61
 Gentle Nature
 Ball: Master Ball
 ~=Location=568
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Grassy Terrain
 - Screech
 - Endeavor
@@ -3066,8 +2827,7 @@ Level: 58
 Naive Nature
 Ball: Master Ball
 ~=Location=600
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Agility
 - Feather Dance
 - Reversal
@@ -3080,8 +2840,7 @@ Level: 58
 Hasty Nature
 Ball: Master Ball
 ~=Location=574
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Covet
 - Take Down
 - Sucker Punch
@@ -3094,8 +2853,7 @@ Level: 62
 Relaxed Nature
 Ball: Master Ball
 ~=Location=582
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Thunder Fang
 - Take Down
 - Sucker Punch
@@ -3108,8 +2866,7 @@ Level: 62
 Serious Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Astonish
 - Take Down
 - Sucker Punch
@@ -3122,8 +2879,7 @@ Level: 11
 Sassy Nature
 Ball: Master Ball
 ~=Location=199
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - String Shot
 - Poison Sting
@@ -3135,8 +2891,7 @@ Level: 44
 Serious Nature
 Ball: Master Ball
 ~=Location=544
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - String Shot
 - Poison Sting
@@ -3149,8 +2904,7 @@ Level: 15
 Timid Nature
 Ball: Master Ball
 ~=Location=253
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - String Shot
 - Poison Sting
@@ -3164,8 +2918,7 @@ Level: 10
 Bashful Nature
 Ball: Master Ball
 ~=Location=200
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 
 Silcoon (M)
@@ -3175,8 +2928,7 @@ Level: 10
 Lax Nature
 Ball: Master Ball
 ~=Location=200
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 
 Silcoon (M)
@@ -3186,8 +2938,7 @@ Level: 10
 Quiet Nature
 Ball: Master Ball
 ~=Location=200
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 
 Silcoon (M)
@@ -3197,8 +2948,7 @@ Level: 44
 Timid Nature
 Ball: Master Ball
 ~=Location=544
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 
 Beautifly (M) @ Pecha Berry
@@ -3209,8 +2959,7 @@ Level: 47
 Docile Nature
 Ball: Master Ball
 ~=Location=545
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - Gust
 - Poison Sting
@@ -3223,8 +2972,7 @@ Level: 61
 Timid Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leech Seed
 - Extrasensory
 - Sucker Punch
@@ -3236,8 +2984,7 @@ Ability: Guts
 Level: 21
 Relaxed Nature
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Wing Attack
 - Double Team
@@ -3250,8 +2997,7 @@ Level: 59
 Bashful Nature
 Ball: Master Ball
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wide Guard
 - Mist
 - Roost
@@ -3264,8 +3010,7 @@ Level: 20
 Bold Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3278,8 +3023,7 @@ Level: 20
 Brave Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3292,8 +3036,7 @@ Level: 20
 Careful Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3306,8 +3049,7 @@ Level: 20
 Docile Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3320,8 +3062,7 @@ Level: 20
 Docile Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3334,8 +3075,7 @@ Level: 62
 Docile Nature
 Ball: Master Ball
 ~=Location=577
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Soak
 - Mist
 - Roost
@@ -3348,8 +3088,7 @@ Level: 20
 Gentle Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3362,8 +3101,7 @@ Level: 20
 Hardy Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3376,8 +3114,7 @@ Level: 20
 Hardy Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3390,8 +3127,7 @@ Level: 20
 Hasty Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3404,8 +3140,7 @@ Level: 63
 Lax Nature
 Ball: Master Ball
 ~=Location=552
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Air Cutter
 - Mist
 - Roost
@@ -3418,8 +3153,7 @@ Level: 20
 Lonely Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3432,8 +3166,7 @@ Level: 20
 Lonely Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3446,8 +3179,7 @@ Level: 20
 Mild Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3460,8 +3192,7 @@ Level: 60
 Mild Nature
 Ball: Master Ball
 ~=Location=595
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Air Cutter
 - Mist
 - Roost
@@ -3474,8 +3205,7 @@ Level: 59
 Mild Nature
 Ball: Master Ball
 ~=Location=595
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Soak
 - Mist
 - Roost
@@ -3488,8 +3218,7 @@ Level: 44
 Quirky Nature
 Ball: Master Ball
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Twister
 - Air Slash
 - Mist
@@ -3502,8 +3231,7 @@ Level: 58
 Timid Nature
 Ball: Master Ball
 ~=Location=551
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Gust
 - Mist
 - Roost
@@ -3516,8 +3244,7 @@ Level: 20
 Timid Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Supersonic
 - Wing Attack
@@ -3530,8 +3257,7 @@ Level: 59
 Docile Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wide Guard
 - Mist
 - Roost
@@ -3544,8 +3270,7 @@ Level: 42
 Lonely Nature
 Ball: Master Ball
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wide Guard
 - Spit Up
 - Fling
@@ -3558,8 +3283,7 @@ Level: 60
 Mild Nature
 Ball: Master Ball
 ~=Location=585
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Soak
 - Mist
 - Roost
@@ -3572,8 +3296,7 @@ Level: 60
 Serious Nature
 Ball: Master Ball
 ~=Location=550
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Gust
 - Mist
 - Roost
@@ -3586,8 +3309,7 @@ Level: 63
 Careful Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Destiny Bond
 - Heal Pulse
 - Dream Eater
@@ -3600,8 +3322,7 @@ Level: 58
 Jolly Nature
 Ball: Master Ball
 ~=Location=567
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bug Bite
 - Fury Swipes
 - Mind Reader
@@ -3614,8 +3335,7 @@ Level: 62
 Naughty Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Final Gambit
 - Fury Swipes
 - Mind Reader
@@ -3629,8 +3349,7 @@ Level: 20
 Bashful Nature
 Ball: Master Ball
 ~=Location=200
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Sand Attack
 - Scratch
 - Mud-Slap
@@ -3641,8 +3360,7 @@ IVs: 20 HP / 11 Atk / 1 Def / 12 SpA / 29 SpD / 14 Spe
 Ability: Speed Boost
 Level: 57
 Hardy Nature
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Swords Dance
 - Scratch
 - Final Gambit
@@ -3655,8 +3373,7 @@ Level: 63
 Naughty Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Final Gambit
 - Fury Swipes
 - Mind Reader
@@ -3669,8 +3386,7 @@ Ability: Wonder Guard
 Level: 20
 Bashful Nature
 ~=Location=200
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Sand Attack
 - Scratch
 - Mud-Slap
@@ -3682,8 +3398,7 @@ EVs: 12 HP / 68 Atk / 19 Def / 24 SpA / 12 SpD / 30 Spe
 Ability: Wonder Guard
 Level: 63
 Hardy Nature
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - False Swipe
 - Scratch
 - Final Gambit
@@ -3695,8 +3410,7 @@ Ability: Wonder Guard
 Level: 63
 Naughty Nature
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Final Gambit
 - Fury Swipes
 - Mind Reader
@@ -3708,8 +3422,7 @@ Ability: Normalize
 Level: 58
 Lax Nature
 ~=Location=594
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Uproar
 - Double-Edge
 - Baby-Doll Eyes
@@ -3722,8 +3435,7 @@ Level: 59
 Lonely Nature
 Ball: Master Ball
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Burst
 - Taunt
 - Fake Tears
@@ -3736,8 +3448,7 @@ Level: 59
 Modest Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Swap
 - Taunt
 - Fake Tears
@@ -3750,8 +3461,7 @@ Level: 62
 Lonely Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stomp
 - Heavy Slam
 - Double-Edge
@@ -3764,8 +3474,7 @@ Level: 59
 Quirky Nature
 Ball: Master Ball
 ~=Location=565
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stomp
 - Iron Defense
 - Heavy Slam
@@ -3778,8 +3487,7 @@ Level: 61
 Docile Nature
 Ball: Master Ball
 ~=Location=583
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Reversal
 - Autotomize
 - Iron Tail
@@ -3792,8 +3500,7 @@ Level: 60
 Sassy Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Endeavor
 - Autotomize
 - Iron Tail
@@ -3806,8 +3513,7 @@ Level: 61
 Brave Nature
 Ball: Master Ball
 ~=Location=580
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Fake Out
 - Reversal
 - Recover
@@ -3820,8 +3526,7 @@ Level: 60
 Serious Nature
 Ball: Master Ball
 ~=Location=586
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Swap
 - Reversal
 - Recover
@@ -3835,8 +3540,7 @@ Level: 37
 Timid Nature
 Ball: Master Ball
 ~=Location=377
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Low Kick
 - High Jump Kick
 - Psybeam
@@ -3848,8 +3552,7 @@ Ability: Swarm
 Level: 57
 Adamant Nature
 ~=Location=601
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Seismic Toss
 - Play Rough
 - Double-Edge
@@ -3862,8 +3565,7 @@ Level: 65
 Lonely Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Aromatherapy
 - Play Rough
 - Covet
@@ -3876,8 +3578,7 @@ Level: 20
 Rash Nature
 Ball: Master Ball
 ~=Location=383
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mega Drain
 - Leech Seed
 - Magical Leaf
@@ -3890,8 +3591,7 @@ Level: 17
 Serious Nature
 Ball: Master Ball
 ~=Location=297
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Worry Seed
 - Mega Drain
 - Leech Seed
@@ -3904,8 +3604,7 @@ Level: 62
 Adamant Nature
 Ball: Master Ball
 ~=Location=609
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growth
 - Earthquake
 - Flamethrower
@@ -3918,8 +3617,7 @@ Level: 63
 Bold Nature
 Ball: Master Ball
 ~=Location=557
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rollout
 - Earthquake
 - Flamethrower
@@ -3932,8 +3630,7 @@ Level: 61
 Relaxed Nature
 Ball: Master Ball
 ~=Location=612
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Earthquake
 - Flamethrower
@@ -3946,8 +3643,7 @@ Level: 59
 Bashful Nature
 Ball: Master Ball
 ~=Location=617
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Rollout
 - Earthquake
 - Eruption
@@ -3960,8 +3656,7 @@ Level: 63
 Gentle Nature
 Ball: Master Ball
 ~=Location=609
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Swallow
 - Earthquake
 - Eruption
@@ -3974,8 +3669,7 @@ Level: 62
 Naive Nature
 Ball: Master Ball
 ~=Location=610
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Scary Face
 - Earthquake
 - Eruption
@@ -3988,8 +3682,7 @@ Level: 63
 Quiet Nature
 Ball: Master Ball
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Scary Face
 - Earthquake
 - Eruption
@@ -4002,8 +3695,7 @@ Level: 63
 Serious Nature
 Ball: Master Ball
 ~=Location=610
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stomp
 - Earthquake
 - Eruption
@@ -4016,8 +3708,7 @@ Level: 60
 Naive Nature
 Ball: Master Ball
 ~=Location=605
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Gust
 - Earthquake
 - Uproar
@@ -4030,8 +3721,7 @@ Level: 63
 Timid Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Attack
 - Uproar
 - Dragon Rush
@@ -4045,8 +3735,7 @@ Level: 60
 Mild Nature
 Ball: Master Ball
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Claw
 - Earthquake
 - Uproar
@@ -4058,8 +3747,7 @@ Ability: Sand Veil
 Level: 58
 Quiet Nature
 ~=Location=603
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Block
 - Cotton Spore
 - Sandstorm
@@ -4071,8 +3759,7 @@ Ability: Sand Veil
 Level: 59
 Quirky Nature
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Disable
 - Cotton Spore
 - Sandstorm
@@ -4084,8 +3771,7 @@ Ability: Sand Veil
 Level: 60
 Quirky Nature
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Cotton Spore
 - Sandstorm
@@ -4097,8 +3783,7 @@ Ability: Sand Veil
 Level: 16
 Gentle Nature
 ~=Location=567
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Low Kick
 - Leech Seed
 - Sand Attack
@@ -4110,8 +3795,7 @@ Ability: Sand Veil
 Level: 62
 Hardy Nature
 ~=Location=605
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Belch
 - Cotton Spore
 - Sandstorm
@@ -4123,8 +3807,7 @@ Ability: Sand Veil
 Level: 57
 Naive Nature
 ~=Location=590
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Disable
 - Energy Ball
 - Cotton Spore
@@ -4136,8 +3819,7 @@ Ability: Sand Veil
 Level: 59
 Quirky Nature
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Power-Up Punch
 - Cotton Spore
 - Sandstorm
@@ -4150,8 +3832,7 @@ Level: 60
 Bashful Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Take Down
 - Moonblast
@@ -4164,8 +3845,7 @@ Level: 58
 Hardy Nature
 Ball: Master Ball
 ~=Location=547
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Power Swap
 - Take Down
 - Moonblast
@@ -4179,8 +3859,7 @@ Level: 59
 Hardy Nature
 Ball: Master Ball
 ~=Location=589
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Power Swap
 - Take Down
 - Moonblast
@@ -4193,8 +3872,7 @@ Level: 63
 Impish Nature
 Ball: Master Ball
 ~=Location=589
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tailwind
 - Take Down
 - Moonblast
@@ -4207,8 +3885,7 @@ Level: 58
 Serious Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hyper Voice
 - Take Down
 - Moonblast
@@ -4222,8 +3899,7 @@ Level: 43
 Quirky Nature
 Ball: Master Ball
 ~=Location=546
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Cotton Guard
 - Dragon Pulse
@@ -4235,8 +3911,7 @@ Ability: Immunity
 Level: 57
 Bashful Nature
 ~=Location=548
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Metal Claw
 - Taunt
 - Swords Dance
@@ -4248,8 +3923,7 @@ Ability: Immunity
 Level: 57
 Relaxed Nature
 ~=Location=614
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Night Slash
 - Taunt
 - Swords Dance
@@ -4262,8 +3936,7 @@ Level: 63
 Calm Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stone Edge
 - Solar Beam
 - Wonder Room
@@ -4276,8 +3949,7 @@ Level: 58
 Lonely Nature
 Ball: Master Ball
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Earth Power
 - Earthquake
 - Future Sight
@@ -4290,8 +3962,7 @@ Level: 62
 Adamant Nature
 Ball: Master Ball
 ~=Location=597
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mud Shot
 - Earthquake
 - Future Sight
@@ -4304,8 +3975,7 @@ Level: 63
 Adamant Nature
 Ball: Master Ball
 ~=Location=576
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Whirlpool
 - Earthquake
 - Future Sight
@@ -4318,8 +3988,7 @@ Level: 62
 Quirky Nature
 Ball: Master Ball
 ~=Location=590
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Earth Power
 - Earthquake
 - Future Sight
@@ -4332,8 +4001,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=585
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Crabhammer
 - Endeavor
@@ -4346,8 +4014,7 @@ Level: 61
 Careful Nature
 Ball: Master Ball
 ~=Location=569
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Body Slam
 - Crunch
 - Crabhammer
@@ -4360,8 +4027,7 @@ Level: 62
 Lax Nature
 Ball: Master Ball
 ~=Location=592
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Switcheroo
 - Crunch
 - Crabhammer
@@ -4374,8 +4040,7 @@ Level: 62
 Naughty Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Dance
 - Crunch
 - Crabhammer
@@ -4388,8 +4053,7 @@ Level: 59
 Rash Nature
 Ball: Master Ball
 ~=Location=606
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Superpower
 - Crunch
 - Crabhammer
@@ -4402,8 +4066,7 @@ Level: 59
 Adamant Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Split
 - Power Split
 - Sandstorm
@@ -4416,8 +4079,7 @@ Level: 62
 Quirky Nature
 Ball: Master Ball
 ~=Location=579
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Split
 - Power Split
 - Sandstorm
@@ -4430,8 +4092,7 @@ Level: 60
 Timid Nature
 Ball: Master Ball
 ~=Location=561
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Guard Split
 - Power Split
 - Sandstorm
@@ -4443,8 +4104,7 @@ Ability: Color Change
 Level: 61
 Relaxed Nature
 ~=Location=549
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Power-Up Punch
 - Substitute
 - Sucker Punch
@@ -4457,8 +4117,7 @@ Level: 65
 Docile Nature
 Ball: Master Ball
 ~=Location=572
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leaf Blade
 - Synthesis
 - Solar Beam
@@ -4471,8 +4130,7 @@ Level: 62
 Hardy Nature
 Ball: Master Ball
 ~=Location=607
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leaf Blade
 - Dragon Hammer
 - Synthesis
@@ -4485,8 +4143,7 @@ Level: 64
 Quiet Nature
 Ball: Master Ball
 ~=Location=607
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leaf Blade
 - Dragon Hammer
 - Synthesis
@@ -4499,8 +4156,7 @@ Level: 58
 Mild Nature
 Ball: Master Ball
 ~=Location=598
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bite
 - Swords Dance
 - Future Sight
@@ -4513,8 +4169,7 @@ Level: 58
 Mild Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Megahorn
 - Swords Dance
 - Future Sight
@@ -4527,8 +4182,7 @@ Level: 63
 Docile Nature
 Ball: Master Ball
 ~=Location=586
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Switcheroo
 - Headbutt
 - Crunch
@@ -4541,8 +4195,7 @@ Level: 59
 Relaxed Nature
 Ball: Master Ball
 ~=Location=586
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Swallow
 - Body Slam
 - Surf
@@ -4555,8 +4208,7 @@ Level: 61
 Jolly Nature
 Ball: Master Ball
 ~=Location=581
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 
 16 (Beldum)
@@ -4566,8 +4218,7 @@ Level: 61
 Naive Nature
 Ball: Master Ball
 ~=Location=608
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 
 Regirock
@@ -4577,8 +4228,7 @@ Level: 70
 Quirky Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Stone Edge
 - Superpower
 - Lock-On
@@ -4591,8 +4241,7 @@ Level: 70
 Rash Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Blizzard
 - Superpower
 - Lock-On
@@ -4605,8 +4254,7 @@ Level: 70
 Careful Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Heavy Slam
 - Superpower
 - Lock-On
@@ -4619,8 +4267,7 @@ Level: 70
 Mild Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Reflect Type
 - Psychic
 - Guard Split
@@ -4633,8 +4280,7 @@ Level: 70
 Naive Nature
 Ball: Master Ball
 ~=Location=506
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Dance
 - Dragon Pulse
 - Zen Headbutt
@@ -4647,8 +4293,7 @@ Level: 70
 Careful Nature
 Ball: Master Ball
 ~=Location=507
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ice Beam
 - Sheer Cold
 - Aqua Ring
@@ -4661,8 +4306,7 @@ Level: 70
 Naughty Nature
 Ball: Master Ball
 ~=Location=507
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Hammer Arm
 - Fissure
 - Rest
@@ -4675,8 +4319,7 @@ Level: 70
 Mild Nature
 Ball: Master Ball
 ~=Location=507
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Dragon Pulse
 - Hyper Voice
 - Rest
@@ -4687,11 +4330,9 @@ IVs: 10 HP / 6 SpA / 10 Spe
 EVs: 45 HP / 106 Atk / 75 Def / 102 SpA / 37 SpD / 145 Spe
 Ability: Serene Grace
 Bold Nature
-=MetLevel=5
-=FatefulEncounter=True
+~=Level=5
 ~=Location=438
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Meteor Mash
 - Wish
 - Zen Headbutt
@@ -4702,11 +4343,9 @@ IVs: 9 HP / 5 SpA / 18 SpD
 Ability: Serene Grace
 Level: 5
 Hardy Nature
-=MetLevel=5
-=FatefulEncounter=True
+~=Level=5
 ~=Location=438
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Confusion
 - Wish
 
@@ -4715,11 +4354,9 @@ IVs: 0 SpA
 Ability: Serene Grace
 Level: 5
 Jolly Nature
-=MetLevel=5
-=FatefulEncounter=True
+~=Level=5
 ~=Location=438
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Confusion
 - Wish
 
@@ -4729,8 +4366,7 @@ Ability: Overgrow
 Level: 57
 Bashful Nature
 ~=Location=568
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Sand Tomb
 - Crunch
 - Giga Drain
@@ -4744,8 +4380,7 @@ Level: 60
 Hardy Nature
 Ball: Master Ball
 ~=Location=610
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Quick Guard
 - Acrobatics
 - Slack Off
@@ -4757,8 +4392,7 @@ Ability: Blaze
 Level: 60
 Quirky Nature
 ~=Location=560
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Encore
 - Acrobatics
 - Slack Off
@@ -4769,10 +4403,9 @@ IVs: 20 HP / 22 Atk / 4 Def / 8 SpA / 26 SpD / 16 Spe
 EVs: 48 HP / 100 Atk / 79 Def / 99 SpA / 34 SpD / 150 Spe
 Ability: Blaze
 Naive Nature
-=MetLevel=5
+~=Level=5
 ~=Location=323
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Flamethrower
 - Close Combat
 - Mach Punch
@@ -4784,10 +4417,9 @@ EVs: 252 SpA / 6 SpD / 252 Spe
 Ability: Torrent
 Level: 27
 Modest Nature
-=MetLevel=5
+~=Level=5
 ~=Location=323
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Pound
 - Growl
 - Water Gun
@@ -4800,10 +4432,9 @@ Ability: Torrent
 Level: 19
 Shiny: Yes
 Naive Nature
-=MetLevel=5
+~=Level=5
 ~=Location=323
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Bubble Beam
 - Peck
 - Water Gun
@@ -4813,10 +4444,9 @@ Empoleon (F) @ Expert Belt
 EVs: 252 SpA / 6 SpD / 252 Spe
 Ability: Torrent
 Modest Nature
-=MetLevel=5
+~=Level=5
 ~=Location=323
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Grass Knot
 - Flash Cannon
 - Stealth Rock
@@ -4828,8 +4458,7 @@ Ability: Keen Eye
 Level: 24
 Bold Nature
 ~=Location=221
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Wing Attack
 - Double Team
 - Endeavor
@@ -4841,8 +4470,7 @@ Ability: Keen Eye
 Level: 16
 Bold Nature
 ~=Location=367
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growl
 - Quick Attack
 - Wing Attack
@@ -4854,8 +4482,7 @@ Ability: Keen Eye
 Level: 22
 Calm Nature
 ~=Location=223
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wing Attack
 - Double Team
 - Endeavor
@@ -4867,8 +4494,7 @@ Ability: Keen Eye
 Level: 16
 Lax Nature
 ~=Location=367
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growl
 - Quick Attack
 - Wing Attack
@@ -4882,8 +4508,7 @@ Level: 28
 Jolly Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Growl
 - Quick Attack
@@ -4897,8 +4522,7 @@ Level: 10
 Modest Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Growl
 - Quick Attack
@@ -4910,8 +4534,7 @@ Ability: Keen Eye
 Level: 24
 Naive Nature
 ~=Location=222
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wing Attack
 - Double Team
 - Endeavor
@@ -4925,8 +4548,7 @@ Shiny: Square
 Adamant Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Growl
 
@@ -4938,8 +4560,7 @@ Level: 25
 Naughty Nature
 Ball: Safari Ball
 ~=Location=224
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Wing Attack
 - Double Team
 - Endeavor
@@ -4951,8 +4572,7 @@ Ability: Intimidate
 Adamant Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Close Combat
 - Brave Bird
 - Quick Attack
@@ -4966,8 +4586,7 @@ Level: 7
 Serious Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Growl
 - Defense Curl
@@ -4979,8 +4598,7 @@ Level: 2
 Timid Nature
 Ball: Master Ball
 ~=Location=354
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Growl
 
@@ -4991,8 +4609,7 @@ Level: 21
 Bashful Nature
 Ball: Safari Ball
 ~=Location=224
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Defense Curl
 - Rollout
 - Headbutt
@@ -5005,8 +4622,7 @@ Level: 25
 Brave Nature
 Ball: Safari Ball
 ~=Location=219
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Rollout
 - Headbutt
 - Taunt
@@ -5019,8 +4635,7 @@ Level: 21
 Docile Nature
 Ball: Safari Ball
 ~=Location=223
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Defense Curl
 - Rollout
 - Headbutt
@@ -5033,8 +4648,7 @@ Level: 25
 Gentle Nature
 Ball: Safari Ball
 ~=Location=220
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Rollout
 - Headbutt
 - Taunt
@@ -5047,8 +4661,7 @@ Level: 23
 Hardy Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Rollout
 - Headbutt
 - Taunt
@@ -5061,8 +4674,7 @@ Level: 21
 Jolly Nature
 Ball: Safari Ball
 ~=Location=223
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Defense Curl
 - Rollout
 - Headbutt
@@ -5076,8 +4688,7 @@ Level: 19
 Lonely Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Taunt
 - Headbutt
 - Water Gun
@@ -5089,8 +4700,7 @@ Ability: Shed Skin
 Level: 61
 Jolly Nature
 ~=Location=592
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growl
 - Pound
 - Struggle Bug
@@ -5102,8 +4712,7 @@ Ability: Shed Skin
 Level: 43
 Lonely Nature
 ~=Location=545
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growl
 - Pound
 - Struggle Bug
@@ -5115,8 +4724,7 @@ Ability: Shed Skin
 Level: 58
 Naughty Nature
 ~=Location=564
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Growl
 - Pound
 - Struggle Bug
@@ -5128,8 +4736,7 @@ Ability: Swarm
 Level: 18
 Adamant Nature
 ~=Location=383
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Struggle Bug
 - Bug Bite
 - Absorb
@@ -5143,8 +4750,7 @@ Level: 30
 Jolly Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Thunder Fang
 - Leer
 - Thunder Shock
@@ -5157,8 +4763,7 @@ Level: 42
 Quiet Nature
 Ball: Master Ball
 ~=Location=563
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Fake Tears
 - Thunder Wave
 - Crunch
@@ -5172,8 +4777,7 @@ Shiny: Square
 Calm Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Leer
 - Thunder Shock
@@ -5186,8 +4790,7 @@ Shiny: Square
 Mild Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tackle
 - Leer
 
@@ -5199,8 +4802,7 @@ Shiny: Square
 Naughty Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Leer
 - Thunder Shock
@@ -5213,8 +4815,7 @@ Shiny: Square
 Quiet Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tackle
 - Leer
 - Thunder Shock
@@ -5226,8 +4827,7 @@ Level: 60
 Relaxed Nature
 Ball: Master Ball
 ~=Location=594
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Baby-Doll Eyes
 - Crunch
 - Discharge
@@ -5241,8 +4841,7 @@ Level: 86
 Serious Nature
 Ball: Master Ball
 ~=Location=355
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Spark
 - Discharge
 - Crunch
@@ -5256,8 +4855,7 @@ Level: 65
 Bashful Nature
 Ball: Master Ball
 ~=Location=570
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Synthesis
 - Growth
 - Stun Spore
@@ -5271,8 +4869,7 @@ Level: 25
 Careful Nature
 Ball: Safari Ball
 ~=Location=222
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Absorb
 - Growth
 - Stun Spore
@@ -5285,8 +4882,7 @@ Level: 62
 Gentle Nature
 Ball: Master Ball
 ~=Location=584
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Seed Bomb
 - Growth
 - Stun Spore
@@ -5299,8 +4895,7 @@ Level: 22
 Quiet Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Absorb
 - Growth
 - Stun Spore
@@ -5314,8 +4909,7 @@ Level: 49
 Serious Nature
 Ball: Master Ball
 ~=Location=545
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Extrasensory
 - Growth
 - Stun Spore
@@ -5329,8 +4923,7 @@ Shiny: Yes
 Relaxed Nature
 Ball: Master Ball
 ~=Location=200
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Absorb
 - Growth
 - Stun Spore
@@ -5343,8 +4936,7 @@ Level: 20
 Hardy Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Quick Attack
 - Water Gun
@@ -5357,8 +4949,7 @@ Level: 20
 Mild Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Quick Attack
 - Water Gun
@@ -5371,8 +4962,7 @@ Level: 22
 Gentle Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tail Whip
 - Water Gun
 - Bite
@@ -5385,8 +4975,7 @@ Level: 42
 Mild Nature
 Ball: Master Ball
 ~=Location=544
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Razor Leaf
 - Take Down
 - Petal Blizzard
@@ -5399,8 +4988,7 @@ Level: 7
 Bashful Nature
 Ball: Master Ball
 ~=Location=197
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Water Gun
 - Mud-Slap
 - Harden
@@ -5412,8 +5000,7 @@ Level: 7
 Bold Nature
 Ball: Master Ball
 ~=Location=197
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Water Gun
 - Mud-Slap
 - Harden
@@ -5425,8 +5012,7 @@ Level: 20
 Adamant Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 - Recover
 - Water Pulse
@@ -5439,8 +5025,7 @@ Level: 22
 Brave Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 - Recover
 - Water Pulse
@@ -5453,8 +5038,7 @@ Level: 20
 Brave Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 - Recover
 - Water Pulse
@@ -5467,8 +5051,7 @@ Level: 22
 Quiet Nature
 Ball: Master Ball
 ~=Location=385
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Harden
 - Recover
 - Water Pulse
@@ -5482,8 +5065,7 @@ Level: 29
 Timid Nature
 Ball: Master Ball
 ~=Location=400
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Recover
 - Water Pulse
 - Ancient Power
@@ -5496,8 +5078,7 @@ Level: 22
 Careful Nature
 Ball: Master Ball
 ~=Location=197
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Focus Energy
 - Payback
 - Hex
@@ -5509,8 +5090,7 @@ Ability: Levitate
 Level: 39
 Bashful Nature
 ~=Location=546
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Future Sight
 - Last Resort
 - Entrainment
@@ -5522,8 +5102,7 @@ Ability: Levitate
 Level: 55
 Hasty Nature
 ~=Location=543
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Recover
 - Last Resort
 - Entrainment
@@ -5536,8 +5115,7 @@ Level: 61
 Bold Nature
 Ball: Master Ball
 ~=Location=594
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Belch
 - Venom Drench
@@ -5550,8 +5128,7 @@ Level: 23
 Gentle Nature
 Ball: Master Ball
 ~=Location=392
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Fury Swipes
 - Focus Energy
 - Bite
@@ -5564,8 +5141,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=592
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Belch
 - Venom Drench
@@ -5578,8 +5154,7 @@ Level: 45
 Quiet Nature
 Ball: Master Ball
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Leer
 - Memento
 - Night Slash
@@ -5592,8 +5167,7 @@ Level: 46
 Lax Nature
 Ball: Master Ball
 ~=Location=559
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Heavy Slam
 - Iron Defense
 - Metal Sound
@@ -5606,8 +5180,7 @@ Level: 63
 Naughty Nature
 Ball: Master Ball
 ~=Location=582
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Heavy Slam
 - Iron Defense
 - Metal Sound
@@ -5621,8 +5194,7 @@ Level: 63
 Gentle Nature
 Ball: Master Ball
 ~=Location=591
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Iron Head
 - Sandstorm
 - Take Down
@@ -5635,8 +5207,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Iron Head
 - Sandstorm
 - Take Down
@@ -5649,8 +5220,7 @@ Level: 43
 Jolly Nature
 Ball: Master Ball
 ~=Location=553
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Double-Edge
 - Slash
 - Dragon Claw
@@ -5663,8 +5233,7 @@ Level: 61
 Brave Nature
 Ball: Master Ball
 ~=Location=604
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Mud Shot
 - Dragon Claw
 - Dig
@@ -5677,8 +5246,7 @@ Level: 42
 Bashful Nature
 Ball: Master Ball
 ~=Location=558
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Counter
 - Fling
 - Amnesia
@@ -5691,8 +5259,7 @@ Level: 61
 Careful Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Confuse Ray
 - X-Scissor
 - Acupressure
@@ -5705,8 +5272,7 @@ Level: 63
 Careful Nature
 Ball: Master Ball
 ~=Location=600
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Poison Tail
 - X-Scissor
 - Acupressure
@@ -5719,8 +5285,7 @@ Level: 62
 Docile Nature
 Ball: Master Ball
 ~=Location=617
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Whirlwind
 - X-Scissor
 - Acupressure
@@ -5733,8 +5298,7 @@ Level: 58
 Impish Nature
 Ball: Master Ball
 ~=Location=596
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Agility
 - X-Scissor
 - Acupressure
@@ -5747,8 +5311,7 @@ Level: 58
 Impish Nature
 Ball: Master Ball
 ~=Location=607
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Screech
 - X-Scissor
 - Acupressure
@@ -5761,8 +5324,7 @@ Level: 63
 Jolly Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Slash
 - X-Scissor
 - Acupressure
@@ -5775,8 +5337,7 @@ Level: 59
 Lax Nature
 Ball: Master Ball
 ~=Location=600
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Slash
 - X-Scissor
 - Acupressure
@@ -5789,8 +5350,7 @@ Level: 59
 Naughty Nature
 Ball: Master Ball
 ~=Location=602
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Poison Tail
 - X-Scissor
 - Acupressure
@@ -5803,8 +5363,7 @@ Level: 63
 Sassy Nature
 Ball: Master Ball
 ~=Location=599
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Poison Tail
 - X-Scissor
 - Acupressure
@@ -5817,8 +5376,7 @@ Level: 25
 Timid Nature
 Ball: Master Ball
 ~=Location=556
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Screech
 - Bug Bite
 - Venoshock
@@ -5831,8 +5389,7 @@ Level: 24
 Brave Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Flatter
 - Revenge
 - Venoshock
@@ -5845,8 +5402,7 @@ Level: 63
 Hasty Nature
 Ball: Master Ball
 ~=Location=597
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Vacuum Wave
 - Nasty Plot
 - Sludge Bomb
@@ -5859,8 +5415,7 @@ Level: 59
 Naughty Nature
 Ball: Master Ball
 ~=Location=597
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Acupressure
 - Nasty Plot
 - Sludge Bomb
@@ -5873,8 +5428,7 @@ Level: 25
 Jolly Nature
 Ball: Safari Ball
 ~=Location=221
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bite
 - Vine Whip
 - Sweet Scent
@@ -5887,8 +5441,7 @@ Level: 38
 Careful Nature
 Ball: Master Ball
 ~=Location=486
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Bubble Beam
 - Headbutt
 - Air Slash
@@ -5901,8 +5454,7 @@ Level: 62
 Lax Nature
 Ball: Master Ball
 ~=Location=571
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Splash
 - Bounce
 - Take Down
@@ -5915,8 +5467,7 @@ Level: 59
 Modest Nature
 Ball: Master Ball
 ~=Location=577
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Haze
 - Bounce
 - Take Down
@@ -5929,8 +5480,7 @@ Level: 62
 Bold Nature
 Ball: Master Ball
 ~=Location=615
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Magical Leaf
 - Wood Hammer
 - Blizzard
@@ -5943,8 +5493,7 @@ Level: 59
 Calm Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Skull Bash
 - Wood Hammer
 - Blizzard
@@ -5957,8 +5506,7 @@ Level: 43
 Sassy Nature
 Ball: Master Ball
 ~=Location=578
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Double-Edge
 - Swagger
 - Ingrain
@@ -5971,8 +5519,7 @@ Level: 40
 Adamant Nature
 Ball: Master Ball
 ~=Location=206
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Razor Leaf
 - Icy Wind
 - Swagger
@@ -5986,8 +5533,7 @@ Level: 70
 Timid Nature
 Ball: Master Ball
 ~=Location=551
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Tri Attack
 - Flash Cannon
 - Light Screen
@@ -6000,8 +5546,7 @@ Level: 58
 Bashful Nature
 Ball: Master Ball
 ~=Location=576
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Flail
 - Power Whip
 - Ingrain
@@ -6014,8 +5559,7 @@ Level: 47
 Relaxed Nature
 Ball: Master Ball
 ~=Location=216
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Ancient Power
 - Slash
 - Flash Cannon
@@ -6029,8 +5573,7 @@ Shiny: Yes
 Modest Nature
 Ball: Master Ball
 ~=Location=217
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Ancient Power
 - Slash
 - Aqua Ring
@@ -6043,8 +5586,7 @@ Level: 70
 Jolly Nature
 Ball: Master Ball
 ~=Location=266
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Shadow Force
 - Pain Split
 - Aura Sphere
@@ -6058,8 +5600,7 @@ Shiny: Yes
 Adamant Nature
 Ball: Master Ball
 ~=Location=266
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Shadow Force
 - Pain Split
 - Aura Sphere
@@ -6072,8 +5613,7 @@ Level: 50
 Docile Nature
 Ball: Master Ball
 .MetLocation=400
-~=Version=BDSP
-.Version=48
+~=Version=BD
 - Slash
 - Psycho Cut
 - Moonlight
@@ -6084,8 +5624,6 @@ IVs: 0 Atk
 Ability: Hydration
 Level: 1
 Timid Nature
-=FatefulEncounter=True
-~=Version=BDSP
-Version=49
+~=Version=SP
 - Tail Glow
 - Water Gun

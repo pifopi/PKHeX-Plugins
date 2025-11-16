@@ -270,8 +270,7 @@ Ability: Hustle
 Level: 12
 Bold Nature
 Language: English
-=OriginalTrainerName=Tatianna
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=43
 - Tail Whip
@@ -324,8 +323,7 @@ Ability: Gluttony
 Level: 20
 Jolly Nature
 Language: English
-=OriginalTrainerName=Tatianna
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Super Fang
@@ -415,8 +413,7 @@ Ability: Surge Surfer
 Level: 30
 Brave Nature
 Language: English
-=OriginalTrainerName=Psytrice
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Thunder Shock
@@ -442,8 +439,7 @@ Ability: Snow Cloak
 Level: 27
 Modest Nature
 Language: English
-=OriginalTrainerName=Nicholice
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Swift
@@ -854,8 +850,7 @@ Ability: Sand Veil
 Level: 25
 Docile Nature
 Language: English
-=OriginalTrainerName=Diggette
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Fury Swipes
@@ -895,8 +890,7 @@ Ability: Sand Veil
 Level: 26
 Docile Nature
 Language: English
-=OriginalTrainerName=Diggette
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Tri Attack
@@ -949,8 +943,7 @@ Ability: Technician
 Level: 44
 Sassy Nature
 Language: English
-=OriginalTrainerName=Darko
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=43
 - Screech
@@ -1396,8 +1389,7 @@ Ability: Sturdy
 Level: 16
 Careful Nature
 Language: English
-=OriginalTrainerName=Higeo
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=43
 - Bide
@@ -1408,7 +1400,6 @@ Language: English
 Geodude-Alola (F)
 IVs: 23 HP / 17 Atk / 13 Def / 17 SpA / 13 SpD
 Ability: Magnet Pull
-Level: re
 ~=Location=50
 ~=Version=GO
 .Version=34
@@ -1501,8 +1492,7 @@ Ability: Magnet Pull
 Level: 25
 Timid Nature
 Language: English
-=OriginalTrainerName=Higeo
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Self-Destruct
@@ -2096,8 +2086,7 @@ Ability: Frisk
 Level: 46
 Hasty Nature
 Language: English
-=OriginalTrainerName=Exemann
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=43
 - Barrage
@@ -2163,8 +2152,7 @@ Ability: Lightning Rod
 Level: 38
 Hasty Nature
 Language: English
-=OriginalTrainerName=Genmar
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Rage
@@ -2704,7 +2692,6 @@ Gentle Nature
 Eevee (M)
 IVs: 26 HP / 16 Atk / 19 Def / 26 SpA / 22 SpD / 6 Spe
 Ability: Run Away
-Level: e
 ~=Location=19
 ~=Version=LGPE
 .Version=42
@@ -2716,7 +2703,6 @@ Level: e
 Vaporeon (M)
 IVs: 26 HP / 16 Atk / 19 Def / 26 SpA / 22 SpD / 6 Spe
 Ability: Water Absorb
-Level: e
 ~=Location=19
 ~=Version=LGPE
 .Version=42
@@ -2741,7 +2727,6 @@ Gentle Nature
 Flareon (M)
 IVs: 26 HP / 16 Atk / 19 Def / 26 SpA / 22 SpD / 6 Spe
 Ability: Flash Fire
-Level: e
 ~=Location=19
 ~=Version=LGPE
 .Version=42
@@ -2882,7 +2867,6 @@ Quirky Nature
 Snorlax (M)
 IVs: 2 HP / 25 SpD
 Ability: Immunity
-Level: re
 ~=Location=14
 ~=Version=LGPE
 .Version=43
@@ -2894,7 +2878,6 @@ Level: re
 Snorlax (M)
 IVs: 5 Atk / 23 Def / 25 SpD
 Ability: Thick Fat
-Level: 
 ~=Location=18
 ~=Version=LGPE
 .Version=43
@@ -2906,7 +2889,6 @@ Level:
 Snorlax (M)
 IVs: 8 HP / 26 Def / 24 Spe
 Ability: Immunity
-Level: 
 ~=Location=18
 ~=Version=LGPE
 .Version=42

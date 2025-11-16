@@ -2503,7 +2503,6 @@ IVs: 30 HP / 2 Atk / 17 Def / 15 SpA / 26 SpD / 5 Spe
 Ability: Hydration
 Level: 36
 Quirky Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -2517,7 +2516,6 @@ EVs: 15 HP / 1 Atk / 3 Spe
 Ability: Hydration
 Level: 50
 Quirky Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Water Pulse
@@ -2530,7 +2528,6 @@ IVs: 22 Atk / 9 Def / 25 Spe
 Ability: Bad Dreams
 Level: 70
 Quirky Nature
-=FatefulEncounter=True
 .MetLocation=10
 ~=Version=PLA
 - Hex
@@ -2544,7 +2541,6 @@ EVs: 15 HP / 1 Atk / 3 Spe
 Ability: Natural Cure
 Level: 70
 Rash Nature
-=FatefulEncounter=True
 .MetLocation=26
 ~=Version=PLA
 - Air Slash
@@ -2557,7 +2553,6 @@ IVs: 8 Def / 15 SpD
 Ability: Multitype
 Level: 75
 Relaxed Nature
-=FatefulEncounter=True
 .MetLocation=109
 ~=Version=PLA
 - Recover
@@ -12197,7 +12192,6 @@ EVs: 15 HP / 1 Atk / 3 Spe
 Ability: Hydration
 Level: 35
 Relaxed Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -12211,7 +12205,6 @@ EVs: 9 HP / 4 Atk / 2 Def / 9 Spe
 Ability: Bad Dreams
 Level: 70
 Quirky Nature
-=FatefulEncounter=True
 .MetLocation=10
 ~=Version=PLA
 - Shadow Ball

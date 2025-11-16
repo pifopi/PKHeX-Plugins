@@ -128,25 +128,25 @@ namespace AutoModPlugins.GUI
             // 
             // B_Load
             // 
-            B_Load.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            B_Load.Anchor = AnchorStyles.Right;
             B_Load.Location = new System.Drawing.Point(381, 12);
             B_Load.Margin = new Padding(4, 3, 4, 3);
             B_Load.Name = "B_Load";
             B_Load.Size = new System.Drawing.Size(65, 30);
             B_Load.TabIndex = 21;
-            B_Load.Text = "Load";
+            B_Load.Text = "Import";
             B_Load.UseVisualStyleBackColor = true;
             B_Load.Click += B_Load_Click;
             // 
             // B_Save
             // 
-            B_Save.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            B_Save.Anchor = AnchorStyles.Right;
             B_Save.Location = new System.Drawing.Point(381, 44);
             B_Save.Margin = new Padding(4, 3, 4, 3);
             B_Save.Name = "B_Save";
             B_Save.Size = new System.Drawing.Size(65, 30);
             B_Save.TabIndex = 22;
-            B_Save.Text = "Save";
+            B_Save.Text = "Export";
             B_Save.UseVisualStyleBackColor = true;
             B_Save.Click += B_Save_Click;
             // 

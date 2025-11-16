@@ -5,7 +5,7 @@ Ability: Overgrow
 Level: 6
 Shiny: Yes
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=FRLG
 .Version=5
 - Body Slam
@@ -53,7 +53,6 @@ Relaxed Nature
 Psyduck
 Shiny: Yes
 Language: Japanese
-=FatefulEncounter=False
 OT: Anubis
 - Mud Sport
 
@@ -189,7 +188,7 @@ Ability: Run Away
 Level: 10
 Shiny: Yes
 Modest Nature
-=MetLevel=10
+~=Level=10
 ~=Version=CXD
 - Tackle
 - Tail Whip
@@ -261,7 +260,6 @@ Shiny: Yes
 Ability: Static
 Level: 5
 Language: Japanese
-=FatefulEncounter=False
 OT: Anubis
 Sassy Nature
 - Follow Me
@@ -281,7 +279,6 @@ Bold Nature
 Igglybuff
 Shiny: Yes
 Language: Japanese
-=FatefulEncounter=False
 OT: Anubis
 - Tickle
 
@@ -593,7 +590,7 @@ Ability: Overgrow
 Level: 5
 Shiny: Yes
 Timid Nature
-=MetLevel=5
+~=Level=5
 .Version=1
 - Pound
 - Leer
@@ -605,7 +602,7 @@ Ability: Overgrow
 Level: 6
 Shiny: Yes
 Timid Nature
-=MetLevel=5
+~=Level=5
 .Version=1
 - Pound
 - Leer
@@ -618,7 +615,7 @@ Ability: Blaze
 Level: 8
 Shiny: Yes
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Version=E
 .Version=3
 - Scratch
@@ -632,7 +629,7 @@ Ability: Blaze
 Level: 5
 Shiny: Yes
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Version=RS
 .Version=2
 - Scratch
@@ -645,7 +642,7 @@ Ability: Torrent
 Level: 5
 Shiny: Yes
 Relaxed Nature
-=MetLevel=5
+~=Level=5
 .Version=1
 - Defense Curl
 
@@ -927,7 +924,7 @@ Ability: Forecast
 Level: 25
 Shiny: Yes
 Modest Nature
-=MetLevel=25
+~=Level=25
 ~=Version=E
 .Version=3
 - Powder Snow
@@ -1021,8 +1018,7 @@ Level: 15
 Adamant Nature
 Ball: Master Ball
 Shiny: Yes
-=MetLevel=15
-=Gen3=True
+~=LevelMin=15
 - Mirror Coat
 - Safeguard
 - Destiny Bond
@@ -1118,7 +1114,7 @@ Ability: Clear Body
 Level: 5
 Shiny: Yes
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Version=E
 .Version=3
 - Take Down

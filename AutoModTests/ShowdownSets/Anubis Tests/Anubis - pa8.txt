@@ -258,7 +258,6 @@ IVs: 20 HP / 6 Atk / 22 Def / 9 SpA / 14 SpD / 18 Spe
 Ability: Friend Guard
 Level: 5
 Hardy Nature
-=FatefulEncounter=True
 .MetLocation=40012
 ~=Version=PLA
 - Baby-Doll Eyes
@@ -335,7 +334,6 @@ IVs: 23 HP / 0 Atk / 26 Def / 13 SpA / 22 SpD / 7 Spe
 Ability: Hydration
 Level: 35
 Lonely Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -348,7 +346,6 @@ IVs: 19 HP / 1 SpA / 29 SpD
 Ability: Hydration
 Level: 50
 Jolly Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Water Pulse
@@ -361,7 +358,6 @@ IVs: 28 HP / 5 Def / 26 SpA
 Ability: Serene Grace
 Level: 70
 Lax Nature
-=FatefulEncounter=True
 .MetLocation=26
 ~=Version=PLA
 - Air Slash
@@ -29890,7 +29886,6 @@ IVs: 27 HP / 8 Atk / 28 Def / 8 SpA / 24 SpD
 Ability: Hydration
 Level: 33
 Adamant Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -29903,7 +29898,6 @@ IVs: 23 HP / 0 Atk / 26 Def / 13 SpA / 22 SpD / 7 Spe
 Ability: Hydration
 Level: 35
 Lonely Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -29916,7 +29910,6 @@ IVs: 26 HP / 8 Atk / 10 Def / 12 SpA / 11 SpD / 6 Spe
 Ability: Hydration
 Level: 34
 Lonely Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Bubble
@@ -29929,7 +29922,6 @@ IVs: 19 HP / 1 SpA / 29 SpD
 Ability: Hydration
 Level: 50
 Jolly Nature
-=FatefulEncounter=True
 .MetLocation=64
 ~=Version=PLA
 - Water Pulse
@@ -29942,7 +29934,6 @@ IVs: 15 HP / 16 Atk / 9 SpA
 Ability: Bad Dreams
 Level: 70
 Serious Nature
-=FatefulEncounter=True
 .MetLocation=10
 ~=Version=PLA
 - Hex
@@ -29955,7 +29946,6 @@ IVs: 28 HP / 5 Def / 26 SpA
 Ability: Serene Grace
 Level: 70
 Lax Nature
-=FatefulEncounter=True
 .MetLocation=26
 ~=Version=PLA
 - Air Slash
@@ -29968,7 +29958,6 @@ IVs: 1 Atk / 3 SpD / 21 Spe
 Ability: Multitype
 Level: 75
 Modest Nature
-=FatefulEncounter=True
 .MetLocation=109
 ~=Version=PLA
 - Recover

@@ -112,7 +112,7 @@ public static class APILegality
             criteria = SetSpecialCriteria(criteria, enc, set);
 
             // Create the PKM from the template.
-            var tr = SimpleEdits.IsUntradeableEncounter(enc) ? dest : GetTrainer(regen, enc, set, dest);
+            var tr = TradeRestrictions.IsUntradableEncounter(enc) ? dest : GetTrainer(regen, enc, set, dest);
             var raw = enc.GetPokemonFromEncounter(tr, criteria, set);
             if (raw.OriginalTrainerName.Length == 0)
             {
@@ -524,7 +524,7 @@ public static class APILegality
     public static bool IsPIDIVSet(PKM pk, IEncounterTemplate enc) => enc switch
     {
         // If PID and IV is handled in PreSetPIDIV, don't set it here again and return out
-        ITeraRaid9 or EncounterStatic8N or EncounterStatic8NC or EncounterStatic8ND or EncounterStatic8U => true,
+        WA9 or IEncounter9a or ITeraRaid9 or EncounterStatic8N or EncounterStatic8NC or EncounterStatic8ND or EncounterStatic8U => true,
         IOverworldCorrelation8 o when o.GetRequirement(pk) == OverworldCorrelation8Requirement.MustHave => true,
         IStaticCorrelation8b s when s.GetRequirement(pk) == StaticCorrelation8bRequirement.MustHave => true,
         EncounterSlot3 when pk.Species == (ushort)Species.Unown => true,
@@ -579,6 +579,7 @@ public static class APILegality
         pk.SetEV(set);
         pk.SetCorrectMetLevel(enc);
         pk.SetGVs();
+        pk.SetPlusFlags(pk.PersonalInfo);
         pk.SetHyperTrainingFlags(set, enc, criteria);
         pk.SetEncryptionConstant(enc);
         pk.SetShinyBoolean(set.Shiny, enc, regen.Extra.ShinyType, pidiv.Type, criteria);
@@ -810,8 +811,6 @@ public static class APILegality
                 pk.SetEncounterTradeIVs();
                 return; // Fixed PID, no need to mutate
         }
-        if (enc.Context is EntityContext.Gen9a)
-            return;
         // Handle mismatching abilities due to a PID re-roll
         // Check against ability index because the Pokémon could be a pre-evo at this point
         if (pk.Ability != set.Ability)
@@ -885,11 +884,7 @@ public static class APILegality
         {
             enc3.SetFromIVsUnown((PK3)pk, criteria);
         }
-        if (pk.Version == GameVersion.CXD && pidiv.Type == PIDType.CXD && criteria.Shiny.IsShiny())  // CXD handling
-        {
-            if (enc is EncounterStatic3XD && enc.Species == (int)Species.Eevee)
-                MethodCXD.SetStarterFromIVs((XK3)pk, in criteria);
-        }
+        
     }
 
     private static void FindTeraPIDIV<T>(PK9 pk, T enc, IBattleTemplate set, EncounterCriteria criteria) where T : ITeraRaid9, IEncounterTemplate
@@ -1245,7 +1240,6 @@ public static class APILegality
             (int)Species.Pyukumuku when criteria is { IV_DEF: 0, IV_SPD: 0 } && set.Ability == (int)Ability.InnardsOut =>
                 Revise(criteria, def: criteria.IV_DEF, spd: criteria.IV_SPD),
             (int)Species.Unown when enc.Generation is 4 => criteria with { Form = (sbyte)set.Form},
-
             _ => Revise(criteria, atk: criteria.IV_ATK == 0 ? (sbyte)0 : (sbyte)-1, spe: criteria.IV_SPE == 0 ? (sbyte)0 : (sbyte)-1),
         };
     }

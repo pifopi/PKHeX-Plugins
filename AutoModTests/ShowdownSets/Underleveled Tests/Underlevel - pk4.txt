@@ -971,7 +971,6 @@ Ability: Magnet Pull
 Level: 19
 Impish Nature
 Language: English
-=OriginalTrainerName=Lorenzo
 ~=Version=HGSS
 .Version=7
 - Thunder Shock
@@ -1037,7 +1036,6 @@ Ability: Levitate
 Level: 35
 Hasty Nature
 Language: English
-=OriginalTrainerName=Mindy
 ~=Version=Pt
 - Sucker Punch
 - Shadow Punch
@@ -1594,7 +1592,6 @@ Ability: Synchronize
 Level: 16
 Modest Nature
 Language: English
-=OriginalTrainerName=Mondo
 ~=Version=HGSS
 .Version=7
 - Leer

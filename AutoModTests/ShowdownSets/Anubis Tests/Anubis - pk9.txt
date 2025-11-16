@@ -18,7 +18,6 @@ Ability: Static
 Tera Type: Flying
 Level: 5
 Rash Nature
-=FatefulEncounter=True
 ~=Location=40001
 ~=Version=SV
 .Version=51
@@ -6531,7 +6530,7 @@ Ability: Overgrow
 Tera Type: Grass
 Level: 41
 Jolly Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -6546,7 +6545,7 @@ EVs: 252 HP / 252 Atk / 6 Def
 Ability: Torrent
 Tera Type: Water
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=50
@@ -7971,7 +7970,7 @@ Ability: Commander
 Tera Type: Dragon
 Level: 45
 Quiet Nature
-=MetLevel=45
+~=Level=45
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -8060,7 +8059,7 @@ Ability: Commander
 Tera Type: Dragon
 Level: 45
 Gentle Nature
-=MetLevel=45
+~=Level=45
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -8120,7 +8119,7 @@ Ability: Commander
 Tera Type: Dragon
 Level: 45
 Relaxed Nature
-=MetLevel=45
+~=Level=45
 ~=Location=40
 ~=Version=SV
 .Version=51
@@ -8526,7 +8525,7 @@ Ability: Anger Shell
 Tera Type: Rock
 Level: 16
 Gentle Nature
-=MetLevel=16
+~=Level=16
 ~=Location=20
 ~=Version=SV
 .Version=51
@@ -8869,7 +8868,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 40
 Bashful Nature
-=MetLevel=40
+~=Level=40
 ~=Location=16
 ~=Version=SV
 .Version=50
@@ -8883,7 +8882,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 46
 Bold Nature
-=MetLevel=35
+~=Level=35
 ~=Location=38
 ~=Version=SV
 .Version=50
@@ -8896,7 +8895,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 50
 Docile Nature
-=MetLevel=50
+~=Level=50
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -8909,7 +8908,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 35
 Hardy Nature
-=MetLevel=35
+~=Level=35
 ~=Location=38
 ~=Version=SV
 .Version=50
@@ -8922,7 +8921,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 15
 Hasty Nature
-=MetLevel=15
+~=Level=15
 ~=Location=14
 ~=Version=SV
 .Version=50
@@ -8935,7 +8934,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 50
 Impish Nature
-=MetLevel=50
+~=Level=50
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -8961,7 +8960,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 20
 Naive Nature
-=MetLevel=20
+~=Level=20
 ~=Location=24
 ~=Version=SV
 .Version=51
@@ -8974,7 +8973,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 50
 Relaxed Nature
-=MetLevel=50
+~=Level=50
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -8987,7 +8986,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 50
 Sassy Nature
-=MetLevel=50
+~=Level=50
 ~=Location=40
 ~=Version=SV
 .Version=50
@@ -9000,7 +8999,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 20
 Timid Nature
-=MetLevel=20
+~=Level=20
 ~=Location=24
 ~=Version=SV
 .Version=51
@@ -9013,7 +9012,7 @@ Ability: Rattled
 Tera Type: Ghost
 Level: 10
 Timid Nature
-=MetLevel=10
+~=Level=10
 ~=Location=20
 ~=Version=SV
 .Version=51
@@ -9039,7 +9038,7 @@ Ability: Protosynthesis
 Tera Type: Fighting
 Level: 45
 Naughty Nature
-=MetLevel=45
+~=Level=45
 ~=Location=24
 ~=Version=SV
 .Version=50
@@ -9237,7 +9236,7 @@ EVs: 2 Atk / 2 Def
 Ability: Vessel of Ruin
 Tera Type: Dark
 Rash Nature
-=MetLevel=60
+~=Level=60
 ~=Location=109
 ~=Version=SV
 .Version=50
@@ -9267,7 +9266,7 @@ Ability: Tablets of Ruin
 Tera Type: Dark
 Level: 60
 Naughty Nature
-=MetLevel=60
+~=Level=60
 ~=Location=6
 ~=Version=SV
 .Version=50
@@ -9298,7 +9297,7 @@ Ability: Orichalcum Pulse
 Tera Type: Fighting
 Level: 72
 Adamant Nature
-=MetLevel=72
+~=Level=72
 ~=Location=124
 ~=Version=SV
 .Version=50
@@ -9358,7 +9357,6 @@ EVs: 78 Atk / 180 SpA / 252 Spe
 Ability: Lightning Rod
 Tera Type: Flying
 Hasty Nature
-=FatefulEncounter=True
 ~=Location=40001
 ~=Version=SV
 .Version=50
@@ -9450,7 +9448,6 @@ Ability: Intimidate
 Tera Type: Fire
 Level: 26
 Rash Nature
-=FatefulEncounter=True
 ~=Location=40001
 ~=Version=PLA
 - Bite
@@ -11153,7 +11150,6 @@ Ability: Natural Cure
 Tera Type: Normal
 Level: 5
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40012
 ~=Version=PLA
 - Pound
@@ -11166,7 +11162,6 @@ Ability: Friend Guard
 Tera Type: Normal
 Level: 5
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40012
 ~=Version=PLA
 - Pound
@@ -11455,7 +11450,6 @@ Ability: Torrent
 Tera Type: Water
 Level: 5
 Rash Nature
-=FatefulEncounter=True
 ~=Location=30018
 ~=Version=PLA
 - Tackle
@@ -11467,7 +11461,6 @@ Ability: Shell Armor
 Tera Type: Water
 Level: 5
 Rash Nature
-=FatefulEncounter=True
 ~=Location=30018
 ~=Version=PLA
 - Tackle
@@ -12994,7 +12987,6 @@ Ability: Overgrow
 Tera Type: Grass
 Level: 5
 Jolly Nature
-=FatefulEncounter=True
 ~=Location=30018
 ~=Version=PLA
 - Tackle
@@ -13007,7 +12999,6 @@ Ability: Long Reach
 Tera Type: Grass
 Level: 5
 Jolly Nature
-=FatefulEncounter=True
 ~=Location=30018
 ~=Version=PLA
 - Tackle
@@ -16527,7 +16518,7 @@ Ability: Orichalcum Pulse
 Tera Type: Fighting
 Level: 72
 Adamant Nature
-=MetLevel=72
+~=Level=72
 ~=Location=124
 ~=Version=SV
 .Version=50
@@ -16738,7 +16729,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16753,7 +16743,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16768,7 +16757,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16783,7 +16771,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16798,7 +16785,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16813,7 +16799,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16828,7 +16813,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16843,7 +16827,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -16858,7 +16841,7 @@ Ability: Surge Surfer
 Tera Type: Electric
 Level: 30
 Rash Nature
-=MetLocation=30001
+~=Location=30001
 ~=Version=LGPE
 .Version=42
 - Electro Ball
@@ -18254,7 +18237,6 @@ EVs: 252 SpA / 6 SpD / 252 Spe
 Ability: Battle Bond
 Tera Type: Water
 Timid Nature
-=FatefulEncounter=True
 ~=Location=30010
 ~=Version=SM
 .Version=30
@@ -18281,7 +18263,6 @@ Ability: Static
 Tera Type: Electric
 Level: 21
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40005
 ~=Version=USUM
 .Version=32
@@ -18370,7 +18351,7 @@ Ability: Technician
 Tera Type: Poison
 Level: 86
 Jolly Nature
-=MetLevel=70
+~=Level=70
 ~=Location=144
 ~=Version=VL
 - Brave Bird
@@ -18384,9 +18365,7 @@ Ability: Synchronize
 Tera Type: Steel
 Level: 5
 Quiet Nature
-=FatefulEncounter=True
 ~=Location=40001
-=TeraTypeOriginal=Steel
 ~=Version=SV
 .Version=50
 - Flash Cannon
@@ -18501,7 +18480,7 @@ Ability: Rock Head
 Tera Type: Rock
 Level: 15
 Jolly Nature
-=MetLevel=15
+~=Level=15
 ~=Location=134
 ~=Version=SL
 .Version=50
@@ -19466,7 +19445,7 @@ Tera Type: Normal
 Level: 1
 Shiny: Square
 Impish Nature
-=MetLevel=1
+~=Level=1
 ~=Location=142
 ~=Version=SL
 .Version=50
@@ -20448,7 +20427,7 @@ Ability: Rock Head
 Tera Type: Rock
 Level: 15
 Jolly Nature
-=MetLevel=15
+~=Level=15
 ~=Location=134
 ~=Version=SL
 .Version=50
@@ -21567,7 +21546,7 @@ Tera Type: Normal
 Level: 1
 Shiny: Square
 Impish Nature
-=MetLevel=1
+~=Level=1
 ~=Location=142
 ~=Version=SL
 .Version=50

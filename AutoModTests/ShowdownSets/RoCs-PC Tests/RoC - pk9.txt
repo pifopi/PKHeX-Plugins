@@ -137,7 +137,7 @@ Ability: Pickup
 Tera Type: Steel
 Level: 5
 Calm Nature
-=MetLevel=5
+~=Level=5
 ~=Location=130
 ~=Version=SV
 .Version=50
@@ -1043,8 +1043,7 @@ Tera Type: Water
 Level: 18
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Sue
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=50
 - Mud Shot
@@ -1073,8 +1072,7 @@ Tera Type: Water
 Level: 20
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Sue
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=51
 - Mud Shot
@@ -5107,7 +5105,7 @@ Ability: Overgrow
 Tera Type: Grass
 Level: 5
 Hardy Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -5147,7 +5145,7 @@ Ability: Blaze
 Tera Type: Fire
 Level: 5
 Docile Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -5187,7 +5185,7 @@ Ability: Torrent
 Tera Type: Water
 Level: 5
 Naive Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -6762,7 +6760,7 @@ EVs: 6 HP / 252 SpA / 252 Spe
 Ability: Unaware
 Tera Type: Fire
 Modest Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=50
@@ -6776,7 +6774,7 @@ EVs: 6 HP / 252 Atk / 252 Spe
 Ability: Moxie
 Tera Type: Water
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -6790,7 +6788,7 @@ EVs: 6 HP / 252 SpA / 252 Spe
 Ability: Protean
 Tera Type: Grass
 Modest Nature
-=MetLevel=5
+~=Level=5
 ~=Location=80
 ~=Version=SV
 .Version=51
@@ -6862,8 +6860,7 @@ Tera Type: Ghost
 Level: 25
 Lonely Nature
 Language: English
-=OriginalTrainerName=Blossom
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=50
 - Payback
@@ -6878,8 +6875,7 @@ Tera Type: Water
 Level: 18
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Sue
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=50
 - Mud Shot
@@ -6894,8 +6890,7 @@ Tera Type: Ice
 Level: 10
 Bashful Nature
 Language: English
-=OriginalTrainerName=Glen
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=50
 - Struggle Bug
@@ -6908,8 +6903,7 @@ Tera Type: Ghost
 Level: 25
 Lonely Nature
 Language: English
-=OriginalTrainerName=Blossom
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=51
 - Payback
@@ -6924,8 +6918,7 @@ Tera Type: Water
 Level: 18
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Sue
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=51
 - Mud Shot
@@ -6940,8 +6933,7 @@ Tera Type: Ice
 Level: 10
 Bashful Nature
 Language: English
-=OriginalTrainerName=Glen
-=MetLocation=30001
+~=Location=30001
 ~=Version=SV
 .Version=51
 - Struggle Bug
@@ -6982,7 +6974,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -6997,7 +6988,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7012,7 +7002,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7027,7 +7016,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7042,7 +7030,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7057,7 +7044,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7072,7 +7058,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7087,7 +7072,6 @@ Ability: Static
 Tera Type: Electric
 Level: 25
 Hardy Nature
-=FatefulEncounter=True
 ~=Location=40042
 ~=Version=SWSH
 .Version=44
@@ -7563,7 +7547,6 @@ Ability: Synchronize
 Tera Type: Psychic
 Level: 1
 Naughty Nature
-=FatefulEncounter=True
 ~=Location=40085
 ~=Version=SWSH
 .Version=44
@@ -8108,7 +8091,6 @@ Ability: Serene Grace
 Tera Type: Steel
 Level: 5
 Bold Nature
-=FatefulEncounter=True
 ~=Location=438
 ~=Version=BD
 - Confusion
@@ -8120,7 +8102,7 @@ Ability: Overgrow
 Tera Type: Grass
 Level: 1
 Rash Nature
-=MetLevel=1
+~=Level=1
 ~=Version=SV
 .Version=50
 - Tackle
@@ -8157,7 +8139,7 @@ Ability: Blaze
 Tera Type: Fire
 Level: 1
 Relaxed Nature
-=MetLevel=1
+~=Level=1
 ~=Version=SV
 .Version=50
 - Scratch
@@ -8195,7 +8177,7 @@ Ability: Torrent
 Tera Type: Water
 Level: 1
 Naughty Nature
-=MetLevel=1
+~=Level=1
 ~=Version=SV
 .Version=50
 - Pound
@@ -8514,7 +8496,6 @@ Ability: Hydration
 Tera Type: Water
 Level: 1
 Modest Nature
-=FatefulEncounter=True
 ~=Version=BD
 - Water Gun
 - Tail Glow
@@ -11742,7 +11723,6 @@ Tera Type: Dark
 Level: 21
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Salvatore
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11758,7 +11738,6 @@ Tera Type: Electric
 Level: 22
 Rash Nature
 Language: English
-=OriginalTrainerName=Iono
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11774,7 +11753,6 @@ Tera Type: Grass
 Level: 40
 Brave Nature
 Language: English
-=OriginalTrainerName=Brassius
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11790,7 +11768,6 @@ Tera Type: Poison
 Level: 8
 Naughty Nature
 Language: English
-=OriginalTrainerName=Rika
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11806,7 +11783,6 @@ Tera Type: Fairy
 Level: 18
 Adamant Nature
 Language: English
-=OriginalTrainerName=Lacey
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11822,7 +11798,6 @@ Tera Type: Steel
 Level: 40
 Lonely Nature
 Language: English
-=OriginalTrainerName=Amarys
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11838,7 +11813,6 @@ Tera Type: Fire
 Level: 12
 Docile Nature
 Language: English
-=OriginalTrainerName=Crispin
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11854,7 +11828,6 @@ Tera Type: Fire
 Level: 28
 Quirky Nature
 Language: English
-=OriginalTrainerName=Dendra
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11870,7 +11843,6 @@ Tera Type: Poison
 Level: 17
 Gentle Nature
 Language: English
-=OriginalTrainerName=Jacq
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11886,7 +11858,6 @@ Tera Type: Bug
 Level: 15
 Calm Nature
 Language: English
-=OriginalTrainerName=Katy
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11903,7 +11874,6 @@ Level: 20
 Shiny: Square
 Hardy Nature
 Language: English
-=OriginalTrainerName=Cyrano
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11919,7 +11889,6 @@ Tera Type: Ground
 Level: 12
 Impish Nature
 Language: English
-=OriginalTrainerName=Tyme
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11935,7 +11904,6 @@ Tera Type: Poison
 Level: 20
 Timid Nature
 Language: English
-=OriginalTrainerName=Miriam
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11951,7 +11919,6 @@ Tera Type: Fairy
 Level: 33
 Serious Nature
 Language: English
-=OriginalTrainerName=Saguaro
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11967,7 +11934,6 @@ Tera Type: Electric
 Level: 36
 Quiet Nature
 Language: English
-=OriginalTrainerName=Drayton
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11983,7 +11949,6 @@ Tera Type: Fighting
 Level: 24
 Hasty Nature
 Language: English
-=OriginalTrainerName=Clavell
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -11999,7 +11964,6 @@ Tera Type: Psychic
 Level: 32
 Impish Nature
 Language: English
-=OriginalTrainerName=Tulip
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12015,7 +11979,6 @@ Tera Type: Fairy
 Level: 25
 Careful Nature
 Language: English
-=OriginalTrainerName=Poppy
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12031,7 +11994,6 @@ Tera Type: Psychic
 Level: 5
 Modest Nature
 Language: English
-=OriginalTrainerName=Geeta
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12047,7 +12009,6 @@ Tera Type: Ghost
 Level: 10
 Jolly Nature
 Language: English
-=OriginalTrainerName=Ryme
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12063,7 +12024,6 @@ Tera Type: Ice
 Level: 37
 Bashful Nature
 Language: English
-=OriginalTrainerName=Grusha
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12079,7 +12039,6 @@ Tera Type: Water
 Level: 20
 Sassy Nature
 Language: English
-=OriginalTrainerName=Kofu
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12095,7 +12054,6 @@ Tera Type: Flying
 Level: 35
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Larry
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12111,7 +12069,6 @@ Tera Type: Dragon
 Level: 45
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Hassel
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12127,7 +12084,6 @@ Tera Type: Steel
 Level: 30
 Sassy Nature
 Language: English
-=OriginalTrainerName=Raifort
 ~=Location=30001
 ~=Version=SL
 .Version=50
@@ -12140,7 +12096,7 @@ Ability: Rock Head
 Tera Type: Rock
 Level: 15
 Jolly Nature
-=MetLevel=15
+~=Level=15
 ~=Location=134
 ~=Version=VL
 .Version=51

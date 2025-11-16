@@ -120,7 +120,6 @@ Ability: Levitate
 Level: 35
 Hasty Nature
 ~=Version=DPPt
-=OriginalTrainerName=Mindy
 - Sucker Punch
 - Shadow Punch
 - Payback

@@ -260,7 +260,6 @@ Ability: Sniper
 Level: 1
 Shiny: Yes
 Modest Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21
@@ -494,7 +493,7 @@ Ability: Synchronize
 Level: 30
 Shiny: Yes
 Adamant Nature
-=MetLocation=30001
+~=Location=201
 Language: Japanese
 ~=Version=E
 .Version=3
@@ -624,7 +623,7 @@ Ability: Pressure
 Level: 40
 Shiny: Yes
 Adamant Nature
-=MetLocation=30001
+~=Location=106
 ~=Version=CXD
 - Sunny Day
 - Leer
@@ -738,7 +737,7 @@ Ability: Early Bird
 Level: 38
 Shiny: Yes
 Hasty Nature
-=MetLocation=30001
+~=Location=202
 ~=Version=HGSS
 .Version=8
 - Synthesis
@@ -782,7 +781,6 @@ Ability: Hyper Cutter
 Level: 1
 Shiny: Yes
 Jolly Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21
@@ -793,7 +791,6 @@ Ability: Natural Cure
 Level: 1
 Shiny: Yes
 Jolly Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21
@@ -896,7 +893,6 @@ Ability: Rock Head
 Level: 1
 Shiny: Yes
 Jolly Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21
@@ -1073,7 +1069,7 @@ Ability: Drought
 Level: 45
 Shiny: Yes
 Adamant Nature
-=MetLocation=30001
+~=Location=72
 ~=Version=RS
 .Version=2
 - Counter
@@ -1132,7 +1128,7 @@ Ability: Air Lock
 Level: 70
 Shiny: Yes
 Adamant Nature
-=MetLocation=30001
+~=Location=85
 ~=Version=RS
 .Version=2
 - Body Slam
@@ -1324,7 +1320,7 @@ Ability: Levitate
 Level: 20
 Shiny: Yes
 Timid Nature
-=MetLocation=30001
+~=Location=70
 ~=Version=Pt
 - Mud-Slap
 - Sucker Punch
@@ -1618,7 +1614,7 @@ Ability: Blaze
 Level: 5
 Shiny: Yes
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Location=117
 ~=Version=B2W2
 .Version=22
@@ -1644,7 +1640,7 @@ Ability: Torrent
 Level: 5
 Shiny: Yes
 Adamant Nature
-=MetLevel=5
+~=Level=5
 Language: Japanese
 ~=Location=4
 ~=Version=BW
@@ -1685,7 +1681,6 @@ Ability: Gluttony
 Level: 1
 Shiny: Yes
 Brave Nature
-=FatefulEncounter=True
 ~=Version=BW
 .Version=21
 - Bullet Seed
@@ -1699,7 +1694,7 @@ Ability: Gluttony
 Level: 10
 Shiny: Yes
 Timid Nature
-=MetLevel=10
+~=Level=10
 Language: Japanese
 ~=Location=32
 ~=Version=BW
@@ -1715,7 +1710,6 @@ Ability: Super Luck
 Level: 1
 Shiny: Yes
 Hardy Nature
-=FatefulEncounter=True
 ~=Version=BW
 .Version=21
 - Gust
@@ -1789,7 +1783,7 @@ Ability: Shell Armor
 Level: 42
 Shiny: Yes
 Gentle Nature
-=MetLevel=42
+~=Level=42
 ~=Location=141
 ~=Version=B2W2
 .Version=23
@@ -1973,7 +1967,6 @@ Ability: Mold Breaker
 Level: 1
 Shiny: Yes
 Naive Nature
-=FatefulEncounter=True
 ~=Version=BW
 .Version=21
 - Scratch
@@ -2042,7 +2035,6 @@ Ability: Sheer Force
 Level: 1
 Shiny: Yes
 Careful Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21
@@ -2055,7 +2047,6 @@ Ability: Hustle
 Level: 1
 Shiny: Yes
 Timid Nature
-=FatefulEncounter=True
 Language: Japanese
 ~=Version=BW
 .Version=21

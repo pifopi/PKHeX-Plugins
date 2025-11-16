@@ -3,7 +3,7 @@ IVs: 0 HP / 13 Atk / 6 Def / 6 SpA / 17 SpD / 5 Spe
 Ability: Overgrow
 Level: 32
 Mild Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Double-Edge
@@ -29,7 +29,7 @@ IVs: 11 HP / 20 Atk / 11 Def / 19 SpA / 15 SpD / 14 Spe
 Ability: Blaze
 Level: 36
 Naughty Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Slash
@@ -42,7 +42,7 @@ IVs: 0 HP / 13 Atk / 6 Def / 6 SpA / 17 SpD / 5 Spe
 Ability: Torrent
 Level: 36
 Mild Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Skull Bash
@@ -721,7 +721,6 @@ Ability: Run Away
 Level: 40
 Impish Nature
 Language: English
-=OriginalTrainerName=Ayana
 ~=Version=HGSS
 .Version=7
 - Pursuit
@@ -874,7 +873,6 @@ Ability: Static
 Level: 20
 Hardy Nature
 Language: English
-=OriginalTrainerName=Richard
 ~=Version=HGSS
 .Version=7
 - Sonic Boom
@@ -1207,7 +1205,7 @@ IVs: 18 HP / 13 Atk / 26 Def / 14 SpA / 16 SpD / 19 Spe
 Ability: Adaptability
 Level: 5
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tail Whip
@@ -1219,7 +1217,7 @@ IVs: 18 HP / 13 Atk / 26 Def / 14 SpA / 16 SpD / 19 Spe
 Ability: Water Absorb
 Level: 5
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tail Whip
@@ -1231,7 +1229,7 @@ IVs: 18 HP / 13 Atk / 26 Def / 14 SpA / 16 SpD / 19 Spe
 Ability: Volt Absorb
 Level: 5
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tail Whip
@@ -1243,7 +1241,7 @@ IVs: 18 HP / 13 Atk / 26 Def / 14 SpA / 16 SpD / 19 Spe
 Ability: Flash Fire
 Level: 5
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tail Whip
@@ -1255,7 +1253,7 @@ IVs: 12 HP / 20 Atk / 7 SpA / 3 SpD / 26 Spe
 Ability: Download
 Level: 25
 Lonely Nature
-=MetLevel=25
+~=Level=25
 ~=Version=Pt
 - Psybeam
 - Agility
@@ -1267,7 +1265,7 @@ IVs: 5 HP / 22 Atk / 0 Def / 10 SpA / 16 SpD / 5 Spe
 Ability: Swift Swim
 Level: 20
 Calm Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Bite
 - Water Gun
@@ -1279,7 +1277,7 @@ IVs: 5 HP / 8 Atk / 29 Def / 3 SpA / 27 SpD / 27 Spe
 Ability: Swift Swim
 Level: 40
 Hasty Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Bite
 - Brine
@@ -1291,7 +1289,7 @@ IVs: 29 HP / 18 Atk / 25 Def / 25 SpA / 16 SpD / 26 Spe
 Ability: Swift Swim
 Level: 20
 Careful Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Harden
 - Absorb
@@ -1303,7 +1301,7 @@ IVs: 22 HP / 19 Atk / 16 Def / 6 SpA / 0 SpD / 21 Spe
 Ability: Swift Swim
 Level: 40
 Hardy Nature
-=MetLevel=20
+~=Level=20
 ~=Version=HGSS
 .Version=7
 - Slash
@@ -1316,7 +1314,7 @@ IVs: 8 HP / 21 Atk / 5 Def / 18 SpA / 10 SpD / 13 Spe
 Ability: Pressure
 Level: 20
 Calm Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Bite
 - Scary Face
@@ -1429,7 +1427,7 @@ IVs: 11 HP / 3 Atk / 8 Def / 26 SpA / 29 SpD / 23 Spe
 Ability: Blaze
 Level: 42
 Jolly Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Swift
@@ -1442,7 +1440,7 @@ IVs: 19 HP / 14 Atk / 2 Def / 12 SpA / 22 SpD / 26 Spe
 EVs: 252 HP / 252 Atk / 6 Spe
 Ability: Torrent
 Impish Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=8
 - Strength
@@ -1753,7 +1751,7 @@ IVs: 18 HP / 13 Atk / 26 Def / 14 SpA / 16 SpD / 19 Spe
 Ability: Synchronize
 Level: 6
 Bold Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tail Whip
@@ -2375,7 +2373,7 @@ IVs: 1 HP / 13 Atk / 20 Def / 29 SpA / 2 SpD / 21 Spe
 Ability: Download
 Level: 25
 Impish Nature
-=MetLevel=25
+~=Level=25
 ~=Version=Pt
 - Psybeam
 - Agility
@@ -2444,7 +2442,6 @@ Ability: Thick Fat
 Level: 48
 Calm Nature
 Language: German
-=OriginalTrainerName=EUKALIA
 ~=Version=DP
 .Version=10
 - Milk Drink
@@ -2575,7 +2572,7 @@ IVs: 15 HP / 30 Atk / 4 Def / 5 SpA / 22 SpD / 5 Spe
 Ability: Torrent
 Level: 36
 Sassy Nature
-=MetLevel=5
+~=Level=5
 ~=Version=HGSS
 .Version=7
 - Tackle
@@ -3345,7 +3342,7 @@ IVs: 30 HP / 18 Atk / 11 Def / 20 SpA / 26 SpD / 4 Spe
 Ability: Suction Cups
 Level: 20
 Impish Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Astonish
 - Constrict
@@ -3357,7 +3354,7 @@ IVs: 28 HP / 15 Atk / 2 Def / 9 SpD / 6 Spe
 Ability: Suction Cups
 Level: 40
 Lonely Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Astonish
 - Constrict
@@ -3369,7 +3366,7 @@ IVs: 10 HP / 15 Atk / 20 Def / 2 SpA / 18 SpD / 6 Spe
 Ability: Battle Armor
 Level: 40
 Lax Nature
-=MetLevel=20
+~=Level=20
 ~=Version=HGSS
 .Version=7
 - Protect
@@ -3384,7 +3381,6 @@ Level: 50
 Bold Nature
 Language: Japanese
 Ball: Cherish Ball
-=OriginalTrainerName=さいきょう
 ~=Version=DP
 .Version=10
 - Rain Dance
@@ -3707,7 +3703,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Drought
 Level: 50
 Relaxed Nature
-=MetLevel=50
+~=Level=50
 ~=Version=HGSS
 .Version=8
 - Rest
@@ -3797,7 +3793,7 @@ EVs: 1 Spe
 Ability: Overgrow
 Level: 32
 Adamant Nature
-=MetLevel=5
+~=Level=5
 ~=Version=DP
 .Version=11
 - Bite
@@ -3811,7 +3807,7 @@ EVs: 1 SpA
 Ability: Blaze
 Level: 36
 Bashful Nature
-=MetLevel=5
+~=Level=5
 ~=Version=Pt
 - Feint
 - Close Combat
@@ -3824,7 +3820,7 @@ EVs: 1 Spe
 Ability: Torrent
 Level: 36
 Careful Nature
-=MetLevel=5
+~=Level=5
 ~=Version=DP
 .Version=10
 - Metal Claw
@@ -3924,7 +3920,7 @@ IVs: 10 HP / 18 Atk / 30 Def / 11 SpA / 20 SpD / 2 Spe
 Ability: Mold Breaker
 Level: 30
 Calm Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Assurance
 - Pursuit
@@ -3936,7 +3932,7 @@ IVs: 11 HP / 20 Atk / 7 Def / 24 SpA / 23 SpD / 21 Spe
 Ability: Sturdy
 Level: 20
 Jolly Nature
-=MetLevel=20
+~=Level=20
 ~=Version=Pt
 - Taunt
 - Metal Sound
@@ -3948,7 +3944,7 @@ IVs: 16 HP / 18 Atk / 19 Def / 26 SpA / 14 SpD / 24 Spe
 Ability: Sturdy
 Level: 30
 Quirky Nature
-=MetLevel=20
+~=Level=20
 ~=Version=DP
 .Version=10
 - Ancient Power
@@ -4071,7 +4067,6 @@ Ability: Storm Drain
 Level: 25
 Relaxed Nature
 Language: English
-=OriginalTrainerName=Hayley
 ~=Version=DP
 .Version=10
 - Natural Gift
@@ -4749,7 +4744,7 @@ IVs: 30 HP / 17 Atk
 Ability: Pressure
 Level: 1
 Careful Nature
-=MetLevel=1
+~=Level=1
 ~=Version=HGSS
 .Version=7
 - Dragon Breath
@@ -4800,7 +4795,7 @@ EVs: 248 HP / 250 Def / 12 SpD
 Ability: Pressure
 Level: 22
 Bold Nature
-=MetLevel=1
+~=Level=1
 ~=Version=HGSS
 .Version=7
 - Dragon Pulse
@@ -4813,7 +4808,7 @@ IVs: 18 HP / 7 Atk / 19 Def / 8 SpA / 16 SpD / 18 Spe
 Ability: Levitate
 Level: 1
 Jolly Nature
-=MetLevel=1
+~=Level=1
 ~=Version=HGSS
 .Version=7
 - Dragon Breath
