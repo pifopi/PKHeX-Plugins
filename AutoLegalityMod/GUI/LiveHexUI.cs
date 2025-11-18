@@ -283,7 +283,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     private (LiveHeXValidation, string, LiveHeXVersion) Connect_Switch(ICommunicatorNX nx, LiveHeXVersion[] versions, ref string gameVer, ref string gameName)
     {
         var botbaseVer = nx.GetBotbaseVersion();
-        var version = decimal.TryParse(botbaseVer, CultureInfo.InvariantCulture, out var v) ? v : 0;
+        var version = System.Version.TryParse(botbaseVer, out var v) ? v : null;
         if (version < InjectionBase.BotbaseVersion && !_settings.EnableDevMode)
         {
             var msg = $"Incompatible {(nx.Protocol is InjectorCommunicationType.SocketNetwork ? "sys-botbase" : "usb-botbase")} version.\n"
