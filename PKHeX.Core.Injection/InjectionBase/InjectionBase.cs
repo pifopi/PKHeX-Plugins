@@ -7,7 +7,7 @@ namespace PKHeX.Core.Injection;
 
 public abstract class InjectionBase
 {
-    public const decimal BotbaseVersion = 2.41m;
+    public const decimal BotbaseVersion = 2.4m;
 
     private const ulong Ovlloader_ID = 0x420000000007e51a;
     private const ulong Dmnt_ID = 0x010000000000000d;
