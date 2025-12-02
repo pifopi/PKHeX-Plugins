@@ -682,10 +682,13 @@ public static class SimpleEdits
     /// <param name="pi">The PersonalInfo to use.</param>
     /// <param name="seedofMastery">Whether to use Seed of Mastery.</param>
     /// <param name="tms">Whether to use TMs.</param>
-    public static void SetPlusFlags(this PKM pk, PersonalInfo pi, bool seedofMastery = false, bool tms = false)
+    public static void SetPlusFlags(this PKM pk, bool seedofMastery = true, bool tms = true)
     {
-        if (pk is IPlusRecord pr)
-            pr.SetPlusFlags((PersonalInfo9ZA)pk.PersonalInfo, new LegalityAnalysis(pk), seedofMastery, tms);
+        if (pk is IPlusRecord plus && pk.PersonalInfo is IPermitPlus permit)
+        {
+            plus.ClearPlusFlags(permit.PlusCountTotal);
+            plus.SetPlusFlags(permit, new LegalityAnalysis(pk), seedofMastery, tms);
+        }
     }
     /// <summary>
     /// Sets record flags for the PKM based on the provided moves.

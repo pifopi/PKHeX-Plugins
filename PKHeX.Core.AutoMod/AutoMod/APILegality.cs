@@ -579,7 +579,7 @@ public static class APILegality
         pk.SetEV(set);
         pk.SetCorrectMetLevel(enc);
         pk.SetGVs();
-        pk.SetPlusFlags(pk.PersonalInfo);
+        pk.SetPlusFlags();
         pk.SetHyperTrainingFlags(set, enc, criteria);
         pk.SetEncryptionConstant(enc);
         pk.SetShinyBoolean(set.Shiny, enc, regen.Extra.ShinyType, pidiv.Type, criteria);
