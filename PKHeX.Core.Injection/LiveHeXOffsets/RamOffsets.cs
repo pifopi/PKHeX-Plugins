@@ -6,7 +6,7 @@ public static class RamOffsets
 {
     public static LiveHeXVersion[] GetValidVersions(SaveFile sf) => sf switch
     {
-        SAV9ZA => [ZA_v101, ZA_v102, ZA_v103],
+        SAV9ZA => [ZA_v101, ZA_v102, ZA_v103, ZA_v200],
         SAV9SV =>
         [
             SV_v101, SV_v110, SV_v120, SV_v130, SV_v131, SV_v132,
@@ -76,7 +76,7 @@ public static class RamOffsets
 
     public static int GetSlotSize(LiveHeXVersion lv) => lv switch
     {
-        >= ZA_v101 and <= ZA_v103 => 408,
+        >= ZA_v101 and <= ZA_v200 => 408,
         LA_v111 => 360,
         LA_v102 => 360,
         LA_v101 => 360,

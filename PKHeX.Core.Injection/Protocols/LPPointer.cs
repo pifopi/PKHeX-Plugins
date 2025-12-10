@@ -13,6 +13,7 @@ public sealed class LPPointer : InjectionBase
         ZA_v101,
         ZA_v102,
         ZA_v103,
+        ZA_v200,
         SV_v101,
         SV_v110,
         SV_v120,
@@ -49,6 +50,13 @@ public sealed class LPPointer : InjectionBase
     private const int LA_MYSTATUS_BLOCK_SIZE = 0x80;
     private const int SV_MYSTATUS_BLOCK_SIZE = 0x68;
     private const int ZA_MYSTATUS_BLOCK_SIZE = 0x78;
+    public static readonly BlockData[] Blocks_ZA_v200 =
+    [
+        Get(0xE3E89BD1, "[[main+6105710]+A0]+40", "MyStatus", "Trainer Data"), 
+        Get(0x21C9BD44, "[[main+6105710]+D0]+40", "KItem", "Items"),
+        Get(0x4F35D0DD, "[[main+6105710]+38]+40", "KMoney", "Money", SCTypeCode.UInt32),
+        Get(0x2D87BE5C, "[[[main+6105710]+68]+40]", "Zukan", "Pokedex") 
+    ];
     public static readonly BlockData[] Blocks_ZA_v103 =
     [
         Get(0xE3E89BD1, "[[main+5F0E250]+A0]+40", "MyStatus", "Trainer Data"), //Thanks Anubis
@@ -185,6 +193,7 @@ public sealed class LPPointer : InjectionBase
     // LiveHexVersion -> Blockname -> List of <SCBlock Keys, OffsetValues>
     public static readonly Dictionary<LiveHeXVersion, BlockData[]> SCBlocks = new()
     {
+        {ZA_v200, Blocks_ZA_v200 },
         {ZA_v103, Blocks_ZA_v103 },
         {ZA_v102, Blocks_ZA_v102 },
         {ZA_v101, Blocks_ZA_v101 },
@@ -217,6 +226,7 @@ public sealed class LPPointer : InjectionBase
 
     private static string GetB1S1Pointer(LiveHeXVersion lv) => lv switch
     {
+        ZA_v200 => "[[[main+6105710]+B0]+978]",
         ZA_v103 => "[[[main+5F0E250]+B0]+978]",
         ZA_v102 => "[[[main+5F0C250]+B0]+978]", 
         ZA_v101 => "[[[main+5F0B250]+B0]+978]", //Thanks Anubis
