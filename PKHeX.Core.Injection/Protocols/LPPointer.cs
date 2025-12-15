@@ -46,7 +46,15 @@ public sealed class LPPointer : InjectionBase
         Pointer = pointer,
         Type = type,
     };
-
+    private static BlockData Get(uint key, string pointer, string name, string display, SCTypeCode type, RWMethod method) => new()
+    {
+        Name = name,
+        Display = display,
+        SCBKey = key,
+        Pointer = pointer,
+        Type = type,
+        Method = method,
+    };
     private const int LA_MYSTATUS_BLOCK_SIZE = 0x80;
     private const int SV_MYSTATUS_BLOCK_SIZE = 0x68;
     private const int ZA_MYSTATUS_BLOCK_SIZE = 0x78;
@@ -56,7 +64,7 @@ public sealed class LPPointer : InjectionBase
         Get(0x21C9BD44, "[[main+6105710]+D0]+40", "KItem", "Items"),
         Get(0x4F35D0DD, "[[main+6105710]+38]+40", "KMoney", "Money", SCTypeCode.UInt32),
         Get(0x2D87BE5C, "[[[main+6105710]+68]+40]", "Zukan", "Pokedex"),
-        Get(0x1D7EE369, "[main+610A5A0]", "KTicketPointsZARoyaleInfinite", "ZA Royale Ticket Points", SCTypeCode.UInt32), //Thank you Anubis
+        Get(0x1D7EE369, "[main+610A5A0]", "KTicketPointsZARoyaleInfinite", "ZA Royale Ticket Points", SCTypeCode.UInt32, RWMethod.Main), //Thank you Anubis
         Get(0x0235471C, "[[main+6105710]+160]+50", "KHyperspaceSurveyPoints", "Hyperspace Survey Points", SCTypeCode.UInt32),//Thank you Anubis
         Get(0xBE007476, "[[[main+6105710]+150]+40]", "KDonuts", "Donuts")//Thank you Anubis
     ];
@@ -373,7 +381,10 @@ public sealed class LPPointer : InjectionBase
             var scbkey = sub.SCBKey;
             var offset = sub.Pointer;
             var scb = scba.GetBlock(scbkey);
-            psb.com.WriteBytes(scb.Data, sb.GetPointerAddress(offset));
+            if (sub.Method == RWMethod.Main)
+                sb.WriteBytesMain(scb.Data, sb.GetPointerAddress(offset));
+            else
+                sb.WriteBytes(scb.Data, sb.GetPointerAddress(offset));
         }
     }
 

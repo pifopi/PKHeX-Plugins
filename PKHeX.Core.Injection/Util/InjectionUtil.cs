@@ -32,7 +32,11 @@ public static class InjectionUtil
         {
             var val = Util.GetHexValue(j.Trim());
             if (val == initaddress)
+            {
+                if (jumps.Length == 1)
+                    return initaddress;
                 continue;
+            }
 
             address = ReadUInt64LittleEndian(sb.ReadBytesAbsolute(address + val, 0x8));
         }

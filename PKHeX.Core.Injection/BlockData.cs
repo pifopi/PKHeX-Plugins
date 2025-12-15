@@ -7,5 +7,6 @@ public record BlockData
     public uint SCBKey { get; set; }
     public string Pointer { get; set; } = string.Empty;
     public ulong Offset { get; set; }
+    public RWMethod Method { get; set; } = RWMethod.Heap;
     public SCTypeCode Type { get; set; } = SCTypeCode.None;
 }
