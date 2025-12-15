@@ -12,7 +12,7 @@ public static class RegenTemplateExtensions
         if (set.Species == (ushort)Species.Zygarde && set.Context == EntityContext.Gen9a)
             set.Form = set.Form == 0 ? (byte)3 : set.Form == 1 ? (byte)2 : set.Form;
         // Scatterbug must be Meadow, Spewpa must be Meadow or Marine (M&Ms only) until HOME compatibility
-        if (set.Context == EntityContext.Gen9a && (set.Species == (ushort)Species.Scatterbug || set.Species == (ushort)Species.Spewpa && set.Form is not 8 || set.Species == (ushort)Species.Vivillon && set.Form is not 8))
+        if (set.Context == EntityContext.Gen9a && ((set.Species == (ushort)Species.Scatterbug && set.Form is not 4) || (set.Species == (ushort)Species.Spewpa && set.Form is not 8 && set.Form is not 4) || (set.Species == (ushort)Species.Vivillon && set.Form is not 8 && set.Form is not 4)))
             set.Form = 6;
         
         if (!FormInfo.IsBattleOnlyForm(set.Species, set.Form, gen))

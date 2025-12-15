@@ -7466,3 +7466,2690 @@ IVs: 12 Atk / 24 SpD / 11 Spe
 - Close Combat
 - Iron Defense
 - No Retreat
+
+Charmander (M)
+Ability: Blaze
+Level: 52
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 Atk / 10 Def / 26 SpA / 0 SpD / 12 Spe
+- Dragon Rush
+- Flamethrower
+- Slash
+- Fire Spin
+
+Charizard (M)
+Ability: Blaze
+Level: 56
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 2 Atk / 15 Def / 6 SpA / 6 SpD / 9 Spe
+- Flare Blitz
+- Dragon Rush
+- Flamethrower
+- Slash
+
+Charizard (M)
+Ability: Solar Power
+Level: 36
+Gentle Nature
+Alpha: Yes
+~=Location=40001
+~=Version=ZA
+~=Generation=9
+IVs: 28 HP / 11 Atk / 7 SpD
+- Solar Beam
+- Flamethrower
+- Dragon Claw
+- Air Slash
+
+Squirtle (F)
+Ability: Torrent
+Level: 52
+Sassy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 29 HP / 26 Atk / 13 Def / 8 SpA / 14 SpD / 13 Spe
+- Liquidation
+- Iron Defense
+- Aqua Jet
+- Aqua Ring
+
+Blastoise (M)
+Ability: Torrent
+Level: 54
+Quirky Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 27 HP / 24 Atk / 17 Def / 10 SpA / 15 SpD / 18 Spe
+- Liquidation
+- Iron Defense
+- Aqua Jet
+- Aqua Ring
+
+Pidgey (M)
+Ability: Keen Eye
+Level: 15
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 8 Atk / 29 Def / 12 SpA / 8 SpD / 25 Spe
+- Quick Attack
+- Gust
+- Growl
+- Tackle
+
+Pidgey (M)
+Ability: Tangled Feet
+Level: 26
+EVs: 252 HP
+Impish Nature
+Alpha: Yes
+~=Location=194
+~=Version=ZA
+~=Generation=9
+IVs: 20 Def / 17 SpD / 0 Spe
+- U-turn
+- Wing Attack
+- Twister
+- Quick Attack
+
+Pidgeotto (F)
+Ability: Tangled Feet
+Level: 25
+Mild Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 28 Atk / 16 Def / 28 SpA / 12 SpD / 5 Spe
+- Whirlwind
+- Wing Attack
+- Twister
+- Quick Attack
+
+Ekans (F)
+Ability: Shed Skin
+Level: 21
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 13 HP / 22 Atk / 20 Def / 3 SpA / 10 SpD / 10 Spe
+- Screech
+- Brutal Swing
+- Glare
+- Bite
+
+Arbok (F)
+Ability: Intimidate
+Level: 26
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 28 HP / 25 Atk / 4 Def / 26 SpA / 29 SpD / 2 Spe
+- Toxic
+- Screech
+- Brutal Swing
+- Glare
+
+Clefairy (F)
+Ability: Cute Charm
+Level: 38
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 1 Atk / 10 Def / 9 SpA / 13 SpD / 11 Spe
+- Dazzling Gleam
+- Amnesia
+- Moonlight
+- Bubble Beam
+
+Clefable (M)
+Ability: Cute Charm
+Level: 41
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 23 HP / 24 Atk / 13 Def / 15 SpA / 16 SpD / 28 Spe
+- Dazzling Gleam
+- Amnesia
+- Moonlight
+- Bubble Beam
+
+Jigglypuff (F)
+Ability: Cute Charm
+Level: 24
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 17 Atk / 22 Def / 22 SpA / 25 SpD / 17 Spe
+- Body Slam
+- Take Down
+- Facade
+- Confusion
+
+Wigglytuff (F)
+Ability: Cute Charm
+Level: 54
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 12 Atk / 17 Def / 6 SpA / 6 SpD / 13 Spe
+- Moonblast
+- Perish Song
+- Double-Edge
+- Wish
+
+Meowth (F)
+Ability: Pickup
+Level: 23
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 20 Atk / 15 Def / 19 SpA / 13 SpD / 15 Spe
+- Slash
+- Screech
+- Taunt
+- Bite
+
+Persian (M)
+Ability: Limber
+Level: 30
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 27 Atk / 6 Def / 16 SpA / 7 SpD / 6 Spe
+- Hypnosis
+- Nasty Plot
+- Slash
+- Screech
+
+Mankey (M)
+Ability: Anger Point
+Level: 17
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 4 Atk / 1 Def / 20 SpA / 28 SpD / 29 Spe
+- Low Sweep
+- Take Down
+- Rock Smash
+- Rock Throw
+
+Abra (M)
+Ability: Inner Focus
+Level: 12
+Naive Nature
+~=Location=198
+~=Version=ZA
+~=Generation=9
+IVs: 20 HP / 8 Atk / 14 Def / 5 SpA / 7 SpD / 26 Spe
+- Teleport
+
+Kadabra (F)
+Ability: Synchronize
+Level: 36
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 6 Atk / 7 Def / 8 SpA / 16 SpD / 18 Spe
+- Psychic
+- Psyshock
+- Recover
+- Psycho Cut
+
+Alakazam (M)
+Ability: Inner Focus
+Level: 39
+Quirky Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 10 HP / 16 Atk / 5 Def / 3 SpA / 21 SpD / 11 Spe
+- Psychic
+- Psyshock
+- Recover
+- Psycho Cut
+
+Machop (M)
+Ability: Guts
+Level: 17
+Quirky Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 20 HP / 23 Atk / 15 Def / 17 SpA / 14 SpD / 13 Spe
+- Bullet Punch
+- Brutal Swing
+- Power-Up Punch
+- Focus Energy
+
+Machop (M)
+Ability: No Guard
+Level: 26
+EVs: 252 HP
+Quiet Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 28 Atk / 13 Spe
+- Rock Slide
+- Bulk Up
+- Knock Off
+- Bullet Punch
+
+Machoke (M)
+Ability: No Guard
+Level: 40
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 19 Atk / 13 Def / 9 SpA / 2 SpD / 21 Spe
+- Detect
+- Bulldoze
+- Brick Break
+- Bulk Up
+
+Machamp (M)
+Ability: No Guard
+Level: 42
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 13 Atk / 30 Def / 5 SpA / 17 SpD / 29 Spe
+- Heavy Slam
+- Detect
+- Bulldoze
+- Brick Break
+
+Bellsprout (F)
+Ability: Chlorophyll
+Level: 17
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 18 Atk / 0 Def / 26 SpA / 21 SpD / 19 Spe
+- Stun Spore
+- Poison Powder
+- Sleep Powder
+- Razor Leaf
+
+Bellsprout (M)
+Ability: Chlorophyll
+Level: 31
+EVs: 252 HP
+Bold Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 23 SpD / 17 Spe
+- Toxic
+- Toxic Spikes
+- Magical Leaf
+- Knock Off
+
+Weepinbell (M)
+Ability: Chlorophyll
+Level: 25
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 7 Atk / 28 Def / 7 SpA / 1 Spe
+- Magical Leaf
+- Knock Off
+- Stun Spore
+- Poison Powder
+
+Slowpoke-Galar (M)
+Ability: Gluttony
+Level: 54
+Docile Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 13 Atk / 18 Def / 5 SpA / 23 SpD / 18 Spe
+- Psychic
+- Surf
+- Amnesia
+- Zen Headbutt
+
+Slowbro-Galar (F)
+Ability: Own Tempo
+Level: 57
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 19 Atk / 10 Def / 3 SpA / 26 SpD
+- Future Sight
+- Psychic
+- Sludge Bomb
+- Surf
+
+Gastly (F)
+Ability: Levitate
+Level: 16
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 25 HP / 23 Atk / 0 Def / 30 SpA / 1 SpD / 17 Spe
+- Shadow Sneak
+- Confusion
+- Hypnosis
+- Lick
+
+Haunter (F)
+Ability: Levitate
+Level: 26
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 27 HP / 21 Atk / 10 Def / 1 SpD / 4 Spe
+- Haze
+- Curse
+- Shadow Claw
+- Shadow Sneak
+
+Onix (F)
+Ability: Rock Head
+Level: 22
+Lax Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 29 Atk / 11 Def / 13 SpA / 29 SpD / 15 Spe
+- Breaking Swipe
+- Rock Slide
+- Curse
+- Dragon Breath
+
+Cubone (F)
+Ability: Lightning Rod
+Level: 17
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 16 Atk / 27 Def / 2 SpA / 17 SpD / 19 Spe
+- Headbutt
+- False Swipe
+- Leer
+- Tail Whip
+
+Cubone (F)
+Ability: Rock Head
+Level: 27
+EVs: 252 HP
+Serious Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 Atk / 30 SpD / 23 Spe
+- Thunder Punch
+- Detect
+- Headbutt
+- False Swipe
+
+Marowak-Alola (F)
+Ability: Lightning Rod
+Level: 40
+Brave Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 21 HP / 7 Atk / 19 Def / 28 SpA / 18 SpD / 17 Spe
+- Bonemerang
+- Focus Energy
+- Brutal Swing
+- Bulldoze
+
+Mr. Mime-Galar (F)
+Ability: Vital Spirit
+Level: 33
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 18 Atk / 28 Def / 10 SpA / 24 SpD / 2 Spe
+- Mimic
+- Psybeam
+- Stealth Rock
+- Protect
+
+Magikarp (F)
+Ability: Swift Swim
+Level: 11
+Adamant Nature
+~=Location=28
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 25 Atk / 21 Def / 18 SpA / 9 SpD / 3 Spe
+- Splash
+
+Magikarp (F)
+Ability: Swift Swim
+Level: 51
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 29 Atk / 23 Def / 11 SpA / 30 SpD / 1 Spe
+- Tackle
+- Splash
+
+Eevee (M)
+Ability: Adaptability
+Level: 35
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 10 HP / 27 Atk / 24 Def / 21 SpA / 19 SpD / 30 Spe
+- Wish
+- Bite
+- Swift
+- Disarming Voice
+
+Porygon
+Ability: Download
+Level: 21
+Brave Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 28 Atk / 6 Def / 26 SpA / 12 SpD / 5 Spe
+- Psybeam
+- Thunder Shock
+- Eerie Impulse
+- Charge
+
+Dratini (F)
+Ability: Shed Skin
+Level: 24
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 30 HP / 6 Atk / 4 Def / 19 SpA / 6 SpD / 7 Spe
+- Breaking Swipe
+- Take Down
+- Thunder Wave
+- Twister
+
+Igglybuff (F)
+Ability: Cute Charm
+Level: 23
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 19 Atk / 23 Def / 25 SpA / 2 SpD / 11 Spe
+- Take Down
+- Facade
+- Confusion
+- Fake Tears
+
+Mareep (M)
+Ability: Static
+Level: 15
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 10 Atk / 18 Def / 24 SpA / 21 SpD / 20 Spe
+- Charge
+- Thunder Wave
+- Thunder Shock
+- Growl
+
+Slowking-Galar (F)
+Ability: Own Tempo
+Level: 56
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 9 Atk / 19 Def / 13 SpA / 27 Spe
+- Future Sight
+- Psychic
+- Sludge Wave
+- Surf
+
+Steelix (F)
+Ability: Rock Head
+Level: 55
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 28 Atk / 6 Def / 21 SpA / 2 SpD
+- Stone Edge
+- Dig
+- Heavy Slam
+- Stealth Rock
+
+Qwilfish-Hisui (F)
+Ability: Poison Point
+Level: 51
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 7 Atk / 19 Def / 15 SpA / 2 SpD / 12 Spe
+- Gunk Shot
+- Crunch
+- Toxic
+- Toxic Spikes
+
+Qwilfish-Hisui (F)
+Ability: Poison Point
+Level: 62
+EVs: 252 HP
+Quirky Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 21 Atk / 1 SpA / 27 SpD
+- Waterfall
+- Crunch
+- Toxic
+- Toxic Spikes
+
+Delibird (M)
+Ability: Hustle
+Level: 26
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 8 Atk / 17 Def / 15 SpA / 8 SpD / 24 Spe
+- Ice Shard
+- Aerial Ace
+- Icy Wind
+- Peck
+
+Skarmory (F)
+Ability: Sturdy
+Level: 26
+Docile Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 7 HP / 12 Atk / 24 Def / 10 SpA / 23 SpD / 4 Spe
+- Slash
+- Wing Attack
+- Sand Tomb
+- Metal Claw
+
+Alias (Porygon2)
+Ability: Trace
+Level: 50
+Modest Nature
+~=Location=30001
+~=Version=ZA
+~=Generation=9
+IVs: 16 HP / 2 Atk / 24 Def / 11 SpA / 12 SpD / 13 Spe
+- Self-Destruct
+- Metal Sound
+- Discharge
+- Recover
+
+Porygon2
+Ability: Trace
+Level: 54
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 13 Atk / 7 SpA / 23 SpD
+- Self-Destruct
+- Metal Sound
+- Discharge
+- Recover
+
+Treecko (M)
+Ability: Overgrow
+Level: 18
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 25 Atk / 26 Def / 22 SpA / 24 SpD / 29 Spe
+- Leech Seed
+- Detect
+- Absorb
+- Quick Attack
+
+Torchic (M)
+Ability: Blaze
+Level: 51
+Naive Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 25 Atk / 24 Def / 30 SpA / 21 SpD / 18 Spe
+- Feather Dance
+- Flamethrower
+- Focus Energy
+- Bounce
+
+Blaziken (M)
+Ability: Blaze
+Level: 54
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 13 Atk / 7 SpA / 2 SpD / 27 Spe
+- Feather Dance
+- Blaze Kick
+- Bulk Up
+- Flamethrower
+
+Mudkip (M)
+Ability: Torrent
+Level: 52
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 23 Atk / 16 Def / 25 SpA / 16 SpD / 28 Spe
+- Muddy Water
+- Sludge Bomb
+- Screech
+- Surf
+
+Swampert (M)
+Ability: Torrent
+Level: 55
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 20 Atk / 12 Def / 5 SpA / 22 SpD / 12 Spe
+- Hydro Pump
+- Earthquake
+- Muddy Water
+- Sludge Bomb
+
+Kirlia (M)
+Ability: Synchronize
+Level: 38
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 27 Atk / 24 Def / 15 SpA / 11 SpD / 26 Spe
+- Psychic
+- Calm Mind
+- Double Team
+- Charm
+
+Gardevoir (M)
+Ability: Synchronize
+Level: 54
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 2 HP / 2 Atk / 9 Def / 28 SpA / 14 SpD / 25 Spe
+- Moonblast
+- Mystical Fire
+- Psychic
+- Calm Mind
+
+Sableye (M)
+Ability: Keen Eye
+Level: 22
+Naive Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 7 HP / 21 Atk / 20 Def / 16 SpA / 8 SpD / 28 Spe
+- Confuse Ray
+- Shadow Claw
+- Detect
+- Take Down
+
+Aron (F)
+Ability: Sturdy
+Level: 20
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 15 Atk / 4 Def / 30 SpA / 27 SpD / 26 Spe
+- Protect
+- Headbutt
+- Roar
+- Rock Tomb
+
+Lairon (M)
+Ability: Rock Head
+Level: 33
+Brave Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 Atk / 2 Def / 11 SpA / 6 SpD / 28 Spe
+- Metal Sound
+- Iron Head
+- Rock Slide
+- Protect
+
+Aggron (M)
+Ability: Sturdy
+Level: 57
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 19 Atk / 12 Def / 14 SpA / 28 SpD / 6 Spe
+- Double-Edge
+- Heavy Slam
+- Iron Defense
+- Iron Tail
+
+Meditite (F)
+Ability: Pure Power
+Level: 26
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 4 Atk / 24 Def / 12 SpA / 3 Spe
+- Zen Headbutt
+- Calm Mind
+- Psybeam
+- Bullet Punch
+
+Medicham (F)
+Ability: Pure Power
+Level: 38
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 10 HP / 29 Atk / 23 Def / 0 SpA / 0 SpD / 21 Spe
+- Agility
+- Take Down
+- Zen Headbutt
+- Calm Mind
+
+Roselia (F)
+Ability: Poison Point
+Level: 22
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 29 HP / 13 Atk / 16 Def / 27 SpA / 10 SpD / 0 Spe
+- Toxic Spikes
+- Sleep Powder
+- Magical Leaf
+- Leech Seed
+
+Roselia (M)
+Ability: Natural Cure
+Level: 31
+EVs: 252 HP
+Impish Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 Atk / 1 Def / 30 SpD
+- Shadow Ball
+- Toxic Spikes
+- Sleep Powder
+- Magical Leaf
+
+Spoink (F)
+Ability: Own Tempo
+Level: 38
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 16 HP / 25 Atk / 30 Def / 20 SpA / 30 SpD / 29 Spe
+- Psyshock
+- Amnesia
+- Power Gem
+- Whirlwind
+
+Grumpig (F)
+Ability: Own Tempo
+Level: 42
+Docile Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 9 Atk / 8 Def / 3 SpA / 26 SpD / 15 Spe
+- Psyshock
+- Amnesia
+- Power Gem
+- Snarl
+
+Swablu (M)
+Ability: Natural Cure
+Level: 18
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 17 Atk / 23 Def / 16 SpA / 8 Spe
+- Mist
+- Disarming Voice
+- Peck
+- Growl
+
+Swablu (M)
+Ability: Natural Cure
+Level: 29
+EVs: 252 HP
+Impish Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 12 Def / 25 SpD
+- Play Rough
+- Dragon Breath
+- Mist
+- Disarming Voice
+
+Seviper (M)
+Ability: Shed Skin
+Level: 27
+Lax Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 28 Atk / 23 Def / 11 SpA / 3 SpD / 23 Spe
+- Breaking Swipe
+- Poison Fang
+- Glare
+- Snarl
+
+Feebas (M)
+Ability: Oblivious
+Level: 19
+Bashful Nature
+~=Location=28
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 23 Atk / 15 Def / 2 SpA / 26 SpD / 7 Spe
+- Tackle
+- Splash
+
+Shuppet (M)
+Ability: Frisk
+Level: 26
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 16 Atk / 7 Def / 29 SpA / 1 SpD / 26 Spe
+- Curse
+- Shadow Claw
+- Shadow Sneak
+- Will-O-Wisp
+
+Banette (F)
+Ability: Frisk
+Level: 38
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 12 Atk / 5 Def / 14 SpA / 4 SpD / 23 Spe
+- Swords Dance
+- Shadow Ball
+- Curse
+- Shadow Claw
+
+Chimecho (M)
+Ability: Levitate
+Level: 25
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 20 HP / 23 Atk / 25 Def / 15 SpA / 13 SpD / 19 Spe
+- Wish
+- Amnesia
+- Screech
+- Take Down
+
+Absol (F) @ Absolite Z
+Ability: Pressure
+EVs: 161 HP / 252 Atk / 20 Def / 34 SpA / 12 SpD / 31 Spe
+Quiet Nature
+~=Location=275
+~=Version=ZA
+~=Generation=9
+IVs: 20 Def / 18 SpD / 28 Spe
+- Knock Off
+- Night Slash
+- Perish Song
+- Protect
+
+Snorunt (M)
+Ability: Ice Body
+Level: 26
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 2 HP / 30 Atk / 23 SpA / 18 SpD / 0 Spe
+- Fake Tears
+- Icy Wind
+- Protect
+- Ice Shard
+
+Bagon (M)
+Ability: Rock Head
+Level: 36
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 14 Atk / 27 Def / 1 SpA / 4 SpD / 28 Spe
+- Zen Headbutt
+- Dragon Claw
+- Crunch
+- Headbutt
+
+Bagon (M)
+Ability: Rock Head
+Level: 33
+EVs: 252 HP
+Rash Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 13 Atk / 4 Def / 27 SpD
+- Thunder Fang
+- Crunch
+- Headbutt
+- Dragon Breath
+
+Shelgon (M)
+Ability: Rock Head
+Level: 41
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 22 Atk / 30 Def / 26 SpA / 27 SpD / 17 Spe
+- Focus Energy
+- Zen Headbutt
+- Dragon Claw
+- Crunch
+
+Beldum
+Ability: Clear Body
+Level: 19
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 25 HP / 13 Atk / 15 Def / 4 SpA / 11 SpD / 29 Spe
+- Tackle
+
+Latias (F)
+Ability: Levitate
+Level: 60
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 7 Atk / 16 Spe
+- Air Slash
+- Mystical Fire
+- Aura Sphere
+- Dragon Pulse
+
+Latios (M)
+Ability: Levitate
+Level: 60
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 16 SpA / 7 SpD / 16 Spe
+- Psychic
+- Mystical Fire
+- Aura Sphere
+- Dragon Pulse
+
+Kyogre
+Ability: Drizzle
+Level: 80
+Modest Nature
+~=Location=281
+~=Version=ZA
+~=Generation=9
+IVs: 12 Def / 28 SpD / 22 Spe
+- Origin Pulse
+- Ice Beam
+- Surf
+- Thunder
+
+Groudon
+Ability: Drought
+Level: 80
+Impish Nature
+~=Location=282
+~=Version=ZA
+~=Generation=9
+IVs: 24 Def / 18 SpD / 25 Spe
+- Precipice Blades
+- Fire Blast
+- Solar Beam
+- Scorching Sands
+
+Rayquaza
+Ability: Air Lock
+Level: 85
+Brave Nature
+~=Location=283
+~=Version=ZA
+~=Generation=9
+IVs: 29 Def / 29 SpD / 20 Spe
+- Dragon Ascent
+- Hyper Voice
+- Meteor Beam
+- Outrage
+
+Starly (M)
+Ability: Keen Eye
+Level: 15
+Lax Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 28 Atk / 19 Def / 6 SpD
+- Wing Attack
+- Gust
+- Quick Attack
+- Peck
+
+Staravia (F)
+Ability: Intimidate
+Level: 18
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 22 Atk / 11 Def / 19 SpA / 15 SpD / 2 Spe
+- Double Team
+- Wing Attack
+- Gust
+- Quick Attack
+
+Staraptor (M) @ Staraptite
+Ability: Intimidate
+EVs: 252 HP / 252 Atk / 6 Def
+Adamant Nature
+~=Location=276
+~=Version=ZA
+~=Generation=9
+- Close Combat
+- Dual Wingbeat
+- Quick Attack
+- Aerial Ace
+
+Budew (M)
+Ability: Natural Cure
+Level: 21
+Hardy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 18 Atk / 29 Def / 2 SpA / 16 SpD / 30 Spe
+- Charm
+- Stun Spore
+- Growth
+- Absorb
+
+Buneary (F)
+Ability: Run Away
+Level: 18
+Naive Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 22 Atk / 25 Def / 5 SpA / 13 SpD / 8 Spe
+- Quick Attack
+- Draining Kiss
+- Splash
+- Tackle
+
+Chingling (M)
+Ability: Levitate
+Level: 23
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 10 Atk / 24 Def / 30 SpA / 12 SpD / 5 Spe
+- Amnesia
+- Screech
+- Take Down
+- Supersonic
+
+Mime Jr. (M)
+Ability: Filter
+Level: 18
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 17 HP / 21 Atk / 0 Def / 18 SpA / 23 SpD / 19 Spe
+- Infestation
+- Dream Eater
+- Confusion
+- Charm
+
+Gible (M)
+Ability: Sand Veil
+Level: 45
+EVs: 252 HP
+Serious Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 9 Def / 4 SpD
+- Thunder Fang
+- Dragon Claw
+- Slash
+- Bite
+
+Gabite (M)
+Ability: Sand Veil
+Level: 39
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 5 Atk / 15 Def / 27 SpA / 20 SpD / 26 Spe
+- Dragon Claw
+- Slash
+- Bite
+- Bulldoze
+
+Riolu (M)
+Ability: Steadfast
+Level: 52
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 13 HP / 21 Def / 24 SpA / 26 SpD / 24 Spe
+- Swords Dance
+- Bulldoze
+- Detect
+- Screech
+
+Lucario (M)
+Ability: Inner Focus
+Level: 54
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 21 Atk / 7 Def / 16 SpA / 28 SpD / 4 Spe
+- Close Combat
+- Extreme Speed
+- Dragon Pulse
+- Swords Dance
+
+Porygon-Z
+Ability: Adaptability
+Level: 54
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 10 HP / 23 Atk / 22 Def / 13 SpA / 28 SpD / 1 Spe
+- Self-Destruct
+- Metal Sound
+- Discharge
+- Recover
+
+Gallade (M)
+Ability: Steadfast
+Level: 39
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 19 Atk / 9 Def / 15 SpA / 29 SpD / 26 Spe
+- Swords Dance
+- Double Team
+- Protect
+- Aerial Ace
+
+Rotom
+Ability: Levitate
+Level: 52
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 13 HP / 29 Atk / 7 Def / 25 SpA / 3 SpD / 5 Spe
+- Thunderbolt
+- Discharge
+- Light Screen
+- Substitute
+
+Rotom
+Ability: Levitate
+Level: 61
+EVs: 252 HP
+Jolly Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 SpA / 27 SpD / 28 Spe
+- Dark Pulse
+- Discharge
+- Light Screen
+- Substitute
+
+Rotom-Heat
+Ability: Levitate
+Level: 55
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 27 Atk / 28 Def / 13 SpA / 29 SpD / 5 Spe
+- Overheat
+- Discharge
+- Light Screen
+- Substitute
+
+Rotom-Fan
+Ability: Levitate
+Level: 64
+EVs: 252 HP
+Lax Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 16 Atk / 27 Def
+- Dark Pulse
+- Discharge
+- Light Screen
+- Substitute
+
+Heatran (M)
+Ability: Flash Fire
+Level: 80
+Bold Nature
+~=Location=279
+~=Version=ZA
+~=Generation=9
+IVs: 28 Def / 25 SpD / 8 Spe
+- Magma Storm
+- Flash Cannon
+- Bulldoze
+- Overheat
+
+Darkrai
+Ability: Bad Dreams
+Level: 85
+Careful Nature
+~=Location=280
+~=Version=ZA
+~=Generation=9
+IVs: 18 Def / 21 SpD / 26 Spe
+- Dark Void
+- Future Sight
+- Dream Eater
+- Snarl
+
+Patrat (F)
+Ability: Keen Eye
+Level: 19
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 30 HP / 6 Atk / 30 Def / 21 SpA / 5 SpD / 22 Spe
+- Hypnosis
+- Crunch
+- Detect
+- Bite
+
+Watchog (F)
+Ability: Illuminate
+Level: 22
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 20 Atk / 4 Def / 14 SpA / 0 Spe
+- Super Fang
+- Hypnosis
+- Crunch
+- Detect
+
+Purrloin (M)
+Ability: Unburden
+Level: 15
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 17 HP / 30 Atk / 22 Def / 22 SpA / 12 SpD / 0 Spe
+- Bite
+- Lick
+- Fake Out
+- Mimic
+
+Pansage (M)
+Ability: Gluttony
+Level: 18
+Rash Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 20 Atk / 15 Def / 0 SpA / 22 SpD
+- Bullet Seed
+- Vine Whip
+- Lick
+- Leer
+
+Panpour (M)
+Ability: Gluttony
+Level: 37
+Shiny: Square
+Quirky Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 4 Atk / 19 Def / 13 SpA / 21 SpD / 23 Spe
+- Crunch
+- Hydro Pump
+- Headbutt
+- Taunt
+
+Munna (M)
+Ability: Synchronize
+Level: 36
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 9 Atk / 2 Def / 30 SpA / 3 SpD / 22 Spe
+- Psychic
+- Calm Mind
+- Dream Eater
+- Zen Headbutt
+
+Munna (M)
+Ability: Forewarn
+Level: 46
+EVs: 252 HP
+Adamant Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 28 HP / 0 SpA / 4 SpD
+- Dazzling Gleam
+- Psychic
+- Calm Mind
+- Dream Eater
+
+Musharna (F)
+Ability: Synchronize
+Level: 39
+Mild Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 29 Atk / 22 Def / 26 SpA / 18 SpD / 16 Spe
+- Psychic
+- Calm Mind
+- Dream Eater
+- Zen Headbutt
+
+Musharna (M)
+Ability: Synchronize
+Level: 48
+EVs: 252 HP
+Naughty Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 Def / 3 SpA / 24 SpD
+- Shadow Ball
+- Moonblast
+- Psychic
+- Calm Mind
+
+Audino (F)
+Ability: Healer
+Level: 33
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 25 Atk / 23 Def / 4 SpA / 29 SpD / 13 Spe
+- Take Down
+- Amnesia
+- Zen Headbutt
+- Draining Kiss
+
+Throh (M)
+Ability: Guts
+Level: 53
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 20 HP / 8 Atk / 12 Def / 19 SpA / 11 SpD / 5 Spe
+- Storm Throw
+- Outrage
+- Amnesia
+- Endure
+
+Sawk (M)
+Ability: Inner Focus
+Level: 53
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 29 Atk / 27 Def / 19 SpA / 23 SpD / 10 Spe
+- Close Combat
+- Outrage
+- Endure
+- Brick Break
+
+Venipede (M)
+Ability: Poison Point
+Level: 15
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 2 Atk / 2 Def / 23 SpA / 2 SpD / 25 Spe
+- Infestation
+- Protect
+- Rollout
+- Leer
+
+Sandile (M)
+Ability: Moxie
+Level: 38
+Adamant Nature
+~=Location=93
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 6 Atk / 13 Def / 26 SpA / 22 SpD / 17 Spe
+- Bite
+- Leer
+- Crunch
+- Dig
+
+Krokorok (F)
+Ability: Intimidate
+Level: 50
+Adamant Nature
+~=Location=93
+~=Version=ZA
+~=Generation=9
+IVs: 30 HP / 17 Atk / 22 Def / 18 SpA / 12 SpD / 21 Spe
+- Bite
+- Leer
+- Crunch
+- Sand Tomb
+
+Yamask (M)
+Ability: Mummy
+Level: 19
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 15 Atk / 11 Def / 20 SpA / 26 Spe
+- Will-O-Wisp
+- Fake Tears
+- Confuse Ray
+- Haze
+
+Foongus (M)
+Ability: Effect Spore
+Level: 22
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 15 Atk / 13 Def / 26 SpA / 3 SpD / 27 Spe
+- Toxic Spikes
+- Synthesis
+- Magical Leaf
+- Rollout
+
+Tynamo (F)
+Ability: Levitate
+Level: 23
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 22 Atk / 24 Def / 10 SpA / 2 SpD / 4 Spe
+- Spark
+- Thunder Wave
+- Tackle
+
+Litwick (F)
+Ability: Flame Body
+Level: 21
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 0 Atk / 17 Def / 21 SpD / 28 Spe
+- Will-O-Wisp
+- Acid Armor
+- Confuse Ray
+- Haze
+
+Lampent (F)
+Ability: Flame Body
+Level: 44
+Hasty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 26 Atk / 10 Def / 5 SpA / 15 SpD / 16 Spe
+- Curse
+- Flame Wheel
+- Shadow Ball
+- Flamethrower
+
+Cobalion
+Ability: Justified
+Level: 60
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 16 SpA / 7 SpD
+- Swords Dance
+- Sacred Sword
+- Megahorn
+- Air Slash
+
+Terrakion
+Ability: Justified
+Level: 60
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 16 Def / 12 SpA / 7 SpD
+- Swords Dance
+- Sacred Sword
+- Megahorn
+- Rock Slide
+
+Virizion
+Ability: Justified
+Level: 60
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 16 HP / 12 Def / 7 SpD
+- Swords Dance
+- Sacred Sword
+- Megahorn
+- Air Slash
+
+Keldeo
+Ability: Justified
+Level: 60
+Lax Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 7 HP / 16 SpA / 12 SpD
+- Swords Dance
+- Sacred Sword
+- Megahorn
+- Air Slash
+
+Meloetta
+Ability: Serene Grace
+Level: 60
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 7 HP / 12 Def / 16 SpD
+- Psychic
+- Relic Song
+- U-turn
+- Psybeam
+
+Genesect
+Ability: Download
+Level: 60
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 3 Def / 6 SpA
+- Techno Blast
+- Flash Cannon
+- Lunge
+- Bug Buzz
+
+Fennekin (M)
+Ability: Blaze
+Level: 52
+Sassy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 7 HP / 26 Atk / 5 Def / 12 SpA / 4 SpD
+- Psychic
+- Will-O-Wisp
+- Flamethrower
+- Psyshock
+
+Froakie (M)
+Ability: Torrent
+Level: 50
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 17 HP / 4 Atk / 16 Def / 2 SpA / 0 SpD / 4 Spe
+- Bounce
+- Night Slash
+- Substitute
+- Smokescreen
+
+Greninja (M)
+Ability: Torrent
+Level: 54
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 23 HP / 11 Atk / 8 Def / 23 SpA / 2 SpD / 10 Spe
+- Double Team
+- Bounce
+- Night Slash
+- Substitute
+
+Bunnelby (M)
+Ability: Cheek Pouch
+Level: 21
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 25 Atk / 29 Def / 5 SpA / 8 SpD / 17 Spe
+- Quick Attack
+- Mud Shot
+- Leer
+- Tackle
+
+Scatterbug-Garden (M)
+Ability: Shield Dust
+Level: 12
+Quirky Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 30 HP / 20 Atk / 10 Def / 22 SpA / 28 SpD / 26 Spe
+- Stun Spore
+- String Shot
+- Tackle
+
+Scatterbug-Garden (M)
+Ability: Shield Dust
+Level: 23
+EVs: 252 HP
+Jolly Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 28 HP / 20 Def / 18 SpA
+- Protect
+- String Shot
+- Tackle
+
+Spewpa-Garden (M)
+Ability: Shed Skin
+Level: 14
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 30 Atk / 22 Def / 10 SpA / 5 SpD / 27 Spe
+- Infestation
+- Stun Spore
+- Harden
+- String Shot
+
+Vivillon-Garden (F)
+Ability: Shield Dust
+Level: 17
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 29 Atk / 1 Def / 23 SpA / 19 SpD / 30 Spe
+- Supersonic
+- Draining Kiss
+- Light Screen
+- Infestation
+
+Pyroar (F)
+Ability: Unnerve
+Level: 35
+EVs: 14 HP / 53 Atk / 28 Def / 36 SpA / 13 SpD / 54 Spe
+Lonely Nature
+~=Location=206
+~=Version=ZA
+~=Generation=9
+IVs: 10 HP / 13 Atk / 15 Def / 27 SpA / 20 SpD / 11 Spe
+- Roar
+- Ember
+- Leer
+- Tackle
+
+Florges-Blue (F)
+Ability: Flower Veil
+Level: 28
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 24 Atk / 5 Def / 9 SpA / 18 SpD / 8 Spe
+- Charm
+- Magical Leaf
+- Wish
+- Draining Kiss
+
+Skiddo (M)
+Ability: Sap Sipper
+Level: 21
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 8 Atk / 6 Def / 16 SpA / 24 SpD / 3 Spe
+- Synthesis
+- Mud Shot
+- Razor Leaf
+- Leech Seed
+
+Pancham (M)
+Ability: Iron Fist
+Level: 17
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 13 HP / 16 Atk / 1 Def / 2 SpA / 22 SpD / 19 Spe
+- Brick Break
+- Taunt
+- Leer
+- Tackle
+
+Pangoro (F)
+Ability: Iron Fist
+Level: 42
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 7 Atk / 4 Def / 12 SpA / 27 SpD / 6 Spe
+- Brutal Swing
+- Crunch
+- Parting Shot
+- Detect
+
+Espurr (M)
+Ability: Infiltrator
+Level: 45
+EVs: 252 HP
+Naughty Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 4 HP / 27 Atk / 26 Spe
+- Energy Ball
+- Reflect
+- Light Screen
+- Psybeam
+
+Meowstic (M)
+Ability: Infiltrator
+Level: 75
+Calm Nature
+~=Location=278
+~=Version=ZA
+~=Generation=9
+IVs: 22 Def / 25 SpD / 24 Spe
+- Psychic
+- Reflect
+- Light Screen
+- Psybeam
+
+Meowstic (M)
+Ability: Infiltrator
+Level: 47
+EVs: 252 HP
+Quiet Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 3 HP / 20 SpA / 23 Spe
+- Thunderbolt
+- Psychic
+- Psyshock
+- Reflect
+
+Honedge (F)
+Ability: No Guard
+Level: 21
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 14 Atk / 29 Def / 1 SpA / 16 SpD / 10 Spe
+- Slash
+- Metal Sound
+- Aerial Ace
+- Shadow Sneak
+
+Honedge (M)
+Ability: No Guard
+Level: 35
+EVs: 252 HP
+Lonely Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 17 HP / 4 Atk / 8 Def
+- Headbutt
+- Shadow Claw
+- Psycho Cut
+- Slash
+
+Doublade (F)
+Ability: No Guard
+Level: 35
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 17 HP / 9 Atk / 27 Def / 7 SpA / 26 SpD / 30 Spe
+- Iron Defense
+- Shadow Claw
+- Psycho Cut
+- Slash
+
+Spritzee (M)
+Ability: Healer
+Level: 28
+EVs: 252 HP
+Quiet Nature
+Alpha: Yes
+~=Location=74
+~=Version=ZA
+~=Generation=9
+IVs: 6 Atk / 19 SpA / 21 Spe
+- Energy Ball
+- Psybeam
+- Wish
+- Draining Kiss
+
+Inkay (F)
+Ability: Suction Cups
+Level: 17
+Naughty Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 19 Atk / 16 Def / 27 SpA / 25 SpD / 17 Spe
+- Psybeam
+- Knock Off
+- Fake Tears
+- Hypnosis
+
+Binacle (M)
+Ability: Sniper
+Level: 24
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 6 HP / 28 Atk / 4 Def / 24 SpA / 29 SpD / 5 Spe
+- Slash
+- Bulldoze
+- Rock Blast
+- Bubble Beam
+
+Sylveon (M)
+Ability: Cute Charm
+Level: 39
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 15 Atk / 19 Def / 26 SpA / 12 SpD / 19 Spe
+- Dazzling Gleam
+- Draining Kiss
+- Light Screen
+- Disarming Voice
+
+Hawlucha (M)
+Ability: Limber
+Level: 33
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 25 HP / 19 Atk / 14 Def / 19 SpA / 30 SpD / 28 Spe
+- Taunt
+- Bounce
+- Lunge
+- Brick Break
+
+Dedenne (F)
+Ability: Cheek Pouch
+Level: 30
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 23 Atk / 10 SpA / 30 SpD / 9 Spe
+- Play Rough
+- Volt Switch
+- Eerie Impulse
+- Parabolic Charge
+
+Carbink
+Ability: Clear Body
+Level: 66
+Hasty Nature
+~=Location=63
+~=Version=ZA
+~=Generation=9
+IVs: 25 SpA / 6 SpD / 28 Spe
+- Stone Edge
+- Flash Cannon
+- Dazzling Gleam
+- Rock Slide
+
+Goomy (F)
+Ability: Hydration
+Level: 39
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 17 Atk / 25 Def / 8 SpA / 10 SpD / 1 Spe
+- Take Down
+- Dragon Pulse
+- Water Pulse
+- Mud Shot
+
+Sliggoo (F)
+Ability: Hydration
+Level: 44
+Mild Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 8 HP / 24 Atk / 10 Def / 4 SpA / 25 SpD / 30 Spe
+- Curse
+- Take Down
+- Dragon Pulse
+- Water Pulse
+
+Goodra-Hisui (F)
+Ability: Shell Armor
+Level: 56
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 3 Atk / 26 Def / 0 SpA / 11 SpD / 9 Spe
+- Surf
+- Heavy Slam
+- Body Slam
+- Iron Tail
+
+Klefki (F)
+Ability: Prankster
+Level: 26
+Sassy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 30 HP / 12 Atk / 2 Def / 1 SpD / 28 Spe
+- Draining Kiss
+- Metal Sound
+- Metal Claw
+- Fairy Wind
+
+Trevenant (M)
+Ability: Frisk
+Level: 41
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 2 HP / 1 Atk / 16 Def / 8 SpA / 28 SpD / 13 Spe
+- Phantom Force
+- Forest’s Curse
+- Shadow Claw
+- Horn Leech
+
+Pumpkaboo (M)
+Ability: Frisk
+Level: 37
+Adamant Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 26 Atk / 15 Def / 0 SpA / 3 SpD / 16 Spe
+- Shadow Ball
+- Hypnosis
+- Brutal Swing
+- Bullet Seed
+
+Bergmite (M)
+Ability: Ice Body
+Level: 24
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 11 Atk / 6 Def / 19 SpA / 14 SpD / 7 Spe
+- Ice Fang
+- Bite
+- Protect
+- Icy Wind
+
+Hoopa
+Ability: Magician
+Level: 80
+Lonely Nature
+~=Location=30034
+~=Version=ZA
+~=Generation=9
+IVs: 7 Atk / 24 SpA / 8 SpD
+- Hyperspace Hole
+- Psychic
+- Nasty Plot
+- Phantom Force
+
+Volcanion
+Ability: Water Absorb
+Level: 80
+Naughty Nature
+~=Location=230
+~=Version=ZA
+~=Generation=9
+IVs: 4 SpA / 4 SpD / 19 Spe
+- Steam Eruption
+- Hydro Pump
+- Haze
+- Overheat
+
+Crabrawler (M)
+Ability: Hyper Cutter
+Level: 35
+Lax Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 23 HP / 22 Atk / 2 Def / 8 SpA / 4 SpD / 27 Spe
+- Mach Punch
+- Bulk Up
+- Brick Break
+- Take Down
+
+Crabrawler (F)
+Ability: Iron Fist
+Level: 26
+EVs: 252 HP
+Jolly Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 SpA / 14 Spe
+- Thunder Punch
+- Brick Break
+- Take Down
+- Protect
+
+Crabominable (F)
+Ability: Iron Fist
+Level: 39
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 21 Atk / 0 Def / 0 SpA / 15 SpD / 18 Spe
+- Ice Hammer
+- Mach Punch
+- Bulk Up
+- Brick Break
+
+Wimpod (M)
+Ability: Wimp Out
+Level: 17
+Naive Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 16 HP / 9 Atk / 15 Def / 11 SpA / 2 SpD / 16 Spe
+- Rollout
+- Harden
+
+Sandygast (F)
+Ability: Water Compaction
+Level: 40
+Impish Nature
+~=Location=211
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 11 Atk / 3 Def / 30 SpD / 20 Spe
+- Sand Tomb
+- Bulldoze
+- Iron Defense
+- Giga Drain
+
+Mimikyu (F)
+Ability: Disguise
+Level: 25
+Quiet Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 21 HP / 10 Atk / 12 Def / 17 SpA / 26 SpD / 18 Spe
+- Mimic
+- Double Team
+- Shadow Sneak
+- Splash
+
+Magearna
+Ability: Soul-Heart
+Level: 80
+Modest Nature
+~=Location=30035
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 28 Atk / 21 SpA
+- Fleur Cannon
+- Flash Cannon
+- Aura Sphere
+- Iron Head
+
+Marshadow
+Ability: Technician
+Level: 80
+Quirky Nature
+~=Location=70
+~=Version=ZA
+~=Generation=9
+IVs: 28 HP / 18 Atk / 23 SpD
+- Spectral Thief
+- Close Combat
+- Shadow Punch
+- Shadow Sneak
+
+Zeraora
+Ability: Volt Absorb
+Level: 85
+Brave Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 Def / 15 SpD / 27 Spe
+- Plasma Fists
+- Dynamic Punch
+- Electroweb
+- Wild Charge
+
+Meltan
+Ability: Magnet Pull
+Level: 70
+Jolly Nature
+~=Location=14
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 28 Def / 5 Spe
+- Flash Cannon
+- Acid Armor
+- Brutal Swing
+- Thunder Wave
+
+Melmetal
+Ability: Iron Fist
+Level: 80
+Adamant Nature
+~=Location=30034
+~=Version=ZA
+~=Generation=9
+IVs: 21 Atk / 2 Def / 19 SpD
+- Double Iron Bash
+- Dynamic Punch
+- Discharge
+- Flash Cannon
+
+Rookidee (F)
+Ability: Unnerve
+Level: 14
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 19 HP / 10 Atk / 16 Def / 30 SpA / 8 SpD / 7 Spe
+- Take Down
+- Gust
+- Peck
+- Leer
+
+Corvisquire (F)
+Ability: Keen Eye
+Level: 45
+EVs: 252 HP
+Hardy Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 29 SpD / 28 Spe
+- U-turn
+- Slash
+- Swagger
+- Feather Dance
+
+Nickit (F)
+Ability: Run Away
+Level: 15
+Naughty Nature
+~=Location=45
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 11 Atk / 23 Def / 30 SpA / 28 SpD / 6 Spe
+- Roar
+- Snarl
+- Quick Attack
+- Tail Whip
+
+Clobbopus (M)
+Ability: Limber
+Level: 39
+Relaxed Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 21 HP / 27 Atk / 21 Def / 5 SpA / 8 SpD / 6 Spe
+- Taunt
+- Double Hit
+- Knock Off
+- Bulk Up
+
+Grapploct (M)
+Ability: Limber
+Level: 42
+Naive Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 26 Atk / 25 Def / 12 SpA / 1 SpD / 1 Spe
+- Taunt
+- Double Hit
+- Knock Off
+- Bulk Up
+
+Overqwil (M)
+Ability: Poison Point
+Level: 53
+Careful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 21 Atk / 8 Def / 3 SpA / 24 SpD / 2 Spe
+- Gunk Shot
+- Crunch
+- Barb Barrage
+- Toxic Spikes
+
+Fidough (F)
+Ability: Own Tempo
+Level: 19
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 0 HP / 3 Atk / 20 Def / 14 SpA / 29 SpD / 16 Spe
+- Play Rough
+- Draining Kiss
+- Bite
+- Tail Whip
+
+Squawkabilly (F)
+Ability: Hustle
+Level: 19
+Mild Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 28 Atk / 23 Def / 3 SpA / 12 SpD / 30 Spe
+- Aerial Ace
+- Torment
+- Quick Attack
+- Peck
+
+Nacli (F)
+Ability: Sturdy
+Level: 40
+Impish Nature
+~=Location=30
+~=Version=ZA
+~=Generation=9
+IVs: 21 HP / 7 Atk / 19 Def / 29 SpA / 11 SpD / 7 Spe
+- Stealth Rock
+- Iron Defense
+- Rock Throw
+- Recover
+
+Nacli (M)
+Ability: Sturdy
+Level: 22
+Jolly Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 19 Atk / 3 Def / 27 SpA / 24 SpD / 23 Spe
+- Ancient Power
+- Headbutt
+- Take Down
+- Mud Shot
+
+Naclstack (M)
+Ability: Purifying Salt
+Level: 54
+Gentle Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 5 HP / 27 Atk / 13 Def / 23 SpA / 27 SpD / 8 Spe
+- Stone Edge
+- Earthquake
+- Heavy Slam
+- Stealth Rock
+
+Garganacl (F)
+Ability: Sturdy
+Level: 57
+Sassy Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 26 HP / 16 Atk / 21 Def / 2 SpA / 6 SpD / 24 Spe
+- Stone Edge
+- Earthquake
+- Heavy Slam
+- Stealth Rock
+
+Shroodle (M)
+Ability: Unburden
+Level: 24
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 24 Atk / 18 Def / 0 SpA / 17 SpD / 0 Spe
+- Parting Shot
+- Slash
+- Super Fang
+- Poison Fang
+
+Grafaiai (F)
+Ability: Unburden
+Level: 28
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 12 Atk / 8 Def / 15 SpA / 20 SpD / 4 Spe
+- U-turn
+- Parting Shot
+- Slash
+- Super Fang
+
+Capsakid (M)
+Ability: Insomnia
+Level: 23
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 27 HP / 30 Atk / 3 Def / 26 SpA / 16 SpD
+- Bullet Seed
+- Leech Seed
+- Razor Leaf
+- Growth
+
+Scovillain (M)
+Ability: Insomnia
+Level: 35
+EVs: 2 HP / 5 Atk / 1 Def / 8 SpA / 5 SpD / 2 Spe
+Modest Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 1 HP / 23 Atk / 7 Def / 0 SpA / 23 SpD / 11 Spe
+- Spicy Extract
+- Leech Seed
+- Razor Leaf
+- Growth
+
+Tinkatink (F)
+Ability: Mold Breaker
+Level: 24
+Calm Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 9 HP / 30 Atk / 21 Def / 19 SpA / 14 SpD / 24 Spe
+- Brutal Swing
+- Screech
+- Draining Kiss
+- Rock Smash
+
+Tinkatuff (F)
+Ability: Own Tempo
+Level: 28
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 22 HP / 30 Atk / 26 Def / 24 SpA / 23 SpD / 4 Spe
+- Fake Tears
+- Brutal Swing
+- Screech
+- Draining Kiss
+
+Glimmet (M)
+Ability: Toxic Debris
+Level: 26
+Serious Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 15 HP / 26 Atk / 23 Def / 16 SpA / 17 SpD / 20 Spe
+- Rock Blast
+- Stealth Rock
+- Confuse Ray
+- Ancient Power
+
+Greavard (M)
+Ability: Pickup
+Level: 17
+Bold Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 25 HP / 12 Atk / 24 Def / 23 SpD / 13 Spe
+- Dig
+- Headbutt
+- Roar
+- Bite
+
+Dondozo (M)
+Ability: Unaware
+Level: 39
+Impish Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 12 HP / 21 Atk / 15 Def / 13 SpA / 0 SpD / 5 Spe
+- Double-Edge
+- Liquidation
+- Body Slam
+- Take Down
+
+Tatsugiri (M)
+Ability: Commander
+Level: 75
+Timid Nature
+~=Location=277
+~=Version=ZA
+~=Generation=9
+IVs: 16 Def / 28 SpD / 30 Spe
+- Waterfall
+- Ice Beam
+- Dragon Rush
+- Whirlpool
+
+Tatsugiri-Droopy (F)
+Ability: Commander
+Level: 40
+Bashful Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 14 HP / 2 Atk / 27 Def / 25 SpA / 22 SpD / 27 Spe
+- Muddy Water
+- Mimic
+- Taunt
+- Mud Shot
+
+Annihilape (F)
+Ability: Vital Spirit
+Level: 37
+Lax Nature
+Alpha: Yes
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 24 HP / 5 Atk / 22 SpD
+- Rage Fist
+- Facade
+- Brick Break
+- Bulldoze
+
+Frigibax (M)
+Ability: Thermal Exchange
+Level: 53
+Docile Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 11 HP / 20 Atk / 0 Def / 17 SpA / 24 SpD / 0 Spe
+- Freeze-Dry
+- Crunch
+- Ice Beam
+- Take Down
+
+Arctibax (M)
+Ability: Thermal Exchange
+Level: 54
+Lonely Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 25 HP / 13 Atk / 6 Def / 29 SpA / 1 SpD / 28 Spe
+- Icicle Crash
+- Freeze-Dry
+- Crunch
+- Ice Beam
+
+Gimmighoul
+Ability: Rattled
+Level: 64
+Timid Nature
+~=Location=273
+~=Version=ZA
+~=Generation=9
+IVs: 18 HP / 13 Atk / 3 Def / 20 SpA / 15 SpD / 12 Spe
+- Confuse Ray
+- Tackle
+
+Chestly (Gholdengo)
+Ability: Rattled
+Level: 5
+Bold Nature
+~=Location=30033
+~=Version=ZA
+~=Generation=9
+IVs: 21 Atk / 27 Def / 10 SpD
+- Confuse Ray
+- Tackle
