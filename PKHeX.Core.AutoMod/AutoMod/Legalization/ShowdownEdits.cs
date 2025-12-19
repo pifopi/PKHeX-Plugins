@@ -157,9 +157,7 @@ public static class ShowdownEdits
             }
         }
 
-        pk.SetSuggestedFormArgument(enc.Species);
-        if (set.Species == (ushort)Species.Gholdengo && enc.Context == EntityContext.Gen9a)
-            pk.ChangeFormArgument(0);
+        pk.SetSuggestedFormArgument(new LegalityAnalysis(pk).Info.EvoChainsAllGens,enc.Species);
         if (evolutionRequired || formchange || (pk.Ability != set.Ability && set.Ability != -1))
         {
             var abilitypref = (AbilityPermission)pk.PersonalInfo.GetIndexOfAbility(set.Ability);

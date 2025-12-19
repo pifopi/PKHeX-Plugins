@@ -303,7 +303,7 @@ public static class ModLogic
         success = almres.Status;
         if (pk.Species is (ushort)Gholdengo)
         {
-            pk.SetSuggestedFormArgument();
+            pk.SetSuggestedFormArgument(new LegalityAnalysis(pk).Info.EvoChainsAllGens);
             pk.SetSuggestedMoves();
             success = LegalizationResult.Regenerated;
         }
