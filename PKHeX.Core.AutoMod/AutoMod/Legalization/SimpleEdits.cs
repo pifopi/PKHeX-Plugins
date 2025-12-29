@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Net.Sockets;
 using System.Reflection.Emit;
 using static PKHeX.Core.Species;
 
@@ -541,7 +542,7 @@ public static class SimpleEdits
             return;
 
         var expect = trainer.IsFromTrainer(pk) ? 0 : 1;
-        if (pk.CurrentHandler == expect && expect == 0)
+        if (pk.CurrentHandler == expect && expect == 0 && !IsTradeEvolutionRequired((Species)enc.Species))
             return;
 
         pk.CurrentHandler = 1;
@@ -755,4 +756,35 @@ public static class SimpleEdits
     /// <param name="form">Form index.</param>
     /// <returns>Held item ID or null.</returns>
     public static int? GetGenesectHeldItemFromForm(int form) => form == 0 ? null : form + 115;
+
+    public static bool IsTradeEvolutionRequired(Species species) => species switch
+    {
+        Kadabra or
+        Machoke or
+        Graveler or
+        Haunter or
+        Boldore or
+        Gurdurr or
+        Phantump or
+        Pumpkaboo or
+        Poliwhirl or
+        Slowpoke or
+        Onix or
+        Scyther or
+        Seadra or
+        Porygon or
+        Porygon2 or
+        Rhydon or
+        Electabuzz or
+        Magmar or
+        Dusclops or
+        Clamperl or
+        Feebas or
+        Spritzee or
+        Swirlix or
+        Shelmet or
+        Karrablast => true,
+
+        _ => false,
+    };
 }
