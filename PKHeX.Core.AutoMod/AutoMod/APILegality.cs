@@ -304,8 +304,8 @@ public static class APILegality
             _ => [.. versionlist.OrderByDescending(z => z).ToArray()]
         };
 
-        if (template.AbilityNumber == 4 && destVer.GetGeneration() < 8)
-            gamelist = [.. gamelist.Where(z => z.GetGeneration() is not 3 and not 4)];
+        if (template.AbilityNumber == 4 && destVer.Generation < 8)
+            gamelist = [.. gamelist.Where(z => z.Generation is not 3 and not 4)];
         if (gamelist.Contains(GameVersion.HGSS))
         {
             gamelist = [.. gamelist.Where(z => z != GameVersion.HGSS)];
@@ -437,7 +437,7 @@ public static class APILegality
 
         // Don't process if PKM is definitely Hidden Ability and the PKM is from Gen 3 or Gen 4 and Hidden Capsule doesn't exist
         var gen = enc.Generation;
-        if (abilityreq == AbilityRequest.Hidden && gen is 3 or 4 && destVer.GetGeneration() < 8)
+        if (abilityreq == AbilityRequest.Hidden && gen is 3 or 4 && destVer.Generation < 8)
             return false;
 
         if (set.Species == (ushort)Species.Pikachu)

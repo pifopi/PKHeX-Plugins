@@ -331,7 +331,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         bool valid = pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
                      pkm is { Species: 0, EncryptionConstant: 0 }
                          or { Species: not 0, Language: not (int)LanguageID.None and not (int)LanguageID.UNUSED_6 };
-        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : !valid ? (LiveHeXValidation.GameVersion,"Invalid data found.",LiveHeXVersion.Unknown): (LiveHeXValidation.None, "", lv);
+        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : !valid ? (LiveHeXValidation.GameVersion, "Invalid data found.", LiveHeXVersion.Unknown) : (LiveHeXValidation.None, "", lv);
     }
 
     private void B_Disconnect_Click(object sender, EventArgs e)
@@ -394,7 +394,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         if (RB_Absolute.Checked)
             method = RWMethod.Absolute;
         var offset = readPointer && Remote.Bot.com is ICommunicatorNX nx ? nx.GetPointerAddress(TB_Pointer.Text, method == RWMethod.Heap) : Util.GetHexValue64(txt);
-        if ((offset.ToString("X16") != txt.ToUpper().PadLeft(16, '0') && !readPointer)|| offset == InjectionUtil.INVALID_PTR)
+        if ((offset.ToString("X16") != txt.ToUpper().PadLeft(16, '0') && !readPointer) || offset == InjectionUtil.INVALID_PTR)
         {
             WinFormsUtil.Alert("Specified offset is not a valid hex string.");
             return;
@@ -556,7 +556,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     public ulong GetPointerAddress(ICommunicatorNX sb)
     {
         var ptr = TB_Pointer.Text.Contains("[key]") ? TB_Pointer.Text.Replace("[key]", "").Trim() : TB_Pointer.Text.Trim();
-        var address = sb.GetPointerAddress(ptr,false);
+        var address = sb.GetPointerAddress(ptr, false);
         return address;
     }
 
@@ -888,7 +888,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             BlockData[] subblocks = Remote.Bot.Injector switch
             {
                 LPBasic => [.. LPBasic.SCBlocks[version].Where(z => z.Display == display)],
-                LPPointer =>[.. LPPointer.SCBlocks[version].Where(z => z.Display == display)],
+                LPPointer => [.. LPPointer.SCBlocks[version].Where(z => z.Display == display)],
                 _ => [],
             };
 
@@ -998,6 +998,11 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         }
 
         return true;
+    }
+
+    private void connectionMode_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        _settings.USBBotBasePreferred = connectionMode.SelectedIndex == 1;
     }
 }
 

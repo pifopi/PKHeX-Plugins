@@ -398,7 +398,7 @@ public static class SimpleEdits
             return;
 
         Span<byte> result = stackalloc byte[6];
-        AwakeningUtil.SetExpectedMinimumAVs(result, pb7);
+        AwakeningUtil.SetExpectedMinimumAVs(pb7, result);
 
         const byte max = AwakeningUtil.AwakeningMax;
         ReadOnlySpan<int> evs = set.EVs;

@@ -29,7 +29,7 @@ public static class TeamTests
         {
             var result = new TestResult(s);
             results.Add(result);
-            var sav = BlankSaveFile.Get(s.GetContext(), "ALMUT");
+            var sav = BlankSaveFile.Get(s.Context, "ALMUT");
             RecentTrainerCache.SetRecentTrainer(sav);
 
             var lines = File.ReadAllLines(file).Where(z => !z.StartsWith("====="));
@@ -51,7 +51,7 @@ public static class TeamTests
                 .Where(z => personal.IsPresentInGame(z.Species, z.Form))
                 .DistinctBy(z => z.Text);
 
-            sets = filter.ToList();
+            sets = [.. filter];
             for (int i = 0; i < sets.Count; i++)
             {
                 var set = sets[i];

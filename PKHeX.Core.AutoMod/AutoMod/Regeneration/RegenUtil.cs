@@ -202,9 +202,9 @@ public static class RegenUtil
         if (lang == null)
             return OT;
 
-        var max = Legal.GetMaxLengthOT(game.GetGeneration(), (LanguageID)lang);
+        var max = Legal.GetMaxLengthOT(game.Generation, (LanguageID)lang);
         OT = OT[..Math.Min(OT.Length, max)];
-        if (GameVersion.GG.Contains(game) || game.GetGeneration() >= 8) // switch keyboard only has latin characters, --don't mutate
+        if (GameVersion.GG.Contains(game) || game.Generation >= 8) // switch keyboard only has latin characters, --don't mutate
             return OT;
 
         var full = lang is LanguageID.Japanese or LanguageID.Korean or LanguageID.ChineseS or LanguageID.ChineseT;
@@ -217,7 +217,7 @@ public static class RegenUtil
     public static string MutateNickname(string nick, LanguageID? lang, GameVersion game)
     {
         // Length checks are handled later in SetSpeciesLevel
-        if (game.GetGeneration() >= 8 || lang == null)
+        if (game.Generation >= 8 || lang == null)
             return nick;
 
         var full = lang is LanguageID.Japanese or LanguageID.Korean or LanguageID.ChineseS or LanguageID.ChineseT;

@@ -36,7 +36,7 @@ public static class LegalEdits
 
             var orig = pk.Ball;
             pk.Ball = (byte)ball;
-            if (force || BallVerifier.VerifyBall(enc, ball, pk).IsValid())
+            if (force || BallVerifier.VerifyBall(enc, ball, pk).IsValid)
                 return;
             pk.Ball = orig;
         }
