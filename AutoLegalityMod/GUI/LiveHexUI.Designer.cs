@@ -88,12 +88,12 @@
             tabPage1.Controls.Add(label1);
             tabPage1.Controls.Add(connectionMode);
             tabPage1.Controls.Add(L_IP);
+            tabPage1.Controls.Add(B_Connect);
             tabPage1.Controls.Add(TB_IP);
             tabPage1.Controls.Add(TB_Port);
             tabPage1.Controls.Add(groupBox5);
             tabPage1.Controls.Add(L_USBState);
             tabPage1.Controls.Add(L_Port);
-            tabPage1.Controls.Add(B_Connect);
             tabPage1.Controls.Add(GB_Boxes);
             tabPage1.Controls.Add(B_Disconnect);
             tabPage1.Location = new System.Drawing.Point(4, 24);
@@ -277,7 +277,7 @@
             // B_Connect
             // 
             B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            B_Connect.Location = new System.Drawing.Point(103, 41);
+            B_Connect.Location = new System.Drawing.Point(104, 41);
             B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_Connect.Name = "B_Connect";
             B_Connect.Size = new System.Drawing.Size(74, 27);
@@ -355,6 +355,7 @@
             // 
             // B_Disconnect
             // 
+            B_Disconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             B_Disconnect.Location = new System.Drawing.Point(104, 41);
             B_Disconnect.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             B_Disconnect.Name = "B_Disconnect";
