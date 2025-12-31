@@ -36,6 +36,7 @@
             label1 = new System.Windows.Forms.Label();
             connectionMode = new System.Windows.Forms.ComboBox();
             L_IP = new System.Windows.Forms.Label();
+            B_Connect = new System.Windows.Forms.Button();
             TB_IP = new System.Windows.Forms.TextBox();
             TB_Port = new System.Windows.Forms.TextBox();
             groupBox5 = new System.Windows.Forms.GroupBox();
@@ -44,7 +45,6 @@
             L_Block = new System.Windows.Forms.Label();
             L_USBState = new System.Windows.Forms.Label();
             L_Port = new System.Windows.Forms.Label();
-            B_Connect = new System.Windows.Forms.Button();
             GB_Boxes = new System.Windows.Forms.GroupBox();
             checkBox2 = new System.Windows.Forms.CheckBox();
             CB_ReadBox = new System.Windows.Forms.CheckBox();
@@ -183,6 +183,18 @@
             L_IP.Text = "IP:";
             L_IP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // B_Connect
+            // 
+            B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_Connect.Location = new System.Drawing.Point(104, 41);
+            B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_Connect.Name = "B_Connect";
+            B_Connect.Size = new System.Drawing.Size(74, 27);
+            B_Connect.TabIndex = 7;
+            B_Connect.Text = "Connect";
+            B_Connect.UseVisualStyleBackColor = true;
+            B_Connect.Click += B_Connect_Click;
+            // 
             // TB_IP
             // 
             TB_IP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -273,18 +285,6 @@
             L_Port.TabIndex = 6;
             L_Port.Text = "Port:";
             L_Port.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // B_Connect
-            // 
-            B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            B_Connect.Location = new System.Drawing.Point(104, 41);
-            B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_Connect.Name = "B_Connect";
-            B_Connect.Size = new System.Drawing.Size(74, 27);
-            B_Connect.TabIndex = 7;
-            B_Connect.Text = "Connect";
-            B_Connect.UseVisualStyleBackColor = true;
-            B_Connect.Click += B_Connect_Click;
             // 
             // GB_Boxes
             // 
@@ -387,7 +387,7 @@
             tabPage2.Padding = new System.Windows.Forms.Padding(3);
             tabPage2.Size = new System.Drawing.Size(421, 232);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Advance";
+            tabPage2.Text = "Advanced";
             // 
             // groupBox4
             // 
