@@ -34,7 +34,7 @@ public class TrainerTemplates : AutoModPlugin
                 continue;
             if (i == 34)
                 continue;
-            var gen = ((GameVersion)i).GetGeneration() == 0 ? 1 : ((GameVersion)i).GetGeneration();
+            var gen = ((GameVersion)i).Generation == 0 ? 1 : ((GameVersion)i).Generation;
             var TID = (ushort)Random.Shared.Next(ushort.MaxValue);
             var SID = (ushort)Random.Shared.Next(ushort.MaxValue);
             while (TrainerIDVerifier.IsOTIDSuspicious(TID, SID))

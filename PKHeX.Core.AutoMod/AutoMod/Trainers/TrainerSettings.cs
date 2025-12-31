@@ -38,7 +38,7 @@ public static class TrainerSettings
         if (!ver.IsValidSavedVersion())
             ver = GameUtil.GameVersions.First(z => ver.Contains(z));
 
-        var ctx = ver.GetContext();
+        var ctx = ver.Context;
         var fallback = lang == null ? new SimpleTrainerInfo(ver) { Context = ctx, OT = DefaultOT, TID16 = DefaultTID16, SID16 = DefaultSID16 } : new SimpleTrainerInfo(ver) { Language = (int)lang, Context = ctx, OT = DefaultOT, TID16 = DefaultTID16, SID16 = DefaultSID16 };
         return fallback;
     }

@@ -135,8 +135,8 @@ public static class ModLogic
 
         // Destination restrictions
         var destPersonal = GameData.GetPersonal(cfg.TransferVersion);
-        var context = cfg.TransferVersion.GetContext();
-        var generation = cfg.TransferVersion.GetGeneration();
+        var context = cfg.TransferVersion.Context;
+        var generation = cfg.TransferVersion.Generation;
 
         ConcurrentBag<PKM> pklist = [];
         var tr = APILegality.UseTrainerData ? TrainerSettings.GetSavedTrainerData(src.Version, lang: (LanguageID)src.Language) : src;
@@ -303,7 +303,7 @@ public static class ModLogic
         success = almres.Status;
         if (pk.Species is (ushort)Gholdengo)
         {
-            pk.SetSuggestedFormArgument(new LegalityAnalysis(pk).Info.EvoChainsAllGens);
+            pk.SetSuggestedFormArgument(pk.Species, pk.Form, pk.Context, new LegalityAnalysis(pk).Info.EvoChainsAllGens);
             pk.SetSuggestedMoves();
             success = LegalizationResult.Regenerated;
         }

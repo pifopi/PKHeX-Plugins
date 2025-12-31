@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using AutoModPlugins.GUI;
 using PKHeX.Core;
 using PKHeX.Core.Injection;
-
+using System.Drawing;
 namespace AutoModPlugins;
 
 public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
@@ -20,16 +20,17 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     public IList<PictureBox> SlotPictureBoxes => throw new InvalidOperationException();
     SaveFile ISlotViewer<PictureBox>.SAV => throw new InvalidOperationException();
 
-    private readonly LiveHeXController Remote;
+    private LiveHeXController Remote;
     private readonly SaveDataEditor<PictureBox> x;
     private readonly PluginSettings _settings;
-
-    private readonly InjectorCommunicationType CurrentInjectionType;
-
+    private IPKMView Editor;
+    private InjectorCommunicationType CurrentInjectionType;
+    private bool initializing = true;
     private readonly ComboBox? BoxSelect; // this is just us holding a reference; disposal is done by its parent
 
     public LiveHeXUI(ISaveFileProvider sav, IPKMView editor, PluginSettings settings)
     {
+        Editor = editor;
         SAV = sav;
         if (SAV.SAV.Version != GameVersion.Invalid)
             SAV_Version = sav.SAV.Version;
@@ -39,8 +40,8 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         Remote = new LiveHeXController(sav, editor, CurrentInjectionType);
 
         InitializeComponent();
+        connectionMode.SelectedIndex = settings.USBBotBasePreferred ? 1 : 0;
         this.TranslateInterface(WinFormsTranslator.CurrentLanguage);
-
         TB_IP.Text = _settings.LatestIP;
 
         // Default Wi-Fi ports for loaded save, 6000 for Switch, 8000 for 3DS
@@ -63,7 +64,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         if (BoxSelect is not null)
         {
             BoxSelect.SelectedIndexChanged += ChangeBox;
-            Closing += (_, _) => BoxSelect.SelectedIndexChanged -= ChangeBox;
+            FormClosing += (_, _) => BoxSelect.SelectedIndexChanged -= ChangeBox;
         }
 
         var type = sav.GetType();
@@ -73,6 +74,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         x.Slots.Publisher.Subscribe(this);
 
         CenterToParent();
+        initializing = false;
     }
 
     public ISlotInfo GetSlotData(PictureBox view) => throw new InvalidOperationException();
@@ -259,7 +261,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         }
 
         B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = false;
-        B_Disconnect.Enabled = B_Disconnect.Visible = groupBox1.Enabled = groupBox2.Enabled = groupBox3.Enabled = true;
+        B_Disconnect.Enabled = B_Disconnect.Visible = GB_Boxes.Enabled = groupBox2.Enabled = groupBox3.Enabled = true;
     }
 
     private (LiveHeXValidation, string, LiveHeXVersion) Connect_NTR(ICommunicator com, LiveHeXVersion[] versions)
@@ -331,7 +333,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         bool valid = pkm.Species <= pkm.MaxSpeciesID && pkm.ChecksumValid &&
                      pkm is { Species: 0, EncryptionConstant: 0 }
                          or { Species: not 0, Language: not (int)LanguageID.None and not (int)LanguageID.UNUSED_6 };
-        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : !valid ? (LiveHeXValidation.GameVersion,"Invalid data found.",LiveHeXVersion.Unknown): (LiveHeXValidation.None, "", lv);
+        return !_settings.EnableDevMode && !valid && InjectionBase.CheckRAMShift(Remote.Bot, out string err) ? (LiveHeXValidation.RAMShift, err, lv) : !valid ? (LiveHeXValidation.GameVersion, "Invalid data found.", LiveHeXVersion.Unknown) : (LiveHeXValidation.None, "", lv);
     }
 
     private void B_Disconnect_Click(object sender, EventArgs e)
@@ -344,7 +346,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = true;
             B_Disconnect.Enabled =
                 B_Disconnect.Visible =
-                    groupBox1.Enabled =
+                    GB_Boxes.Enabled =
                         groupBox2.Enabled =
                             groupBox3.Enabled =
                                 false;
@@ -380,10 +382,6 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
     private void B_WriteCurrent_Click(object sender, EventArgs e) => Remote.WriteBox(SAV.CurrentBox);
 
-    private void B_ReadSlot_Click(object sender, EventArgs e) => Remote.ReadActiveSlot((int)NUD_Box.Value - 1, (int)NUD_Slot.Value - 1);
-
-    private void B_WriteSlot_Click(object sender, EventArgs e) => Remote.WriteActiveSlot((int)NUD_Box.Value - 1, (int)NUD_Slot.Value - 1);
-
     private void B_ReadOffset_Click(object sender, EventArgs e)
     {
         bool readPointer = (ModifierKeys & Keys.Control) == Keys.Control;
@@ -394,7 +392,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         if (RB_Absolute.Checked)
             method = RWMethod.Absolute;
         var offset = readPointer && Remote.Bot.com is ICommunicatorNX nx ? nx.GetPointerAddress(TB_Pointer.Text, method == RWMethod.Heap) : Util.GetHexValue64(txt);
-        if ((offset.ToString("X16") != txt.ToUpper().PadLeft(16, '0') && !readPointer)|| offset == InjectionUtil.INVALID_PTR)
+        if ((offset.ToString("X16") != txt.ToUpper().PadLeft(16, '0') && !readPointer) || offset == InjectionUtil.INVALID_PTR)
         {
             WinFormsUtil.Alert("Specified offset is not a valid hex string.");
             return;
@@ -556,7 +554,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
     public ulong GetPointerAddress(ICommunicatorNX sb)
     {
         var ptr = TB_Pointer.Text.Contains("[key]") ? TB_Pointer.Text.Replace("[key]", "").Trim() : TB_Pointer.Text.Trim();
-        var address = sb.GetPointerAddress(ptr,false);
+        var address = sb.GetPointerAddress(ptr, false);
         return address;
     }
 
@@ -888,7 +886,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             BlockData[] subblocks = Remote.Bot.Injector switch
             {
                 LPBasic => [.. LPBasic.SCBlocks[version].Where(z => z.Display == display)],
-                LPPointer =>[.. LPPointer.SCBlocks[version].Where(z => z.Display == display)],
+                LPPointer => [.. LPPointer.SCBlocks[version].Where(z => z.Display == display)],
                 _ => [],
             };
 
@@ -999,6 +997,29 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         return true;
     }
+
+    private void ConnectionMode_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (initializing)
+            return;
+        _settings.USBBotBasePreferred = connectionMode.SelectedIndex == 1;
+        CurrentInjectionType = _settings.USBBotBasePreferred ? InjectorCommunicationType.USB : InjectorCommunicationType.SocketNetwork;
+        Remote = new LiveHeXController(SAV, Editor, CurrentInjectionType);
+        // Default Wi-Fi ports for loaded save, 6000 for Switch, 8000 for 3DS
+        var default_port = RamOffsets.IsSwitchTitle(SAV.SAV) ? 6000 : 8000;
+        TB_Port.ReadOnly = true;
+        if (_settings.USBBotBasePreferred)
+        {
+            // Only use the saved port if using USB-Botbase
+            if (int.TryParse(_settings.LatestPort, out int port))
+                default_port = port;
+            // Allow editing of the port field.
+            TB_Port.ReadOnly = false;
+        }
+        TB_Port.Text = default_port.ToString();
+        SetInjectionTypeView();
+    }
+   
 }
 
 internal class HexTextBox : TextBox

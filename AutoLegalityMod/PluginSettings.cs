@@ -55,8 +55,7 @@ public class PluginSettings
     [Description("Stores the last port used by LiveHeX.")]
     public string LatestPort { get; set; } = "6000";
 
-    [Category(Connection)]
-    [Description("Allows LiveHeX to use USB-Botbase instead of sys-botbase.")]
+    [Browsable(false)]
     public bool USBBotBasePreferred { get; set; }
 
 
