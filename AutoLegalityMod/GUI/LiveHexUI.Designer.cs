@@ -311,9 +311,9 @@
             checkBox2.Location = new System.Drawing.Point(15, 44);
             checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(127, 19);
+            checkBox2.Size = new System.Drawing.Size(129, 19);
             checkBox2.TabIndex = 3;
-            checkBox2.Text = "Inject In Slot on Set";
+            checkBox2.Text = "Inject In Slot On Set";
             checkBox2.UseVisualStyleBackColor = true;
             // 
             // CB_ReadBox
