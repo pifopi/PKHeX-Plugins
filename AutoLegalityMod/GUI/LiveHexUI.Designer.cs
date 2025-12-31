@@ -28,111 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
-            B_ReadCurrent = new System.Windows.Forms.Button();
-            B_WriteCurrent = new System.Windows.Forms.Button();
-            CB_ReadBox = new System.Windows.Forms.CheckBox();
-            TB_IP = new System.Windows.Forms.TextBox();
-            L_IP = new System.Windows.Forms.Label();
-            TB_Port = new System.Windows.Forms.TextBox();
-            L_Port = new System.Windows.Forms.Label();
-            B_Connect = new System.Windows.Forms.Button();
-            B_Disconnect = new System.Windows.Forms.Button();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            checkBox2 = new System.Windows.Forms.CheckBox();
+            tabPage1 = new System.Windows.Forms.TabPage();
             groupBox2 = new System.Windows.Forms.GroupBox();
             TB_Offset = new HexTextBox();
             L_ReadOffset = new System.Windows.Forms.Label();
             B_ReadOffset = new System.Windows.Forms.Button();
-            L_Slot = new System.Windows.Forms.Label();
-            NUD_Slot = new System.Windows.Forms.NumericUpDown();
-            L_Box = new System.Windows.Forms.Label();
-            NUD_Box = new System.Windows.Forms.NumericUpDown();
-            B_ReadSlot = new System.Windows.Forms.Button();
-            B_WriteSlot = new System.Windows.Forms.Button();
-            groupBox3 = new System.Windows.Forms.GroupBox();
-            B_ReadRAM = new System.Windows.Forms.Button();
-            RamSize = new System.Windows.Forms.TextBox();
-            L_ReadRamSize = new System.Windows.Forms.Label();
-            RamOffset = new HexTextBox();
-            L_ReadRamOffset = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            connectionMode = new System.Windows.Forms.ComboBox();
+            L_IP = new System.Windows.Forms.Label();
+            TB_IP = new System.Windows.Forms.TextBox();
+            TB_Port = new System.Windows.Forms.TextBox();
+            groupBox5 = new System.Windows.Forms.GroupBox();
+            CB_BlockName = new System.Windows.Forms.ComboBox();
+            B_EditBlock = new System.Windows.Forms.Button();
+            L_Block = new System.Windows.Forms.Label();
             L_USBState = new System.Windows.Forms.Label();
+            L_Port = new System.Windows.Forms.Label();
+            B_Connect = new System.Windows.Forms.Button();
+            GB_Boxes = new System.Windows.Forms.GroupBox();
+            checkBox2 = new System.Windows.Forms.CheckBox();
+            CB_ReadBox = new System.Windows.Forms.CheckBox();
+            B_ReadCurrent = new System.Windows.Forms.Button();
+            B_WriteCurrent = new System.Windows.Forms.Button();
+            B_Disconnect = new System.Windows.Forms.Button();
+            tabControl1 = new System.Windows.Forms.TabControl();
+            tabPage2 = new System.Windows.Forms.TabPage();
             groupBox4 = new System.Windows.Forms.GroupBox();
             B_ReadPointer = new System.Windows.Forms.Button();
             B_CopyAddress = new System.Windows.Forms.Button();
             B_EditPointer = new System.Windows.Forms.Button();
             TB_Pointer = new HexTextBox();
             L_Pointer = new System.Windows.Forms.Label();
-            groupBox5 = new System.Windows.Forms.GroupBox();
-            CB_BlockName = new System.Windows.Forms.ComboBox();
-            B_EditBlock = new System.Windows.Forms.Button();
-            L_Block = new System.Windows.Forms.Label();
             groupBox6 = new System.Windows.Forms.GroupBox();
             RB_Absolute = new System.Windows.Forms.RadioButton();
             RB_Main = new System.Windows.Forms.RadioButton();
             RB_Heap = new System.Windows.Forms.RadioButton();
             L_OffsRelative = new System.Windows.Forms.Label();
-            tabControl1 = new System.Windows.Forms.TabControl();
-            tabPage1 = new System.Windows.Forms.TabPage();
-            label1 = new System.Windows.Forms.Label();
-            connectionMode = new System.Windows.Forms.ComboBox();
-            tabPage2 = new System.Windows.Forms.TabPage();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)NUD_Slot).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)NUD_Box).BeginInit();
-            groupBox3.SuspendLayout();
-            groupBox4.SuspendLayout();
-            groupBox5.SuspendLayout();
-            groupBox6.SuspendLayout();
-            tabControl1.SuspendLayout();
+            groupBox3 = new System.Windows.Forms.GroupBox();
+            B_ReadRAM = new System.Windows.Forms.Button();
+            RamSize = new System.Windows.Forms.TextBox();
+            L_ReadRamSize = new System.Windows.Forms.Label();
+            RamOffset = new HexTextBox();
+            L_ReadRamOffset = new System.Windows.Forms.Label();
             tabPage1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox5.SuspendLayout();
+            GB_Boxes.SuspendLayout();
+            tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
+            groupBox4.SuspendLayout();
+            groupBox6.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
-            // B_ReadCurrent
+            // tabPage1
             // 
-            B_ReadCurrent.Location = new System.Drawing.Point(15, 70);
-            B_ReadCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_ReadCurrent.Name = "B_ReadCurrent";
-            B_ReadCurrent.Size = new System.Drawing.Size(146, 27);
-            B_ReadCurrent.TabIndex = 0;
-            B_ReadCurrent.Text = "Read Current Box";
-            B_ReadCurrent.UseVisualStyleBackColor = true;
-            B_ReadCurrent.Click += B_ReadCurrent_Click;
+            tabPage1.BackColor = System.Drawing.Color.Transparent;
+            tabPage1.Controls.Add(groupBox2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Controls.Add(connectionMode);
+            tabPage1.Controls.Add(L_IP);
+            tabPage1.Controls.Add(TB_IP);
+            tabPage1.Controls.Add(TB_Port);
+            tabPage1.Controls.Add(groupBox5);
+            tabPage1.Controls.Add(L_USBState);
+            tabPage1.Controls.Add(L_Port);
+            tabPage1.Controls.Add(B_Connect);
+            tabPage1.Controls.Add(GB_Boxes);
+            tabPage1.Controls.Add(B_Disconnect);
+            tabPage1.Location = new System.Drawing.Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            tabPage1.Size = new System.Drawing.Size(421, 232);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Basic";
             // 
-            // B_WriteCurrent
+            // groupBox2
             // 
-            B_WriteCurrent.Location = new System.Drawing.Point(15, 100);
-            B_WriteCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_WriteCurrent.Name = "B_WriteCurrent";
-            B_WriteCurrent.Size = new System.Drawing.Size(146, 27);
-            B_WriteCurrent.TabIndex = 1;
-            B_WriteCurrent.Text = "Write Current Box";
-            B_WriteCurrent.UseVisualStyleBackColor = true;
-            B_WriteCurrent.Click += B_WriteCurrent_Click;
+            groupBox2.Controls.Add(TB_Offset);
+            groupBox2.Controls.Add(L_ReadOffset);
+            groupBox2.Controls.Add(B_ReadOffset);
+            groupBox2.Enabled = false;
+            groupBox2.Location = new System.Drawing.Point(195, 141);
+            groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox2.Size = new System.Drawing.Size(174, 83);
+            groupBox2.TabIndex = 9;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "PKM Reader";
             // 
-            // CB_ReadBox
+            // TB_Offset
             // 
-            CB_ReadBox.AutoSize = true;
-            CB_ReadBox.Checked = true;
-            CB_ReadBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            CB_ReadBox.Location = new System.Drawing.Point(15, 22);
-            CB_ReadBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            CB_ReadBox.Name = "CB_ReadBox";
-            CB_ReadBox.Size = new System.Drawing.Size(138, 19);
-            CB_ReadBox.TabIndex = 2;
-            CB_ReadBox.Text = "Read On Change Box";
-            CB_ReadBox.UseVisualStyleBackColor = true;
+            TB_Offset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            TB_Offset.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            TB_Offset.Location = new System.Drawing.Point(62, 48);
+            TB_Offset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TB_Offset.MaxLength = 16;
+            TB_Offset.Name = "TB_Offset";
+            TB_Offset.Size = new System.Drawing.Size(81, 20);
+            TB_Offset.TabIndex = 16;
+            TB_Offset.Text = "2E32206A";
             // 
-            // TB_IP
+            // L_ReadOffset
             // 
-            TB_IP.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_IP.Location = new System.Drawing.Point(38, 17);
-            TB_IP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TB_IP.Name = "TB_IP";
-            TB_IP.Size = new System.Drawing.Size(129, 20);
-            TB_IP.TabIndex = 3;
-            TB_IP.Text = "111.111.111.111";
+            L_ReadOffset.Location = new System.Drawing.Point(8, 46);
+            L_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_ReadOffset.Name = "L_ReadOffset";
+            L_ReadOffset.Size = new System.Drawing.Size(49, 23);
+            L_ReadOffset.TabIndex = 15;
+            L_ReadOffset.Text = "Offset:";
+            L_ReadOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // B_ReadOffset
+            // 
+            B_ReadOffset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadOffset.Location = new System.Drawing.Point(8, 16);
+            B_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_ReadOffset.Name = "B_ReadOffset";
+            B_ReadOffset.Size = new System.Drawing.Size(146, 27);
+            B_ReadOffset.TabIndex = 13;
+            B_ReadOffset.Text = "Read from Offset";
+            B_ReadOffset.UseVisualStyleBackColor = true;
+            B_ReadOffset.Click += B_ReadOffset_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(203, 19);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(41, 15);
+            label1.TabIndex = 17;
+            label1.Text = "Mode:";
+            // 
+            // connectionMode
+            // 
+            connectionMode.BackColor = System.Drawing.SystemColors.Window;
+            connectionMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            connectionMode.FormattingEnabled = true;
+            connectionMode.Items.AddRange(new object[] { "WiFi", "USB" });
+            connectionMode.Location = new System.Drawing.Point(248, 14);
+            connectionMode.Name = "connectionMode";
+            connectionMode.Size = new System.Drawing.Size(121, 23);
+            connectionMode.TabIndex = 16;
+            connectionMode.SelectedIndexChanged += ConnectionMode_SelectedIndexChanged;
             // 
             // L_IP
             // 
@@ -144,8 +183,20 @@
             L_IP.Text = "IP:";
             L_IP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // TB_IP
+            // 
+            TB_IP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            TB_IP.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            TB_IP.Location = new System.Drawing.Point(38, 17);
+            TB_IP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TB_IP.Name = "TB_IP";
+            TB_IP.Size = new System.Drawing.Size(129, 20);
+            TB_IP.TabIndex = 3;
+            TB_IP.Text = "111.111.111.111";
+            // 
             // TB_Port
             // 
+            TB_Port.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             TB_Port.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             TB_Port.Location = new System.Drawing.Point(47, 43);
             TB_Port.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -154,337 +205,6 @@
             TB_Port.Size = new System.Drawing.Size(48, 20);
             TB_Port.TabIndex = 5;
             TB_Port.Text = "6000";
-            // 
-            // L_Port
-            // 
-            L_Port.Location = new System.Drawing.Point(7, 42);
-            L_Port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_Port.Name = "L_Port";
-            L_Port.Size = new System.Drawing.Size(32, 23);
-            L_Port.TabIndex = 6;
-            L_Port.Text = "Port:";
-            L_Port.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // B_Connect
-            // 
-            B_Connect.Location = new System.Drawing.Point(103, 41);
-            B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_Connect.Name = "B_Connect";
-            B_Connect.Size = new System.Drawing.Size(74, 27);
-            B_Connect.TabIndex = 7;
-            B_Connect.Text = "Connect";
-            B_Connect.UseVisualStyleBackColor = true;
-            B_Connect.Click += B_Connect_Click;
-            // 
-            // B_Disconnect
-            // 
-            B_Disconnect.Location = new System.Drawing.Point(104, 41);
-            B_Disconnect.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            B_Disconnect.Name = "B_Disconnect";
-            B_Disconnect.Size = new System.Drawing.Size(74, 27);
-            B_Disconnect.TabIndex = 15;
-            B_Disconnect.Text = "Disconnect";
-            B_Disconnect.UseVisualStyleBackColor = true;
-            B_Disconnect.Visible = false;
-            B_Disconnect.Click += B_Disconnect_Click;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(checkBox2);
-            groupBox1.Controls.Add(CB_ReadBox);
-            groupBox1.Controls.Add(B_ReadCurrent);
-            groupBox1.Controls.Add(B_WriteCurrent);
-            groupBox1.Enabled = false;
-            groupBox1.Location = new System.Drawing.Point(7, 80);
-            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox1.Size = new System.Drawing.Size(174, 134);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Boxes";
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Checked = true;
-            checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            checkBox2.Location = new System.Drawing.Point(15, 44);
-            checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new System.Drawing.Size(127, 19);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "Inject In Slot on Set";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(TB_Offset);
-            groupBox2.Controls.Add(L_ReadOffset);
-            groupBox2.Controls.Add(B_ReadOffset);
-            groupBox2.Controls.Add(L_Slot);
-            groupBox2.Controls.Add(NUD_Slot);
-            groupBox2.Controls.Add(L_Box);
-            groupBox2.Controls.Add(NUD_Box);
-            groupBox2.Controls.Add(B_ReadSlot);
-            groupBox2.Controls.Add(B_WriteSlot);
-            groupBox2.Enabled = false;
-            groupBox2.Location = new System.Drawing.Point(240, 6);
-            groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox2.Size = new System.Drawing.Size(174, 196);
-            groupBox2.TabIndex = 9;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "PKM Editor";
-            // 
-            // TB_Offset
-            // 
-            TB_Offset.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_Offset.Location = new System.Drawing.Point(76, 163);
-            TB_Offset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TB_Offset.MaxLength = 16;
-            TB_Offset.Name = "TB_Offset";
-            TB_Offset.Size = new System.Drawing.Size(81, 20);
-            TB_Offset.TabIndex = 16;
-            TB_Offset.Text = "2E32206A";
-            // 
-            // L_ReadOffset
-            // 
-            L_ReadOffset.Location = new System.Drawing.Point(20, 163);
-            L_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_ReadOffset.Name = "L_ReadOffset";
-            L_ReadOffset.Size = new System.Drawing.Size(49, 23);
-            L_ReadOffset.TabIndex = 15;
-            L_ReadOffset.Text = "Offset:";
-            L_ReadOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // B_ReadOffset
-            // 
-            B_ReadOffset.Location = new System.Drawing.Point(15, 133);
-            B_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_ReadOffset.Name = "B_ReadOffset";
-            B_ReadOffset.Size = new System.Drawing.Size(146, 27);
-            B_ReadOffset.TabIndex = 13;
-            B_ReadOffset.Text = "Read from Offset";
-            B_ReadOffset.UseVisualStyleBackColor = true;
-            B_ReadOffset.Click += B_ReadOffset_Click;
-            // 
-            // L_Slot
-            // 
-            L_Slot.Location = new System.Drawing.Point(31, 102);
-            L_Slot.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_Slot.Name = "L_Slot";
-            L_Slot.Size = new System.Drawing.Size(49, 23);
-            L_Slot.TabIndex = 12;
-            L_Slot.Text = "Slot:";
-            L_Slot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // NUD_Slot
-            // 
-            NUD_Slot.Location = new System.Drawing.Point(88, 104);
-            NUD_Slot.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            NUD_Slot.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
-            NUD_Slot.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            NUD_Slot.Name = "NUD_Slot";
-            NUD_Slot.Size = new System.Drawing.Size(44, 23);
-            NUD_Slot.TabIndex = 11;
-            NUD_Slot.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // L_Box
-            // 
-            L_Box.Location = new System.Drawing.Point(31, 77);
-            L_Box.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_Box.Name = "L_Box";
-            L_Box.Size = new System.Drawing.Size(49, 23);
-            L_Box.TabIndex = 10;
-            L_Box.Text = "Box:";
-            L_Box.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // NUD_Box
-            // 
-            NUD_Box.Location = new System.Drawing.Point(88, 80);
-            NUD_Box.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            NUD_Box.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
-            NUD_Box.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            NUD_Box.Name = "NUD_Box";
-            NUD_Box.Size = new System.Drawing.Size(44, 23);
-            NUD_Box.TabIndex = 2;
-            NUD_Box.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // B_ReadSlot
-            // 
-            B_ReadSlot.Location = new System.Drawing.Point(15, 21);
-            B_ReadSlot.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_ReadSlot.Name = "B_ReadSlot";
-            B_ReadSlot.Size = new System.Drawing.Size(146, 27);
-            B_ReadSlot.TabIndex = 0;
-            B_ReadSlot.Text = "Read from Slot";
-            B_ReadSlot.UseVisualStyleBackColor = true;
-            B_ReadSlot.Click += B_ReadSlot_Click;
-            // 
-            // B_WriteSlot
-            // 
-            B_WriteSlot.Location = new System.Drawing.Point(15, 51);
-            B_WriteSlot.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_WriteSlot.Name = "B_WriteSlot";
-            B_WriteSlot.Size = new System.Drawing.Size(146, 27);
-            B_WriteSlot.TabIndex = 1;
-            B_WriteSlot.Text = "Write to Slot";
-            B_WriteSlot.UseVisualStyleBackColor = true;
-            B_WriteSlot.Click += B_WriteSlot_Click;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(B_ReadRAM);
-            groupBox3.Controls.Add(RamSize);
-            groupBox3.Controls.Add(L_ReadRamSize);
-            groupBox3.Controls.Add(RamOffset);
-            groupBox3.Controls.Add(L_ReadRamOffset);
-            groupBox3.Enabled = false;
-            groupBox3.Location = new System.Drawing.Point(39, 6);
-            groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox3.Size = new System.Drawing.Size(160, 115);
-            groupBox3.TabIndex = 10;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "RAM Editor";
-            // 
-            // B_ReadRAM
-            // 
-            B_ReadRAM.Location = new System.Drawing.Point(19, 69);
-            B_ReadRAM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_ReadRAM.Name = "B_ReadRAM";
-            B_ReadRAM.Size = new System.Drawing.Size(84, 27);
-            B_ReadRAM.TabIndex = 21;
-            B_ReadRAM.Text = "Edit RAM";
-            B_ReadRAM.UseVisualStyleBackColor = true;
-            B_ReadRAM.Click += B_ReadRAM_Click;
-            // 
-            // RamSize
-            // 
-            RamSize.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            RamSize.Location = new System.Drawing.Point(68, 45);
-            RamSize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            RamSize.MaxLength = 8;
-            RamSize.Name = "RamSize";
-            RamSize.Size = new System.Drawing.Size(63, 20);
-            RamSize.TabIndex = 20;
-            RamSize.Text = "344";
-            // 
-            // L_ReadRamSize
-            // 
-            L_ReadRamSize.Location = new System.Drawing.Point(19, 43);
-            L_ReadRamSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_ReadRamSize.Name = "L_ReadRamSize";
-            L_ReadRamSize.Size = new System.Drawing.Size(42, 23);
-            L_ReadRamSize.TabIndex = 19;
-            L_ReadRamSize.Text = "Size:";
-            L_ReadRamSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // RamOffset
-            // 
-            RamOffset.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            RamOffset.Location = new System.Drawing.Point(68, 21);
-            RamOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            RamOffset.MaxLength = 16;
-            RamOffset.Name = "RamOffset";
-            RamOffset.Size = new System.Drawing.Size(81, 20);
-            RamOffset.TabIndex = 18;
-            RamOffset.Text = "2E32206A";
-            // 
-            // L_ReadRamOffset
-            // 
-            L_ReadRamOffset.Location = new System.Drawing.Point(12, 20);
-            L_ReadRamOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_ReadRamOffset.Name = "L_ReadRamOffset";
-            L_ReadRamOffset.Size = new System.Drawing.Size(49, 23);
-            L_ReadRamOffset.TabIndex = 17;
-            L_ReadRamOffset.Text = "Offset:";
-            L_ReadRamOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // L_USBState
-            // 
-            L_USBState.AutoSize = true;
-            L_USBState.Location = new System.Drawing.Point(7, 19);
-            L_USBState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_USBState.Name = "L_USBState";
-            L_USBState.Size = new System.Drawing.Size(109, 15);
-            L_USBState.TabIndex = 11;
-            L_USBState.Text = "USB-Botbase Mode";
-            L_USBState.Visible = false;
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(B_ReadPointer);
-            groupBox4.Controls.Add(B_CopyAddress);
-            groupBox4.Controls.Add(B_EditPointer);
-            groupBox4.Controls.Add(TB_Pointer);
-            groupBox4.Controls.Add(L_Pointer);
-            groupBox4.Enabled = false;
-            groupBox4.Location = new System.Drawing.Point(37, 208);
-            groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox4.Size = new System.Drawing.Size(358, 84);
-            groupBox4.TabIndex = 12;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Pointer Lookup";
-            // 
-            // B_ReadPointer
-            // 
-            B_ReadPointer.Location = new System.Drawing.Point(238, 50);
-            B_ReadPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_ReadPointer.Name = "B_ReadPointer";
-            B_ReadPointer.Size = new System.Drawing.Size(110, 27);
-            B_ReadPointer.TabIndex = 23;
-            B_ReadPointer.Text = "Read Pointer";
-            B_ReadPointer.UseVisualStyleBackColor = true;
-            B_ReadPointer.Click += B_ReadPointer_Click;
-            // 
-            // B_CopyAddress
-            // 
-            B_CopyAddress.Location = new System.Drawing.Point(10, 50);
-            B_CopyAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_CopyAddress.Name = "B_CopyAddress";
-            B_CopyAddress.Size = new System.Drawing.Size(110, 27);
-            B_CopyAddress.TabIndex = 22;
-            B_CopyAddress.Text = "Copy Address";
-            B_CopyAddress.UseVisualStyleBackColor = true;
-            B_CopyAddress.Click += B_CopyAddress_Click;
-            // 
-            // B_EditPointer
-            // 
-            B_EditPointer.Location = new System.Drawing.Point(125, 50);
-            B_EditPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            B_EditPointer.Name = "B_EditPointer";
-            B_EditPointer.Size = new System.Drawing.Size(110, 27);
-            B_EditPointer.TabIndex = 21;
-            B_EditPointer.Text = "Edit RAM";
-            B_EditPointer.UseVisualStyleBackColor = true;
-            B_EditPointer.Click += B_EditPointerData_Click;
-            // 
-            // TB_Pointer
-            // 
-            TB_Pointer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            TB_Pointer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            TB_Pointer.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_Pointer.Location = new System.Drawing.Point(68, 21);
-            TB_Pointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            TB_Pointer.Name = "TB_Pointer";
-            TB_Pointer.Size = new System.Drawing.Size(278, 20);
-            TB_Pointer.TabIndex = 18;
-            // 
-            // L_Pointer
-            // 
-            L_Pointer.Location = new System.Drawing.Point(4, 18);
-            L_Pointer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            L_Pointer.Name = "L_Pointer";
-            L_Pointer.Size = new System.Drawing.Size(57, 23);
-            L_Pointer.TabIndex = 17;
-            L_Pointer.Text = "Pointer:";
-            L_Pointer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // groupBox5
             // 
@@ -503,7 +223,7 @@
             // 
             // CB_BlockName
             // 
-            CB_BlockName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            CB_BlockName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             CB_BlockName.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             CB_BlockName.Location = new System.Drawing.Point(68, 22);
             CB_BlockName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -533,6 +253,216 @@
             L_Block.Text = "Block:";
             L_Block.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // L_USBState
+            // 
+            L_USBState.AutoSize = true;
+            L_USBState.Location = new System.Drawing.Point(7, 19);
+            L_USBState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_USBState.Name = "L_USBState";
+            L_USBState.Size = new System.Drawing.Size(109, 15);
+            L_USBState.TabIndex = 11;
+            L_USBState.Text = "USB-Botbase Mode";
+            L_USBState.Visible = false;
+            // 
+            // L_Port
+            // 
+            L_Port.Location = new System.Drawing.Point(7, 42);
+            L_Port.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_Port.Name = "L_Port";
+            L_Port.Size = new System.Drawing.Size(32, 23);
+            L_Port.TabIndex = 6;
+            L_Port.Text = "Port:";
+            L_Port.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // B_Connect
+            // 
+            B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_Connect.Location = new System.Drawing.Point(103, 41);
+            B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_Connect.Name = "B_Connect";
+            B_Connect.Size = new System.Drawing.Size(74, 27);
+            B_Connect.TabIndex = 7;
+            B_Connect.Text = "Connect";
+            B_Connect.UseVisualStyleBackColor = true;
+            B_Connect.Click += B_Connect_Click;
+            // 
+            // GB_Boxes
+            // 
+            GB_Boxes.Controls.Add(checkBox2);
+            GB_Boxes.Controls.Add(CB_ReadBox);
+            GB_Boxes.Controls.Add(B_ReadCurrent);
+            GB_Boxes.Controls.Add(B_WriteCurrent);
+            GB_Boxes.Enabled = false;
+            GB_Boxes.ForeColor = System.Drawing.SystemColors.ControlText;
+            GB_Boxes.Location = new System.Drawing.Point(7, 80);
+            GB_Boxes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            GB_Boxes.Name = "GB_Boxes";
+            GB_Boxes.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            GB_Boxes.Size = new System.Drawing.Size(174, 144);
+            GB_Boxes.TabIndex = 8;
+            GB_Boxes.TabStop = false;
+            GB_Boxes.Text = "Boxes";
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Checked = true;
+            checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            checkBox2.Location = new System.Drawing.Point(15, 44);
+            checkBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new System.Drawing.Size(127, 19);
+            checkBox2.TabIndex = 3;
+            checkBox2.Text = "Inject In Slot on Set";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // CB_ReadBox
+            // 
+            CB_ReadBox.AutoSize = true;
+            CB_ReadBox.Checked = true;
+            CB_ReadBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            CB_ReadBox.Location = new System.Drawing.Point(15, 22);
+            CB_ReadBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CB_ReadBox.Name = "CB_ReadBox";
+            CB_ReadBox.Size = new System.Drawing.Size(138, 19);
+            CB_ReadBox.TabIndex = 2;
+            CB_ReadBox.Text = "Read On Change Box";
+            CB_ReadBox.UseVisualStyleBackColor = true;
+            // 
+            // B_ReadCurrent
+            // 
+            B_ReadCurrent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadCurrent.Location = new System.Drawing.Point(15, 70);
+            B_ReadCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_ReadCurrent.Name = "B_ReadCurrent";
+            B_ReadCurrent.Size = new System.Drawing.Size(146, 27);
+            B_ReadCurrent.TabIndex = 0;
+            B_ReadCurrent.Text = "Read Current Box";
+            B_ReadCurrent.UseVisualStyleBackColor = true;
+            B_ReadCurrent.Click += B_ReadCurrent_Click;
+            // 
+            // B_WriteCurrent
+            // 
+            B_WriteCurrent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_WriteCurrent.Location = new System.Drawing.Point(15, 100);
+            B_WriteCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_WriteCurrent.Name = "B_WriteCurrent";
+            B_WriteCurrent.Size = new System.Drawing.Size(146, 27);
+            B_WriteCurrent.TabIndex = 1;
+            B_WriteCurrent.Text = "Write Current Box";
+            B_WriteCurrent.UseVisualStyleBackColor = true;
+            B_WriteCurrent.Click += B_WriteCurrent_Click;
+            // 
+            // B_Disconnect
+            // 
+            B_Disconnect.Location = new System.Drawing.Point(104, 41);
+            B_Disconnect.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            B_Disconnect.Name = "B_Disconnect";
+            B_Disconnect.Size = new System.Drawing.Size(74, 27);
+            B_Disconnect.TabIndex = 15;
+            B_Disconnect.Text = "Disconnect";
+            B_Disconnect.UseVisualStyleBackColor = true;
+            B_Disconnect.Visible = false;
+            B_Disconnect.Click += B_Disconnect_Click;
+            // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Location = new System.Drawing.Point(1, 1);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new System.Drawing.Size(429, 260);
+            tabControl1.TabIndex = 16;
+            // 
+            // tabPage2
+            // 
+            tabPage2.BackColor = System.Drawing.Color.Transparent;
+            tabPage2.Controls.Add(groupBox4);
+            tabPage2.Controls.Add(groupBox6);
+            tabPage2.Controls.Add(groupBox3);
+            tabPage2.Location = new System.Drawing.Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            tabPage2.Size = new System.Drawing.Size(421, 232);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Advance";
+            // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(B_ReadPointer);
+            groupBox4.Controls.Add(B_CopyAddress);
+            groupBox4.Controls.Add(B_EditPointer);
+            groupBox4.Controls.Add(TB_Pointer);
+            groupBox4.Controls.Add(L_Pointer);
+            groupBox4.Enabled = false;
+            groupBox4.Location = new System.Drawing.Point(8, 127);
+            groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox4.Size = new System.Drawing.Size(378, 84);
+            groupBox4.TabIndex = 12;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Pointer Lookup";
+            // 
+            // B_ReadPointer
+            // 
+            B_ReadPointer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadPointer.Location = new System.Drawing.Point(248, 50);
+            B_ReadPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_ReadPointer.Name = "B_ReadPointer";
+            B_ReadPointer.Size = new System.Drawing.Size(110, 27);
+            B_ReadPointer.TabIndex = 23;
+            B_ReadPointer.Text = "Read Pointer";
+            B_ReadPointer.UseVisualStyleBackColor = true;
+            B_ReadPointer.Click += B_ReadPointer_Click;
+            // 
+            // B_CopyAddress
+            // 
+            B_CopyAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_CopyAddress.Location = new System.Drawing.Point(12, 50);
+            B_CopyAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_CopyAddress.Name = "B_CopyAddress";
+            B_CopyAddress.Size = new System.Drawing.Size(110, 27);
+            B_CopyAddress.TabIndex = 22;
+            B_CopyAddress.Text = "Copy Address";
+            B_CopyAddress.UseVisualStyleBackColor = true;
+            B_CopyAddress.Click += B_CopyAddress_Click;
+            // 
+            // B_EditPointer
+            // 
+            B_EditPointer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_EditPointer.Location = new System.Drawing.Point(130, 50);
+            B_EditPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_EditPointer.Name = "B_EditPointer";
+            B_EditPointer.Size = new System.Drawing.Size(110, 27);
+            B_EditPointer.TabIndex = 21;
+            B_EditPointer.Text = "Edit RAM";
+            B_EditPointer.UseVisualStyleBackColor = true;
+            B_EditPointer.Click += B_EditPointerData_Click;
+            // 
+            // TB_Pointer
+            // 
+            TB_Pointer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            TB_Pointer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            TB_Pointer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            TB_Pointer.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            TB_Pointer.Location = new System.Drawing.Point(68, 21);
+            TB_Pointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TB_Pointer.Name = "TB_Pointer";
+            TB_Pointer.Size = new System.Drawing.Size(278, 20);
+            TB_Pointer.TabIndex = 18;
+            // 
+            // L_Pointer
+            // 
+            L_Pointer.Location = new System.Drawing.Point(4, 18);
+            L_Pointer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_Pointer.Name = "L_Pointer";
+            L_Pointer.Size = new System.Drawing.Size(57, 23);
+            L_Pointer.TabIndex = 17;
+            L_Pointer.Text = "Pointer:";
+            L_Pointer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // groupBox6
             // 
             groupBox6.Controls.Add(RB_Absolute);
@@ -540,11 +470,11 @@
             groupBox6.Controls.Add(RB_Heap);
             groupBox6.Controls.Add(L_OffsRelative);
             groupBox6.Enabled = false;
-            groupBox6.Location = new System.Drawing.Point(22, 127);
+            groupBox6.Location = new System.Drawing.Point(176, 6);
             groupBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox6.Size = new System.Drawing.Size(210, 73);
+            groupBox6.Size = new System.Drawing.Size(210, 115);
             groupBox6.TabIndex = 14;
             groupBox6.TabStop = false;
             groupBox6.Text = "RAM Config";
@@ -594,77 +524,84 @@
             L_OffsRelative.TabIndex = 0;
             L_OffsRelative.Text = "RAM offsets relative to:";
             // 
-            // tabControl1
+            // groupBox3
             // 
-            tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new System.Drawing.Point(1, 1);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(429, 332);
-            tabControl1.TabIndex = 16;
+            groupBox3.Controls.Add(B_ReadRAM);
+            groupBox3.Controls.Add(RamSize);
+            groupBox3.Controls.Add(L_ReadRamSize);
+            groupBox3.Controls.Add(RamOffset);
+            groupBox3.Controls.Add(L_ReadRamOffset);
+            groupBox3.Enabled = false;
+            groupBox3.Location = new System.Drawing.Point(8, 6);
+            groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox3.Size = new System.Drawing.Size(160, 115);
+            groupBox3.TabIndex = 10;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "RAM Editor";
             // 
-            // tabPage1
+            // B_ReadRAM
             // 
-            tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
-            tabPage1.Controls.Add(label1);
-            tabPage1.Controls.Add(connectionMode);
-            tabPage1.Controls.Add(L_IP);
-            tabPage1.Controls.Add(TB_IP);
-            tabPage1.Controls.Add(groupBox5);
-            tabPage1.Controls.Add(L_USBState);
-            tabPage1.Controls.Add(L_Port);
-            tabPage1.Controls.Add(TB_Port);
-            tabPage1.Controls.Add(B_Connect);
-            tabPage1.Controls.Add(groupBox1);
-            tabPage1.Controls.Add(B_Disconnect);
-            tabPage1.Location = new System.Drawing.Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(421, 304);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "Basic";
+            B_ReadRAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadRAM.Location = new System.Drawing.Point(19, 69);
+            B_ReadRAM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            B_ReadRAM.Name = "B_ReadRAM";
+            B_ReadRAM.Size = new System.Drawing.Size(84, 27);
+            B_ReadRAM.TabIndex = 21;
+            B_ReadRAM.Text = "Edit RAM";
+            B_ReadRAM.UseVisualStyleBackColor = true;
+            B_ReadRAM.Click += B_ReadRAM_Click;
             // 
-            // label1
+            // RamSize
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(218, 24);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(41, 15);
-            label1.TabIndex = 17;
-            label1.Text = "Mode:";
+            RamSize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            RamSize.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            RamSize.Location = new System.Drawing.Point(68, 45);
+            RamSize.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            RamSize.MaxLength = 8;
+            RamSize.Name = "RamSize";
+            RamSize.Size = new System.Drawing.Size(63, 20);
+            RamSize.TabIndex = 20;
+            RamSize.Text = "344";
             // 
-            // connectionMode
+            // L_ReadRamSize
             // 
-            connectionMode.BackColor = System.Drawing.SystemColors.Window;
-            connectionMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            connectionMode.FormattingEnabled = true;
-            connectionMode.Items.AddRange(new object[] { "WiFi", "USB" });
-            connectionMode.Location = new System.Drawing.Point(263, 19);
-            connectionMode.Name = "connectionMode";
-            connectionMode.Size = new System.Drawing.Size(121, 23);
-            connectionMode.TabIndex = 16;
-            connectionMode.SelectedIndexChanged += connectionMode_SelectedIndexChanged;
+            L_ReadRamSize.Location = new System.Drawing.Point(19, 43);
+            L_ReadRamSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_ReadRamSize.Name = "L_ReadRamSize";
+            L_ReadRamSize.Size = new System.Drawing.Size(42, 23);
+            L_ReadRamSize.TabIndex = 19;
+            L_ReadRamSize.Text = "Size:";
+            L_ReadRamSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tabPage2
+            // RamOffset
             // 
-            tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            tabPage2.Controls.Add(groupBox2);
-            tabPage2.Controls.Add(groupBox4);
-            tabPage2.Controls.Add(groupBox6);
-            tabPage2.Controls.Add(groupBox3);
-            tabPage2.Location = new System.Drawing.Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            tabPage2.Size = new System.Drawing.Size(421, 304);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Advance";
+            RamOffset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            RamOffset.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            RamOffset.Location = new System.Drawing.Point(68, 21);
+            RamOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            RamOffset.MaxLength = 16;
+            RamOffset.Name = "RamOffset";
+            RamOffset.Size = new System.Drawing.Size(81, 20);
+            RamOffset.TabIndex = 18;
+            RamOffset.Text = "2E32206A";
+            // 
+            // L_ReadRamOffset
+            // 
+            L_ReadRamOffset.Location = new System.Drawing.Point(12, 20);
+            L_ReadRamOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            L_ReadRamOffset.Name = "L_ReadRamOffset";
+            L_ReadRamOffset.Size = new System.Drawing.Size(49, 23);
+            L_ReadRamOffset.TabIndex = 17;
+            L_ReadRamOffset.Text = "Offset:";
+            L_ReadRamOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // LiveHeXUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(433, 337);
+            ClientSize = new System.Drawing.Size(429, 261);
             Controls.Add(tabControl1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -674,76 +611,68 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             Text = "LiveHeXUI";
             FormClosing += LiveHeXUI_FormClosing;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)NUD_Slot).EndInit();
-            ((System.ComponentModel.ISupportInitialize)NUD_Box).EndInit();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            GB_Boxes.ResumeLayout(false);
+            GB_Boxes.PerformLayout();
+            tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button B_ReadCurrent;
-        private System.Windows.Forms.Button B_WriteCurrent;
-        private System.Windows.Forms.CheckBox CB_ReadBox;
-        private System.Windows.Forms.TextBox TB_IP;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox connectionMode;
         private System.Windows.Forms.Label L_IP;
+        private System.Windows.Forms.TextBox TB_IP;
         private System.Windows.Forms.TextBox TB_Port;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ComboBox CB_BlockName;
+        private System.Windows.Forms.Button B_EditBlock;
+        private System.Windows.Forms.Label L_Block;
+        private System.Windows.Forms.Label L_USBState;
         private System.Windows.Forms.Label L_Port;
         private System.Windows.Forms.Button B_Connect;
-        private System.Windows.Forms.Button B_Disconnect;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button B_ReadSlot;
-        private System.Windows.Forms.Button B_WriteSlot;
-        private System.Windows.Forms.Label L_Slot;
-        private System.Windows.Forms.NumericUpDown NUD_Slot;
-        private System.Windows.Forms.Label L_Box;
-        private System.Windows.Forms.NumericUpDown NUD_Box;
+        private System.Windows.Forms.GroupBox GB_Boxes;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox CB_ReadBox;
+        private System.Windows.Forms.Button B_ReadCurrent;
+        private System.Windows.Forms.Button B_WriteCurrent;
+        private System.Windows.Forms.Button B_Disconnect;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private HexTextBox TB_Offset;
         private System.Windows.Forms.Label L_ReadOffset;
         private System.Windows.Forms.Button B_ReadOffset;
-        private HexTextBox TB_Offset;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button B_ReadPointer;
+        private System.Windows.Forms.Button B_CopyAddress;
+        private System.Windows.Forms.Button B_EditPointer;
+        private HexTextBox TB_Pointer;
+        private System.Windows.Forms.Label L_Pointer;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton RB_Absolute;
+        private System.Windows.Forms.RadioButton RB_Main;
+        private System.Windows.Forms.RadioButton RB_Heap;
+        private System.Windows.Forms.Label L_OffsRelative;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button B_ReadRAM;
         private System.Windows.Forms.TextBox RamSize;
         private System.Windows.Forms.Label L_ReadRamSize;
         private HexTextBox RamOffset;
         private System.Windows.Forms.Label L_ReadRamOffset;
-        private System.Windows.Forms.Label L_USBState;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button B_EditPointer;
-        private HexTextBox TB_Pointer;
-        private System.Windows.Forms.Label L_Pointer;
-        private System.Windows.Forms.Button B_CopyAddress;
-        private System.Windows.Forms.Button B_ReadPointer;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox CB_BlockName;
-        private System.Windows.Forms.Button B_EditBlock;
-        private System.Windows.Forms.Label L_Block;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.RadioButton RB_Absolute;
-        private System.Windows.Forms.RadioButton RB_Main;
-        private System.Windows.Forms.RadioButton RB_Heap;
-        private System.Windows.Forms.Label L_OffsRelative;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox connectionMode;
     }
 }
