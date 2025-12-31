@@ -39,23 +39,23 @@ steps:
     restoreSolution: '$(Build.SourcesDirectory)/PKHeX/PKHeX.sln'
     noCache: true
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build PKHeX.Core (dotnet)'
+- task: MSBuild@1
   inputs:
-    command: 'build'
-    projects: '$(Build.SourcesDirectory)/PKHeX/PKHeX.Core/PKHeX.Core.csproj'
-    arguments: '--configuration $(buildConfiguration) --no-restore /p:Platform="$(buildPlatform)"'
+    solution: '$(Build.SourcesDirectory)/PKHeX/PKHeX.Core/PKHeX.Core.csproj'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    createLogFile: true
 
 - powershell: |
     $nugetver = (Get-ChildItem "$(UserProfile)/.nuget/packages/pkhex.core" | Sort-Object -Property LastWriteTime -Descending)[0].Name
-    Copy-Item "$(Build.SourcesDirectory)\pkhex\PKHeX.Core\bin\Release\net10.0\PKHeX.Core.dll" "$(UserProfile)\.nuget\packages\pkhex.core\$nugetver\lib\net10.0"
+    Copy-Item "$(Build.SourcesDirectory)\pkhex\PKHeX.Core\bin\Any CPU\Release\net10.0\PKHeX.Core.dll" "$(UserProfile)\.nuget\packages\pkhex.core\$nugetver\lib\net10.0"
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build PKHeX-Plugins solution (dotnet)'
+- task: VSBuild@1
   inputs:
-    command: 'build'
-    projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) --no-restore /p:Platform="$(buildPlatform)"'
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    createLogFile: true
 
 - task: CmdLine@2
   inputs:
