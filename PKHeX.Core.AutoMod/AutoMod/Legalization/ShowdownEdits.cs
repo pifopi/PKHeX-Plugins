@@ -157,7 +157,7 @@ public static class ShowdownEdits
             }
         }
 
-        pk.SetSuggestedFormArgument(enc.Species, enc.Form, enc.Context, new LegalityAnalysis(pk).Info.EvoChainsAllGens);
+        pk.SetSuggestedFormArgument(pk.Species, pk.Form, pk.Context, new LegalityAnalysis(pk).Info.EvoChainsAllGens, enc.Species);
         if (evolutionRequired || formchange || (pk.Ability != set.Ability && set.Ability != -1))
         {
             var abilitypref = (AbilityPermission)pk.PersonalInfo.GetIndexOfAbility(set.Ability);
