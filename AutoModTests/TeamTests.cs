@@ -29,7 +29,7 @@ public static class TeamTests
         {
             var result = new TestResult(s);
             results.Add(result);
-            var sav = BlankSaveFile.Get(s.Context, "ALMUT");
+            var sav = BlankSaveFile.Get(s, "ALMUT");
             RecentTrainerCache.SetRecentTrainer(sav);
 
             var lines = File.ReadAllLines(file).Where(z => !z.StartsWith("====="));
