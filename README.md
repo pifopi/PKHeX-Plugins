@@ -4,7 +4,7 @@ This Fork is owned by [@santacrab2](https://github.com/santacrab2)
 The original project is owned by [@architdate](https://github.com/architdate) (Discord: thecommondude) and [@kwsch](https://github.com/kwsch) (Discord: kwsch).
 
 ## Building  
-This project requires an IDE that supports compiling .NET based code, such as Visual Studio 2022, and the [.NET 9.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0).
+This project requires an IDE that supports compiling .NET based code, such as Visual Studio 2026, and the [.NET 10.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
 
 **Regular Builds**  
 Regular builds will usually succeed unless there are changes that are incompatible with the NuGet [PKHeX.Core](https://www.nuget.org/packages/PKHeX.Core) package dependency specified in the `.csproj` files of the projects. If building fails, use the bleeding edge method instead.
@@ -22,7 +22,7 @@ Use this build method only if the regular builds fail. The Azure Pipelines CI wi
 - Open the PKHeX solution, change your environment to `Release`, right-click on the `PKHeX.Core` project, and click `Rebuild` to build the project.
 - Open the PKHeX-Plugins solution and right-click to `Restore NuGet Packages`.
 - Next, replace the most recent NuGet packages with the newly-built `PKHeX.Core.dll` files.
-   - Copy the `PKHeX.Core.dll` file located in `PKHeX.Core\bin\Release\net9.0` to the following folder with the most recent date:
+   - Copy the `PKHeX.Core.dll` file located in `PKHeX.Core\bin\Release\net10.0` to the following folder with the most recent date:
        * `C:\Users\%USERNAME%\.nuget\packages\pkhex.core\YY.MM.DD\lib\net9.0`
 - Right click the PKHeX-Plugins solution and `Rebuild All`. This should build the mod with the latest `PKHeX.Core` version so that it can be used with the latest commit of PKHeX.
 - The compiled DLLs will be in the same location as with the regular builds. 
