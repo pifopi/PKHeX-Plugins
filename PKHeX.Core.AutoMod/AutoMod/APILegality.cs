@@ -807,7 +807,6 @@ public static class APILegality
             // EncounterTrade4 doesn't have fixed PIDs, so don't early return
             case EncounterTrade3:
             case EncounterTrade4PID:
-            case EncounterTrade4RanchGift:
                 pk.SetEncounterTradeIVs();
                 return; // Fixed PID, no need to mutate
         }
