@@ -99,7 +99,7 @@
             tabPage1.Location = new System.Drawing.Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(421, 232);
+            tabPage1.Size = new System.Drawing.Size(405, 232);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Basic";
             // 
@@ -224,11 +224,11 @@
             groupBox5.Controls.Add(B_EditBlock);
             groupBox5.Controls.Add(L_Block);
             groupBox5.Enabled = false;
-            groupBox5.Location = new System.Drawing.Point(195, 80);
+            groupBox5.Location = new System.Drawing.Point(195, 43);
             groupBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox5.Name = "groupBox5";
             groupBox5.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox5.Size = new System.Drawing.Size(219, 55);
+            groupBox5.Size = new System.Drawing.Size(202, 92);
             groupBox5.TabIndex = 13;
             groupBox5.TabStop = false;
             groupBox5.Text = "Block Editor";
@@ -237,7 +237,7 @@
             // 
             CB_BlockName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             CB_BlockName.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            CB_BlockName.Location = new System.Drawing.Point(68, 22);
+            CB_BlockName.Location = new System.Drawing.Point(53, 22);
             CB_BlockName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             CB_BlockName.Name = "CB_BlockName";
             CB_BlockName.Size = new System.Drawing.Size(143, 22);
@@ -246,7 +246,8 @@
             // 
             // B_EditBlock
             // 
-            B_EditBlock.Location = new System.Drawing.Point(262, 21);
+            B_EditBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_EditBlock.Location = new System.Drawing.Point(62, 50);
             B_EditBlock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_EditBlock.Name = "B_EditBlock";
             B_EditBlock.Size = new System.Drawing.Size(84, 28);
@@ -257,10 +258,10 @@
             // 
             // L_Block
             // 
-            L_Block.Location = new System.Drawing.Point(12, 21);
+            L_Block.Location = new System.Drawing.Point(8, 22);
             L_Block.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             L_Block.Name = "L_Block";
-            L_Block.Size = new System.Drawing.Size(49, 23);
+            L_Block.Size = new System.Drawing.Size(40, 23);
             L_Block.TabIndex = 17;
             L_Block.Text = "Block:";
             L_Block.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -373,7 +374,7 @@
             tabControl1.Location = new System.Drawing.Point(1, 1);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new System.Drawing.Size(429, 260);
+            tabControl1.Size = new System.Drawing.Size(413, 260);
             tabControl1.TabIndex = 16;
             // 
             // tabPage2
@@ -385,7 +386,7 @@
             tabPage2.Location = new System.Drawing.Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            tabPage2.Size = new System.Drawing.Size(421, 232);
+            tabPage2.Size = new System.Drawing.Size(421, 305);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Advanced";
             // 
@@ -602,7 +603,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(429, 261);
+            ClientSize = new System.Drawing.Size(418, 261);
             Controls.Add(tabControl1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

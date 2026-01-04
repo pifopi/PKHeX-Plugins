@@ -1019,7 +1019,6 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         TB_Port.Text = default_port.ToString();
         SetInjectionTypeView();
     }
-   
 }
 
 internal class HexTextBox : TextBox
