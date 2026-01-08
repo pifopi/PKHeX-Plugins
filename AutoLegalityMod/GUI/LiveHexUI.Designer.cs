@@ -59,7 +59,6 @@
             B_EditPointer = new System.Windows.Forms.Button();
             TB_Pointer = new HexTextBox();
             L_Pointer = new System.Windows.Forms.Label();
-            groupBox6 = new System.Windows.Forms.GroupBox();
             RB_Absolute = new System.Windows.Forms.RadioButton();
             RB_Main = new System.Windows.Forms.RadioButton();
             RB_Heap = new System.Windows.Forms.RadioButton();
@@ -70,6 +69,7 @@
             L_ReadRamSize = new System.Windows.Forms.Label();
             RamOffset = new HexTextBox();
             L_ReadRamOffset = new System.Windows.Forms.Label();
+            groupBox6 = new System.Windows.Forms.GroupBox();
             tabPage1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -77,8 +77,8 @@
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox6.SuspendLayout();
             groupBox3.SuspendLayout();
+            groupBox6.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage1
@@ -175,7 +175,7 @@
             // 
             // L_IP
             // 
-            L_IP.Location = new System.Drawing.Point(7, 15);
+            L_IP.Location = new System.Drawing.Point(16, 16);
             L_IP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             L_IP.Name = "L_IP";
             L_IP.Size = new System.Drawing.Size(23, 23);
@@ -199,7 +199,7 @@
             // 
             TB_IP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             TB_IP.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_IP.Location = new System.Drawing.Point(38, 17);
+            TB_IP.Location = new System.Drawing.Point(49, 16);
             TB_IP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TB_IP.Name = "TB_IP";
             TB_IP.Size = new System.Drawing.Size(129, 20);
@@ -210,7 +210,7 @@
             // 
             TB_Port.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             TB_Port.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_Port.Location = new System.Drawing.Point(47, 43);
+            TB_Port.Location = new System.Drawing.Point(49, 41);
             TB_Port.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TB_Port.Name = "TB_Port";
             TB_Port.ReadOnly = true;
@@ -269,7 +269,7 @@
             // L_USBState
             // 
             L_USBState.AutoSize = true;
-            L_USBState.Location = new System.Drawing.Point(7, 19);
+            L_USBState.Location = new System.Drawing.Point(47, 22);
             L_USBState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             L_USBState.Name = "L_USBState";
             L_USBState.Size = new System.Drawing.Size(109, 15);
@@ -386,7 +386,7 @@
             tabPage2.Location = new System.Drawing.Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            tabPage2.Size = new System.Drawing.Size(421, 305);
+            tabPage2.Size = new System.Drawing.Size(405, 232);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Advanced";
             // 
@@ -465,22 +465,6 @@
             L_Pointer.Text = "Pointer:";
             L_Pointer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(RB_Absolute);
-            groupBox6.Controls.Add(RB_Main);
-            groupBox6.Controls.Add(RB_Heap);
-            groupBox6.Controls.Add(L_OffsRelative);
-            groupBox6.Enabled = false;
-            groupBox6.Location = new System.Drawing.Point(176, 6);
-            groupBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox6.Size = new System.Drawing.Size(210, 115);
-            groupBox6.TabIndex = 14;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "RAM Config";
-            // 
             // RB_Absolute
             // 
             RB_Absolute.AutoSize = true;
@@ -546,7 +530,7 @@
             // B_ReadRAM
             // 
             B_ReadRAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            B_ReadRAM.Location = new System.Drawing.Point(19, 69);
+            B_ReadRAM.Location = new System.Drawing.Point(35, 69);
             B_ReadRAM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadRAM.Name = "B_ReadRAM";
             B_ReadRAM.Size = new System.Drawing.Size(84, 27);
@@ -599,11 +583,27 @@
             L_ReadRamOffset.Text = "Offset:";
             L_ReadRamOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(RB_Absolute);
+            groupBox6.Controls.Add(RB_Main);
+            groupBox6.Controls.Add(RB_Heap);
+            groupBox6.Controls.Add(L_OffsRelative);
+            groupBox6.Enabled = false;
+            groupBox6.Location = new System.Drawing.Point(176, 6);
+            groupBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox6.Size = new System.Drawing.Size(210, 115);
+            groupBox6.TabIndex = 14;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "RAM Config";
+            // 
             // LiveHeXUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(418, 261);
+            ClientSize = new System.Drawing.Size(693, 261);
             Controls.Add(tabControl1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -624,10 +624,10 @@
             tabPage2.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
             ResumeLayout(false);
 
         }
@@ -665,7 +665,6 @@
         private System.Windows.Forms.Button B_EditPointer;
         private HexTextBox TB_Pointer;
         private System.Windows.Forms.Label L_Pointer;
-        private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.RadioButton RB_Absolute;
         private System.Windows.Forms.RadioButton RB_Main;
         private System.Windows.Forms.RadioButton RB_Heap;
@@ -676,5 +675,6 @@
         private System.Windows.Forms.Label L_ReadRamSize;
         private HexTextBox RamOffset;
         private System.Windows.Forms.Label L_ReadRamOffset;
+        private System.Windows.Forms.GroupBox groupBox6;
     }
 }

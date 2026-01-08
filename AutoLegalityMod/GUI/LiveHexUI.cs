@@ -260,7 +260,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
             return;
         }
 
-        B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = false;
+        B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = connectionMode.Enabled = false;
         B_Disconnect.Enabled = B_Disconnect.Visible = GB_Boxes.Enabled = groupBox2.Enabled = groupBox3.Enabled = true;
     }
 
@@ -1019,6 +1019,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
         TB_Port.Text = default_port.ToString();
         SetInjectionTypeView();
     }
+
 }
 
 internal class HexTextBox : TextBox
