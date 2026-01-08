@@ -603,7 +603,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(693, 261);
+            ClientSize = new System.Drawing.Size(418, 261);
             Controls.Add(tabControl1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
