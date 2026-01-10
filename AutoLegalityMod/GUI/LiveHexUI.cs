@@ -343,7 +343,7 @@ public partial class LiveHeXUI : Form, ISlotViewer<PictureBox>
 
         try
         {
-            B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = true;
+            B_Connect.Enabled = B_Connect.Visible = TB_IP.Enabled = TB_Port.Enabled = connectionMode.Enabled = true;
             B_Disconnect.Enabled =
                 B_Disconnect.Visible =
                     GB_Boxes.Enabled =

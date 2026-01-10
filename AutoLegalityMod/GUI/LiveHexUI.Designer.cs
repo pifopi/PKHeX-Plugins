@@ -59,6 +59,7 @@
             B_EditPointer = new System.Windows.Forms.Button();
             TB_Pointer = new HexTextBox();
             L_Pointer = new System.Windows.Forms.Label();
+            groupBox6 = new System.Windows.Forms.GroupBox();
             RB_Absolute = new System.Windows.Forms.RadioButton();
             RB_Main = new System.Windows.Forms.RadioButton();
             RB_Heap = new System.Windows.Forms.RadioButton();
@@ -69,7 +70,6 @@
             L_ReadRamSize = new System.Windows.Forms.Label();
             RamOffset = new HexTextBox();
             L_ReadRamOffset = new System.Windows.Forms.Label();
-            groupBox6 = new System.Windows.Forms.GroupBox();
             tabPage1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -77,8 +77,8 @@
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             groupBox4.SuspendLayout();
-            groupBox3.SuspendLayout();
             groupBox6.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
             // 
             // tabPage1
@@ -142,7 +142,7 @@
             // 
             // B_ReadOffset
             // 
-            B_ReadOffset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadOffset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_ReadOffset.Location = new System.Drawing.Point(8, 16);
             B_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadOffset.Name = "B_ReadOffset";
@@ -164,7 +164,7 @@
             // connectionMode
             // 
             connectionMode.BackColor = System.Drawing.SystemColors.Window;
-            connectionMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            connectionMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             connectionMode.FormattingEnabled = true;
             connectionMode.Items.AddRange(new object[] { "WiFi", "USB" });
             connectionMode.Location = new System.Drawing.Point(248, 14);
@@ -185,14 +185,15 @@
             // 
             // B_Connect
             // 
-            B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_Connect.BackColor = System.Drawing.Color.Transparent;
+            B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_Connect.Location = new System.Drawing.Point(104, 41);
             B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_Connect.Name = "B_Connect";
             B_Connect.Size = new System.Drawing.Size(74, 27);
             B_Connect.TabIndex = 7;
             B_Connect.Text = "Connect";
-            B_Connect.UseVisualStyleBackColor = true;
+            B_Connect.UseVisualStyleBackColor = false;
             B_Connect.Click += B_Connect_Click;
             // 
             // TB_IP
@@ -235,7 +236,7 @@
             // 
             // CB_BlockName
             // 
-            CB_BlockName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            CB_BlockName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             CB_BlockName.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             CB_BlockName.Location = new System.Drawing.Point(53, 22);
             CB_BlockName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -246,7 +247,7 @@
             // 
             // B_EditBlock
             // 
-            B_EditBlock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_EditBlock.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_EditBlock.Location = new System.Drawing.Point(62, 50);
             B_EditBlock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_EditBlock.Name = "B_EditBlock";
@@ -332,7 +333,7 @@
             // 
             // B_ReadCurrent
             // 
-            B_ReadCurrent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadCurrent.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_ReadCurrent.Location = new System.Drawing.Point(15, 70);
             B_ReadCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadCurrent.Name = "B_ReadCurrent";
@@ -344,7 +345,7 @@
             // 
             // B_WriteCurrent
             // 
-            B_WriteCurrent.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_WriteCurrent.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_WriteCurrent.Location = new System.Drawing.Point(15, 100);
             B_WriteCurrent.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_WriteCurrent.Name = "B_WriteCurrent";
@@ -356,7 +357,7 @@
             // 
             // B_Disconnect
             // 
-            B_Disconnect.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_Disconnect.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_Disconnect.Location = new System.Drawing.Point(104, 41);
             B_Disconnect.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             B_Disconnect.Name = "B_Disconnect";
@@ -409,7 +410,7 @@
             // 
             // B_ReadPointer
             // 
-            B_ReadPointer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadPointer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_ReadPointer.Location = new System.Drawing.Point(248, 50);
             B_ReadPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadPointer.Name = "B_ReadPointer";
@@ -421,7 +422,7 @@
             // 
             // B_CopyAddress
             // 
-            B_CopyAddress.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_CopyAddress.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_CopyAddress.Location = new System.Drawing.Point(12, 50);
             B_CopyAddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_CopyAddress.Name = "B_CopyAddress";
@@ -433,7 +434,7 @@
             // 
             // B_EditPointer
             // 
-            B_EditPointer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_EditPointer.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_EditPointer.Location = new System.Drawing.Point(130, 50);
             B_EditPointer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_EditPointer.Name = "B_EditPointer";
@@ -464,6 +465,22 @@
             L_Pointer.TabIndex = 17;
             L_Pointer.Text = "Pointer:";
             L_Pointer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // groupBox6
+            // 
+            groupBox6.Controls.Add(RB_Absolute);
+            groupBox6.Controls.Add(RB_Main);
+            groupBox6.Controls.Add(RB_Heap);
+            groupBox6.Controls.Add(L_OffsRelative);
+            groupBox6.Enabled = false;
+            groupBox6.Location = new System.Drawing.Point(176, 6);
+            groupBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox6.Name = "groupBox6";
+            groupBox6.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox6.Size = new System.Drawing.Size(210, 115);
+            groupBox6.TabIndex = 14;
+            groupBox6.TabStop = false;
+            groupBox6.Text = "RAM Config";
             // 
             // RB_Absolute
             // 
@@ -529,7 +546,7 @@
             // 
             // B_ReadRAM
             // 
-            B_ReadRAM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            B_ReadRAM.FlatStyle = System.Windows.Forms.FlatStyle.System;
             B_ReadRAM.Location = new System.Drawing.Point(35, 69);
             B_ReadRAM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadRAM.Name = "B_ReadRAM";
@@ -583,22 +600,6 @@
             L_ReadRamOffset.Text = "Offset:";
             L_ReadRamOffset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // groupBox6
-            // 
-            groupBox6.Controls.Add(RB_Absolute);
-            groupBox6.Controls.Add(RB_Main);
-            groupBox6.Controls.Add(RB_Heap);
-            groupBox6.Controls.Add(L_OffsRelative);
-            groupBox6.Enabled = false;
-            groupBox6.Location = new System.Drawing.Point(176, 6);
-            groupBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox6.Size = new System.Drawing.Size(210, 115);
-            groupBox6.TabIndex = 14;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "RAM Config";
-            // 
             // LiveHeXUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -624,10 +625,10 @@
             tabPage2.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
 
         }
