@@ -122,17 +122,17 @@
             // 
             TB_Offset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             TB_Offset.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            TB_Offset.Location = new System.Drawing.Point(62, 48);
+            TB_Offset.Location = new System.Drawing.Point(65, 13);
             TB_Offset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             TB_Offset.MaxLength = 16;
             TB_Offset.Name = "TB_Offset";
-            TB_Offset.Size = new System.Drawing.Size(81, 20);
+            TB_Offset.Size = new System.Drawing.Size(88, 20);
             TB_Offset.TabIndex = 16;
             TB_Offset.Text = "2E32206A";
             // 
             // L_ReadOffset
             // 
-            L_ReadOffset.Location = new System.Drawing.Point(8, 46);
+            L_ReadOffset.Location = new System.Drawing.Point(8, 10);
             L_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             L_ReadOffset.Name = "L_ReadOffset";
             L_ReadOffset.Size = new System.Drawing.Size(49, 23);
@@ -143,7 +143,7 @@
             // B_ReadOffset
             // 
             B_ReadOffset.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            B_ReadOffset.Location = new System.Drawing.Point(8, 16);
+            B_ReadOffset.Location = new System.Drawing.Point(8, 39);
             B_ReadOffset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_ReadOffset.Name = "B_ReadOffset";
             B_ReadOffset.Size = new System.Drawing.Size(146, 27);
@@ -187,7 +187,7 @@
             // 
             B_Connect.BackColor = System.Drawing.Color.Transparent;
             B_Connect.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            B_Connect.Location = new System.Drawing.Point(104, 41);
+            B_Connect.Location = new System.Drawing.Point(104, 40);
             B_Connect.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             B_Connect.Name = "B_Connect";
             B_Connect.Size = new System.Drawing.Size(74, 27);
