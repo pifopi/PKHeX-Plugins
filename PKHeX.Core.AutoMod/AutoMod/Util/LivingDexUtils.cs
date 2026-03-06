@@ -2,7 +2,7 @@
 
 public readonly record struct LivingDexConfig
 {
-    public bool IncludeForms { get; init; }
+    public bool IncludeForms { get; init; } = true;
     public bool SetShiny { get; init; }
     public bool SetAlpha { get; init; }
 
